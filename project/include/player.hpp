@@ -1,7 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "games.hpp"
+#include "game.hpp"
+#include "game_controller.hpp"
 
 #include <string>
 #include <vector>
@@ -12,14 +13,16 @@ class Player {
 private:
     string _name;
     string _nickname;
-    vector<Games> _gamesStats;
+    vector<Game> _gamesStats;
 
 public:
     Player(string name, string nickname);
-    string getName();
-    string getNickname();
     void setName(string name);
+    string getName();
     void setNickname(string name);
+    string getNickname();
+    int getNumWins(int index);
+    int getNumDefeats(int index);
 };
 
 #endif //PLAYER_H
