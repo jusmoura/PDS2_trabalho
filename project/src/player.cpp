@@ -8,24 +8,32 @@ Player::Player(string name, string nickname) {
     this->_gamesStats = gameController.getGames();
 }
 
-string Player::getName() {
-    return _name;
-}
-
-string Player::getNickname() {
-    return _nickname;
-}
-
 void Player::setName(string name) {
     this->_name = name;
+}
+
+string Player::getName() {
+    return _name;
 }
 
 void Player::setNickname(string nickname) {
     this->_nickname = nickname;
 }
 
+string Player::getNickname() {
+    return _nickname;
+}
+
+void Player::setNumWins(int game, int numWins) {
+    this->_gamesStats[game].setNumWins(numWins);
+}
+
 int Player::getNumWins(int game) {
     return _gamesStats[game].getNumWins();
+}
+
+void Player::setNumDefeats(int game, int numDefeats) {
+    this->_gamesStats[game].setNumDefeats(numDefeats);
 }
 
 int Player::getNumDefeats(int game) {

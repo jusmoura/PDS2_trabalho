@@ -1,14 +1,21 @@
-#include "../include/player.hpp"
+#include "../include/player_controller.hpp"
 
 #include <iostream>
 
 using namespace std;
 
 int main() {
-    Player* player1 = new Player("Pedro", "Piter");
+    PlayerController* controller = new PlayerController();
 
-    cout << "Número de vitórias no Reversi do player " << player1->getNickname() << ": " << player1->getNumWins(REVERSI) << endl;
-    cout << "Número de derrotas no Reversi do player " << player1->getNickname() << ": " << player1->getNumDefeats(REVERSI) << endl;
+    controller->printPlayers();
+    cout << "\nADICIONANDO PLAYERS...\n" << endl;
+    Player player1 = Player("Joao", "Jow");
+    controller->insertPlayer(player1);
+    Player player2 = Player("Maria", "Mah");
+    controller->insertPlayer(player2);
+    controller->printPlayers();
+
+    controller->endProcess();
 
     return 0;
 }
