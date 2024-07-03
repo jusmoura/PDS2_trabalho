@@ -12,4 +12,4 @@ public:
     void printBoard();
 };
 
-#endif // CONNECT4_HPP
+#endif
