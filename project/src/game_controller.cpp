@@ -1,17 +1,13 @@
 #include "../include/game_controller.hpp"
 
+//Instancia todos os jogos disponíveis no projeto
 GameController::GameController() {
-    Game gameReversi("Reversi");
-    Game gameLig4("Lig4");
-    Game gameTicTacToe("Jogo da Velha");
-    Game gameMinesweeper("Campo Minado");
-
-    _games.push_back(gameReversi);
-    _games.push_back(gameLig4);
-    _games.push_back(gameTicTacToe);
-    _games.push_back(gameMinesweeper);
+    for (auto name : _NameGames) {
+        Game newGame(name);
+        _availableGames.push_back(newGame);
+    }
 }
 
-vector<Game> GameController::getGames() {
-    return this->_games;
+vector<Game> GameController::getAvailableGames() {
+    return this->_availableGames;
 }

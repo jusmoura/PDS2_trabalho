@@ -18,17 +18,17 @@ Player PlayerController::getPlayerByIndex(int index) {
 }
 
 void PlayerController::printPlayers() {
+    cout << "\nExibindo jogadores...\n" << endl;
+
     for (auto player : _players) {
         cout << "Nome: " << player.getName() << endl;
         cout << "Apelido: " << player.getNickname() << endl;
-        cout << "REVERSI -- Numero de Vitorias: " << player.getNumWins(REVERSI) << endl;
-        cout << "REVERSI -- Numero de Derrotas: " << player.getNumDefeats(REVERSI) << endl;
-        cout << "LIG4 -- Numero de Vitorias: " << player.getNumWins(LIG4) << endl;
-        cout << "LIG4 -- Numero de Derrotas: " << player.getNumDefeats(LIG4) << endl;
-        cout << "TIC_TAC_TOE -- Numero de Vitorias: " << player.getNumWins(TIC_TAC_TOE) << endl;
-        cout << "TIC_TAC_TOE -- Numero de Derrotas: " << player.getNumDefeats(TIC_TAC_TOE) << endl;
-        cout << "MINESWEEPER -- Numero de Vitorias: " << player.getNumWins(MINESWEEPER) << endl;
-        cout << "MINESWEEPER -- Numero de Derrotas: " << player.getNumDefeats(MINESWEEPER) << endl;
+
+        cout << "-- Estatisticas dos Jogos --" << endl;
+
+        for (auto game : player.getGamesStats())
+            cout << game.getName() << " - V: " << game.getNumWins() << ", D: " << game.getNumDefeats() << endl;
+
         cout << "\n";
     }
 }

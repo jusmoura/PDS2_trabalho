@@ -5,7 +5,7 @@ Player::Player(string name, string nickname) {
     this->_nickname = nickname;
 
     GameController gameController = GameController();
-    this->_gamesStats = gameController.getGames();
+    this->_gamesStats = gameController.getAvailableGames();
 }
 
 void Player::setName(string name) {
@@ -22,6 +22,10 @@ void Player::setNickname(string nickname) {
 
 string Player::getNickname() {
     return _nickname;
+}
+
+vector<Game> Player::getGamesStats() {
+    return _gamesStats;
 }
 
 void Player::setNumWins(int game, int numWins) {

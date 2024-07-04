@@ -13,11 +13,14 @@ const int MINESWEEPER = 3;
 
 class GameController {
 private:
-    vector<Game> _games;
+    //Lista de jogos cadastrados
+    /*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/
+    vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado", "Teste" };
+    vector<Game> _availableGames;
 
 public:
     GameController();
-    vector<Game> getGames();
+    vector<Game> getAvailableGames();
 };
 
 #endif //GAME_CONTROLLER_H
