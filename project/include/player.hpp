@@ -1,7 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "game.hpp"
 #include "game_controller.hpp"
 
 #include <string>

@@ -14,13 +14,18 @@ class PlayerController {
 private:
     DatabaseController* databaseController;
     vector<Player> _players;
+    /* Métodos */
+    int findIndexOfPlayer(Player wantedPlayer);
+    void printPlayers();
 
 public:
     PlayerController();
-    void insertPlayer(Player player);
     int getTotalNumberOfPlayers();
-    Player getPlayerByIndex(int index);
-    void printPlayers();
+    Player* getPlayerByIndex(int index);
+    void insertNewPlayer(Player player);
+    void removePlayerByIndex(int index);
+    void printPlayersByName();
+    void printPlayersByNickname();
     void endProcess();
 };
 

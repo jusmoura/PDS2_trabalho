@@ -15,6 +15,10 @@ void DatabaseController::readFile(PlayerController* playerController) {
         int num;
 
         std::getline(_inputFile, name);
+        //Tratamento para arquivo vazio
+        if (name == "")
+            break;
+
         _inputFile >> nickName;
 
         Player player = Player(name, nickName);
@@ -32,7 +36,7 @@ void DatabaseController::readFile(PlayerController* playerController) {
         string buffer;
         std::getline(_inputFile, buffer);
 
-        playerController->insertPlayer(player);
+        playerController->insertNewPlayer(player);
     }
 
     _inputFile.close();
@@ -47,16 +51,16 @@ void DatabaseController::writeFile(PlayerController* playerController) {
     int playersSize = playerController->getTotalNumberOfPlayers();
 
     for (int i = 0; i < playersSize; i++) {
-        Player player = playerController->getPlayerByIndex(i);
+        Player* player = playerController->getPlayerByIndex(i);
 
-        _outputFile << player.getName() << endl;
-        _outputFile << player.getNickname() << endl;
+        _outputFile << player->getName() << endl;
+        _outputFile << player->getNickname() << endl;
 
-        vector<Game>* games = player.getGamesStats();
+        vector<Game>* games = player->getGamesStats();
         int gamesSize = games->size();
 
         for (int gameIndex = 0; gameIndex < gamesSize; gameIndex++) {
-            _outputFile << player.getNumWins(gameIndex) << " " << player.getNumDefeats(gameIndex);
+            _outputFile << player->getNumWins(gameIndex) << " " << player->getNumDefeats(gameIndex);
 
             if (i != playersSize - 1)
                 _outputFile << endl;
