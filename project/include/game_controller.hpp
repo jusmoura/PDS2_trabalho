@@ -15,7 +15,7 @@ class GameController {
 private:
     //Lista de jogos cadastrados
     /*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/
-    vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado", "Teste" };
+    vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado" };
     vector<Game> _availableGames;
 
 public:

@@ -24,8 +24,8 @@ string Player::getNickname() {
     return _nickname;
 }
 
-vector<Game> Player::getGamesStats() {
-    return _gamesStats;
+vector<Game>* Player::getGamesStats() {
+    return &_gamesStats;
 }
 
 void Player::setNumWins(int game, int numWins) {

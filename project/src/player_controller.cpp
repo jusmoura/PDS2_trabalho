@@ -26,8 +26,11 @@ void PlayerController::printPlayers() {
 
         cout << "-- Estatisticas dos Jogos --" << endl;
 
-        for (auto game : player.getGamesStats())
-            cout << game.getName() << " - V: " << game.getNumWins() << ", D: " << game.getNumDefeats() << endl;
+        vector<Game>* games = player.getGamesStats();
+        int gamesSize = games->size();
+
+        for (int i = 0; i < gamesSize; i++)
+            cout << games->at(i).getName() << " - V: " << games->at(i).getNumWins() << ", D: " << games->at(i).getNumDefeats() << endl;
 
         cout << "\n";
     }

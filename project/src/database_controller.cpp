@@ -9,7 +9,6 @@ DatabaseController::DatabaseController() {
 }
 
 void DatabaseController::readFile(PlayerController* playerController) {
-
     while (!_inputFile.eof()) {
         string name;
         string nickName;
@@ -20,22 +19,15 @@ void DatabaseController::readFile(PlayerController* playerController) {
 
         Player player = Player(name, nickName);
 
-        _inputFile >> num;
-        player.setNumWins(REVERSI, num);
-        _inputFile >> num;
-        player.setNumDefeats(REVERSI, num);
-        _inputFile >> num;
-        player.setNumWins(LIG4, num);
-        _inputFile >> num;
-        player.setNumDefeats(LIG4, num);
-        _inputFile >> num;
-        player.setNumWins(TIC_TAC_TOE, num);
-        _inputFile >> num;
-        player.setNumDefeats(TIC_TAC_TOE, num);
-        _inputFile >> num;
-        player.setNumWins(MINESWEEPER, num);
-        _inputFile >> num;
-        player.setNumDefeats(MINESWEEPER, num);
+        vector<Game>* games = player.getGamesStats();
+        int gamesSize = games->size();
+
+        for (int i = 0; i < gamesSize; i++) {
+            _inputFile >> num;
+            games->at(i).setNumWins(num);
+            _inputFile >> num;
+            games->at(i).setNumDefeats(num);
+        }
 
         string buffer;
         std::getline(_inputFile, buffer);
@@ -52,18 +44,29 @@ void DatabaseController::writeFile(PlayerController* playerController) {
     if (!_outputFile.is_open())
         std::cout << "Falha na abertura do arquivo " << _filePath << std::endl;
 
-    int size = playerController->getTotalNumberOfPlayers();
+    int playersSize = playerController->getTotalNumberOfPlayers();
 
-    for (int i = 0; i < size; i++) {
-        _outputFile << playerController->getPlayerByIndex(i).getName() << endl;
-        _outputFile << playerController->getPlayerByIndex(i).getNickname() << endl;
-        _outputFile << playerController->getPlayerByIndex(i).getNumWins(REVERSI) << " " << playerController->getPlayerByIndex(i).getNumDefeats(REVERSI) << endl;
-        _outputFile << playerController->getPlayerByIndex(i).getNumWins(LIG4) << " " << playerController->getPlayerByIndex(i).getNumDefeats(LIG4) << endl;
-        _outputFile << playerController->getPlayerByIndex(i).getNumWins(TIC_TAC_TOE) << " " << playerController->getPlayerByIndex(i).getNumDefeats(TIC_TAC_TOE) << endl;
-        _outputFile << playerController->getPlayerByIndex(i).getNumWins(MINESWEEPER) << " " << playerController->getPlayerByIndex(i).getNumDefeats(MINESWEEPER);
+    for (int i = 0; i < playersSize; i++) {
+        Player player = playerController->getPlayerByIndex(i);
 
-        if (i != size - 1)
-            _outputFile << endl;
+        _outputFile << player.getName() << endl;
+        _outputFile << player.getNickname() << endl;
+
+        vector<Game>* games = player.getGamesStats();
+        int gamesSize = games->size();
+
+        for (int gameIndex = 0; gameIndex < gamesSize; gameIndex++) {
+            _outputFile << player.getNumWins(gameIndex) << " " << player.getNumDefeats(gameIndex);
+
+            if (i != playersSize - 1)
+                _outputFile << endl;
+
+            //Tratamento para a quebra de linha do ultimo jogo do ultimo player cadastrado
+            else {
+                if (gameIndex != gamesSize - 1)
+                    _outputFile << endl;
+            }
+        }
     }
 
     _outputFile.close();
