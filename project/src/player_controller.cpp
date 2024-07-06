@@ -53,7 +53,13 @@ void PlayerController::printPlayersByName() {
     for (int i = 0; i < size - 1; i++) {
         int min_idx = i;
         for (int j = i + 1; j < size; j++) {
-            if (_players[j].getName() < _players[min_idx].getName())
+            //Conversão local dos nomes dos jogadores para UPPERCASE para fins de comparação (a == A)
+            string nameI = _players[min_idx].getName();
+            transform(nameI.begin(), nameI.end(), nameI.begin(), ::toupper);
+            string nameJ = _players[j].getName();
+            transform(nameJ.begin(), nameJ.end(), nameJ.begin(), ::toupper);
+
+            if (nameJ < nameI)
                 min_idx = j;
         }
 
@@ -77,7 +83,13 @@ void PlayerController::printPlayersByNickname() {
     for (int i = 0; i < size - 1; i++) {
         int min_idx = i;
         for (int j = i + 1; j < size; j++) {
-            if (_players[j].getNickname() < _players[min_idx].getNickname())
+            //Conversão local dos nomes dos jogadores para UPPERCASE para fins de comparação (a == A)
+            string nicknameI = _players[min_idx].getNickname();
+            transform(nicknameI.begin(), nicknameI.end(), nicknameI.begin(), ::toupper);
+            string nicknameJ = _players[j].getNickname();
+            transform(nicknameJ.begin(), nicknameJ.end(), nicknameJ.begin(), ::toupper);
+
+            if (nicknameJ < nicknameI)
                 min_idx = j;
         }
 

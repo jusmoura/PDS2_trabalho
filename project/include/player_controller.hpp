@@ -5,6 +5,7 @@
 #include "database_controller.hpp"
 
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 using namespace std;

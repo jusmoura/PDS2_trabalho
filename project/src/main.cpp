@@ -5,18 +5,17 @@
 int main() {
     PlayerController* controller = new PlayerController();
 
-    controller->removePlayerByIndex(1);
-
     cout << "\nPRINTANDO...\n" << endl;
     controller->printPlayersByName();
 
     cout << "\nADICIONANDO NOVOS PLAYERS...\n" << endl;
-    Player player1 = Player("a - primeiro nome", "d-ultimoNick");
-    controller->insertNewPlayer(player1);
-    Player player2 = Player("d - ultimo nome", "a-primeiroNick");
+    Player player2 = Player("d", "a-primeiroNick");
     controller->insertNewPlayer(player2);
+    Player player1 = Player("a - primeiro nome", "z-ultimoNick");
+    controller->insertNewPlayer(player1);
 
     cout << "\nPRINTANDO...\n" << endl;
+    controller->printPlayersByName();
     controller->printPlayersByNickname();
 
     controller->endProcess();
