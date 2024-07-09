@@ -1,15 +1,15 @@
 #ifndef LIG4_HPP
 #define LIG4_HPP
 
-#include "tabuleiro.hpp"
+#include "board.hpp"
 
-class lig4 : public tabuleiro {
+class Lig4 : public Board {
 public:
-    lig4(int lin, int col);
+    Lig4(int lin, int col);
 
-    void makeMove(int line, int column, char player);
-    bool checkVictory(char player);
-    void printBoard();
+    void makeMove(int line, int column, int player);
+    bool checkVictory(int player);
+    // void printBoard();
 };
 
-#endif 
+#endif //LIG4_HPP

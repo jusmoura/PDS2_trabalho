@@ -1,23 +1,23 @@
-#include "reversi.hpp"
-#include <iostream>
+#include "../include/reversi.hpp"
 
-reversi::reversi(int lin, int col) : tabuleiro(lin, col) {}
+Reversi::Reversi(int line, int column) : Board(line, column) {
+}
 
-void reversi::makeMove(int line, int column, char player) {
+void Reversi::makeMove(int line, int column, int player) {
     if (validateMove(line, column)) {
-        Tabuleiro[line][column] = player;
+        _board[line][column].setValue(player);
     }
 }
 
-bool reversi::checkVictory(char player) {
+bool Reversi::checkVictory(int player) {
     return false;
 }
 
-void reversi::printBoard() {
-    for (int i = 0; i < lines; ++i) {
-        for (int j = 0; j < columns; ++j) {
-            std::cout << Tabuleiro[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-}
+// void Reversi::printBoard() {
+//     for (int i = 0; i < linesSize; ++i) {
+//         for (int j = 0; j < columnsSize; ++j) {
+//             std::cout << _board[i][j].getValue() << " ";
+//         }
+//         std::cout << std::endl;
+//     }
+// }

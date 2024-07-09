@@ -37,17 +37,18 @@ $(OBJ_DIR)/player_controller.o: $(INCLUDE_DIR)/player_controller.hpp $(SRC_DIR)/
 	$(CC) -c $(SRC_DIR)/$(PLAYERS_DIR)/$(CONTROLLERS_DIR)/player_controller.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/player_controller.o
 
 # Games Module
-#
-#
-#
-#
+$(OBJ_DIR)/cell.o: $(INCLUDE_DIR)/cell.hpp $(SRC_DIR)/$(GAMES_DIR)/$(MODELS_DIR)/cell.cpp
+	$(CC) -c $(SRC_DIR)/$(GAMES_DIR)/$(MODELS_DIR)/cell.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/cell.o
+
+$(OBJ_DIR)/board.o: $(INCLUDE_DIR)/cell.hpp $(INCLUDE_DIR)/board.hpp $(SRC_DIR)/$(GAMES_DIR)/$(MODELS_DIR)/board.cpp
+	$(CC) -c $(SRC_DIR)/$(GAMES_DIR)/$(MODELS_DIR)/board.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/board.o
 
 # main
-$(OBJ_DIR)/main.o: $(INCLUDE_DIR)/player_controller.hpp $(SRC_DIR)/main.cpp
+$(OBJ_DIR)/main.o: $(INCLUDE_DIR)/player_controller.hpp $(INCLUDE_DIR)/board.hpp $(SRC_DIR)/main.cpp
 	$(CC) -c $(SRC_DIR)/main.cpp -I$(INCLUDE_DIR) -o $(OBJ_DIR)/main.o
     
-main: $(OBJ_DIR)/main.o $(OBJ_DIR)/game.o $(OBJ_DIR)/game_controller.o $(OBJ_DIR)/player.o $(OBJ_DIR)/player_controller.o $(OBJ_DIR)/database_controller.o
-	$(CC) $(OBJ_DIR)/main.o $(OBJ_DIR)/game_controller.o $(OBJ_DIR)/game.o $(OBJ_DIR)/player.o $(OBJ_DIR)/player_controller.o $(OBJ_DIR)/database_controller.o -o $(BIN_DIR)/main
+main: $(OBJ_DIR)/main.o $(OBJ_DIR)/game.o $(OBJ_DIR)/game_controller.o $(OBJ_DIR)/player.o $(OBJ_DIR)/player_controller.o $(OBJ_DIR)/database_controller.o $(OBJ_DIR)/cell.o $(OBJ_DIR)/board.o
+	$(CC) $(OBJ_DIR)/main.o $(OBJ_DIR)/game_controller.o $(OBJ_DIR)/game.o $(OBJ_DIR)/player.o $(OBJ_DIR)/player_controller.o $(OBJ_DIR)/database_controller.o $(OBJ_DIR)/cell.o $(OBJ_DIR)/board.o -o $(BIN_DIR)/main
     
 clean:
 	rm -f $(BIN_DIR)/main $(OBJ_DIR)/*.o

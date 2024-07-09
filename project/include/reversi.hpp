@@ -1,15 +1,15 @@
 #ifndef REVERSI_HPP
 #define REVERSI_HPP
 
-#include "tabuleiro.hpp"
+#include "board.hpp"
 
-class reversi : public tabuleiro {
+class Reversi : public Board {
 public:
-    reversi(int lin, int col);
+    Reversi(int line, int column);
 
-    void makeMove(int line, int column, char player);
-    bool checkVictory(char player);
-    void printBoard();
+    void makeMove(int line, int column, int player);
+    bool checkVictory(int player);
+    // void printBoard();
 };
 
-#endif 
+#endif //REVERSI_HPP

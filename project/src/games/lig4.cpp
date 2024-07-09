@@ -1,23 +1,24 @@
 #include "lig4.hpp"
 #include <iostream>
 
-lig4::lig4(int lin, int col) : tabuleiro(lin, col) {}
+Lig4::Lig4(int line, int column) : Board(line, column) {
+}
 
-void lig4::makeMove(int line, int column, char player) {
+void Lig4::makeMove(int line, int column, int player) {
     if (validateMove(line, column)) {
-        Tabuleiro[line][column] = player;
+        _board[line][column].setValue(player);
     }
 }
 
-bool lig4::checkVictory(char player) {
+bool Lig4::checkVictory(int player) {
     return false;
 }
 
-void lig4::printBoard() {
-    for (int i = 0; i < lines; ++i) {
-        for (int j = 0; j < columns; ++j) {
-            std::cout << Tabuleiro[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-}
+// void Lig4::printBoard() {
+//     for (int i = 0; i < linesSize; ++i) {
+//         for (int j = 0; j < columnsSize; ++j) {
+//             std::cout << _board[i][j].getValue() << " ";
+//         }
+//         std::cout << std::endl;
+//     }
+// }
