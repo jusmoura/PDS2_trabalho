@@ -21,6 +21,8 @@ public:
     void setNickname(string name);
     string getNickname();
     vector<Game>* getGamesStats();
+    void addWin(int game);
+    void addDefeat(int game);
     void setNumWins(int game, int numWins);
     int getNumWins(int index);
     void setNumDefeats(int game, int numDefeats);

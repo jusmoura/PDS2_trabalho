@@ -13,8 +13,19 @@ Player* PlayerController::getPlayerByIndex(int index) {
     return &_players[index];
 }
 
+Player* PlayerController::getPlayerByNickname(string nickname) {
+    int playerIndex = findIndexOfPlayer(nickname);
+
+    if (playerIndex == -1) {
+        cout << "Jogador com apelido " << nickname << " não encontrado!" << endl;
+        return nullptr;
+    }
+    else
+        return &_players[playerIndex];
+}
+
 void PlayerController::insertNewPlayer(Player player) {
-    int playerIndex = findIndexOfPlayer(player);
+    int playerIndex = findIndexOfPlayer(player.getNickname());
 
     //Verifica se o player já existe
     if (playerIndex == -1)
@@ -105,11 +116,11 @@ void PlayerController::endProcess() {
 }
 
 /* Métodos privados */
-int PlayerController::findIndexOfPlayer(Player wantedPlayer) {
+int PlayerController::findIndexOfPlayer(string nickname) {
     int size = _players.size();
 
     for (int i = 0; i < size; i++) {
-        if (wantedPlayer.getNickname() == _players[i].getNickname())
+        if (nickname == _players[i].getNickname())
             return i;
     }
 

@@ -16,13 +16,14 @@ private:
     DatabaseController* databaseController;
     vector<Player> _players;
     /* Métodos */
-    int findIndexOfPlayer(Player wantedPlayer);
+    int findIndexOfPlayer(string nickname);
     void printPlayers();
 
 public:
     PlayerController();
     int getTotalNumberOfPlayers();
     Player* getPlayerByIndex(int index);
+    Player* getPlayerByNickname(string nickname);
     void insertNewPlayer(Player player);
     void removePlayerByIndex(int index);
     void printPlayersByName();

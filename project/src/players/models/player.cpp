@@ -24,6 +24,16 @@ string Player::getNickname() {
     return _nickname;
 }
 
+void Player::addWin(int game) {
+    int numWins = this->getNumWins(game);
+    this->setNumWins(game, ++numWins);
+}
+
+void Player::addDefeat(int game) {
+    int numDefeats = this->getNumDefeats(game);
+    this->setNumDefeats(game, ++numDefeats);
+}
+
 vector<Game>* Player::getGamesStats() {
     return &_gamesStats;
 }
