@@ -195,7 +195,7 @@ public:
         int x, y;
         std::string line;
 
-        while (sumX + sumO < (BOARD_SIZE - 1) * (BOARD_SIZE - 1)) {
+        while (sumX + sumO < 64) {
             board.display();
             std::cout << "Jogador " << currentPlayer << ": [linha coluna]; 'help' para ajuda; 'hint' para dica: " << std::endl;
             std::getline(std::cin, line);
