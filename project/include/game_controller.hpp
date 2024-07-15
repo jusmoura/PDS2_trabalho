@@ -10,12 +10,13 @@ const int REVERSI = 0;
 const int LIG4 = 1;
 const int TIC_TAC_TOE = 2;
 const int MINESWEEPER = 3;
+const int CHECKERS = 4;
 
 class GameController {
 private:
     //Lista de jogos cadastrados
     /*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/
-    vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado" };
+    vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado", "Damas" };
     vector<Game> _availableGames;
 
 public:
