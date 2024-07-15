@@ -21,9 +21,8 @@
 //         std::cout << std::endl;
 //     }
 // }
-#include <iostream>
-#include <vector>
-#include <sstream>
+
+#include "reversi.hpp"
 
 const int BOARD_SIZE = 9;
 
