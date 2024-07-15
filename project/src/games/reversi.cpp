@@ -216,8 +216,10 @@ public:
                 }
                 if (currentPlayer == 'X') {
                     hintsX--;
+                    std::cout << "      Você ainda tem " << hintsX << " dicas" << std::endl;
                 } else {
                     hintsO--;
+                    std::cout << "      Você ainda tem " << hintsO << " dicas" << std::endl;
                 }
                 continue;
             }
