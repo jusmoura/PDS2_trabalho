@@ -1,12 +1,12 @@
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
-#include "../include/player_controller.hpp"
-#include "../include/minesweeper.hpp"
-#include "../include/reversi.hpp"
-#include "../include/lig4.hpp"
-// #include "../include/tic_tac_toe.hpp"
-// #include "../include/checkers.hpp"
+#include "player_controller.hpp"
+#include "minesweeper.hpp"
+#include "reversi.hpp"
+#include "lig4.hpp"
+// #include "tic_tac_toe.hpp"
+// #include "checkers.hpp"
 
 #include <iostream>
 

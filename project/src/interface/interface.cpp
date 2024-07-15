@@ -74,12 +74,6 @@ void Interface::gamesMenu() {
         cout << "\n========================================\n\nDigite o numero do jogo que deseja jogar: ";
         cin >> menuInput;
 
-        cout << "\n---Digite o tamanho do tabuleiro: ";
-        int size;
-        cin >> size;
-
-        bool playerWon;
-
         switch (menuInput) {
         case REVERSI:
         {
@@ -101,7 +95,8 @@ void Interface::gamesMenu() {
 
         case MINESWEEPER:
         {
-            Minesweeper mine = Minesweeper(size, size);
+            bool playerWon;
+            Minesweeper mine = Minesweeper(8, 8);
             playerWon = mine.play();
             if (playerWon)
                 player->addWin(MINESWEEPER);
