@@ -2,39 +2,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-using namespace std;
 
 void print_board(int board[9][8])
 {
     int x, y;
     char z=1;
     for (x=1;x<9;x++){
-        cout << z << endl;
+        std::cout << z << std::endl;
         z++;
         for (y=1;y<9;y++){
-            cout << "|";
+            std::cout << "|";
             switch(board[x][y])
             {
                 case 0:
-                    cout << " ";
+                    std::cout << " ";
                     break;
                 case 1:
-                    cout << "x";
+                    std::cout << "x";
                     break;
                 case 2:
-                    cout << "o";
+                    std::cout << "o";
                     break;
                 case 3:
-                    cout << "X";
+                    std::cout << "X";
                     break;
                 case 4:
-                    cout << "O";
+                    std::cout << "O";
                     break;
             }
         }
-        cout << "|";
+        std::cout << "|";
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void set_defaults(int board[9][8])
@@ -79,32 +78,29 @@ void Check_if_became_queen(int x, int y, int board[9][8], int turn)
 }
 
 void lerJogadas(int x[]) {
-    cout << "linha peça: " << endl;
-    cin >> x[1];
-    cout << "coluna peça: " << endl;
-    cin >> x[2];
-    cout << "linha jogada: " << endl;
-    cin >> x[3];
-    cout << "coluna jogada: " << endl;
-    cin >> x[4];
+    std::cout << "Digite linha e coluna da peça: " << std::endl;
+    std::cin >> x[1] >> x[2];
+    std::cout << "Digite linha e coluna da jogada: " << std::endl;
+    std::cin >> x[3] >> x[4];
 }
+
 
 bool JogadaValida(int board[9][8], int x[4]) {
     if (x[1] < 0 || x[1] >= 9 || x[2] < 0 || x[2] >= 8){
-        cout << "Jogada invalida 1" << endl;
+        std::cout << "Jogada invalida 1" << std::endl;
         return false;
     }
     else if (x[3] < 0 || x[3] >= 9 || x[4] < 0 || x[4] >= 8){
-        cout << "Jogada invalida 2" << endl;
+        std::cout << "Jogada invalida 2" << std::endl;
         return false;
     }
     else if (board[x[3]][x[4]] == 1 || board[x[3]][x[4]] == 2 || board[x[3]][x[4]] == 3 || board[x[3]][x[4]] == 4){
-        cout << "Jogada invalida 3" << endl;
+        std::cout << "Jogada invalida 3" << std::endl;
         return false;
     }
     else {
         return true;
-        cout<< "Deu bom"<<endl;
+        std::cout << "Deu bom"<< std::endl;
     }
 }
 
@@ -152,7 +148,7 @@ void get_co(int board[9][8], int turn, int peshka[2]) {
     int x[4];
     bool moveValido = false;
     while (!moveValido) {
-        cout << ((turn % 2 == 1) ? "x's turn." : "o's turn.") << endl;
+        std::cout << ((turn % 2 == 1) ? "x's turn." : "o's turn.") << std::endl;
         lerJogadas(x);
         if (JogadaValida(board, x)) {
             if (movimentoSimples(x, turn)) {
@@ -166,7 +162,7 @@ void get_co(int board[9][8], int turn, int peshka[2]) {
                 moveValido = true;
             } 
             else {
-                cout << "Movimento inválido. Tente novamente." << endl;
+                std::cout << "Movimento inválido. Tente novamente." << std::endl;
             }
         }
     }
@@ -176,12 +172,12 @@ int Winner(int x, int o)
 {
     if(x==0)
     {
-        cout << "O won!" << endl;
+        std::cout << "O won!" << std::endl;
         return 1;
     }
     else if(o==0)
     {
-        cout << "X won!" << endl;
+        std::cout << "X won!" << std::endl;
         return 1;
     }
     else
