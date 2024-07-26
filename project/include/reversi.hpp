@@ -5,42 +5,32 @@
 #include <sstream>
 #include <iostream>
 
-const int BOARD_SIZE = 9;
+#include "board.hpp"
 
-class Board {
-public:
-    std::vector<std::vector<char>> grid;
+const int BOARD_SIZE = 8;
 
-    Board();
+const int EMPTY = 0;
+const int PLAYER_X = 1;
+const int PLAYER_O = 2;
 
-    void initialize();
-
-    void display();
-};
-
-class ReversiGame {
-public:
-    Board board;
+class ReversiGame : public Board {
+private:
     int sumX;
     int sumO;
     int hintsO;
     int hintsX;
     char currentPlayer;
 
-    ReversiGame();
-
+    /*Metodos*/
     void switchPlayer();
-
     int validMove(int x, int y);
-
     std::vector<std::pair<int, int>> help();
-
     std::vector<std::pair<std::pair<int, int>, int>> hint();
-
     void makeMove(int x, int y);
-
     void calculateScore();
 
+public:
+    ReversiGame();
     void play();
 };
 
