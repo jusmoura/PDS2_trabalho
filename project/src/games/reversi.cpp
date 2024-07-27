@@ -179,16 +179,13 @@ void ReversiGame::play() {
 
     Board::printBoard();
 
-    char playerName = (currentPlayer == PLAYER_X) ? 'X' : 'O';
-
     if (sumX > sumO){
-        cout << "PARABÉNS" << playerName << ", VOCÊ GANHOU!" << endl;
+        cout << "PARABÉNS X VOCÊ GANHOU!" << endl;
     } else if(sumO > sumX){
-        cout << "PARABÉNS" << playerName << ", VOCÊ GANHOU!" << endl;
-    } else if{
+        cout << "PARABÉNS O VOCÊ GANHOU!" << endl;
+    } else{
         cout << "O jogo terminou em empate!" << endl;
     }
-
 }
 
 int main() {
