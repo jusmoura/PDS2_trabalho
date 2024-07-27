@@ -179,6 +179,10 @@ void ReversiGame::play() {
 
     Board::printBoard();
 
+    checkVictory();
+}
+
+    bool ReversiGame::checkVictory(){
     if (sumX > sumO){
         cout << "PARABÉNS X VOCÊ GANHOU!" << endl;
     } else if(sumO > sumX){
@@ -186,7 +190,7 @@ void ReversiGame::play() {
     } else{
         cout << "O jogo terminou em empate!" << endl;
     }
-}
+    }
 
 int main() {
     ReversiGame game;
