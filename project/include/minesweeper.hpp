@@ -13,7 +13,7 @@ private:
     void printBoard() override;
     void setBombsPositions();
     bool checkDefeat(int line, int column);
-    bool checkWin();
+    bool checkVictory() override;
     void checkAndShowAdjacentsCells(int row, int column);
 
 public:

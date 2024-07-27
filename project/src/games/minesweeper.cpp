@@ -66,7 +66,7 @@ void Minesweeper::printBoard() {
                 if (_board[i][j].getValue() >= IS_BOMB)
                     cout << " B |";
 
-                else if (_board[i][j].getValue() == 0)
+                else if (_board[i][j].getValue() == EMPTY)
                     cout << "   |";
 
                 else
@@ -105,7 +105,7 @@ bool Minesweeper::play() {
         cout << endl;
 
         // Determinando a exibição da posição escolhida
-        if (validateMove(line, column) && _board[line][column].getValue() == 0)
+        if (validateMove(line, column) && _board[line][column].getValue() == EMPTY)
             //Verifica celulas adjacentes caso a selecionada for 0
             checkAndShowAdjacentsCells(line, column);
 
@@ -119,7 +119,7 @@ bool Minesweeper::play() {
         if (checkDefeat(line, column))
             return false;
 
-        if (checkWin())
+        if (checkVictory())
             return true;
     }
 }
@@ -180,7 +180,7 @@ bool Minesweeper::checkDefeat(int line, int column) {
         return false;
 }
 
-bool Minesweeper::checkWin() {
+bool Minesweeper::checkVictory() {
     // Verificando se o jogador ganhou
     int counter = 0;
     for (int i = 0; i < this->linesSize; i++) {
@@ -207,7 +207,7 @@ void Minesweeper::checkAndShowAdjacentsCells(int line, int column) {
                 // Evita que a própria posição seja checada novamente
                 continue;
 
-            else if (validateMove(line + i, column + j) && _board[line + i][column + j].getValue() == 0 && _board[line + i][column + j].getSelected() == false)
+            else if (validateMove(line + i, column + j) && _board[line + i][column + j].getValue() == EMPTY && _board[line + i][column + j].getSelected() == false)
                 // Chamada recursiva da função para verificar se o adjacente ao adjacente atual (e etc) também não é bomba -> para liberar todos os 0's adjacentes
                 checkAndShowAdjacentsCells(line + i, column + j);
 

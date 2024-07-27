@@ -77,19 +77,17 @@ void Board::printBoard() {
         }
         // Printa o campo
         for (int j = 0; j < this->columnsSize; j++) {
-            if (_board[i][j].getSelected() == false)
-                cout << " \xdb |";
+            /*
+            ADAPTAR OS PRINTS ABAIXO PARA CADA JOGO, SE NECESSÁRIO (OVERRIDE)
+            */
+            if (_board[i][j].getValue() == EMPTY)
+                cout << "   |";
 
-            else {
-                /*
-                ADAPTAR OS PRINTS ABAIXO PARA CADA JOGO, SE NECESSÁRIO (OVERRIDE)
-                */
-                if (_board[i][j].getValue() == 0)
-                    cout << "   |";
+            else if (_board[i][j].getValue() == PLAYER_X)
+                cout << " X |";
 
-                else
-                    cout << " " << _board[i][j].getValue() << " |";
-            }
+            else if (_board[i][j].getValue() == PLAYER_O)
+                cout << " O |";
         }
         cout << endl;
 

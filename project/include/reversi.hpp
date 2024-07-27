@@ -7,14 +7,9 @@
 
 #include "board.hpp"
 
-const int BOARD_SIZE = 8;
-
-const int EMPTY = 0;
-const int PLAYER_X = 1;
-const int PLAYER_O = 2;
-
 class ReversiGame : public Board {
 private:
+    const int BOARD_SIZE = 8;
     int sumX;
     int sumO;
     int hintsO;
