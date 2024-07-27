@@ -4,8 +4,9 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
-
 #include "board.hpp"
+
+class Board;
 
 class ReversiGame : public Board {
 private:
@@ -22,6 +23,7 @@ private:
     std::vector<std::pair<std::pair<int, int>, int>> hint();
     void makeMove(int x, int y);
     void calculateScore();
+    bool checkVictory();
 
 public:
     ReversiGame();
