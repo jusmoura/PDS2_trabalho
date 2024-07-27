@@ -14,9 +14,8 @@ private:
     int sumO;
     int hintsO;
     int hintsX;
-    char currentPlayer;
+    int currentPlayer;
 
-    /*Metodos*/
     void switchPlayer();
     int validMove(int x, int y);
     std::vector<std::pair<int, int>> help();
