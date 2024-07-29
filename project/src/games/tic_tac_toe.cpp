@@ -1,11 +1,10 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
+
 void printBoard(char board[9]){
     cout<<board[0]<<" "<<board[1]<<" "<<board[2]<<endl;
     cout<<board[3]<<" "<<board[4]<<" "<<board[5]<<endl;
     cout<<board[6]<<" "<<board[7]<<" "<<board[8]<<endl;
-
 }
 
 bool checkXwin(char board[9]){
@@ -61,50 +60,56 @@ bool checkTie(char board[9]){
     return true;
 }
 
-void humanPlay(char board[9]){
-    int play;
-    cout<<"enter play(0-8)"<<endl;
-    cin>>play;
-    if(board[play]=='?')
-        board[play]='x';
+void xPlay(char board[9],string playerx){
+    int i;
+    cout<<playerx<<" play: "<<endl;
+    cin>>i;
+    if(board[i]=='?')
+        board[i]='x';
 }
-
-void computerPlay(char board[9]){
-    int play;
-    srand(time(0));
-    while(true) {
-        play = rand() % 9;
-        if (board[play] == '?'){
-            board[play] = 'o';
-            break;
-        }
-    }
+void oPlay(char board[9],string playero){
+    int i;
+    cout<<playero<<" play: "<<endl;
+    cin>>i;
+    if(board[i]=='?')
+        board[i]='o';
 }
 
 int main(){
+    string playerx,playero;
+    cout<<"enter player X name"<<endl;
+    cin>>playerx;
+    cout<<"enter player O name"<<endl;
+    cin>>playero;
+    bool running=true;
+
     char board[9]={'?','?','?','?','?','?','?','?','?'};
-    int play;
     printBoard(board);
 
-    while(!checkXwin(board)&&!checkOwin(board)&&!checkTie(board)){
-        humanPlay(board);
+    while(running){
+        xPlay(board,playerx);
         printBoard(board);
-        cout<<"--------------------"<<endl;
         if(checkXwin(board)) {
+            running = false;
             break;
         }
-        if(checkTie(board)){
+        else if(checkTie(board)){
+            running=false;
             break;
         }
-        computerPlay(board);
+        oPlay(board,playero);
         printBoard(board);
         if(checkOwin(board)) {
+            running = false;
             break;
         }
-        if(checkTie(board)){
+        else if(checkTie(board)){
+            running=false;
             break;
         }
     }
     cout<<"game over"<<endl;
+
     return 0;
 }
+
