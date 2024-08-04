@@ -93,7 +93,7 @@ void Minesweeper::printBoard() {
     cout << "\n\n";
 }
 
-bool Minesweeper::play() {
+Player* Minesweeper::play(Player* player1, Player* player2) {
     cout << "\nCampo gerado:\n\n";
     printBoard();
     while (1) {
@@ -117,10 +117,10 @@ bool Minesweeper::play() {
         printBoard();
 
         if (checkDefeat(line, column))
-            return false;
+            return nullptr;
 
         if (checkVictory())
-            return true;
+            return player1;
     }
 }
 

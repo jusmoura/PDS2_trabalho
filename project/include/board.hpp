@@ -2,6 +2,7 @@
 #define BOARD_HPP
 
 #include "cell.hpp"
+#include "player.hpp"
 
 #include <iostream>
 #include <vector>
@@ -24,7 +25,7 @@ protected:
 
     /*Métodos*/
     virtual bool validateMove(int line, int column);
-    virtual bool checkVictory() = 0;
+    virtual Player* play(Player* player1, Player* player2) = 0;
 
 public:
     Board(int line, int column);

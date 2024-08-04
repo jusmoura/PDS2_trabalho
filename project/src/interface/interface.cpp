@@ -95,10 +95,10 @@ void Interface::gamesMenu() {
 
         case MINESWEEPER:
         {
-            bool playerWon;
+            Player* playerWon;
             Minesweeper mine = Minesweeper(8, 8);
-            playerWon = mine.play();
-            if (playerWon)
+            playerWon = mine.play(player);
+            if (playerWon == player)
                 player->addWin(MINESWEEPER);
 
             else

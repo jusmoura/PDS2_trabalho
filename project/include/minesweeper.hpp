@@ -13,12 +13,13 @@ private:
     void printBoard() override;
     void setBombsPositions();
     bool checkDefeat(int line, int column);
-    bool checkVictory() override;
+    bool checkVictory();
     void checkAndShowAdjacentsCells(int row, int column);
 
 public:
     Minesweeper(int line, int column);
-    bool play();
+    //Inicializar player2 como nullptr permite não passar o segundo parâmetro na chamada da função (apenas um player joga o jogo)
+    Player* play(Player* player1, Player* player2 = nullptr) override;
 };
 
 #endif //MINESWEEPER_H
