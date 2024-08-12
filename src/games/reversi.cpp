@@ -1,4 +1,5 @@
 #include "reversi.hpp"
+#include <stdexcept>
 
 using namespace std;
 
@@ -125,17 +126,17 @@ void ReversiGame::calculateScore() {
     cout << "Pontuacao O: " << sumO << endl;
 }
 
-void ReversiGame::play() {
-    int x, y;
-    string line;
+Player* ReversiGame::play(Player* player1, Player* player2) {
+    Player* currentPlayerPtr = player1; 
+    Player* otherPlayerPtr = player2;
 
     while (sumX + sumO < 64) {
+        Board::printBoard(); 
 
-        Board::printBoard();
+        int x, y;
+        string line;
 
-        char playerName = (currentPlayer == PLAYER_X) ? 'X' : 'O';
-
-        cout << "Jogador " << playerName << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica: " << endl;
+        cout << "Jogador " << (currentPlayerPtr == player1 ? 'X' : 'O') << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica: " << endl;
         getline(cin, line);
 
         if (line == "help") {
@@ -145,21 +146,19 @@ void ReversiGame::play() {
                 cout << "[" << move.first << " " << move.second << "]" << endl;
             }
             continue;
-        }
-        else if (line == "hint") {
+        } else if (line == "hint") {
             vector<pair<pair<int, int>, int>> hints = hint();
             cout << "[Jogada] | [Pontuacao]" << endl;
             for (const auto& hint : hints) {
                 cout << "[ " << hint.first.first << " " << hint.first.second
-                    << "   |     [" << hint.second << "    ]" << endl;
+                     << "   |     [" << hint.second << "    ]" << endl;
             }
-            if (currentPlayer == PLAYER_X) {
+            if (currentPlayerPtr == player1) {
                 hintsX--;
                 cout << endl;
                 cout << "Você ainda tem " << hintsX << " dicas" << endl;
                 cout << endl;
-            }
-            else {
+            } else {
                 hintsO--;
                 cout << endl;
                 cout << "Você ainda tem " << hintsO << " dicas" << endl;
@@ -171,15 +170,18 @@ void ReversiGame::play() {
         stringstream ss(line);
         if (ss >> x >> y) {
             makeMove(x, y);
-        }
-        else {
+        } else {
             cout << "Entrada invalida!" << endl;
         }
+
+        // Troca o jogador
+        std::swap(currentPlayerPtr, otherPlayerPtr);
     }
 
     Board::printBoard();
-
     checkVictory();
+
+    return sumX > sumO ? player1 : player2;
 }
 
     bool ReversiGame::checkVictory(){
@@ -192,8 +194,11 @@ void ReversiGame::play() {
     }
     }
 
+Player player1;
+Player player2;
+
 int main() {
     ReversiGame game;
-    game.play();
+    game.play(&player1, &player2);
     return 0;
 }

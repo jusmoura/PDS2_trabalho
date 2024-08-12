@@ -4,9 +4,8 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
+#include <stdexcept>
 #include "board.hpp"
-
-class Board;
 
 class ReversiGame : public Board {
 private:
@@ -27,7 +26,7 @@ private:
 
 public:
     ReversiGame();
-    void play();
+    Player* play(Player* player1, Player* player2) override;
 };
 
 #endif // REVERSI_HPP
