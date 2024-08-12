@@ -54,6 +54,7 @@ void Interface::gamesMenu() {
     //
     //Digite o apelido do jogador 2
     Player* player = controller->getPlayerByNickname("Dani");
+    Player* player2 = controller->getPlayerByNickname("jusmoura");
 
     //Player não existe
     if (player == nullptr)
@@ -78,7 +79,17 @@ void Interface::gamesMenu() {
         case REVERSI:
         {
             cout << "\nReversi" << endl;
-            /* code */
+            ReversiGame reversiGame;
+            Player* winner = reversiGame.play(player, player2);
+            if (winner == player) {
+                player->addWin(REVERSI);
+                player2->addDefeat(REVERSI);
+            } else if (winner == player2) {
+                player2->addWin(REVERSI);
+                player->addDefeat(REVERSI);
+            } else {
+                cout << "Empate!" << endl;
+            }
         } break;
 
         case LIG4:
