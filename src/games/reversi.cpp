@@ -208,12 +208,3 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         cout << "O jogo terminou em empate!" << endl;
     }
     }
-
-Player player1;
-Player player2;
-
-int main() {
-    ReversiGame game;
-    game.play(&player1, &player2);
-    return 0;
-}
