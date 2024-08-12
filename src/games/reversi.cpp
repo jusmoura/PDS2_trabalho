@@ -3,7 +3,7 @@
 
 using namespace std;
 
-ReversiGame::ReversiGame() : Board(BOARD_SIZE, BOARD_SIZE), sumX(2), sumO(2), hintsO(2), hintsX(2), currentPlayer(PLAYER_X) {
+ReversiGame::ReversiGame() : Board(BOARD_SIZE, BOARD_SIZE), sumX(2), sumO(2), hintsO(5), hintsX(5), currentPlayer(PLAYER_X) {
     _board[3][3].setValue(PLAYER_X);
     _board[4][3].setValue(PLAYER_O);
     _board[3][4].setValue(PLAYER_O);
@@ -15,6 +15,14 @@ void ReversiGame::switchPlayer() {
 }
 
 int ReversiGame::validMove(int x, int y) {
+    if (x < 1 || x >= BOARD_SIZE || y < 1 || y >= BOARD_SIZE) {
+        throw out_of_range("Movimento fora dos limites do tabuleiro.");
+    }
+    
+    if (!Board::validateMove(x, y)) {
+        return 0; 
+    }
+
     if (Board::validateMove(x, y)) {
 
         int opponent = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
@@ -75,37 +83,40 @@ vector<pair<pair<int, int>, int>> ReversiGame::hint() {
 }
 
 void ReversiGame::makeMove(int x, int y) {
-    if (validMove(x, y)) {
-        _board[x][y].setValue(currentPlayer);
-        int opponent = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
+    try {
+        if (validMove(x, y) > 0) {
+            _board[x][y].setValue(currentPlayer);
+            int opponent = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
 
-        for (int dx = -1; dx <= 1; ++dx) {
-            for (int dy = -1; dy <= 1; ++dy) {
-                if (dx == 0 && dy == 0) continue;
+            for (int dx = -1; dx <= 1; ++dx) {
+                for (int dy = -1; dy <= 1; ++dy) {
+                    if (dx == 0 && dy == 0) continue;
 
-                int nx = x + dx, ny = y + dy;
-                bool foundOpponent = false;
-                while (nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == opponent) {
-                    foundOpponent = true;
-                    nx += dx;
-                    ny += dy;
-                }
-                if (foundOpponent && nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == currentPlayer) {
-                    while (nx != x || ny != y) {
-                        nx -= dx;
-                        ny -= dy;
-                        _board[nx][ny].setValue(currentPlayer);
+                    int nx = x + dx, ny = y + dy;
+                    bool foundOpponent = false;
+                    while (nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == opponent) {
+                        foundOpponent = true;
+                        nx += dx;
+                        ny += dy;
+                    }
+                    if (foundOpponent && nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == currentPlayer) {
+                        while (nx != x || ny != y) {
+                            nx -= dx;
+                            ny -= dy;
+                            _board[nx][ny].setValue(currentPlayer);
+                        }
                     }
                 }
             }
+
+            calculateScore();
+            switchPlayer();
+
+        } else {
+            throw invalid_argument("Movimento invalido!");
         }
-
-        calculateScore();
-        switchPlayer();
-
-    }
-    else {
-        cout << "Movimento invalido!" << endl;
+    } catch (const exception& e) {
+        cout << "Erro: " << e.what() << endl;
     }
 }
 
@@ -139,43 +150,47 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         cout << "Jogador " << (currentPlayerPtr == player1 ? 'X' : 'O') << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica: " << endl;
         getline(cin, line);
 
-        if (line == "help") {
-            vector<pair<int, int>> moves = help();
-            cout << "Jogadas validas:" << endl;
-            for (const auto& move : moves) {
-                cout << "[" << move.first << " " << move.second << "]" << endl;
+        try {
+            if (line == "help") {
+                vector<pair<int, int>> moves = help();
+                cout << "Jogadas validas:" << endl;
+                for (const auto& move : moves) {
+                    cout << "[" << move.first << " " << move.second << "]" << endl;
+                }
+                continue;
+            } else if (line == "hint") {
+                vector<pair<pair<int, int>, int>> hints = hint();
+                cout << "[Jogada] | [Pontuacao]" << endl;
+                for (const auto& hint : hints) {
+                    cout << "[ " << hint.first.first << " " << hint.first.second
+                         << "   |     [" << hint.second << "    ]" << endl;
+                }
+                if (currentPlayerPtr == player1) {
+                    hintsX--;
+                    cout << endl;
+                    cout << "Você ainda tem " << hintsX << " dicas" << endl;
+                    cout << endl;
+                } else {
+                    hintsO--;
+                    cout << endl;
+                    cout << "Você ainda tem " << hintsO << " dicas" << endl;
+                    cout << endl;
+                }
+                continue;
             }
-            continue;
-        } else if (line == "hint") {
-            vector<pair<pair<int, int>, int>> hints = hint();
-            cout << "[Jogada] | [Pontuacao]" << endl;
-            for (const auto& hint : hints) {
-                cout << "[ " << hint.first.first << " " << hint.first.second
-                     << "   |     [" << hint.second << "    ]" << endl;
-            }
-            if (currentPlayerPtr == player1) {
-                hintsX--;
-                cout << endl;
-                cout << "Você ainda tem " << hintsX << " dicas" << endl;
-                cout << endl;
+
+            stringstream ss(line);
+            if (ss >> x >> y) {
+                makeMove(x, y);
             } else {
-                hintsO--;
-                cout << endl;
-                cout << "Você ainda tem " << hintsO << " dicas" << endl;
-                cout << endl;
+                throw invalid_argument("Entrada invalida! Insira [linha coluna] ou 'help'/'hint'.");
             }
-            continue;
-        }
 
-        stringstream ss(line);
-        if (ss >> x >> y) {
-            makeMove(x, y);
-        } else {
-            cout << "Entrada invalida!" << endl;
-        }
+            std::swap(currentPlayerPtr, otherPlayerPtr);
 
-        // Troca o jogador
-        std::swap(currentPlayerPtr, otherPlayerPtr);
+        } catch (const exception& e) {
+            cout << "Erro: " << e.what() << endl;
+        }
     }
 
     Board::printBoard();
