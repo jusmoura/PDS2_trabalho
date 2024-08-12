@@ -18,11 +18,11 @@ private:
 
     /**
      * @brief Troca o jogador atual.
-     * 
+     *
      * Este método alterna o jogador que está atualmente realizando a jogada. Se o jogador atual é o jogador X, ele se torna o jogador O, e vice-versa.
-     * 
+     *
      * Este método não possui parâmetros e não retorna nenhum valor.
-     * 
+     *
      * Este método não lança exceções.
      */
     void switchPlayer();
@@ -47,7 +47,7 @@ private:
      * @return Vetor de pares (linha, coluna) e número de peças viradas.
      */
     std::vector<std::pair<std::pair<int, int>, int>> hint();
-    
+
     /**
      * @brief Faz um movimento no tabuleiro na posição (x, y).
      * @param x Coordenada x.
@@ -65,7 +65,7 @@ private:
      * @brief Verifica e exibe o resultado final do jogo.
      * @return true se o jogador X venceu, false se o jogador O venceu.
      */
-    bool checkVictory();
+    void checkVictory();
 
 public:
     ReversiGame();

@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+
+void printBoard(char board[9]) {
+    cout << board[0] << " " << board[1] << " " << board[2] << endl;
+    cout << board[3] << " " << board[4] << " " << board[5] << endl;
+    cout << board[6] << " " << board[7] << " " << board[8] << endl;
+}
+
+bool checkXwin(char board[9]) {
+    if (board[0] == 'x' && board[0] == board[1] && board[1] == board[2])
+        cout << "x wins!" << endl;
+    else if (board[3] == 'x' && board[3] == board[4] && board[4] == board[5])
+        cout << "x wins!" << endl;
+    else if (board[6] == 'x' && board[6] == board[7] && board[7] == board[8])
+        cout << "x wins!" << endl;
+    else if (board[0] == 'x' && board[0] == board[3] && board[3] == board[6])
+        cout << "x wins!" << endl;
+    else if (board[1] == 'x' && board[1] == board[4] && board[4] == board[7])
+        cout << "x wins!" << endl;
+    else if (board[2] == 'x' && board[2] == board[5] && board[5] == board[8])
+        cout << "x wins!" << endl;
+    else if (board[0] == 'x' && board[0] == board[4] && board[4] == board[8])
+        cout << "x wins!" << endl;
+    else if (board[2] == 'x' && board[2] == board[4] && board[4] == board[6])
+        cout << "x wins!" << endl;
+    else
+        return false;
+    return true;
+}
+
+bool checkOwin(char board[9]) {
+    if (board[0] == 'o' && board[0] == board[1] && board[1] == board[2])
+        cout << "o wins!" << endl;
+    else if (board[3] == 'o' && board[3] == board[4] && board[4] == board[5])
+        cout << "o wins!" << endl;
+    else if (board[6] == 'o' && board[6] == board[7] && board[7] == board[8])
+        cout << "o wins!" << endl;
+    else if (board[0] == 'o' && board[0] == board[3] && board[3] == board[6])
+        cout << "o wins!" << endl;
+    else if (board[1] == 'o' && board[1] == board[4] && board[4] == board[7])
+        cout << "o wins!" << endl;
+    else if (board[2] == 'o' && board[2] == board[5] && board[5] == board[8])
+        cout << "o wins!" << endl;
+    else if (board[0] == 'o' && board[0] == board[4] && board[4] == board[8])
+        cout << "o wins!" << endl;
+    else if (board[2] == 'o' && board[2] == board[4] && board[4] == board[6])
+        cout << "o wins!" << endl;
+    else
+        return false;
+    return true;
+}
+
+bool checkTie(char board[9]) {
+    for (int i = 0;i < 9;i++) {
+        if (board[i] == '?')
+            return false;
+    }
+    cout << "its a tie!" << endl;
+    return true;
+}
+
+void xPlay(char board[9], string playerx) {
+    int i;
+    cout << playerx << " play: " << endl;
+    cin >> i;
+    if (board[i] == '?')
+        board[i] = 'x';
+}
+void oPlay(char board[9], string playero) {
+    int i;
+    cout << playero << " play: " << endl;
+    cin >> i;
+    if (board[i] == '?')
+        board[i] = 'o';
+}
+
+// int main(){
+//     string playerx,playero;
+//     cout<<"enter player X name"<<endl;
+//     cin>>playerx;
+//     cout<<"enter player O name"<<endl;
+//     cin>>playero;
+//     bool running=true;
+
+//     char board[9]={'?','?','?','?','?','?','?','?','?'};
+//     printBoard(board);
+
+//     while(running){
+//         xPlay(board,playerx);
+//         printBoard(board);
+//         if(checkXwin(board)) {
+//             running = false;
+//             break;
+//         }
+//         else if(checkTie(board)){
+//             running=false;
+//             break;
+//         }
+//         oPlay(board,playero);
+//         printBoard(board);
+//         if(checkOwin(board)) {
+//             running = false;
+//             break;
+//         }
+//         else if(checkTie(board)){
+//             running=false;
+//             break;
+//         }
+//     }
+//     cout<<"game over"<<endl;
+
+//     return 0;
+// }

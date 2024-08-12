@@ -1,5 +1,4 @@
-#include "reversi.hpp"
-#include <stdexcept>
+#include "../include/reversi.hpp"
 
 using namespace std;
 
@@ -18,9 +17,9 @@ int ReversiGame::validMove(int x, int y) {
     if (x < 1 || x >= BOARD_SIZE || y < 1 || y >= BOARD_SIZE) {
         throw out_of_range("Movimento fora dos limites do tabuleiro.");
     }
-    
+
     if (!Board::validateMove(x, y)) {
-        return 0; 
+        return 0;
     }
 
     if (Board::validateMove(x, y)) {
@@ -112,10 +111,12 @@ void ReversiGame::makeMove(int x, int y) {
             calculateScore();
             switchPlayer();
 
-        } else {
+        }
+        else {
             throw invalid_argument("Movimento invalido!");
         }
-    } catch (const exception& e) {
+    }
+    catch (const exception& e) {
         cout << "Erro: " << e.what() << endl;
     }
 }
@@ -138,11 +139,11 @@ void ReversiGame::calculateScore() {
 }
 
 Player* ReversiGame::play(Player* player1, Player* player2) {
-    Player* currentPlayerPtr = player1; 
+    Player* currentPlayerPtr = player1;
     Player* otherPlayerPtr = player2;
 
     while (sumX + sumO < 64) {
-        Board::printBoard(); 
+        Board::printBoard();
 
         int x, y;
         string line;
@@ -158,19 +159,21 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
                     cout << "[" << move.first << " " << move.second << "]" << endl;
                 }
                 continue;
-            } else if (line == "hint") {
+            }
+            else if (line == "hint") {
                 vector<pair<pair<int, int>, int>> hints = hint();
                 cout << "[Jogada] | [Pontuacao]" << endl;
                 for (const auto& hint : hints) {
                     cout << "[ " << hint.first.first << " " << hint.first.second
-                         << "   |     [" << hint.second << "    ]" << endl;
+                        << "   |     [" << hint.second << "    ]" << endl;
                 }
                 if (currentPlayerPtr == player1) {
                     hintsX--;
                     cout << endl;
                     cout << "Você ainda tem " << hintsX << " dicas" << endl;
                     cout << endl;
-                } else {
+                }
+                else {
                     hintsO--;
                     cout << endl;
                     cout << "Você ainda tem " << hintsO << " dicas" << endl;
@@ -182,13 +185,15 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
             stringstream ss(line);
             if (ss >> x >> y) {
                 makeMove(x, y);
-            } else {
+            }
+            else {
                 throw invalid_argument("Entrada invalida! Insira [linha coluna] ou 'help'/'hint'.");
             }
 
             std::swap(currentPlayerPtr, otherPlayerPtr);
 
-        } catch (const exception& e) {
+        }
+        catch (const exception& e) {
             cout << "Erro: " << e.what() << endl;
         }
     }
@@ -199,12 +204,14 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
     return sumX > sumO ? player1 : player2;
 }
 
-    bool ReversiGame::checkVictory(){
-    if (sumX > sumO){
+void ReversiGame::checkVictory() {
+    if (sumX > sumO) {
         cout << "PARABÉNS X VOCÊ GANHOU!" << endl;
-    } else if(sumO > sumX){
+    }
+    else if (sumO > sumX) {
         cout << "PARABÉNS O VOCÊ GANHOU!" << endl;
-    } else{
+    }
+    else {
         cout << "O jogo terminou em empate!" << endl;
     }
-    }
+}

@@ -1,34 +1,34 @@
+#include "../include/checkers.hpp"
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
 
-void print_board(int board[9][8])
-{
+void print_board(int board[9][8]) {
     int x, y;
-    char z=1;
-    for (x=1;x<9;x++){
+    char z = 1;
+    for (x = 1;x < 9;x++) {
         std::cout << z << std::endl;
         z++;
-        for (y=1;y<9;y++){
+        for (y = 1;y < 9;y++) {
             std::cout << "|";
-            switch(board[x][y])
-            {
-                case 0:
-                    std::cout << " ";
-                    break;
-                case 1:
-                    std::cout << "x";
-                    break;
-                case 2:
-                    std::cout << "o";
-                    break;
-                case 3:
-                    std::cout << "X";
-                    break;
-                case 4:
-                    std::cout << "O";
-                    break;
+            switch (board[x][y]) {
+            case 0:
+                std::cout << " ";
+                break;
+            case 1:
+                std::cout << "x";
+                break;
+            case 2:
+                std::cout << "o";
+                break;
+            case 3:
+                std::cout << "X";
+                break;
+            case 4:
+                std::cout << "O";
+                break;
             }
         }
         std::cout << "|";
@@ -36,43 +36,34 @@ void print_board(int board[9][8])
     std::cout << std::endl;
 }
 
-void set_defaults(int board[9][8])
-{
-    board[1][2]=1;board[1][4]=1;board[1][6]=1;board[1][8]=1;
-    board[2][1]=1;board[2][3]=1;board[2][5]=1;board[2][7]=1;
-    board[3][2]=1;board[3][4]=1;board[3][6]=1;board[3][8]=1;
-    board[6][1]=2;board[6][3]=2;board[6][5]=2;board[6][7]=2;
-    board[7][2]=2;board[7][4]=2;board[7][6]=2;board[7][8]=2;
-    board[8][1]=2;board[8][3]=2;board[8][5]=2;board[8][7]=2;
+void set_defaults(int board[9][8]) {
+    board[1][2] = 1;board[1][4] = 1;board[1][6] = 1;board[1][8] = 1;
+    board[2][1] = 1;board[2][3] = 1;board[2][5] = 1;board[2][7] = 1;
+    board[3][2] = 1;board[3][4] = 1;board[3][6] = 1;board[3][8] = 1;
+    board[6][1] = 2;board[6][3] = 2;board[6][5] = 2;board[6][7] = 2;
+    board[7][2] = 2;board[7][4] = 2;board[7][6] = 2;board[7][8] = 2;
+    board[8][1] = 2;board[8][3] = 2;board[8][5] = 2;board[8][7] = 2;
 }
 
-int Enemy(int piece)
-{
-    if(piece==1 || piece==3)
-    {
+int Enemy(int piece) {
+    if (piece == 1 || piece == 3) {
         return 2;
     }
-    if(piece==2 || piece==4)
-    {
+    if (piece == 2 || piece == 4) {
         return 1;
     }
     return 0;
 }
 
-void Check_if_became_queen(int x, int y, int board[9][8], int turn)
-{
-    if(turn==1)
-    {
-        if(x==8)
-        {
-            board[x][y]=3;
+void Check_if_became_queen(int x, int y, int board[9][8], int turn) {
+    if (turn == 1) {
+        if (x == 8) {
+            board[x][y] = 3;
         }
     }
-    if(turn==2)
-    {
-        if(x==1)
-        {
-            board[x][y]=4;
+    if (turn == 2) {
+        if (x == 1) {
+            board[x][y] = 4;
         }
     }
 }
@@ -86,21 +77,21 @@ void lerJogadas(int x[]) {
 
 
 bool JogadaValida(int board[9][8], int x[4]) {
-    if (x[1] < 0 || x[1] >= 9 || x[2] < 0 || x[2] >= 8){
+    if (x[1] < 0 || x[1] >= 9 || x[2] < 0 || x[2] >= 8) {
         std::cout << "Jogada invalida 1" << std::endl;
         return false;
     }
-    else if (x[3] < 0 || x[3] >= 9 || x[4] < 0 || x[4] >= 8){
+    else if (x[3] < 0 || x[3] >= 9 || x[4] < 0 || x[4] >= 8) {
         std::cout << "Jogada invalida 2" << std::endl;
         return false;
     }
-    else if (board[x[3]][x[4]] == 1 || board[x[3]][x[4]] == 2 || board[x[3]][x[4]] == 3 || board[x[3]][x[4]] == 4){
+    else if (board[x[3]][x[4]] == 1 || board[x[3]][x[4]] == 2 || board[x[3]][x[4]] == 3 || board[x[3]][x[4]] == 4) {
         std::cout << "Jogada invalida 3" << std::endl;
         return false;
     }
     else {
         return true;
-        std::cout << "Deu bom"<< std::endl;
+        std::cout << "Deu bom" << std::endl;
     }
 }
 
@@ -115,7 +106,8 @@ int NextChainValid(int board[9][8], int x[4]) {
         board[x[1] - 1][x[2] + 1] == enemyPiece1 || board[x[1] - 1][x[2] + 1] == enemyPiece2 ||
         board[x[1] - 1][x[2] - 1] == enemyPiece1 || board[x[1] - 1][x[2] - 1] == enemyPiece2) {
         return 1;
-    } else {
+    }
+    else {
         return 0;
     }
 }
@@ -124,8 +116,8 @@ bool movimentoSimples(int x[4], int turn) {
     return (x[3] == x[1] + 1 || x[3] == x[1] - 1) && (x[4] == x[2] + 1 || x[4] == x[2] - 1);
 }
 
-bool movimentoCaptura(int board[9][8],int x[4], int turn) {
-    if (NextChainValid(board, x) == 1){
+bool movimentoCaptura(int board[9][8], int x[4], int turn) {
+    if (NextChainValid(board, x) == 1) {
         return (x[3] == x[1] + 2 || x[3] == x[1] - 2) && (x[4] == x[2] + 2 || x[4] == x[2] - 2);
     }
     else {
@@ -155,12 +147,12 @@ void get_co(int board[9][8], int turn, int peshka[2]) {
                 atualizarTabuleiro(board, x, turn, peshka);
                 Check_if_became_queen(x[3], x[4], board, turn);
                 moveValido = true;
-            } 
+            }
             else if (movimentoCaptura(board, x, turn)) {
                 atualizarTabuleiro(board, x, turn, peshka);
                 Check_if_became_queen(x[3], x[4], board, turn);
                 moveValido = true;
-            } 
+            }
             else {
                 std::cout << "Movimento inválido. Tente novamente." << std::endl;
             }
@@ -168,36 +160,32 @@ void get_co(int board[9][8], int turn, int peshka[2]) {
     }
 }
 
-int Winner(int x, int o)
-{
-    if(x==0)
-    {
+int Winner(int x, int o) {
+    if (x == 0) {
         std::cout << "O won!" << std::endl;
         return 1;
     }
-    else if(o==0)
-    {
+    else if (o == 0) {
         std::cout << "X won!" << std::endl;
         return 1;
     }
-    else
-    {
+    else {
         return 0;
     }
 }
 
-int main() {
-    int board[9][8]={0}, turn=1, peshka[2]={12,12};
-    set_defaults(board);
-    print_board(board);
-    
-    while (true) {
-        get_co(board, turn, peshka);
-        print_board(board);
-        if (Winner(peshka[0], peshka[1])) {
-            break;
-        }
-        turn = (turn == 1) ? 2 : 1;
-    }
+// int main() {
+//     int board[9][8]={0}, turn=1, peshka[2]={12,12};
+//     set_defaults(board);
+//     print_board(board);
 
-}
+//     while (true) {
+//         get_co(board, turn, peshka);
+//         print_board(board);
+//         if (Winner(peshka[0], peshka[1])) {
+//             break;
+//         }
+//         turn = (turn == 1) ? 2 : 1;
+//     }
+
+// }

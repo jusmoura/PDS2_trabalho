@@ -5,8 +5,8 @@
 #include "minesweeper.hpp"
 #include "reversi.hpp"
 #include "lig4.hpp"
-// #include "tic_tac_toe.hpp"
-// #include "checkers.hpp"
+#include "tic_tac_toe.hpp"
+#include "checkers.hpp"
 
 #include <iostream>
 
