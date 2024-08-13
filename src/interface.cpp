@@ -3,15 +3,15 @@
 using namespace std;
 
 void Interface::mainMenu() {
-    cout << "\n--- Bem vindo(a) ao Pixel Patterns, o seu hub de jogos de tabuleiro! ---" << endl;
+    cout << "\n--- Bem vindo(a) ao Hub de Jogos de Tabuleiro! ---" << endl;
 
     int input = 0;
-    while (input != 3) {
+    while (input != SAIR) {
         cout << "\nMENU:\n\n";
         cout << "    1 - Gerenciar jogadores" << endl;
         cout << "    2 - Jogar!" << endl;
-        cout << "    3 - Sair do programa" << endl;
-        cout << "Digite o numero da opcao desejada: ";
+        cout << "    9 - Sair do programa" << endl;
+        cout << "\nDigite o numero da opcao desejada: ";
         cin >> input;
 
         switch (input) {
@@ -21,7 +21,7 @@ void Interface::mainMenu() {
         case 2:
             gamesMenu();
             break;
-        case 3:
+        case SAIR:
             endProcess();
             break;
         default:
@@ -33,35 +33,92 @@ void Interface::mainMenu() {
 }
 
 void Interface::playersMenu() {
-    /*
-    Listar players by name
-    Listar players by nick
-    Criar jogador
-    Remover jogador
-    */
+    cout << "\nGerenciando jogadores...\n\n";
+    cout << "    1 - Criar jogador" << endl;
+    cout << "    1 - Remover jogador" << endl;
+    cout << "    1 - Listar jogadores ordenados pelo NOME" << endl;
+    cout << "    2 - Listar jogadores ordenados pelo APELIDO" << endl;
+    cout << "    8 - Voltar" << endl;
+    cout << "    9 - Sair do programa" << endl;
+    cout << "\nDigite o numero da opcao desejada: ";
+    int input;
+    cin >> input;
 
-    // cout << "    8 - Voltar\n";
-    // cout << "    9 - Sair do programa\n";
-    //    if (menuInput == 8)
-    //         mainMenu();
-    //     else if (menuInput == 9)
-    //         endProcess();
+    while (input != SAIR) {
+        switch (input) {
+        case 1:
+            playersMenu();
+            break;
+        case 2:
+            gamesMenu();
+            break;
+        case SAIR:
+            endProcess();
+            break;
+        default:
+            cout << "\nOpcao nao cadastrada. Tente novamente!" << endl;
+            break;
+        }
+    }
+
+}
+
+void Interface::showSelectPlayerMenu(string player) {
+    cout << "\n" << player << ": Entre em um perfil ja cadastrado ou crie um novo" << endl;
+    cout << "Selecione:\n\n";
+    cout << "    1 - Entrar\n";
+    cout << "    2 - Criar jogador\n";
+    cout << "    8 - Voltar\n";
+    cout << "    9 - Sair do programa\n";
+    cout << "\nDigite o numero da opcao desejada: ";
 }
 
 void Interface::gamesMenu() {
+    Player* player1;
+    Player* player2;
 
-    //Digite o apelido do jogador 1
-    //
-    //Digite o apelido do jogador 2
-    Player* player = controller->getPlayerByNickname("Dani");
-    Player* player2 = controller->getPlayerByNickname("jusmoura");
+    int playerMenuInput = 0;
+    while (playerMenuInput != VOLTAR && playerMenuInput != SAIR) {
+        showSelectPlayerMenu("Jogador 1");
+        cin >> playerMenuInput;
 
-    //Player não existe
-    if (player == nullptr)
-        return;
+        switch (playerMenuInput) {
+        case 1:
+        {
+            string nickname;
+            cout << "\nDigite o apelido do jogador 1: ";
+            cin >> nickname;
+            player1 = controller->getPlayerByNickname(nickname);
 
-    int menuInput = 0;
-    while (menuInput != 8 && menuInput != 9) {
+            if (player1 == nullptr) {
+                cout << "Tente novamente!" << endl;
+                break;
+            }
+            else {
+                cout << "\nBem vindo(a), " << player1->getName() << "!\n\n";
+                showSelectPlayerMenu("Jogador 2");
+                cin >> playerMenuInput;
+            }
+
+        } break;
+        case 2:
+            gamesMenu();
+            break;
+        case VOLTAR:
+            throw VOLTAR;
+        case SAIR:
+            endProcess();
+            break;
+        default:
+            cout << "Opcao nao cadastrada. Tente novamente!" << endl;
+            break;
+        }
+    }
+
+    Player* winner;
+
+    int input = 0;
+    while (input != 8 && input != 9) {
 
         cout << "\nJogos disponíveis:\n\n";
         cout << "    0 - Reversi\n";
@@ -73,21 +130,23 @@ void Interface::gamesMenu() {
         cout << "    9 - Sair do programa\n";
 
         cout << "\n========================================\n\nDigite o numero do jogo que deseja jogar: ";
-        cin >> menuInput;
+        cin >> input;
 
-        switch (menuInput) {
+        switch (input) {
         case REVERSI:
         {
             cout << "\nReversi" << endl;
             ReversiGame reversiGame;
-            Player* winner = reversiGame.play(player, player2);
-            if (winner == player) {
-                player->addWin(REVERSI);
+            winner = reversiGame.play(player1, player2);
+            if (winner == player1) {
+                player1->addWin(REVERSI);
                 player2->addDefeat(REVERSI);
-            } else if (winner == player2) {
+            }
+            else if (winner == player2) {
                 player2->addWin(REVERSI);
-                player->addDefeat(REVERSI);
-            } else {
+                player1->addDefeat(REVERSI);
+            }
+            else {
                 cout << "Empate!" << endl;
             }
         } break;
@@ -107,13 +166,13 @@ void Interface::gamesMenu() {
         case MINESWEEPER:
         {
             Player* playerWon;
-            Minesweeper mine = Minesweeper(8, 8);
-            playerWon = mine.play(player);
-            if (playerWon == player)
-                player->addWin(MINESWEEPER);
+            Minesweeper mine(8, 8);
+            winner = mine.play(player1);
+            if (winner == player1)
+                player1->addWin(MINESWEEPER);
 
             else
-                player->addDefeat(MINESWEEPER);
+                player1->addDefeat(MINESWEEPER);
 
             cout << "\nEncerrando campo minado...\n\n";
         } break;
@@ -124,11 +183,11 @@ void Interface::gamesMenu() {
             /* code */
         } break;
 
-        case 8: //Voltar
+        case VOLTAR: //Voltar
             mainMenu();
             break;
 
-        case 9: //Sair do programa
+        case SAIR: //Sair do programa
             endProcess();
             break;
 
@@ -137,10 +196,12 @@ void Interface::gamesMenu() {
             break;
         }
     }
+    delete player1, player2; winner;
 }
 
 void Interface::endProcess() {
     controller->endProcess();
+    delete controller;
     cout << "Saindo...\n" << endl;
     return;
 }

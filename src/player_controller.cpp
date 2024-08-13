@@ -17,7 +17,7 @@ Player* PlayerController::getPlayerByNickname(string nickname) {
     int playerIndex = findIndexOfPlayer(nickname);
 
     if (playerIndex == -1) {
-        cout << "Jogador com apelido " << nickname << " não encontrado!" << endl;
+        cout << "Jogador com apelido " << nickname << " nao encontrado!" << endl;
         return nullptr;
     }
     else
