@@ -31,7 +31,7 @@ void Board::printBoard() {
 
     // Printa os números das colunas
     if (this->columnsSize <= 10) {
-        printf("\t   ");
+        cout << "\t   ";
         for (int i = 0; i < this->columnsSize; i++)
             cout << " " << i << "  ";
 
@@ -83,11 +83,12 @@ void Board::printBoard() {
             if (_board[i][j].getValue() == EMPTY)
                 cout << "   |";
 
-            else if (_board[i][j].getValue() == PLAYER_X)
-                cout << " X |";
+            else if (_board[i][j].getValue() == PLAYER_X){
+                cout << " " << RED << "X" << RESET << " |";
+            }
 
             else if (_board[i][j].getValue() == PLAYER_O)
-                cout << " O |";
+                cout << " " << YELLOW << "O" << RESET << " |";
         }
         cout << endl;
 
