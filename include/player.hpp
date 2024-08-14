@@ -3,6 +3,7 @@
 
 #include "game_controller.hpp"
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -27,6 +28,8 @@ public:
     int getNumWins(int index);
     void setNumDefeats(int game, int numDefeats);
     int getNumDefeats(int index);
+    //Sobrecarga do operador <<
+    friend std::ostream& operator << (std::ostream& os, Player& player);
 };
 
 #endif //PLAYER_H

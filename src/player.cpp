@@ -1,5 +1,7 @@
 #include "../include/player.hpp"
 
+using namespace std;
+
 Player::Player(string name, string nickname) {
     this->_name = name;
     this->_nickname = nickname;
@@ -52,4 +54,21 @@ void Player::setNumDefeats(int game, int numDefeats) {
 
 int Player::getNumDefeats(int game) {
     return _gamesStats[game].getNumDefeats();
+}
+
+ostream& operator << (ostream& os, Player& player) {
+    os << "Nome: " << player.getName() << endl;
+    os << "Apelido: " << player.getNickname() << endl;
+
+    os << "-- Estatisticas dos Jogos --" << endl;
+
+    vector<Game>* games = player.getGamesStats();
+    int gamesSize = games->size();
+
+    for (int i = 0; i < gamesSize; i++)
+        os << games->at(i).getName() << " - V: " << games->at(i).getNumWins() << ", D: " << games->at(i).getNumDefeats() << endl;
+
+    os << "\n";
+
+    return os;
 }

@@ -132,18 +132,6 @@ int PlayerController::findIndexOfPlayer(string nickname) {
 }
 
 void PlayerController::printPlayers() {
-    for (auto player : _players) {
-        cout << "Nome: " << player.getName() << endl;
-        cout << "Apelido: " << player.getNickname() << endl;
-
-        cout << "-- Estatisticas dos Jogos --" << endl;
-
-        vector<Game>* games = player.getGamesStats();
-        int gamesSize = games->size();
-
-        for (int i = 0; i < gamesSize; i++)
-            cout << games->at(i).getName() << " - V: " << games->at(i).getNumWins() << ", D: " << games->at(i).getNumDefeats() << endl;
-
-        cout << "\n";
-    }
+    for (auto player : _players)
+        cout << player;
 }
