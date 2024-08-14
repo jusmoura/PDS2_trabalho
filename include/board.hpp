@@ -3,6 +3,7 @@
 
 #include "cell.hpp"
 #include "player.hpp"
+#include "colors.hpp"
 
 #include <iostream>
 #include <vector>
@@ -19,12 +20,6 @@ protected:
     const int PLAYER_X = 1;
     const int PLAYER_O = 2;
 
-    /*Cores*/
-    static const std::string RED;
-    static const std::string YELLOW;
-    static const std::string RESET;
-    
-
     /*Variáveis*/
     int linesSize;
     int columnsSize;
@@ -39,7 +34,4 @@ public:
     virtual void printBoard();
 };
 
-const std::string Board::RED = "\033[31m";    // Texto vermelho (para jogador X)
-const std::string Board::YELLOW = "\033[33m"; // Texto amarelo (para jogador O)
-const std::string Board::RESET = "\033[0m";
 #endif //BOARD_HPP

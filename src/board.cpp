@@ -83,12 +83,12 @@ void Board::printBoard() {
             if (_board[i][j].getValue() == EMPTY)
                 cout << "   |";
 
-            else if (_board[i][j].getValue() == PLAYER_X){
-                cout << " " << RED << "X" << RESET << " |";
+            else if (_board[i][j].getValue() == PLAYER_X) {
+                cout << " " << RED_COLOR << "X" << RESET_COLOR << " |";
             }
 
             else if (_board[i][j].getValue() == PLAYER_O)
-                cout << " " << YELLOW << "O" << RESET << " |";
+                cout << " " << YELLOW_COLOR << "O" << RESET_COLOR << " |";
         }
         cout << endl;
 

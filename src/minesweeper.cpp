@@ -64,7 +64,7 @@ void Minesweeper::printBoard() {
 
             else {
                 if (_board[i][j].getValue() >= IS_BOMB)
-                    cout << " B |";
+                    cout << " " << RED_COLOR << "B" << RESET_COLOR << " |";
 
                 else if (_board[i][j].getValue() == EMPTY)
                     cout << "   |";
