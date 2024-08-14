@@ -2,7 +2,7 @@
 
 using namespace std;
 
-ReversiGame::ReversiGame() : Board(BOARD_SIZE, BOARD_SIZE), sumX(2), sumO(2), hintsO(5), hintsX(5), currentPlayer(PLAYER_X) {
+ReversiGame::ReversiGame() : Board(8, 8), sumX(2), sumO(2), hintsO(5), hintsX(5), currentPlayer(PLAYER_X) {
     _board[3][3].setValue(PLAYER_X);
     _board[4][3].setValue(PLAYER_O);
     _board[3][4].setValue(PLAYER_O);
@@ -14,49 +14,42 @@ void ReversiGame::switchPlayer() {
 }
 
 int ReversiGame::validMove(int x, int y) {
-    if (x < 1 || x >= BOARD_SIZE || y < 1 || y >= BOARD_SIZE) {
-        throw out_of_range("Movimento fora dos limites do tabuleiro.");
+    if (x < 0 || x >= 8 || y < 0 || y >= 8 || _board[x][y].getValue() != EMPTY) {
+        return 0; // Jogada fora dos limites ou célula já ocupada
     }
 
-    if (!Board::validateMove(x, y)) {
-        return 0;
-    }
+    int opponent = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
+    int totalFlips = 0;
 
-    if (Board::validateMove(x, y)) {
+    for (int dx = -1; dx <= 1; ++dx) {
+        for (int dy = -1; dy <= 1; ++dy) {
+            if (dx == 0 && dy == 0) continue; 
 
-        int opponent = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
-        int totalFlips = 0;
+            int nx = x + dx, ny = y + dy;
+            int flips = 0;
+            bool foundOpponent = false;
 
-        for (int dx = -1; dx <= 1; ++dx) {
-            for (int dy = -1; dy <= 1; ++dy) {
-                if (dx == 0 && dy == 0) continue;
+            while (nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && _board[nx][ny].getValue() == opponent) {
+                foundOpponent = true;
+                nx += dx;
+                ny += dy;
+                flips++;
+            }
 
-                int nx = x + dx, ny = y + dy;
-                int flips = 0;
-                bool foundOpponent = false;
-
-                while (nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == opponent) {
-                    foundOpponent = true;
-                    nx += dx;
-                    ny += dy;
-                    ++flips;
-                }
-
-                if (foundOpponent && nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == currentPlayer) {
-                    totalFlips += flips;
-                }
+            if (foundOpponent && nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && _board[nx][ny].getValue() == currentPlayer) {
+                totalFlips += flips;
             }
         }
-
-        return totalFlips;
     }
 
+    return totalFlips;
 }
+
 
 vector<pair<int, int>> ReversiGame::help() {
     vector<pair<int, int>> validMoves;
-    for (int a = 0; a < BOARD_SIZE; ++a) {
-        for (int b = 0; b < BOARD_SIZE; ++b) {
+    for (int a = 0; a < 8; ++a) {
+        for (int b = 0; b < 8; ++b) {
             if (validMove(a, b)) {
                 validMoves.push_back({ a, b });
             }
@@ -68,8 +61,8 @@ vector<pair<int, int>> ReversiGame::help() {
 vector<pair<pair<int, int>, int>> ReversiGame::hint() {
     vector<pair<pair<int, int>, int>> hints;
 
-    for (int i = 0; i < BOARD_SIZE; ++i) {
-        for (int j = 0; j < BOARD_SIZE; ++j) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
             if (_board[i][j].getValue() == EMPTY) {
                 int flips = validMove(i, j);
                 if (flips > 0) {
@@ -93,12 +86,12 @@ void ReversiGame::makeMove(int x, int y) {
 
                     int nx = x + dx, ny = y + dy;
                     bool foundOpponent = false;
-                    while (nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == opponent) {
+                    while (nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && _board[nx][ny].getValue() == opponent) {
                         foundOpponent = true;
                         nx += dx;
                         ny += dy;
                     }
-                    if (foundOpponent && nx >= 1 && nx < BOARD_SIZE && ny >= 1 && ny < BOARD_SIZE && _board[nx][ny].getValue() == currentPlayer) {
+                    if (foundOpponent && nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && _board[nx][ny].getValue() == currentPlayer) {
                         while (nx != x || ny != y) {
                             nx -= dx;
                             ny -= dy;
@@ -124,8 +117,8 @@ void ReversiGame::makeMove(int x, int y) {
 void ReversiGame::calculateScore() {
     sumX = 0;
     sumO = 0;
-    for (int i = 0; i < BOARD_SIZE; ++i) {
-        for (int j = 0; j < BOARD_SIZE; ++j) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
             if (_board[i][j].getValue() == PLAYER_X) {
                 sumX++;
             }
@@ -151,50 +144,46 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         cout << "Jogador " << (currentPlayerPtr == player1 ? 'X' : 'O') << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica: " << endl;
         getline(cin, line);
 
-        try {
-            if (line == "help") {
-                vector<pair<int, int>> moves = help();
-                cout << "Jogadas validas:" << endl;
-                for (const auto& move : moves) {
-                    cout << "[" << move.first << " " << move.second << "]" << endl;
-                }
-                continue;
+        if (line == "help") {
+            vector<pair<int, int>> moves = help();
+            cout << "Jogadas validas:" << endl;
+            for (const auto& move : moves) {
+                cout << "[" << move.first << " " << move.second << "]" << endl;
             }
-            else if (line == "hint") {
-                vector<pair<pair<int, int>, int>> hints = hint();
-                cout << "[Jogada] | [Pontuacao]" << endl;
-                for (const auto& hint : hints) {
-                    cout << "[ " << hint.first.first << " " << hint.first.second
-                        << "   |     [" << hint.second << "    ]" << endl;
-                }
-                if (currentPlayerPtr == player1) {
-                    hintsX--;
-                    cout << endl;
-                    cout << "Você ainda tem " << hintsX << " dicas" << endl;
-                    cout << endl;
-                }
-                else {
-                    hintsO--;
-                    cout << endl;
-                    cout << "Você ainda tem " << hintsO << " dicas" << endl;
-                    cout << endl;
-                }
-                continue;
+            continue;
+        }
+        else if (line == "hint") {
+            vector<pair<pair<int, int>, int>> hints = hint();
+            cout << "[Jogada | Pontuacao]" << endl;
+            for (const auto& hint : hints) {
+                cout << "[ " << hint.first.first << " " << hint.first.second
+                    << "   |     " << hint.second << "    ]" << endl;
             }
-
-            stringstream ss(line);
-            if (ss >> x >> y) {
-                makeMove(x, y);
+            if (currentPlayerPtr == player1) {
+                hintsX--;
+                cout << endl;
+                cout << "Você ainda tem " << hintsX << " dicas" << endl;
+                cout << endl;
             }
             else {
-                throw invalid_argument("Entrada invalida! Insira [linha coluna] ou 'help'/'hint'.");
+                hintsO--;
+                cout << endl;
+                cout << "Você ainda tem " << hintsO << " dicas" << endl;
+                cout << endl;
             }
-
-            std::swap(currentPlayerPtr, otherPlayerPtr);
-
+            continue;
         }
-        catch (const exception& e) {
-            cout << "Erro: " << e.what() << endl;
+
+        stringstream ss(line);
+        if (ss >> x >> y) {
+            if (validMove(x, y) > 0) {
+                makeMove(x, y);
+                std::swap(currentPlayerPtr, otherPlayerPtr);
+            } else {
+                cout << "Jogada inválida!" << endl;
+            }
+        } else {
+            cout << "Entrada inválida! Insira [linha coluna] ou 'help'/'hint'." << endl;
         }
     }
 
