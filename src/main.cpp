@@ -3,7 +3,11 @@
 int main() {
     Interface interface;
 
-    interface.mainMenu();
-
-    return 0;
+    try {
+        interface.mainMenu();
+    }
+    catch (const char* e) {
+        cout << "Encerrou a main";
+        return 0;
+    }
 }

@@ -24,30 +24,34 @@ Player* PlayerController::getPlayerByNickname(string nickname) {
         return &_players[playerIndex];
 }
 
-void PlayerController::insertNewPlayer(Player player) {
+bool PlayerController::insertNewPlayer(Player& player) {
     int playerIndex = findIndexOfPlayer(player.getNickname());
 
-    //Verifica se o player já existe
-    if (playerIndex == -1)
+    //Verifica se o player não existe
+    if (playerIndex == -1) {
         _players.push_back(player);
+        return true;
+    }
 
     else
-        cout << "Jogador com apelido " << player.getNickname() << " já cadastrado!" << endl;
+        return false;
 }
 
-void PlayerController::removePlayerByIndex(int index) {
+bool PlayerController::removePlayer(string nickname) {
     if (_players.empty()) {
-        cout << "Nenhum jogador cadastrado!" << endl;
-        return;
+        cout << "\nNenhum jogador cadastrado!" << endl;
+        return false;
     }
 
-    if (index == -1 || index >= _players.size()) {
-        cout << "Jogador não encontrado!" << endl;
-        return;
-    }
+    int playerIndex = findIndexOfPlayer(nickname);
 
-    cout << "Jogador " << _players[index].getNickname() << " removido!" << endl;
-    _players.erase(_players.begin() + index);
+    if (playerIndex == -1 || playerIndex >= _players.size())
+        return false;
+
+    else {
+        _players.erase(_players.begin() + playerIndex);
+        return true;
+    }
 }
 
 
@@ -123,7 +127,7 @@ int PlayerController::findIndexOfPlayer(string nickname) {
         if (nickname == _players[i].getNickname())
             return i;
     }
-
+    //Caso o jogador não seja encontrado
     return -1;
 }
 

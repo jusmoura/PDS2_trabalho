@@ -3,62 +3,124 @@
 using namespace std;
 
 void Interface::mainMenu() {
-    cout << "\n--- Bem vindo(a) ao Hub de Jogos de Tabuleiro! ---" << endl;
+    cout << "\n=== Bem vindo(a) ao Hub de Jogos de Tabuleiro! ===" << endl;
 
     int input = 0;
     while (input != SAIR) {
-        cout << "\nMENU:\n\n";
-        cout << "    1 - Gerenciar jogadores" << endl;
-        cout << "    2 - Jogar!" << endl;
+        try {
+            cout << "\nMENU PRINCIPAL:\n\n";
+            cout << "    1 - Gerenciar jogadores" << endl;
+            cout << "    2 - Jogar!" << endl;
+            cout << "    9 - Sair do programa" << endl;
+            cout << "\nDigite o indice da opcao desejada: ";
+            cin >> input;
+
+            switch (input) {
+            case 1:
+                playersMenu();
+                break;
+
+            case 2:
+                gamesMenu();
+                break;
+
+            case SAIR:
+                throw SAIR;
+                break;
+
+            default:
+                cout << "\n" << YELLOW_COLOR << "\nOpcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
+            }
+
+            //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
+            cin.clear();
+            string buffer;
+            getline(cin, buffer);
+        }
+        catch (int value) {
+            if (value == SAIR)
+                endProcess();
+        }
+        catch (const exception& e) {
+            cout << "Erro: " << e.what() << endl;
+        }
+    }
+}
+
+void Interface::playersMenu() {
+    int input = 0;
+
+    while (input != SAIR) {
+        cout << "\nGerenciando jogadores...\n\n";
+        cout << "    1 - Criar jogador" << endl;
+        cout << "    2 - Remover jogador" << endl;
+        cout << "    3 - Listar jogadores ordenados pelo NOME" << endl;
+        cout << "    4 - Listar jogadores ordenados pelo APELIDO" << endl;
+        cout << "    8 - Voltar" << endl;
         cout << "    9 - Sair do programa" << endl;
-        cout << "\nDigite o numero da opcao desejada: ";
+        cout << "\nDigite o indice da opcao desejada: ";
         cin >> input;
 
         switch (input) {
         case 1:
-            playersMenu();
-            break;
+        {
+            string name, nickname;
+            cout << "\nDigite o nome do novo jogador: ";
+            cin >> name;
+            cout << "Digite o apelido do novo jogador: ";
+            cin >> nickname;
+            Player newPlayer(name, nickname);
+
+            bool inserted = controller->insertNewPlayer(newPlayer);
+
+            if (inserted)
+                cout << "\nJogador " << nickname << " criado com sucesso!" << endl;
+
+            else
+                cout << "\nJogador com apelido " << nickname << " ja cadastrado! Tente novamente!" << endl;
+
+        } break;
+
         case 2:
-            gamesMenu();
+        {
+            string nickname;
+            cout << "\nDigite o apelido do jogador a ser removido: ";
+            cin >> nickname;
+
+            bool removed = controller->removePlayer(nickname);
+
+            if (removed)
+                cout << "\nJogador " << nickname << " removido com sucesso!" << endl;
+
+            else
+                cout << "\nJogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << endl;
+
+        } break;
+
+        case 3:
+            controller->printPlayersByName();
             break;
+
+        case 4:
+            controller->printPlayersByNickname();
+            break;
+
+        case VOLTAR:
+            return;
+
         case SAIR:
-            endProcess();
+            throw SAIR;
             break;
+
         default:
-            cout << "Opcao nao cadastrada. Tente novamente!" << endl;
+            cout << "\n" << YELLOW_COLOR << "\nOpcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
             break;
         }
-    }
-    return;
-}
 
-void Interface::playersMenu() {
-    cout << "\nGerenciando jogadores...\n\n";
-    cout << "    1 - Criar jogador" << endl;
-    cout << "    1 - Remover jogador" << endl;
-    cout << "    1 - Listar jogadores ordenados pelo NOME" << endl;
-    cout << "    2 - Listar jogadores ordenados pelo APELIDO" << endl;
-    cout << "    8 - Voltar" << endl;
-    cout << "    9 - Sair do programa" << endl;
-    cout << "\nDigite o numero da opcao desejada: ";
-    int input;
-    cin >> input;
-
-    while (input != SAIR) {
-        switch (input) {
-        case 1:
-            playersMenu();
-            break;
-        case 2:
-            gamesMenu();
-            break;
-        case SAIR:
-            endProcess();
-            break;
-        default:
-            cout << "\nOpcao nao cadastrada. Tente novamente!" << endl;
-            break;
-        }
+        //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
+        cin.clear();
+        string buffer;
+        getline(cin, buffer);
     }
 
 }
@@ -70,56 +132,58 @@ void Interface::showSelectPlayerMenu(string player) {
     cout << "    2 - Criar jogador\n";
     cout << "    8 - Voltar\n";
     cout << "    9 - Sair do programa\n";
-    cout << "\nDigite o numero da opcao desejada: ";
+    cout << "\nDigite o indice da opcao desejada: ";
 }
 
 void Interface::gamesMenu() {
-    Player* player1;
-    Player* player2;
+    // int playerMenuInput = 0;
+    // while (playerMenuInput != VOLTAR && playerMenuInput != SAIR) {
+    //     showSelectPlayerMenu("Jogador 1");
+    //     cin >> playerMenuInput;
 
-    int playerMenuInput = 0;
-    while (playerMenuInput != VOLTAR && playerMenuInput != SAIR) {
-        showSelectPlayerMenu("Jogador 1");
-        cin >> playerMenuInput;
+    //     switch (playerMenuInput) {
+    //     case 1:
+    //     {
+    //         string nickname;
+    //         cout << "\nDigite o apelido do jogador 1: ";
+    //         cin >> nickname;
+    //         player1 = controller->getPlayerByNickname(nickname);
 
-        switch (playerMenuInput) {
-        case 1:
-        {
-            string nickname;
-            cout << "\nDigite o apelido do jogador 1: ";
-            cin >> nickname;
-            player1 = controller->getPlayerByNickname(nickname);
+    //         if (player1 == nullptr) {
+    //             cout << "Tente novamente!" << endl;
+    //             break;
+    //         }
+    //         else {
+    //             cout << "\nBem vindo(a), " << player1->getName() << "!\n\n";
+    //             showSelectPlayerMenu("Jogador 2");
+    //             cin >> playerMenuInput;
+    //         }
+    //     } break;
+    //     case 2:
+    //         gamesMenu();
+    //         break;
+    //     case VOLTAR:
+    //         throw VOLTAR;
+    //     case SAIR:
+    //         throw SAIR;
+    //         break;
+    //     default:
+    //         cout << "\n\nOpcao nao cadastrada. Tente novamente!" << endl;
+    //         break;
+    //     }
 
-            if (player1 == nullptr) {
-                cout << "Tente novamente!" << endl;
-                break;
-            }
-            else {
-                cout << "\nBem vindo(a), " << player1->getName() << "!\n\n";
-                showSelectPlayerMenu("Jogador 2");
-                cin >> playerMenuInput;
-            }
+    //     //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
+    //     cin.clear();
+    //     string buffer;
+    //     getline(cin, buffer);
+    // }
 
-        } break;
-        case 2:
-            gamesMenu();
-            break;
-        case VOLTAR:
-            throw VOLTAR;
-        case SAIR:
-            endProcess();
-            break;
-        default:
-            cout << "Opcao nao cadastrada. Tente novamente!" << endl;
-            break;
-        }
-    }
-
+    Player* player1 = controller->getPlayerByNickname("Dani");
+    Player* player2 = controller->getPlayerByNickname("jusmoura");
     Player* winner;
 
     int input = 0;
     while (input != 8 && input != 9) {
-
         cout << "\nJogos disponíveis:\n\n";
         cout << "    0 - Reversi\n";
         cout << "    1 - Lig4\n";
@@ -129,7 +193,7 @@ void Interface::gamesMenu() {
         cout << "    8 - Voltar\n";
         cout << "    9 - Sair do programa\n";
 
-        cout << "\n========================================\n\nDigite o numero do jogo que deseja jogar: ";
+        cout << "\n========================================\n\nDigite o indice do jogo que deseja jogar: ";
         cin >> input;
 
         switch (input) {
@@ -188,20 +252,24 @@ void Interface::gamesMenu() {
             break;
 
         case SAIR: //Sair do programa
-            endProcess();
+            throw SAIR;
             break;
 
         default:
-            cout << "Opcao nao cadastrada. Tente novamente!" << endl;
+            cout << "\n" << YELLOW_COLOR << "\nOpcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
             break;
         }
+
+        //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
+        cin.clear();
+        string buffer;
+        getline(cin, buffer);
     }
-    delete player1, player2; winner;
 }
 
 void Interface::endProcess() {
     controller->endProcess();
     delete controller;
-    cout << "Saindo...\n" << endl;
-    return;
+    cout << "\nSaindo...\n" << endl;
+    throw "ENCERRAR";
 }

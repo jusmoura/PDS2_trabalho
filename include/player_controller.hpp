@@ -24,8 +24,8 @@ public:
     int getTotalNumberOfPlayers();
     Player* getPlayerByIndex(int index);
     Player* getPlayerByNickname(string nickname);
-    void insertNewPlayer(Player player);
-    void removePlayerByIndex(int index);
+    bool insertNewPlayer(Player& player);
+    bool removePlayer(string nickname);
     void printPlayersByName();
     void printPlayersByNickname();
     void endProcess();
