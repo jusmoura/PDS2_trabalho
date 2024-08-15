@@ -16,10 +16,9 @@ Player* PlayerController::getPlayerByIndex(int index) {
 Player* PlayerController::getPlayerByNickname(string nickname) {
     int playerIndex = findIndexOfPlayer(nickname);
 
-    if (playerIndex == -1) {
-        cout << "Jogador com apelido " << nickname << " nao encontrado!" << endl;
+    if (playerIndex == -1)
         return nullptr;
-    }
+
     else
         return &_players[playerIndex];
 }

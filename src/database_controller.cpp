@@ -1,7 +1,13 @@
 #include "../include/database_controller.hpp"
 
 DatabaseController::DatabaseController() {
-    _filePath = "./database/players_data.txt";
+
+    //Necessário para lidar com a abertura em diferentes sistemas operacionais
+#ifdef _WIN32
+    _filePath = "../database/players_data.txt";  // Caminho no Windows
+#else
+    _filePath = "./database/players_data.txt";    // Caminho no Linux/Unix
+#endif
 
     _inputFile.open(_filePath);
     if (!_inputFile.is_open())

@@ -251,6 +251,7 @@ string Interface::createPlayer() {
 }
 
 Player* Interface::loginPlayer(string playerNumber) {
+    clearBuffer();
     int input = 0;
     while (1) {
         cout << "\nAntes de jogar, " << BOLD << playerNumber << RESET_ALL << ", entre em um perfil ja existe ou crie um novo jogador:\n" << endl;
