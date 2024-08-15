@@ -7,17 +7,20 @@
 
 class CheckersGame : public Board {
 private:
-    void printBoard() override;
-    void setDefaults(int board[8][8]);
+    const int BOARD_SIZE = 8;
+    int turn = 2;
+    int piece[2] = {12, 12};
+
+    void setDefaults();
     int Enemy(int piece);
-    void CheckIfBecameQueen(int x, int y, int board[8][8], int turn);
+    void CheckIfBecameQueen(int x, int y);
     void readMove(int coordenadas[]);
-    bool validMove(int board[8][8], int x[4]);
-    int nextChainValid(int board[8][8], int x[4]);
-    bool simpleMove(int x[4], int turn);
-    bool captureMove(int board[8][8],int x[4], int turn);
-    void updateBoard(int board[8][8], int x[4], int turn, int peshka[2]);
-    void getCo(int board[8][8], int turn, int peshka[2]);
+    bool validMove(int x[4]);
+    int nextChainValid(int x[4]);
+    bool simpleMove(int x[4]);
+    bool captureMove(int x[4]);
+    void updateBoard(int x[4]);
+    void getCo();
     int Winner(int x, int o);
 
 public:
