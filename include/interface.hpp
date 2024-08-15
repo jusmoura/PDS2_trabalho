@@ -20,9 +20,10 @@ public:
     void mainMenu();
     void playersMenu();
     void gamesMenu();
+    string createPlayer();
+    Player* loginPlayer(string playerNumber);
     void clearBuffer();
     void endProcess();
-    void showSelectPlayerMenu(string player);
 };
 
 #endif //INTERFACE_H

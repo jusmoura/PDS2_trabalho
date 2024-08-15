@@ -24,7 +24,7 @@ Player* PlayerController::getPlayerByNickname(string nickname) {
         return &_players[playerIndex];
 }
 
-bool PlayerController::insertNewPlayer(Player& player) {
+bool PlayerController::insertNewPlayer(Player player) {
     int playerIndex = findIndexOfPlayer(player.getNickname());
 
     //Verifica se o player não existe
@@ -55,11 +55,11 @@ int PlayerController::removePlayer(string nickname) {
 
 void PlayerController::printPlayersByName() {
     if (_players.empty()) {
-        cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado!" << RESET_COLOR << endl;
+        cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado!" << RESET_ALL << endl;
         return;
     }
 
-    cout << "\n" << BLUE_COLOR << "Exibindo jogadores ordenados pelo NOME...\n" << RESET_COLOR << endl;
+    cout << "\n" << BLUE_COLOR << "Exibindo jogadores ordenados pelo NOME...\n" << RESET_ALL << endl;
 
     int size = _players.size();
 
@@ -85,11 +85,11 @@ void PlayerController::printPlayersByName() {
 
 void PlayerController::printPlayersByNickname() {
     if (_players.empty()) {
-        cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado!" << RESET_COLOR << endl;
+        cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado!" << RESET_ALL << endl;
         return;
     }
 
-    cout << "\n" << BLUE_COLOR << "Exibindo jogadores ordenados pelo APELIDO...\n" << RESET_COLOR << endl;
+    cout << "\n" << BLUE_COLOR << "Exibindo jogadores ordenados pelo APELIDO...\n" << RESET_ALL << endl;
 
     int size = _players.size();
 
