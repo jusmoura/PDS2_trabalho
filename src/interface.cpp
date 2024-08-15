@@ -141,7 +141,7 @@ void Interface::gamesMenu() {
 
             player2 = loginPlayer("JOGADOR 2");
             cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-
+            clearBuffer();
             ReversiGame reversiGame;
             winner = reversiGame.play(player1, player2);
             if (winner == player1) {
