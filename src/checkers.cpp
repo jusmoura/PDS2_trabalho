@@ -172,4 +172,5 @@ Player* CheckersGame::play(Player* player1, Player* player2) {
         }
         turn = (turn == 1) ? 2 : 1;
     }
+    return nullptr;
 }
