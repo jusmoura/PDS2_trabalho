@@ -192,7 +192,22 @@ void Interface::gamesMenu() {
         case CHECKERS:
         {
             cout << "\nDamas" << endl;
-            /* code */
+
+            player2 = loginPlayer("JOGADOR 2");
+            cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
+
+            CheckersGame checkersGame;
+
+            /*ALTERAR O CHECKERS PARA RETORNAR O VENCEDOR*/
+            winner = checkersGame.play(player1, player2);
+            if (winner == player1) {
+                player1->addWin(CHECKERS);
+                player2->addDefeat(CHECKERS);
+            }
+            else if (winner == player2) {
+                player2->addWin(CHECKERS);
+                player1->addDefeat(CHECKERS);
+            }
         } break;
 
         case VOLTAR: //Voltar
