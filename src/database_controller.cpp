@@ -1,7 +1,7 @@
 #include "../include/database_controller.hpp"
 
 DatabaseController::DatabaseController() {
-    _filePath = "../database/players_data.txt";
+    _filePath = "./database/players_data.txt";
 
     _inputFile.open(_filePath);
     if (!_inputFile.is_open())
