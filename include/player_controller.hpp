@@ -3,6 +3,7 @@
 
 #include "player.hpp"
 #include "database_controller.hpp"
+#include "colors.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -25,7 +26,7 @@ public:
     Player* getPlayerByIndex(int index);
     Player* getPlayerByNickname(string nickname);
     bool insertNewPlayer(Player& player);
-    bool removePlayer(string nickname);
+    int removePlayer(string nickname);
     void printPlayersByName();
     void printPlayersByNickname();
     void endProcess();

@@ -8,7 +8,7 @@ void Interface::mainMenu() {
     int input = 0;
     while (input != SAIR) {
         try {
-            cout << "\nMENU PRINCIPAL:\n\n";
+            cout << "\n" << BLUE_COLOR << "MENU PRINCIPAL:\n\n" << RESET_COLOR;
             cout << "    1 - Gerenciar jogadores" << endl;
             cout << "    2 - Jogar!" << endl;
             cout << "    9 - Sair do programa" << endl;
@@ -29,13 +29,10 @@ void Interface::mainMenu() {
                 break;
 
             default:
-                cout << "\n" << YELLOW_COLOR << "\nOpcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
+                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
             }
 
-            //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
-            cin.clear();
-            string buffer;
-            getline(cin, buffer);
+            clearBuffer();
         }
         catch (int value) {
             if (value == SAIR)
@@ -51,7 +48,7 @@ void Interface::playersMenu() {
     int input = 0;
 
     while (input != SAIR) {
-        cout << "\nGerenciando jogadores...\n\n";
+        cout << "\n" << BLUE_COLOR << "Gerenciando jogadores...\n\n" << RESET_COLOR;
         cout << "    1 - Criar jogador" << endl;
         cout << "    2 - Remover jogador" << endl;
         cout << "    3 - Listar jogadores ordenados pelo NOME" << endl;
@@ -64,9 +61,11 @@ void Interface::playersMenu() {
         switch (input) {
         case 1:
         {
+            clearBuffer();
+
             string name, nickname;
             cout << "\nDigite o nome do novo jogador: ";
-            cin >> name;
+            getline(cin, name);
             cout << "Digite o apelido do novo jogador: ";
             cin >> nickname;
             Player newPlayer(name, nickname);
@@ -74,10 +73,10 @@ void Interface::playersMenu() {
             bool inserted = controller->insertNewPlayer(newPlayer);
 
             if (inserted)
-                cout << "\nJogador " << nickname << " criado com sucesso!" << endl;
+                cout << "\n" << GREEN_COLOR << "Jogador " << nickname << " criado com sucesso!" << RESET_COLOR << endl;
 
             else
-                cout << "\nJogador com apelido " << nickname << " ja cadastrado! Tente novamente!" << endl;
+                cout << "\n" << RED_COLOR << "Jogador com apelido " << nickname << " ja cadastrado! Tente novamente!" << RESET_COLOR << endl;
 
         } break;
 
@@ -87,13 +86,16 @@ void Interface::playersMenu() {
             cout << "\nDigite o apelido do jogador a ser removido: ";
             cin >> nickname;
 
-            bool removed = controller->removePlayer(nickname);
+            int removed = controller->removePlayer(nickname);
 
-            if (removed)
-                cout << "\nJogador " << nickname << " removido com sucesso!" << endl;
+            if (removed == 1)
+                cout << "\n" << GREEN_COLOR << "Jogador " << nickname << " removido com sucesso!" << RESET_COLOR << endl;
+
+            else if (removed == -1)
+                cout << "\n" << RED_COLOR << "Jogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << RESET_COLOR << endl;
 
             else
-                cout << "\nJogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << endl;
+                cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado! Tente novamente!" << RESET_COLOR << endl;
 
         } break;
 
@@ -113,14 +115,11 @@ void Interface::playersMenu() {
             break;
 
         default:
-            cout << "\n" << YELLOW_COLOR << "\nOpcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
+            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_COLOR << endl;
             break;
         }
 
-        //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
-        cin.clear();
-        string buffer;
-        getline(cin, buffer);
+        clearBuffer();
     }
 
 }
@@ -172,10 +171,7 @@ void Interface::gamesMenu() {
     //         break;
     //     }
 
-    //     //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
-    //     cin.clear();
-    //     string buffer;
-    //     getline(cin, buffer);
+    //   clearBuffer();
     // }
 
     Player* player1 = controller->getPlayerByNickname("Dani");
@@ -260,11 +256,14 @@ void Interface::gamesMenu() {
             break;
         }
 
-        //Tratamento para casos em que a entrada é inválida (letras, por exemplo)
-        cin.clear();
-        string buffer;
-        getline(cin, buffer);
+        clearBuffer();
     }
+}
+
+void Interface::clearBuffer() {
+    cin.clear();
+    string buffer;
+    getline(cin, buffer);
 }
 
 void Interface::endProcess() {

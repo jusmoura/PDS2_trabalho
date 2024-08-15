@@ -20,6 +20,7 @@ public:
     void mainMenu();
     void playersMenu();
     void gamesMenu();
+    void clearBuffer();
     void endProcess();
     void showSelectPlayerMenu(string player);
 };
