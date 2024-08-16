@@ -1,3 +1,10 @@
+/**
+ * @file player_controller.hpp
+ * @brief Declaração da classe PlayerController responsável pelo gerenciamento dos jogadores.
+ * 
+ * Este arquivo contém a definição da classe PlayerController, que é responsável por 
+ * realizar operações relacionadas aos jogadores, como inserção, remoção, e listagem de jogadores.
+ */
 #ifndef PLAYER_CONTROLLER_H
 #define PLAYER_CONTROLLER_H
 
