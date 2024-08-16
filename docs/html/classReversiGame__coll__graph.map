@@ -1,4 +1,4 @@
 <map id="ReversiGame" name="ReversiGame">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node1" title="Classe que implementa o jogo Reversi." alt="" coords="5,80,116,107"/>
 <area shape="rect" id="node2" href="$classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo." alt="" coords="31,5,91,32"/>
 </map>

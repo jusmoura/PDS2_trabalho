@@ -3,5 +3,5 @@
 <area shape="rect" id="node2" href="$classCheckersGame.html" title="Implementa a lógica do jogo de damas (checkers) baseado na classe Board." alt="" coords="5,80,125,107"/>
 <area shape="rect" id="node3" href="$classLig4.html" title=" " alt="" coords="150,80,199,107"/>
 <area shape="rect" id="node4" href="$classMinesweeper.html" title="Implementa o jogo Campo Minado." alt="" coords="224,80,333,107"/>
-<area shape="rect" id="node5" href="$classReversiGame.html" title=" " alt="" coords="358,80,469,107"/>
+<area shape="rect" id="node5" href="$classReversiGame.html" title="Classe que implementa o jogo Reversi." alt="" coords="358,80,469,107"/>
 </map>
