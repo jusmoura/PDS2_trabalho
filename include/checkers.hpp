@@ -43,7 +43,7 @@ private:
     /** 
      * @brief Armazena a quantidade de peças para cada jogador.
      * 
-     * O array peshka[2] armazena o número de peças restantes para o jogador 1 e jogador 2.
+     * O array pieces[2] armazena o número de peças restantes para o jogador 1 e jogador 2.
      */
     int pieces[2] = {12, 12};
 
@@ -73,48 +73,48 @@ private:
     /**
      * @brief Lê e interpreta um movimento de jogador.
      * 
-     * @param x Array que armazena as coordenadas do movimento.
+     * @param coordinates Array que armazena as coordenadas do movimento.
      */
-    void readMove(int x[]);
+    void readMove(int coordinates[]);
 
     /**
      * @brief Valida se um movimento é válido.
      * 
-     * @param x Array que contém as coordenadas do movimento.
+     * @param coordinates Array que contém as coordenadas do movimento.
      * @return Retorna true se o movimento for válido, caso contrário retorna false.
      */
-    bool validMove(int x[4]);
+    bool validMove(int coordinates[4]);
 
     /**
      * @brief Valida a continuidade de uma cadeia de movimentos.
      * 
-     * @param x Array que contém as coordenadas do movimento.
+     * @param coordinates Array que contém as coordenadas do movimento.
      * @return O número de movimentos válidos em sequência.
      */
-    int nextChainValid(int x[4]);
+    int nextChainValid(int coordinates[4]);
 
     /**
      * @brief Executa um movimento simples no tabuleiro.
      * 
-     * @param x Array que contém as coordenadas do movimento.
+     * @param coordinates Array que contém as coordenadas do movimento.
      * @return Retorna true se o movimento foi executado com sucesso, caso contrário retorna false.
      */
-    bool simpleMove(int x[4]);
+    bool simpleMove(int coordinates[4]);
 
     /**
      * @brief Executa um movimento de captura no tabuleiro.
      * 
-     * @param x Array que contém as coordenadas do movimento.
+     * @param coordinates Array que contém as coordenadas do movimento.
      * @return Retorna true se a captura foi realizada com sucesso, caso contrário retorna false.
      */
-    bool captureMove(int x[4]);
+    bool captureMove(int coordinates[4]);
 
     /**
      * @brief Atualiza o estado do tabuleiro após um movimento.
      * 
-     * @param x Array que contém as coordenadas do movimento.
+     * @param coordinates Array que contém as coordenadas do movimento.
      */
-    void updateBoard(int x[4]);
+    void updateBoard(int coordinates[4]);
 
     /**
      * @brief Obtém as coordenadas de um movimento do jogador.
