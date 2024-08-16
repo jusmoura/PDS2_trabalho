@@ -37,6 +37,8 @@ void DatabaseController::readFile(PlayerController* playerController) {
             games->at(i).setNumWins(num);
             _inputFile >> num;
             games->at(i).setNumDefeats(num);
+            _inputFile >> num;
+            games->at(i).setNumDraws(num);
         }
 
         string buffer;
@@ -66,7 +68,7 @@ void DatabaseController::writeFile(PlayerController* playerController) {
         int gamesSize = games->size();
 
         for (int gameIndex = 0; gameIndex < gamesSize; gameIndex++) {
-            _outputFile << player->getNumWins(gameIndex) << " " << player->getNumDefeats(gameIndex);
+            _outputFile << player->getNumWins(gameIndex) << " " << player->getNumDefeats(gameIndex) << " " << player->getNumDraws(gameIndex);
 
             if (i != playersSize - 1)
                 _outputFile << endl;

@@ -10,6 +10,7 @@ private:
     string _name;
     int _numWins;
     int _numDefeats;
+    int _numDraws;
 
 public:
     Game(string name);
@@ -19,6 +20,8 @@ public:
     int getNumWins();
     void setNumDefeats(int numDefeats);
     int getNumDefeats();
+    void setNumDraws(int numDraws);
+    int getNumDraws();
 };
 
 #endif //GAME_H

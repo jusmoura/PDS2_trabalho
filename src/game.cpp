@@ -5,6 +5,7 @@ Game::Game(string name) {
     this->_name = name;
     this->_numWins = 0;
     this->_numDefeats = 0;
+    this->_numDraws = 0;
 }
 
 string Game::getName() {
@@ -29,4 +30,12 @@ int Game::getNumDefeats() {
 
 void Game::setNumDefeats(int numDefeats) {
     this->_numDefeats = numDefeats;
+}
+
+int Game::getNumDraws() {
+    return this->_numDraws;
+}
+
+void Game::setNumDraws(int numDraws) {
+    this->_numDraws = numDraws;
 }

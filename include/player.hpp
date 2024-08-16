@@ -2,8 +2,10 @@
 #define PLAYER_H
 
 #include "game_controller.hpp"
+#include "colors.hpp"
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 
@@ -28,6 +30,8 @@ public:
     int getNumWins(int index);
     void setNumDefeats(int game, int numDefeats);
     int getNumDefeats(int index);
+    void setNumDraws(int game, int numDraws);
+    int getNumDraws(int index);
     //Sobrecarga do operador <<
     friend std::ostream& operator << (std::ostream& os, Player& player);
 };
