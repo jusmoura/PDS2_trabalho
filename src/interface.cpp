@@ -108,7 +108,7 @@ void Interface::gamesMenu() {
             while (1) {
                 //Verificação caso o jogador 2 já esteja "logado"
                 if (player2 != nullptr) {
-                    cout << "Jogador 1: " << player1->getNickname() << endl;
+                    cout << "\nJogador 1: " << player1->getNickname() << endl;
                     cout << "Jogador 2: " << player2->getNickname() << endl;
 
                     cout << "\nDeseja continuar com os mesmos jogadores (S/N)? ";
