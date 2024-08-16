@@ -184,7 +184,6 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
 
     return checkVictory(player1, player2);
 
-    return sumX > sumO ? player1 : player2;
 }
 
 Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
@@ -198,5 +197,6 @@ Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
     }
     else {
         cout << "O jogo terminou em empate!" << endl;
+        return nullptr;
     }
 }
