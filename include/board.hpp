@@ -43,14 +43,17 @@ protected:
      * @brief Constante que representa uma célula vazia no tabuleiro.
      */
     const int EMPTY = 0;
+
     /** 
      * @brief Constante que representa o jogador X no tabuleiro.
      */    
     const int PLAYER_X = 1;
+
     /** 
      * @brief Constante que representa o jogador O no tabuleiro.
      */
     const int PLAYER_O = 2;
+
     /** 
      * @brief Tamanho das linhas do tabuleiro.
      */
@@ -60,10 +63,12 @@ protected:
      * @brief Tamanho das linhas do tabuleiro.
      */
     int linesSize;
+
     /** 
      * @brief Tamanho das colunas do tabuleiro.
      */
     int columnsSize;
+
     /** 
      * @brief Matriz que representa o tabuleiro de jogo, composta por objetos da classe Cell.
      */
@@ -81,6 +86,7 @@ protected:
      * @return Retorna true se a jogada for válida, caso contrário retorna false.
      */
     virtual bool validateMove(int line, int column);
+
     /**
      * @brief Executa a jogada dos jogadores.
      * 
@@ -103,6 +109,7 @@ public:
      * @param column Número de colunas do tabuleiro.
      */
     Board(int line, int column);
+    
     /**
      * @brief Imprime o tabuleiro no console.
      * 
