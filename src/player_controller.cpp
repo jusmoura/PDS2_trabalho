@@ -10,7 +10,7 @@ int PlayerController::getTotalNumberOfPlayers() {
 }
 
 Player* PlayerController::getPlayerByIndex(int index) {
-    return &_players[index];
+    return _players[index];
 }
 
 Player* PlayerController::getPlayerByNickname(string nickname) {
@@ -20,11 +20,11 @@ Player* PlayerController::getPlayerByNickname(string nickname) {
         return nullptr;
 
     else
-        return &_players[playerIndex];
+        return _players[playerIndex];
 }
 
-bool PlayerController::insertNewPlayer(Player player) {
-    int playerIndex = findIndexOfPlayer(player.getNickname());
+bool PlayerController::insertNewPlayer(Player* player) {
+    int playerIndex = findIndexOfPlayer(player->getNickname());
 
     //Verifica se o player não existe
     if (playerIndex == -1) {
@@ -46,7 +46,9 @@ int PlayerController::removePlayer(string nickname) {
         return -1;
 
     else {
+        Player* player = _players[playerIndex];
         _players.erase(_players.begin() + playerIndex);
+        delete player;
         return 1;
     }
 }
@@ -66,9 +68,9 @@ void PlayerController::printPlayersByName() {
         int min_idx = i;
         for (int j = i + 1; j < size; j++) {
             //Conversão local dos nomes dos jogadores para UPPERCASE para fins de comparação (a == A)
-            string nameI = _players[min_idx].getName();
+            string nameI = _players[min_idx]->getName();
             transform(nameI.begin(), nameI.end(), nameI.begin(), ::toupper);
-            string nameJ = _players[j].getName();
+            string nameJ = _players[j]->getName();
             transform(nameJ.begin(), nameJ.end(), nameJ.begin(), ::toupper);
 
             if (nameJ < nameI)
@@ -96,9 +98,9 @@ void PlayerController::printPlayersByNickname() {
         int min_idx = i;
         for (int j = i + 1; j < size; j++) {
             //Conversão local dos nomes dos jogadores para UPPERCASE para fins de comparação (a == A)
-            string nicknameI = _players[min_idx].getNickname();
+            string nicknameI = _players[min_idx]->getNickname();
             transform(nicknameI.begin(), nicknameI.end(), nicknameI.begin(), ::toupper);
-            string nicknameJ = _players[j].getNickname();
+            string nicknameJ = _players[j]->getNickname();
             transform(nicknameJ.begin(), nicknameJ.end(), nicknameJ.begin(), ::toupper);
 
             if (nicknameJ < nicknameI)
@@ -112,16 +114,11 @@ void PlayerController::printPlayersByNickname() {
     printPlayers();
 }
 
-void PlayerController::endProcess() {
-    databaseController->writeFile(this);
-}
-
-/* Métodos privados */
 int PlayerController::findIndexOfPlayer(string nickname) {
     int size = _players.size();
 
     for (int i = 0; i < size; i++) {
-        if (nickname == _players[i].getNickname())
+        if (nickname == _players[i]->getNickname())
             return i;
     }
     //Caso o jogador não seja encontrado
@@ -130,5 +127,12 @@ int PlayerController::findIndexOfPlayer(string nickname) {
 
 void PlayerController::printPlayers() {
     for (auto player : _players)
-        cout << player;
+        cout << *player;
+}
+
+PlayerController::~PlayerController() {
+    databaseController->writeFile(this);
+
+    for (auto player : _players)
+        delete player;
 }

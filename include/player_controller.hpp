@@ -15,7 +15,7 @@ class DatabaseController;
 class PlayerController {
 private:
     DatabaseController* databaseController;
-    vector<Player> _players;
+    vector<Player*> _players;
     /* Métodos */
     int findIndexOfPlayer(string nickname);
     void printPlayers();
@@ -25,11 +25,11 @@ public:
     int getTotalNumberOfPlayers();
     Player* getPlayerByIndex(int index);
     Player* getPlayerByNickname(string nickname);
-    bool insertNewPlayer(Player player);
+    bool insertNewPlayer(Player* player);
     int removePlayer(string nickname);
     void printPlayersByName();
     void printPlayersByNickname();
-    void endProcess();
+    ~PlayerController();
 };
 
 #endif //PLAYER_CONTROLLER_H

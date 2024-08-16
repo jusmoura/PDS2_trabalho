@@ -343,7 +343,7 @@ void Interface::gamesMenu() {
     }
 }
 
-string Interface::createPlayer() {
+Player* Interface::createPlayer() {
     clearBuffer();
 
     string name, nickname;
@@ -351,18 +351,18 @@ string Interface::createPlayer() {
     getline(cin, name);
     cout << "Digite o apelido do novo jogador: ";
     cin >> nickname;
-    Player newPlayer(name, nickname);
+    Player* newPlayer = new Player(name, nickname);
 
     bool inserted = controller->insertNewPlayer(newPlayer);
 
     if (inserted) {
         cout << "\n" << GREEN_COLOR << "Jogador " << nickname << " criado com sucesso!" << RESET_ALL << endl;
-        return nickname;
+        return newPlayer;
     }
 
     else {
         cout << "\n" << RED_COLOR << "Jogador com apelido " << nickname << " ja cadastrado! Tente novamente!" << RESET_ALL << endl;
-        return "";
+        return nullptr;
     }
 }
 
@@ -398,11 +398,9 @@ Player* Interface::loginPlayer(string playerNumber) {
 
         case 2:
         {
-            string nickname = createPlayer();
-
-            if (nickname != "")
-                return controller->getPlayerByNickname(nickname);
-
+            Player* player = createPlayer();
+            if (player != nullptr)
+                return player;
         } break;
 
         case VOLTAR:
@@ -429,7 +427,6 @@ void Interface::clearBuffer() {
 }
 
 void Interface::endProcess() {
-    controller->endProcess();
     delete controller;
     cout << "\nSaindo...\n" << endl;
     throw "CLOSE_PROGRAM";

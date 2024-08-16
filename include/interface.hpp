@@ -20,7 +20,7 @@ public:
     void mainMenu();
     void playersMenu();
     void gamesMenu();
-    string createPlayer();
+    Player* createPlayer();
     Player* loginPlayer(string playerNumber);
     void clearBuffer();
     void endProcess();

@@ -27,9 +27,9 @@ void DatabaseController::readFile(PlayerController* playerController) {
 
         _inputFile >> nickName;
 
-        Player player(name, nickName);
+        Player* player = new Player(name, nickName);
 
-        vector<Game>* games = player.getGamesStats();
+        vector<Game>* games = player->getGamesStats();
         int gamesSize = games->size();
 
         for (int i = 0; i < gamesSize; i++) {
