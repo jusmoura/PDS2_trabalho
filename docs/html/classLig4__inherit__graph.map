@@ -1,4 +1,4 @@
 <map id="Lig4" name="Lig4">
 <area shape="rect" id="node1" title=" " alt="" coords="11,80,60,107"/>
-<area shape="rect" id="node2" href="$classBoard.html" title=" " alt="" coords="5,5,65,32"/>
+<area shape="rect" id="node2" href="$classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo." alt="" coords="5,5,65,32"/>
 </map>

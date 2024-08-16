@@ -69,22 +69,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Representa uma célula individual em um tabuleiro de jogo.  
+ <a href="classCell.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cell_8hpp_source.html">cell.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a394510643e8664cf12b5efaf5cb99f71"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a394510643e8664cf12b5efaf5cb99f71">Cell</a> ()</td></tr>
+<tr class="memdesc:a394510643e8664cf12b5efaf5cb99f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe <a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a>.  <a href="classCell.html#a394510643e8664cf12b5efaf5cb99f71">More...</a><br /></td></tr>
 <tr class="separator:a394510643e8664cf12b5efaf5cb99f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1ec60e70cebbcf06291e58e98bb402"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a9b1ec60e70cebbcf06291e58e98bb402">getValue</a> ()</td></tr>
+<tr class="memdesc:a9b1ec60e70cebbcf06291e58e98bb402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o valor armazenado na célula.  <a href="classCell.html#a9b1ec60e70cebbcf06291e58e98bb402">More...</a><br /></td></tr>
 <tr class="separator:a9b1ec60e70cebbcf06291e58e98bb402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b58034e57c99329a534189428882e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a9b58034e57c99329a534189428882e0e">setValue</a> (int value)</td></tr>
+<tr class="memdesc:a9b58034e57c99329a534189428882e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o valor da célula.  <a href="classCell.html#a9b58034e57c99329a534189428882e0e">More...</a><br /></td></tr>
 <tr class="separator:a9b58034e57c99329a534189428882e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5ef909b35f30e21e865d1a69deffa9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#aae5ef909b35f30e21e865d1a69deffa9">getSelected</a> ()</td></tr>
+<tr class="memdesc:aae5ef909b35f30e21e865d1a69deffa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a célula foi selecionada.  <a href="classCell.html#aae5ef909b35f30e21e865d1a69deffa9">More...</a><br /></td></tr>
 <tr class="separator:aae5ef909b35f30e21e865d1a69deffa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71c18578d41589506ddeaef3fbe080f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a71c18578d41589506ddeaef3fbe080f7">setSelected</a> (bool wasSelected)</td></tr>
+<tr class="memdesc:a71c18578d41589506ddeaef3fbe080f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o estado de seleção da célula.  <a href="classCell.html#a71c18578d41589506ddeaef3fbe080f7">More...</a><br /></td></tr>
 <tr class="separator:a71c18578d41589506ddeaef3fbe080f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representa uma célula individual em um tabuleiro de jogo. </p>
+<p>A classe <code><a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a></code> é usada para representar uma célula em um tabuleiro. Ela armazena o valor da célula e um estado booleano que indica se a célula foi selecionada ou não. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a394510643e8664cf12b5efaf5cb99f71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a394510643e8664cf12b5efaf5cb99f71">&#9670;&nbsp;</a></span>Cell()</h2>
 
@@ -99,6 +110,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construtor padrão da classe <a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a>. </p>
+<p>Inicializa a célula com valores padrão. Normalmente, o valor é 0 e o estado de seleção é false. </p>
 
 </div>
 </div>
@@ -118,6 +132,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifica se a célula foi selecionada. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna true se a célula foi selecionada, caso contrário retorna false. </dd></dl>
+
 </div>
 </div>
 <a id="a9b1ec60e70cebbcf06291e58e98bb402"></a>
@@ -134,6 +151,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Obtém o valor armazenado na célula. </p>
+<dl class="section return"><dt>Returns</dt><dd>O valor armazenado na célula. </dd></dl>
 
 </div>
 </div>
@@ -153,6 +173,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Define o estado de seleção da célula. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wasSelected</td><td>O novo estado de seleção da célula. Deve ser true se a célula foi selecionada, ou false se não foi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9b58034e57c99329a534189428882e0e"></a>
@@ -170,6 +198,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define o valor da célula. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>O novo valor a ser armazenado na célula. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
