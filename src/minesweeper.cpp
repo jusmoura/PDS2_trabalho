@@ -115,32 +115,50 @@ void Minesweeper::printBoard() {
 
 Player* Minesweeper::play(Player* player1, Player* player2) {
     cout << "\nCampo gerado para " << player1->getNickname() << ":\n\n";
-    printBoard();
     while (1) {
+        printBoard();
         // Solicitando ao usuário uma escolha de posição
-        int line, column;
-        cout << "\nEscolha uma posicao (formato: \"nLinha nColuna\")" << endl;
+        cout << "Escolha uma posicao (formato: \"linha coluna\" ou digite \"SAIR\" para voltar)" << endl;
         cout << "Digite a posicao que deseja selecionar: ";
-        cin >> line >> column;
-        cout << endl;
 
-        // Determinando a exibição da posição escolhida
-        if (validateMove(line, column) && _board[line][column].getValue() == EMPTY)
-            //Verifica celulas adjacentes caso a selecionada for 0
-            checkAndShowAdjacentsCells(line, column);
+        int line, column;
+        string input;
+
+        getline(cin, input);
+
+        if (input == "SAIR" || input == "sair")
+            throw SIMPLE_RETURN;
 
         else {
-            if (validateMove(line, column))
-                _board[line][column].setSelected(true);
+            stringstream ss(input);
+            if (ss >> line >> column) {
+                cout << endl;
+
+                if (validateMove(line, column)) {
+                    // Determinando a exibição da posição escolhida
+                    if (_board[line][column].getValue() == EMPTY)
+                        //Verifica celulas adjacentes caso a selecionada for 0
+                        checkAndShowAdjacentsCells(line, column);
+
+                    else
+                        _board[line][column].setSelected(true);
+                }
+                else {
+                    cout << YELLOW_COLOR << "Entrada invalida. Tente novamente!\n" << RESET_ALL << endl;
+                    continue;
+                }
+
+                if (checkDefeat(line, column))
+                    return nullptr;
+
+                if (checkVictory())
+                    return player1;
+            }
+            else {
+                cout << "\n" << YELLOW_COLOR << "Entrada invalida. Tente novamente!\n" << RESET_ALL << endl;
+                continue;
+            }
         }
-
-        printBoard();
-
-        if (checkDefeat(line, column))
-            return nullptr;
-
-        if (checkVictory())
-            return player1;
     }
 }
 
@@ -192,7 +210,8 @@ void Minesweeper::setBombsPositions() {
 bool Minesweeper::checkDefeat(int line, int column) {
     // Determinando o fim do jogo caso uma bomba seja escolhida
     if (validateMove(line, column) && _board[line][column].getValue() >= IS_BOMB) {
-        cout << "\n" << RED_COLOR << "Bumm! Voce selecionou uma bomba!\n" << BOLD << "Fim de jogo!" << RESET_ALL << endl;
+        printBoard();
+        cout << "\n" << RED_COLOR << "Bumm! Voce selecionou uma bomba!\n" << LOSER_STYLE << "Fim de jogo!" << RESET_ALL << endl;
         return true;
     }
 
@@ -210,7 +229,8 @@ bool Minesweeper::checkVictory() {
         }
     }
     if (counter == 0) {
-        cout << "\n" << GREEN_COLOR << "Parabens! Voce nao selecionou nenhuma bomba!\n" << BOLD << "Ganhou o jogo!" << RESET_ALL << endl;
+        printBoard();
+        cout << "\n" << GREEN_COLOR << "Parabens! Voce nao selecionou nenhuma bomba!\n" << WINNER_STYLE << "Ganhou o jogo!" << RESET_ALL << endl;
         return true;
     }
     else
