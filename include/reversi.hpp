@@ -15,6 +15,12 @@
 #include <stdexcept>
 #include "board.hpp"
 
+/**
+ * @brief Classe que implementa o jogo Reversi.
+ * 
+ * A classe `ReversiGame` herda da classe `Board` e implementa as regras e a lógica específicas do jogo Reversi, também conhecido como Othello. 
+ * Esta classe gerencia o tabuleiro, a troca de jogadores, a validação de movimentos, o cálculo da pontuação, e o resultado final do jogo.
+ */
 class ReversiGame : public Board {
 private:
     const int BOARD_SIZE = 8;
