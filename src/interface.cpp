@@ -171,7 +171,7 @@ void Interface::gamesMenu() {
                     //     player1->addDraw(REVERSI);
                     //     player2->addDraw(REVERSI);
                     // }
-                    cout << "\n" << GRAY_COLOR << "Encerrando Reversi...\n" << RESET_ALL << endl;
+                    cout << "\n" << GRAY_COLOR << "Encerrando Reversi..." << RESET_ALL << endl;
 
                 } break;
 
@@ -180,7 +180,6 @@ void Interface::gamesMenu() {
                     cout << "\n" << BLUE_COLOR << "Lig4" << RESET_ALL << endl;
 
                     player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
-                    cout << "PRINTANDOO" << player2->getNickname() << endl;
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
                     // Lig4 lig4;
@@ -198,7 +197,7 @@ void Interface::gamesMenu() {
                     //     player1->addDraw(LIG4);
                     //     player2->addDraw(LIG4);
                     // }
-                    cout << "\n" << GRAY_COLOR << "Encerrando Lig4...\n" << RESET_ALL << endl;
+                    cout << "\n" << GRAY_COLOR << "Encerrando Lig4..." << RESET_ALL << endl;
 
                 } break;
 
@@ -224,7 +223,7 @@ void Interface::gamesMenu() {
                     //     player1->addDraw(TIC_TAC_TOE);
                     //     player2->addDraw(TIC_TAC_TOE);
                     // }
-                    cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha...\n" << RESET_ALL << endl;
+                    cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha..." << RESET_ALL << endl;
 
                 } break;
 
@@ -232,17 +231,16 @@ void Interface::gamesMenu() {
                 {
                     cout << "\n" << BLUE_COLOR << "Campo Minado" << RESET_ALL << endl;
 
-                    cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                    // Minesweeper mine(8, 8);
-                    // winner = mine.play(player1);
+                    Minesweeper minesweeper;
+                    winner = minesweeper.play(player1);
 
-                    // if (winner == player1)
-                    //     player1->addWin(MINESWEEPER);
+                    if (winner == player1)
+                        player1->addWin(MINESWEEPER);
 
-                    // else
-                    //     player1->addDefeat(MINESWEEPER);
+                    else
+                        player1->addDefeat(MINESWEEPER);
 
-                    cout << "\n" << GRAY_COLOR << "Encerrando Campo Minado...\n" << RESET_ALL << endl;
+                    cout << "\n" << GRAY_COLOR << "Encerrando Campo Minado..." << RESET_ALL << endl;
                 } break;
 
                 case CHECKERS:
@@ -251,18 +249,17 @@ void Interface::gamesMenu() {
 
                     player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
-                    cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                    // CheckersGame checkersGame;
-                    // winner = checkersGame.play(player1, player2);
-                    // if (winner == player1) {
-                    //     player1->addWin(CHECKERS);
-                    //     player2->addDefeat(CHECKERS);
-                    // }
-                    // else if (winner == player2) {
-                    //     player2->addWin(CHECKERS);
-                    //     player1->addDefeat(CHECKERS);
-                    // }
-                    cout << "\n" << GRAY_COLOR << "Encerrando Damas...\n" << RESET_ALL << endl;
+                    CheckersGame checkersGame;
+                    winner = checkersGame.play(player1, player2);
+                    if (winner == player1) {
+                        player1->addWin(CHECKERS);
+                        player2->addDefeat(CHECKERS);
+                    }
+                    else if (winner == player2) {
+                        player2->addWin(CHECKERS);
+                        player1->addDefeat(CHECKERS);
+                    }
+                    cout << "\n" << GRAY_COLOR << "Encerrando Damas..." << RESET_ALL << endl;
 
                 } break;
 

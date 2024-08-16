@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Minesweeper::Minesweeper(int line, int column) : Board(line, column) {
+Minesweeper::Minesweeper() : Board(8, 8) {
     setBombsPositions();
 }
 
@@ -13,7 +13,7 @@ void Minesweeper::printBoard() {
 
     // Printa os números das colunas
     if (this->columnsSize <= 10) {
-        printf("\t   ");
+        cout << "\t   ";
         for (int i = 0; i < this->columnsSize; i++)
             cout << " " << i << "  ";
 
@@ -69,8 +69,28 @@ void Minesweeper::printBoard() {
                 else if (_board[i][j].getValue() == EMPTY)
                     cout << "   |";
 
-                else
-                    cout << " " << _board[i][j].getValue() << " |";
+                else {
+                    int value = _board[i][j].getValue();
+                    //Cores dos números
+                    switch (value) {
+                    case 1:
+                        cout << " " << GREEN_COLOR << value << RESET_ALL << " |";
+                        break;
+                    case 2:
+                        cout << " " << BLUE_COLOR << value << RESET_ALL << " |";
+                        break;
+                    case 3:
+                        cout << " " << YELLOW_COLOR << value << RESET_ALL << " |";
+                        break;
+                    case 4:
+                        cout << " " << PURPLE_COLOR << value << RESET_ALL << " |";
+                        break;
+
+                    default:
+                        cout << " " << value << " |";
+                        break;
+                    }
+                }
             }
         }
         cout << endl;
@@ -94,7 +114,7 @@ void Minesweeper::printBoard() {
 }
 
 Player* Minesweeper::play(Player* player1, Player* player2) {
-    cout << "\nCampo gerado:\n\n";
+    cout << "\nCampo gerado para " << player1->getNickname() << ":\n\n";
     printBoard();
     while (1) {
         // Solicitando ao usuário uma escolha de posição
@@ -172,7 +192,7 @@ void Minesweeper::setBombsPositions() {
 bool Minesweeper::checkDefeat(int line, int column) {
     // Determinando o fim do jogo caso uma bomba seja escolhida
     if (validateMove(line, column) && _board[line][column].getValue() >= IS_BOMB) {
-        cout << "\n\nBumm! Voce selecionou uma bomba!\nFim de jogo!\n\n";
+        cout << "\n" << RED_COLOR << "Bumm! Voce selecionou uma bomba!\n" << BOLD << "Fim de jogo!" << RESET_ALL << endl;
         return true;
     }
 
@@ -190,7 +210,7 @@ bool Minesweeper::checkVictory() {
         }
     }
     if (counter == 0) {
-        cout << "\n\nParabens! Voce nao selecionou nenhuma bomba!\nGanhou o jogo!\n\n";
+        cout << "\n" << GREEN_COLOR << "Parabens! Voce nao selecionou nenhuma bomba!\n" << BOLD << "Ganhou o jogo!" << RESET_ALL << endl;
         return true;
     }
     else
