@@ -130,7 +130,7 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
     Player* otherPlayerPtr = player2;
 
     while (sumX + sumO < 64) {
-        cout << player1->getNickname() << ": (X)" << player2->getNickname() << ": (O)" << endl;
+        cout << player1->getNickname() << ": (X)" << player2->getNickname() << " : (O)" << endl;
         Board::printBoard();
 
         int x, y;
