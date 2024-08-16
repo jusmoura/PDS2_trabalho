@@ -1,3 +1,11 @@
+/**
+ * @file colors.hpp
+ * @brief Declaração de constantes para cores e estilos de texto para a saída no terminal.
+ * 
+ * Este arquivo define uma série de constantes para representar cores e estilos de texto que podem
+ * ser usados para colorir e formatar a saída do terminal. As cores são definidas usando códigos
+ * ANSI e podem ser aplicadas a texto para melhorar a visibilidade e a estética.
+ */
 #ifndef COLORS_HPP
 #define COLORS_HPP
 
