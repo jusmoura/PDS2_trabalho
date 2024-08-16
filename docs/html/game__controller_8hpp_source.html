@@ -69,42 +69,50 @@ $(function() {
 <div class="title">game_controller.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="game__controller_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_CONTROLLER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAME_CONTROLLER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game_8hpp.html">game.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//Lista de índices dos jogos cadastrados no projeto</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">    9</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a> = 0;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">   10</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a> = 1;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">   11</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a> = 2;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">   12</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a> = 3;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">   13</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a> = 4;</div>
+<a href="game__controller_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GAME_CONTROLLER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GAME_CONTROLLER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game_8hpp.html">game.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classGameController.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameController.html">GameController</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//Lista de jogos cadastrados</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    vector&lt;string&gt; _NameGames = { <span class="stringliteral">&quot;Reversi&quot;</span>, <span class="stringliteral">&quot;Lig4&quot;</span>, <span class="stringliteral">&quot;Jogo da Velha&quot;</span>, <span class="stringliteral">&quot;Campo Minado&quot;</span>, <span class="stringliteral">&quot;Damas&quot;</span> };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    vector&lt;Game&gt; _availableGames;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    vector&lt;Game&gt; <a class="code" href="classGameController.html#a61bd51c45c1c322d5e50a1590a48ec0d">getAvailableGames</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//GAME_CONTROLLER_H</span></div>
-<div class="ttc" id="aclassGameController_html"><div class="ttname"><a href="classGameController.html">GameController</a></div><div class="ttdef"><b>Definition:</b> game_controller.hpp:15</div></div>
-<div class="ttc" id="aclassGameController_html_a61bd51c45c1c322d5e50a1590a48ec0d"><div class="ttname"><a href="classGameController.html#a61bd51c45c1c322d5e50a1590a48ec0d">GameController::getAvailableGames</a></div><div class="ttdeci">vector&lt; Game &gt; getAvailableGames()</div><div class="ttdef"><b>Definition:</b> game_controller.cpp:11</div></div>
-<div class="ttc" id="aclassGameController_html_a7d72ff3f639acb68578e20fee3649b42"><div class="ttname"><a href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController::GameController</a></div><div class="ttdeci">GameController()</div><div class="ttdef"><b>Definition:</b> game_controller.cpp:4</div></div>
-<div class="ttc" id="agame_8hpp_html"><div class="ttname"><a href="game_8hpp.html">game.hpp</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_a5c927771131fe9c79030f5432ddee57b"><div class="ttname"><a href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a></div><div class="ttdeci">const int CHECKERS</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:13</div></div>
-<div class="ttc" id="agame__controller_8hpp_html_a8a7f40d67752cdde6bb244f5daed6dca"><div class="ttname"><a href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a></div><div class="ttdeci">const int REVERSI</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:9</div></div>
-<div class="ttc" id="agame__controller_8hpp_html_aa626a9f1c0f8d28dea0bcbb42484f340"><div class="ttname"><a href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a></div><div class="ttdeci">const int MINESWEEPER</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:12</div></div>
-<div class="ttc" id="agame__controller_8hpp_html_ac702853118dfd22413ba863dcf096a05"><div class="ttname"><a href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a></div><div class="ttdeci">const int TIC_TAC_TOE</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:11</div></div>
-<div class="ttc" id="agame__controller_8hpp_html_ae9ab73858869b5f70cec9437b4ef5309"><div class="ttname"><a href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a></div><div class="ttdeci">const int LIG4</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:10</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//Lista de índices dos jogos cadastrados no projeto</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">   19</a></span>&#160;<span class="comment"></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a> = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">   24</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a> = 1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">   29</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a> = 2;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">   34</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a> = 3;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">   39</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a> = 4;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classGameController.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGameController.html">GameController</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//Lista de jogos cadastrados</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    vector&lt;string&gt; _NameGames = { <span class="stringliteral">&quot;Reversi&quot;</span>, <span class="stringliteral">&quot;Lig4&quot;</span>, <span class="stringliteral">&quot;Jogo da Velha&quot;</span>, <span class="stringliteral">&quot;Campo Minado&quot;</span>, <span class="stringliteral">&quot;Damas&quot;</span> };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    vector&lt;Game&gt; _availableGames;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    vector&lt;Game&gt; <a class="code" href="classGameController.html#a61bd51c45c1c322d5e50a1590a48ec0d">getAvailableGames</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//GAME_CONTROLLER_H</span></div>
+<div class="ttc" id="aclassGameController_html"><div class="ttname"><a href="classGameController.html">GameController</a></div><div class="ttdoc">Gerencia a lista de jogos disponíveis no projeto.</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:49</div></div>
+<div class="ttc" id="aclassGameController_html_a61bd51c45c1c322d5e50a1590a48ec0d"><div class="ttname"><a href="classGameController.html#a61bd51c45c1c322d5e50a1590a48ec0d">GameController::getAvailableGames</a></div><div class="ttdeci">vector&lt; Game &gt; getAvailableGames()</div><div class="ttdoc">Obtém a lista de jogos disponíveis.</div><div class="ttdef"><b>Definition:</b> game_controller.cpp:11</div></div>
+<div class="ttc" id="aclassGameController_html_a7d72ff3f639acb68578e20fee3649b42"><div class="ttname"><a href="classGameController.html#a7d72ff3f639acb68578e20fee3649b42">GameController::GameController</a></div><div class="ttdeci">GameController()</div><div class="ttdoc">Construtor da classe GameController.</div><div class="ttdef"><b>Definition:</b> game_controller.cpp:4</div></div>
+<div class="ttc" id="agame_8hpp_html"><div class="ttname"><a href="game_8hpp.html">game.hpp</a></div><div class="ttdoc">Declaração da classe Game para representar um jogo.</div></div>
+<div class="ttc" id="agame__controller_8hpp_html_a5c927771131fe9c79030f5432ddee57b"><div class="ttname"><a href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a></div><div class="ttdeci">const int CHECKERS</div><div class="ttdoc">Índice para o jogo Damas (Checkers).</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:39</div></div>
+<div class="ttc" id="agame__controller_8hpp_html_a8a7f40d67752cdde6bb244f5daed6dca"><div class="ttname"><a href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a></div><div class="ttdeci">const int REVERSI</div><div class="ttdoc">Índice para o jogo Reversi.</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:19</div></div>
+<div class="ttc" id="agame__controller_8hpp_html_aa626a9f1c0f8d28dea0bcbb42484f340"><div class="ttname"><a href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a></div><div class="ttdeci">const int MINESWEEPER</div><div class="ttdoc">Índice para o jogo Campo Minado (Minesweeper).</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:34</div></div>
+<div class="ttc" id="agame__controller_8hpp_html_ac702853118dfd22413ba863dcf096a05"><div class="ttname"><a href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a></div><div class="ttdeci">const int TIC_TAC_TOE</div><div class="ttdoc">Índice para o jogo Jogo da Velha (Tic Tac Toe).</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:29</div></div>
+<div class="ttc" id="agame__controller_8hpp_html_ae9ab73858869b5f70cec9437b4ef5309"><div class="ttname"><a href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a></div><div class="ttdeci">const int LIG4</div><div class="ttdoc">Índice para o jogo Lig4 (Conecte 4).</div><div class="ttdef"><b>Definition:</b> game_controller.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

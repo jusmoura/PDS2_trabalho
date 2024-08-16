@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classBoard.html" title=" " alt="" coords="5,81,65,108"/>
-<area shape="rect" id="node2" href="$classCheckersGame.html" title=" " alt="" coords="113,5,233,32"/>
+<area shape="rect" id="node1" href="$classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo." alt="" coords="5,81,65,108"/>
+<area shape="rect" id="node2" href="$classCheckersGame.html" title="Implementa a lógica do jogo de damas (checkers) baseado na classe Board." alt="" coords="113,5,233,32"/>
 <area shape="rect" id="node3" href="$classLig4.html" title=" " alt="" coords="149,56,198,83"/>
-<area shape="rect" id="node4" href="$classMinesweeper.html" title=" " alt="" coords="119,107,228,133"/>
+<area shape="rect" id="node4" href="$classMinesweeper.html" title="Implementa o jogo Campo Minado." alt="" coords="119,107,228,133"/>
 <area shape="rect" id="node5" href="$classReversiGame.html" title=" " alt="" coords="118,157,229,184"/>
 </map>

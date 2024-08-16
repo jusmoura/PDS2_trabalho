@@ -69,42 +69,56 @@ $(function() {
 <div class="title">checkers.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="checkers_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CHECKERS_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CHECKERS_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classCheckersGame.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCheckersGame.html">CheckersGame</a> : <span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE = 8;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">int</span> turn = 2;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> peshka[2] = {12, 12};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> setDefaults();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> enemy(<span class="keywordtype">int</span> piece);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> checkIfBecameQueen(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> readMove(<span class="keywordtype">int</span> x[]);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> validMove(<span class="keywordtype">int</span> x[4]);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> nextChainValid(<span class="keywordtype">int</span> x[4]);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> simpleMove(<span class="keywordtype">int</span> x[4]);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> captureMove(<span class="keywordtype">int</span> x[4]);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> updateBoard(<span class="keywordtype">int</span> x[4]);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> getCo();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> winner(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> o);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6">CheckersGame</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="checkers_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef CHECKERS_HPP</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define CHECKERS_HPP</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCheckersGame.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCheckersGame.html">CheckersGame</a> : <span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE = 8;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> turn = 2;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> peshka[2] = {12, 12};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> setDefaults();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> enemy(<span class="keywordtype">int</span> piece);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> checkIfBecameQueen(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> readMove(<span class="keywordtype">int</span> x[]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> validMove(<span class="keywordtype">int</span> x[4]);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> nextChainValid(<span class="keywordtype">int</span> x[4]);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">bool</span> simpleMove(<span class="keywordtype">int</span> x[4]);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">bool</span> captureMove(<span class="keywordtype">int</span> x[4]);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> updateBoard(<span class="keywordtype">int</span> x[4]);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> getCo();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> winner(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> o);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6">CheckersGame</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//CHECKERS_HPP</span></div>
 <div class="ttc" id="aboard_8hpp_html"><div class="ttname"><a href="board_8hpp.html">board.hpp</a></div></div>
-<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdef"><b>Definition:</b> board.hpp:13</div></div>
-<div class="ttc" id="aclassCheckersGame_html"><div class="ttname"><a href="classCheckersGame.html">CheckersGame</a></div><div class="ttdef"><b>Definition:</b> checkers.hpp:8</div></div>
-<div class="ttc" id="aclassCheckersGame_html_a3c73b6c32e675ae38296adde22ea1ae6"><div class="ttname"><a href="classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6">CheckersGame::CheckersGame</a></div><div class="ttdeci">CheckersGame()</div><div class="ttdef"><b>Definition:</b> checkers.cpp:3</div></div>
-<div class="ttc" id="aclassCheckersGame_html_a991d05190d73089b3a5cf624b08ff8fb"><div class="ttname"><a href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">CheckersGame::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdef"><b>Definition:</b> checkers.cpp:163</div></div>
+<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo.</div><div class="ttdef"><b>Definition:</b> board.hpp:30</div></div>
+<div class="ttc" id="aclassCheckersGame_html"><div class="ttname"><a href="classCheckersGame.html">CheckersGame</a></div><div class="ttdoc">Implementa a lógica do jogo de damas (checkers) baseado na classe Board.</div><div class="ttdef"><b>Definition:</b> checkers.hpp:25</div></div>
+<div class="ttc" id="aclassCheckersGame_html_a3c73b6c32e675ae38296adde22ea1ae6"><div class="ttname"><a href="classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6">CheckersGame::CheckersGame</a></div><div class="ttdeci">CheckersGame()</div><div class="ttdoc">Construtor da classe CheckersGame.</div><div class="ttdef"><b>Definition:</b> checkers.cpp:3</div></div>
+<div class="ttc" id="aclassCheckersGame_html_a991d05190d73089b3a5cf624b08ff8fb"><div class="ttname"><a href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">CheckersGame::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Realiza uma jogada no jogo de damas.</div><div class="ttdef"><b>Definition:</b> checkers.cpp:163</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

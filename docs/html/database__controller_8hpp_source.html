@@ -69,34 +69,39 @@ $(function() {
 <div class="title">database_controller.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="database__controller_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DATABASE_CONTROLLER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DATABASE_CONTROLLER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="player__controller_8hpp.html">player_controller.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="classPlayerController.html">PlayerController</a>;</div>
+<a href="database__controller_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef DATABASE_CONTROLLER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define DATABASE_CONTROLLER_H</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classDatabaseController.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDatabaseController.html">DatabaseController</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">string</span> _filePath;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ifstream _inputFile;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ofstream _outputFile;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="player__controller_8hpp.html">player_controller.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classDatabaseController.html#a0368a631e0488b14c619a0672620c84e">DatabaseController</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDatabaseController.html#aebb748bd192ea993bb969ff8f8fd9367">readFile</a>(<a class="code" href="classPlayerController.html">PlayerController</a>* playerController);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDatabaseController.html#abdb13accba52da40f717315def34b389">writeFile</a>(<a class="code" href="classPlayerController.html">PlayerController</a>* playerController);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DATABASE_CONTROLLER_H</span></div>
-<div class="ttc" id="aclassDatabaseController_html"><div class="ttname"><a href="classDatabaseController.html">DatabaseController</a></div><div class="ttdef"><b>Definition:</b> database_controller.hpp:12</div></div>
-<div class="ttc" id="aclassDatabaseController_html_a0368a631e0488b14c619a0672620c84e"><div class="ttname"><a href="classDatabaseController.html#a0368a631e0488b14c619a0672620c84e">DatabaseController::DatabaseController</a></div><div class="ttdeci">DatabaseController()</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:3</div></div>
-<div class="ttc" id="aclassDatabaseController_html_abdb13accba52da40f717315def34b389"><div class="ttname"><a href="classDatabaseController.html#abdb13accba52da40f717315def34b389">DatabaseController::writeFile</a></div><div class="ttdeci">void writeFile(PlayerController *playerController)</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:53</div></div>
-<div class="ttc" id="aclassDatabaseController_html_aebb748bd192ea993bb969ff8f8fd9367"><div class="ttname"><a href="classDatabaseController.html#aebb748bd192ea993bb969ff8f8fd9367">DatabaseController::readFile</a></div><div class="ttdeci">void readFile(PlayerController *playerController)</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:17</div></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="classPlayerController.html">PlayerController</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classDatabaseController.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDatabaseController.html">DatabaseController</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">string</span> _filePath;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ifstream _inputFile;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ofstream _outputFile;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classDatabaseController.html#a0368a631e0488b14c619a0672620c84e">DatabaseController</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDatabaseController.html#aebb748bd192ea993bb969ff8f8fd9367">readFile</a>(<a class="code" href="classPlayerController.html">PlayerController</a>* playerController);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDatabaseController.html#abdb13accba52da40f717315def34b389">writeFile</a>(<a class="code" href="classPlayerController.html">PlayerController</a>* playerController);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//DATABASE_CONTROLLER_H</span></div>
+<div class="ttc" id="aclassDatabaseController_html"><div class="ttname"><a href="classDatabaseController.html">DatabaseController</a></div><div class="ttdoc">Gerencia a leitura e escrita de dados de jogadores em arquivos.</div><div class="ttdef"><b>Definition:</b> database_controller.hpp:26</div></div>
+<div class="ttc" id="aclassDatabaseController_html_a0368a631e0488b14c619a0672620c84e"><div class="ttname"><a href="classDatabaseController.html#a0368a631e0488b14c619a0672620c84e">DatabaseController::DatabaseController</a></div><div class="ttdeci">DatabaseController()</div><div class="ttdoc">Construtor da classe DatabaseController.</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:3</div></div>
+<div class="ttc" id="aclassDatabaseController_html_abdb13accba52da40f717315def34b389"><div class="ttname"><a href="classDatabaseController.html#abdb13accba52da40f717315def34b389">DatabaseController::writeFile</a></div><div class="ttdeci">void writeFile(PlayerController *playerController)</div><div class="ttdoc">Escreve os dados dos jogadores em um arquivo.</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:53</div></div>
+<div class="ttc" id="aclassDatabaseController_html_aebb748bd192ea993bb969ff8f8fd9367"><div class="ttname"><a href="classDatabaseController.html#aebb748bd192ea993bb969ff8f8fd9367">DatabaseController::readFile</a></div><div class="ttdeci">void readFile(PlayerController *playerController)</div><div class="ttdoc">Lê os dados dos jogadores a partir de um arquivo e atualiza o PlayerController.</div><div class="ttdef"><b>Definition:</b> database_controller.cpp:17</div></div>
 <div class="ttc" id="aclassPlayerController_html"><div class="ttname"><a href="classPlayerController.html">PlayerController</a></div><div class="ttdef"><b>Definition:</b> player_controller.hpp:15</div></div>
 <div class="ttc" id="aplayer__controller_8hpp_html"><div class="ttname"><a href="player__controller_8hpp.html">player_controller.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

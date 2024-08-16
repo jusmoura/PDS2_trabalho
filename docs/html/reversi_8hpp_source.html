@@ -69,49 +69,50 @@ $(function() {
 <div class="title">reversi.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="reversi_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef REVERSI_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define REVERSI_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classReversiGame.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReversiGame.html">ReversiGame</a> : <span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE = 8;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> sumX;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> sumO;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> hintsO;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> hintsX;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> switchPlayer();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> validMove(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::vector&lt;std::pair&lt;int, int&gt;&gt; help();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;std::pair&lt;std::pair&lt;int, int&gt;, <span class="keywordtype">int</span>&gt;&gt; hint();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> makeMove(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<a href="reversi_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef REVERSI_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define REVERSI_HPP</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classReversiGame.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReversiGame.html">ReversiGame</a> : <span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE = 8;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> sumX;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> sumO;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> hintsO;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> hintsX;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> switchPlayer();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> validMove(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::vector&lt;std::pair&lt;int, int&gt;&gt; help();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::vector&lt;std::pair&lt;std::pair&lt;int, int&gt;, <span class="keywordtype">int</span>&gt;&gt; hint();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> calculateScore();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* checkVictory(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classReversiGame.html#adbddca50641cae543bcf0b2491527191">ReversiGame</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classReversiGame.html#a18273a46b5252631955ded0a976d1b2d">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// REVERSI_HPP</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> makeMove(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> calculateScore();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* checkVictory(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classReversiGame.html#adbddca50641cae543bcf0b2491527191">ReversiGame</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classReversiGame.html#a18273a46b5252631955ded0a976d1b2d">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// REVERSI_HPP</span></div>
 <div class="ttc" id="aboard_8hpp_html"><div class="ttname"><a href="board_8hpp.html">board.hpp</a></div></div>
-<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdef"><b>Definition:</b> board.hpp:13</div></div>
+<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo.</div><div class="ttdef"><b>Definition:</b> board.hpp:30</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.hpp:14</div></div>
-<div class="ttc" id="aclassReversiGame_html"><div class="ttname"><a href="classReversiGame.html">ReversiGame</a></div><div class="ttdef"><b>Definition:</b> reversi.hpp:10</div></div>
+<div class="ttc" id="aclassReversiGame_html"><div class="ttname"><a href="classReversiGame.html">ReversiGame</a></div><div class="ttdef"><b>Definition:</b> reversi.hpp:18</div></div>
 <div class="ttc" id="aclassReversiGame_html_a18273a46b5252631955ded0a976d1b2d"><div class="ttname"><a href="classReversiGame.html#a18273a46b5252631955ded0a976d1b2d">ReversiGame::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Inicia o jogo entre dois jogadores.</div><div class="ttdef"><b>Definition:</b> reversi.cpp:128</div></div>
 <div class="ttc" id="aclassReversiGame_html_adbddca50641cae543bcf0b2491527191"><div class="ttname"><a href="classReversiGame.html#adbddca50641cae543bcf0b2491527191">ReversiGame::ReversiGame</a></div><div class="ttdeci">ReversiGame()</div><div class="ttdef"><b>Definition:</b> reversi.cpp:5</div></div>
 </div><!-- fragment --></div><!-- contents -->

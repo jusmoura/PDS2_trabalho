@@ -1,3 +1,11 @@
+/**
+ * @file reversi.hpp
+ * @brief Declaração da classe ReversiGame para o jogo Reversi
+ * 
+ * Este arquivo contém a definição da classe `ReversiGame`, que herda da classe `Board` e implementa a lógica e as regras do jogo Reversi. A classe gerencia o estado do jogo, controla a troca de jogadores, valida movimentos, e calcula a pontuação e o resultado final do jogo.
+ * 
+ */
+
 #ifndef REVERSI_HPP
 #define REVERSI_HPP
 
