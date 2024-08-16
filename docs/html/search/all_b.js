@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pds2_5ftrabalho_77',['PDS2_trabalho',['../md__home_julia_Julia_PDS2_trabalho_README.html',1,'']]],
+  ['pds2_5ftrabalho_77',['PDS2_trabalho',['../index.html',1,'']]],
   ['play_78',['play',['../classBoard.html#ae6190d11118d6b2840d1569d41da8af3',1,'Board::play()'],['../classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb',1,'CheckersGame::play()'],['../classMinesweeper.html#a1008ae502a99c3d445a3a4d3fea39b4c',1,'Minesweeper::play()'],['../classReversiGame.html#a18273a46b5252631955ded0a976d1b2d',1,'ReversiGame::play()']]],
   ['player_79',['Player',['../classPlayer.html#ae5810f411f3288b9a4392dd86a5490ba',1,'Player::Player()'],['../classPlayer.html',1,'Player']]],
   ['player_2ecpp_80',['player.cpp',['../player_8cpp.html',1,'']]],
