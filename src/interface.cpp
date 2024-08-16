@@ -180,24 +180,31 @@ void Interface::gamesMenu() {
                             cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
                     }
 
-                    ReversiGame reversiGame;
-                    winner = reversiGame.play(player1, player2);
-                    if (winner == player1) {
-                        player1->addWin(REVERSI);
-                        player2->addDefeat(REVERSI);
-                    }
-                    else if (winner == player2) {
-                        player2->addWin(REVERSI);
-                        player1->addDefeat(REVERSI);
-                    }
-                    else {
-                        cout << "Empate!" << endl;
-                    }
+                    cout << "\n" << BLUE_COLOR << "Reversi" << RESET_ALL << endl;
+
+                    cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
+                    // ReversiGame reversiGame;
+                    // winner = reversiGame.play(player1, player2);
+
+                    // if (winner == player1) {
+                    //     player1->addWin(REVERSI);
+                    //     player2->addDefeat(REVERSI);
+                    // }
+                    // else if (winner == player2) {
+                    //     player2->addWin(REVERSI);
+                    //     player1->addDefeat(REVERSI);
+                    // }
+                    // else {
+                    //     player1->addDraw(REVERSI);
+                    //     player2->addDraw(REVERSI);
+                    // }
+                    cout << "\n" << GRAY_COLOR << "Encerrando Reversi...\n" << RESET_ALL << endl;
+
                 } break;
 
                 case LIG4:
                 {
-                    cout << "\nLig4" << endl;
+                    cout << "\n" << BLUE_COLOR << "Lig4" << RESET_ALL << endl;
 
                     if (player2 == nullptr) {
                         player2 = loginPlayer("JOGADOR 2");
@@ -212,12 +219,28 @@ void Interface::gamesMenu() {
                     }
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                    /* code */
+                    // Lig4 lig4;
+                    // winner = lig4.play(player1, player2);
+
+                    // if (winner == player1) {
+                    //     player1->addWin(LIG4);
+                    //     player2->addDefeat(LIG4);
+                    // }
+                    // else if (winner == player2) {
+                    //     player2->addWin(LIG4);
+                    //     player1->addDefeat(LIG4);
+                    // }
+                    // else {
+                    //     player1->addDraw(LIG4);
+                    //     player2->addDraw(LIG4);
+                    // }
+                    cout << "\n" << GRAY_COLOR << "Encerrando Lig4...\n" << RESET_ALL << endl;
+
                 } break;
 
                 case TIC_TAC_TOE:
                 {
-                    cout << "\nJogo da Velha" << endl;
+                    cout << "\n" << BLUE_COLOR << "Jogo da Velha" << RESET_ALL << endl;
 
                     if (player2 == nullptr) {
                         player2 = loginPlayer("JOGADOR 2");
@@ -232,26 +255,45 @@ void Interface::gamesMenu() {
                     }
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                    /* code */
+                    // TicTacToe ticTacToe;
+                    // winner = ticTacToe.play(player1, player2);
+
+                    // if (winner == player1) {
+                    //     player1->addWin(TIC_TAC_TOE);
+                    //     player2->addDefeat(TIC_TAC_TOE);
+                    // }
+                    // else if (winner == player2) {
+                    //     player2->addWin(TIC_TAC_TOE);
+                    //     player1->addDefeat(TIC_TAC_TOE);
+                    // }
+                    // else {
+                    //     player1->addDraw(TIC_TAC_TOE);
+                    //     player2->addDraw(TIC_TAC_TOE);
+                    // }
+                    cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha...\n" << RESET_ALL << endl;
+
                 } break;
 
                 case MINESWEEPER:
                 {
-                    Minesweeper mine(8, 8);
-                    winner = mine.play(player1);
+                    cout << "\n" << BLUE_COLOR << "Campo Minado" << RESET_ALL << endl;
 
-                    if (winner == player1)
-                        player1->addWin(MINESWEEPER);
+                    cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
+                    // Minesweeper mine(8, 8);
+                    // winner = mine.play(player1);
 
-                    else
-                        player1->addDefeat(MINESWEEPER);
+                    // if (winner == player1)
+                    //     player1->addWin(MINESWEEPER);
 
-                    cout << "\nEncerrando campo minado...\n\n";
+                    // else
+                    //     player1->addDefeat(MINESWEEPER);
+
+                    cout << "\n" << GRAY_COLOR << "Encerrando Campo Minado...\n" << RESET_ALL << endl;
                 } break;
 
                 case CHECKERS:
                 {
-                    cout << "\nDamas" << endl;
+                    cout << "\n" << BLUE_COLOR << "Damas" << RESET_ALL << endl;
 
                     if (player2 == nullptr) {
                         player2 = loginPlayer("JOGADOR 2");
@@ -265,18 +307,19 @@ void Interface::gamesMenu() {
                             cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
                     }
 
-                    CheckersGame checkersGame;
+                    cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
+                    // CheckersGame checkersGame;
+                    // winner = checkersGame.play(player1, player2);
+                    // if (winner == player1) {
+                    //     player1->addWin(CHECKERS);
+                    //     player2->addDefeat(CHECKERS);
+                    // }
+                    // else if (winner == player2) {
+                    //     player2->addWin(CHECKERS);
+                    //     player1->addDefeat(CHECKERS);
+                    // }
+                    cout << "\n" << GRAY_COLOR << "Encerrando Damas...\n" << RESET_ALL << endl;
 
-                    /*ALTERAR O CHECKERS PARA RETORNAR O VENCEDOR*/
-                    winner = checkersGame.play(player1, player2);
-                    if (winner == player1) {
-                        player1->addWin(CHECKERS);
-                        player2->addDefeat(CHECKERS);
-                    }
-                    else if (winner == player2) {
-                        player2->addWin(CHECKERS);
-                        player1->addDefeat(CHECKERS);
-                    }
                 } break;
 
                 case VOLTAR: //Voltar

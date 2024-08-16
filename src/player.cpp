@@ -36,6 +36,11 @@ void Player::addDefeat(int game) {
     this->setNumDefeats(game, ++numDefeats);
 }
 
+void Player::addDraw(int game) {
+    int numDraws = this->getNumDraws(game);
+    this->setNumDraws(game, ++numDraws);
+}
+
 vector<Game>* Player::getGamesStats() {
     return &_gamesStats;
 }

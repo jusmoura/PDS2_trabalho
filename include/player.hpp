@@ -26,6 +26,7 @@ public:
     vector<Game>* getGamesStats();
     void addWin(int game);
     void addDefeat(int game);
+    void addDraw(int game);
     void setNumWins(int game, int numWins);
     int getNumWins(int index);
     void setNumDefeats(int game, int numDefeats);
