@@ -7,6 +7,7 @@
  * fornece funcionalidades básicas para inicializar e imprimir o tabuleiro, além de métodos
  * virtuais para validação de jogadas e execução de jogadas.
  */
+
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
