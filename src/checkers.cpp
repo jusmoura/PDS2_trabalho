@@ -5,21 +5,25 @@ CheckersGame::CheckersGame() : Board(8, 8) {
 
 void CheckersGame::setDefaults()
 {
-    _board[0][1].setValue(1); _board[0][3].setValue(1); _board[0][5].setValue(1); _board[0][7].setValue(1);
-    _board[1][0].setValue(1); _board[1][2].setValue(1); _board[1][4].setValue(1); _board[1][6].setValue(1);
-    _board[2][1].setValue(1); _board[2][3].setValue(1); _board[2][5].setValue(1); _board[2][7].setValue(1);
-    _board[5][0].setValue(2); _board[5][2].setValue(2); _board[5][4].setValue(2); _board[5][6].setValue(2);
-    _board[6][1].setValue(2); _board[6][3].setValue(2); _board[6][5].setValue(2); _board[6][7].setValue(2);
-    _board[7][0].setValue(2); _board[7][2].setValue(2); _board[7][4].setValue(2); _board[7][6].setValue(2);
+    for (int i = 0; i < 3; ++i) {
+        for (int j = (i % 2 == 0) ? 1 : 0; j < 8; j += 2) {
+            _board[i][j].setValue(1);
+        }
+    }
+    for (int i = 5; i < 8; ++i) {
+        for (int j = (i % 2 == 0) ? 1 : 0; j < 8; j += 2) {
+            _board[i][j].setValue(2);
+        }
+    }
 }
 
 int CheckersGame::enemy(int piece)
 {
-    if(piece == 1 || piece == 3)
+    if(piece == PLAYER_X || piece == PLAYER_X_QUEEN)
     {
         return 2;
     }
-    if(piece == 2 || piece == 4)
+    if(piece == PLAYER_O || piece == PLAYER_O_QUEEN)
     {
         return 1;
     }
@@ -55,20 +59,20 @@ void CheckersGame::readMove(int x[])
 bool CheckersGame::validMove(int x[4])
 {
     if(x[1] < 0 || x[1] >= BOARD_SIZE || x[2] < 0 || x[2] > BOARD_SIZE) {
-        std::cout << "Jogada invalida 1" << std::endl;
+        std::cout << "Jogada invalida 1: Coordenadas da peça invalidas." << std::endl;
         return false;
     }
     else if(x[3] < 0 || x[3] >= BOARD_SIZE || x[4] < 0 || x[4] > BOARD_SIZE) {
-        std::cout << "Jogada invalida 2" << std::endl;
+        std::cout << "Jogada invalida 2: Coordenadas da jogada invalidas." << std::endl;
         return false;
     }
     else if(_board[x[3]][x[4]].getValue() == 1 || _board[x[3]][x[4]].getValue() == 2 || _board[x[3]][x[4]].getValue() == 3 || _board[x[3]][x[4]].getValue() == 4) {
-        std::cout << "Jogada invalida 3" << std::endl;
+        std::cout << "Jogada invalida 3: Já existe uma peça na coordenada da jogada." << std::endl;
         return false;
     }
     else {
         return true;
-        std::cout << "Deu bom" << std::endl;
+        std::cout << "Boa jogada!" << std::endl;
     }
 }
 
@@ -113,7 +117,7 @@ void CheckersGame::updateBoard(int x[4])
     int y2 = (x[2] + x[4]) / 2;
     if (abs(x[1] - x[3]) == 2) {
         _board[x2][y2].setValue(0);
-        peshka[(turn == 1 || turn == 3) ? 1 : 0]--;
+        pieces[(turn == 1 || turn == 3) ? 1 : 0]--;
     }
 }
 
@@ -136,7 +140,7 @@ void CheckersGame::getCo()
                 moveValido = true;
             }
             else {
-                std::cout << "Movimento inválido. Tente novamente." << std::endl;
+                std::cout << "Movimento invalido. Tente novamente." << std::endl;
             }
         }
     }
@@ -167,10 +171,9 @@ Player* CheckersGame::play(Player* player1, Player* player2) {
     while (true) {
         getCo();
         Board::printBoard();
-        if (winner(peshka[0], peshka[1])) {
+        if (winner(pieces[0], pieces[1])) {
             break;
         }
         turn = (turn == 1) ? 2 : 1;
     }
-    return nullptr;
 }

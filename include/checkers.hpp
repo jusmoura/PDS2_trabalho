@@ -11,7 +11,7 @@
 #define CHECKERS_HPP
 
 #include <iostream>
-#include <string>
+#include <cmath>
 #include "board.hpp"
 
 /**
@@ -30,6 +30,8 @@ private:
      * O tamanho padrão do tabuleiro de damas é 8x8.
      */
     const int BOARD_SIZE = 8;
+    const int PLAYER_X_QUEEN = 3;
+    const int PLAYER_O_QUEEN = 4;
 
     /** 
      * @brief Indica o turno atual no jogo.
@@ -43,7 +45,7 @@ private:
      * 
      * O array peshka[2] armazena o número de peças restantes para o jogador 1 e jogador 2.
      */
-    int peshka[2] = {12, 12};
+    int pieces[2] = {12, 12};
 
     /**
      * @brief Configura os valores padrão para o jogo de damas.
