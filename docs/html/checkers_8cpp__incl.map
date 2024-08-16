@@ -5,7 +5,7 @@
 <area shape="rect" id="node4" title=" " alt="" coords="421,468,480,495"/>
 <area shape="rect" id="node5" href="$board_8hpp.html" title=" " alt="" coords="371,169,458,196"/>
 <area shape="rect" id="node6" href="$cell_8hpp.html" title="Declaração da classe Cell para representar as células do tabuleiro." alt="" coords="555,244,629,271"/>
-<area shape="rect" id="node7" href="$player_8hpp.html" title=" " alt="" coords="267,244,357,271"/>
+<area shape="rect" id="node7" href="$player_8hpp.html" title="Declaração da classe Player responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="267,244,357,271"/>
 <area shape="rect" id="node10" title=" " alt="" coords="534,393,597,420"/>
 <area shape="rect" id="node11" href="$colors_8hpp.html" title="Declaração de constantes para cores e estilos de texto para a saída no terminal." alt="" coords="110,319,199,345"/>
 <area shape="rect" id="node8" href="$game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto." alt="" coords="373,319,528,345"/>

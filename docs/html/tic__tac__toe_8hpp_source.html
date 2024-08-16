@@ -69,7 +69,36 @@ $(function() {
 <div class="title">tic_tac_toe.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="tic__tac__toe_8hpp.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="tic__tac__toe_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIC_TAC_TOE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TIC_TAC_TOE_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classTicTacToe.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicTacToe.html">TicTacToe</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">   10</a></span>&#160;    <a class="code" href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicTacToe.html#aade6b7c12e5a2bd6893e8d2e323d97b8">printBoard</a>(<span class="keywordtype">int</span> board[3][3]);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicTacToe.html#a47ac37cef49d4db6b46df1ecc293ee02">makeMove</a>(<span class="keywordtype">int</span> board[3][3], <span class="keywordtype">int</span> currentPlayer, <span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTicTacToe.html#a099be7301cbaa9a378e2c36b38b461db">validMove</a>(<span class="keywordtype">int</span> board[3][3], <span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicTacToe.html#ae129ee1ae63b367286e47b74ab0c7bfd">play</a>(<span class="keywordtype">int</span> board[3][3]);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTicTacToe.html#a707a457c8f59485cfa31d869c8cfd2c6">checkVictory</a>(<span class="keywordtype">int</span> board[3][3], <span class="keywordtype">int</span> currentPlayer);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTicTacToe.html#ab96c9c8a2cb4ab7b2af8d0d595e7c9c0">checkTie</a>(<span class="keywordtype">int</span> board[3][3]);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicTacToe.html#a4767e765201d6d3220886813a2f660c7">switchPlayer</a>(<span class="keywordtype">int</span> currentPlayer, <span class="keywordtype">int</span> playerX, <span class="keywordtype">int</span> playerO);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdef"><b>Definition:</b> tic_tac_toe.hpp:6</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a099be7301cbaa9a378e2c36b38b461db"><div class="ttname"><a href="classTicTacToe.html#a099be7301cbaa9a378e2c36b38b461db">TicTacToe::validMove</a></div><div class="ttdeci">bool validMove(int board[3][3], int line, int column)</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:39</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a103fe9a5ae41b5ef756e20594a70cb7a"><div class="ttname"><a href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe::TicTacToe</a></div><div class="ttdeci">TicTacToe()</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a4767e765201d6d3220886813a2f660c7"><div class="ttname"><a href="classTicTacToe.html#a4767e765201d6d3220886813a2f660c7">TicTacToe::switchPlayer</a></div><div class="ttdeci">void switchPlayer(int currentPlayer, int playerX, int playerO)</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:46</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a47ac37cef49d4db6b46df1ecc293ee02"><div class="ttname"><a href="classTicTacToe.html#a47ac37cef49d4db6b46df1ecc293ee02">TicTacToe::makeMove</a></div><div class="ttdeci">void makeMove(int board[3][3], int currentPlayer, int line, int column)</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:53</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a707a457c8f59485cfa31d869c8cfd2c6"><div class="ttname"><a href="classTicTacToe.html#a707a457c8f59485cfa31d869c8cfd2c6">TicTacToe::checkVictory</a></div><div class="ttdeci">bool checkVictory(int board[3][3], int currentPlayer)</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:14</div></div>
+<div class="ttc" id="aclassTicTacToe_html_aade6b7c12e5a2bd6893e8d2e323d97b8"><div class="ttname"><a href="classTicTacToe.html#aade6b7c12e5a2bd6893e8d2e323d97b8">TicTacToe::printBoard</a></div><div class="ttdeci">void printBoard(int board[3][3])</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:5</div></div>
+<div class="ttc" id="aclassTicTacToe_html_ab96c9c8a2cb4ab7b2af8d0d595e7c9c0"><div class="ttname"><a href="classTicTacToe.html#ab96c9c8a2cb4ab7b2af8d0d595e7c9c0">TicTacToe::checkTie</a></div><div class="ttdeci">bool checkTie(int board[3][3])</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:29</div></div>
+<div class="ttc" id="aclassTicTacToe_html_ae129ee1ae63b367286e47b74ab0c7bfd"><div class="ttname"><a href="classTicTacToe.html#ae129ee1ae63b367286e47b74ab0c7bfd">TicTacToe::play</a></div><div class="ttdeci">void play(int board[3][3])</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:62</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

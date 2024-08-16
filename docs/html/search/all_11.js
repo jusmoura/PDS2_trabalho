@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xplay_118',['xPlay',['../tic__tac__toe_8cpp.html#a270d8d484d4939175e4bbc9b16435019',1,'tic_tac_toe.cpp']]]
+  ['yellow_5fcolor_113',['YELLOW_COLOR',['../colors_8hpp.html#a6c0e23fcaf844d675cb89a78d59d36d3',1,'colors.hpp']]]
 ];

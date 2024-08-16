@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reversigame_132',['ReversiGame',['../classReversiGame.html',1,'']]]
+  ['reversigame_126',['ReversiGame',['../classReversiGame.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cell_122',['Cell',['../classCell.html',1,'']]],
-  ['checkersgame_123',['CheckersGame',['../classCheckersGame.html',1,'']]]
+  ['cell_116',['Cell',['../classCell.html',1,'']]],
+  ['checkersgame_117',['CheckersGame',['../classCheckersGame.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 <map id="/home/julia/Julia/PDS2_trabalho/include/player.hpp" name="/home/julia/Julia/PDS2_trabalho/include/player.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="170,5,377,47"/>
+<area shape="rect" id="node1" title="Declaração da classe Player responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="170,5,377,47"/>
 <area shape="rect" id="node2" href="$game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto." alt="" coords="5,95,160,121"/>
 <area shape="rect" id="node4" title=" " alt="" coords="219,244,277,271"/>
 <area shape="rect" id="node5" title=" " alt="" coords="147,169,210,196"/>

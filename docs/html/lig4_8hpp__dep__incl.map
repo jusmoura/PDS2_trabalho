@@ -1,6 +1,7 @@
 <map id="/home/julia/Julia/PDS2_trabalho/include/lig4.hpp" name="/home/julia/Julia/PDS2_trabalho/include/lig4.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="110,5,301,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="219,5,410,47"/>
 <area shape="rect" id="node2" href="$interface_8hpp.html" title="Declaração da classe Interface para gerenciar a interação com o usuário." alt="" coords="93,95,317,136"/>
+<area shape="rect" id="node5" href="$lig4_8cpp.html" title=" " alt="" coords="341,95,507,136"/>
 <area shape="rect" id="node3" href="$interface_8cpp.html" title=" " alt="" coords="5,184,200,225"/>
 <area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="224,184,395,225"/>
 </map>
