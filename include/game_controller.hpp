@@ -17,22 +17,27 @@
  * @brief Índice para o jogo Reversi.
  */
 const int REVERSI = 0;
+
 /** 
  * @brief Índice para o jogo Lig4 (Conecte 4).
  */
 const int LIG4 = 1;
+
 /** 
  * @brief Índice para o jogo Jogo da Velha (Tic Tac Toe).
  */
 const int TIC_TAC_TOE = 2;
+
 /** 
  * @brief Índice para o jogo Campo Minado (Minesweeper).
  */
 const int MINESWEEPER = 3;
+
 /** 
  * @brief Índice para o jogo Damas (Checkers).
  */
 const int CHECKERS = 4;
+
 /**
  * @class GameController
  * @brief Gerencia a lista de jogos disponíveis no projeto.
@@ -52,6 +57,7 @@ private:
     //Lista de jogos cadastrados
     /*Para cadastrar um novo jogo, basta adicionar o nome no vetor de nomes abaixo e criar uma nova const*/
     vector<string> _NameGames = { "Reversi", "Lig4", "Jogo da Velha", "Campo Minado", "Damas" };
+
     /** 
      * @brief Lista de jogos disponíveis.
      * 
@@ -60,12 +66,14 @@ private:
     vector<Game> _availableGames;
 
 public:
+
     /**
      * @brief Construtor da classe GameController.
      * 
      * Inicializa uma instância de `GameController` e configura a lista de jogos disponíveis.
      */
     GameController();
+
     /**
      * @brief Obtém a lista de jogos disponíveis.
      * 
