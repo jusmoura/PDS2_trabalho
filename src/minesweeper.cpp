@@ -118,7 +118,7 @@ Player* Minesweeper::play(Player* player1, Player* player2) {
     while (1) {
         printBoard();
         // Solicitando ao usuário uma escolha de posição
-        cout << "Escolha uma posicao (formato: \"linha coluna\" ou digite \"SAIR\" para voltar)" << endl;
+        cout << "Escolha uma posicao (formato: 'linha coluna' ou digite 'sair' para voltar ao menu de jogos)" << endl;
         cout << "Digite a posicao que deseja selecionar: ";
 
         int line, column;

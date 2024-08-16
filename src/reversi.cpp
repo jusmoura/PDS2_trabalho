@@ -23,7 +23,7 @@ int ReversiGame::validMove(int x, int y) {
 
     for (int dx = -1; dx <= 1; ++dx) {
         for (int dy = -1; dy <= 1; ++dy) {
-            if (dx == 0 && dy == 0) continue; 
+            if (dx == 0 && dy == 0) continue;
 
             int nx = x + dx, ny = y + dy;
             int flips = 0;
@@ -88,7 +88,7 @@ void ReversiGame::makeMove(int x, int y) {
                     foundOpponent = true;
                     nx += dx;
                     ny += dy;
-                    }
+                }
                 if (foundOpponent && nx >= 0 && nx < 8 && ny >= 0 && ny < 8 && _board[nx][ny].getValue() == currentPlayer) {
                     while (nx != x || ny != y) {
                         nx -= dx;
@@ -102,11 +102,11 @@ void ReversiGame::makeMove(int x, int y) {
         calculateScore();
         switchPlayer();
 
-        }
-        else {
-            cout<< "Movimento invalido!"<< endl;
-        }
     }
+    else {
+        cout << YELLOW_COLOR << "Movimento invalido!" << RESET_ALL << endl;
+    }
+}
 
 void ReversiGame::calculateScore() {
     sumX = 0;
@@ -121,7 +121,7 @@ void ReversiGame::calculateScore() {
             }
         }
     }
-    cout << "Pontuacao X: " << sumX << endl;
+    cout << "\nPontuacao X: " << sumX << endl;
     cout << "Pontuacao O: " << sumO << endl;
 }
 
@@ -129,19 +129,30 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
     Player* currentPlayerPtr = player1;
     Player* otherPlayerPtr = player2;
 
+    string player1Nickname = player1->getNickname();
+    string player2Nickname = player2->getNickname();
+
+    int size1 = player1Nickname.size();
+    int size2 = player2Nickname.size();
+
+    int size = (size1 >= size2) ? size1 : size2;
+
     while (sumX + sumO < 64) {
-        cout << player1->getNickname() << ": (X)" << player2->getNickname() << " : (O)" << endl;
+        cout << endl;
+        cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
+        cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
+
         Board::printBoard();
 
         int x, y;
         string line;
 
-        cout << (currentPlayerPtr == player1 ? player1->getNickname() : player2->getNickname()) << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica: " << endl;
+        cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [linha coluna]; 'help' para ajuda; 'hint' para dica; 'sair' para voltar ao menu de jogos: " << endl;
         getline(cin, line);
 
         if (line == "help") {
             vector<pair<int, int>> moves = help();
-            cout << "Jogadas validas:" << endl;
+            cout << "\n" << GREEN_COLOR << "Jogadas validas:" << RESET_ALL << endl;
             for (const auto& move : moves) {
                 cout << "[" << move.first << " " << move.second << "]" << endl;
             }
@@ -149,7 +160,7 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         }
         else if (line == "hint") {
             vector<pair<pair<int, int>, int>> hints = hint();
-            cout << "[Jogada | Pontuacao]" << endl;
+            cout << "\n[Jogada | Pontuacao]" << endl;
             for (const auto& hint : hints) {
                 cout << "[ " << hint.first.first << " " << hint.first.second
                     << "   |     " << hint.second << "    ]" << endl;
@@ -158,7 +169,6 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
                 hintsX--;
                 cout << endl;
                 cout << "Voce ainda tem " << hintsX << " dicas" << endl;
-                cout << endl;
             }
             else {
                 hintsO--;
@@ -168,17 +178,21 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
             }
             continue;
         }
+        else if (line == "SAIR" || line == "sair")
+            throw SIMPLE_RETURN;
 
         stringstream ss(line);
         if (ss >> x >> y) {
             if (validMove(x, y) > 0) {
                 makeMove(x, y);
                 std::swap(currentPlayerPtr, otherPlayerPtr);
-            } else {
-                cout << "Jogada invalida!" << endl;
             }
-        } else {
-            cout << "Entrada invalida! Insira [linha coluna] ou 'help'/'hint'." << endl;
+            else {
+                cout << "\n" << YELLOW_COLOR << "Jogada invalida!" << RESET_ALL << endl;
+            }
+        }
+        else {
+            cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'help' / 'hint' / 'sair'" << RESET_ALL << endl;
         }
     }
 
@@ -188,11 +202,11 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
 
 Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
     if (sumX > sumO) {
-        cout << "PARABENS "<< player1->getNickname()<<" VOCÊ GANHOU!" << endl;
+        cout << GREEN_COLOR << "PARABENS " << player1->getNickname() << ", VOCÊ GANHOU!" << RESET_ALL << endl;
         return player1;
     }
     else if (sumO > sumX) {
-        cout << "PARABENS " <<player2->getNickname() <<" VOCÊ GANHOU!" << endl;
+        cout << GREEN_COLOR << "PARABENS " << player2->getNickname() << ", VOCÊ GANHOU!" << RESET_ALL << endl;
         return player2;
     }
     else {

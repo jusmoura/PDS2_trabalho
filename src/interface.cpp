@@ -157,22 +157,21 @@ void Interface::gamesMenu() {
 
                         cout << "\n" << BLUE_COLOR << "Reversi" << RESET_ALL << endl;
 
-                        cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                        // ReversiGame reversiGame;
-                        // winner = reversiGame.play(player1, player2);
+                        ReversiGame reversiGame;
+                        winner = reversiGame.play(player1, player2);
 
-                        // if (winner == player1) {
-                        //     player1->addWin(REVERSI);
-                        //     player2->addDefeat(REVERSI);
-                        // }
-                        // else if (winner == player2) {
-                        //     player2->addWin(REVERSI);
-                        //     player1->addDefeat(REVERSI);
-                        // }
-                        // else {
-                        //     player1->addDraw(REVERSI);
-                        //     player2->addDraw(REVERSI);
-                        // }
+                        if (winner == player1) {
+                            player1->addWin(REVERSI);
+                            player2->addDefeat(REVERSI);
+                        }
+                        else if (winner == player2) {
+                            player2->addWin(REVERSI);
+                            player1->addDefeat(REVERSI);
+                        }
+                        else {
+                            player1->addDraw(REVERSI);
+                            player2->addDraw(REVERSI);
+                        }
                         cout << "\n" << GRAY_COLOR << "Encerrando Reversi..." << RESET_ALL << endl;
 
                     } break;
