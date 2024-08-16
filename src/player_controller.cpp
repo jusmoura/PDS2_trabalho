@@ -132,6 +132,7 @@ void PlayerController::printPlayers() {
 
 PlayerController::~PlayerController() {
     databaseController->writeFile(this);
+    delete databaseController;
 
     for (auto player : _players)
         delete player;

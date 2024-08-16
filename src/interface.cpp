@@ -66,25 +66,8 @@ void Interface::playersMenu() {
             break;
 
         case 2:
-        {
-            clearBuffer();
-
-            string nickname;
-            cout << "\nDigite o apelido do jogador a ser removido: ";
-            cin >> nickname;
-
-            int removed = controller->removePlayer(nickname);
-
-            if (removed == 1)
-                cout << "\n" << GREEN_COLOR << "Jogador " << nickname << " removido com sucesso!" << RESET_ALL << endl;
-
-            else if (removed == -1)
-                cout << "\n" << RED_COLOR << "Jogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << RESET_ALL << endl;
-
-            else
-                cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado! Tente novamente!" << RESET_ALL << endl;
-
-        } break;
+            removePlayer();
+            break;
 
         case 3:
             controller->printPlayersByName();
@@ -129,10 +112,10 @@ void Interface::gamesMenu() {
                     cout << "Jogador 2: " << player2->getNickname() << endl;
 
                     cout << "\nDeseja continuar com os mesmos jogadores (S/N)? ";
-                    char a;
-                    cin >> a;
+                    char input;
+                    cin >> input;
 
-                    switch (a) {
+                    switch (input) {
                     case 'N':
                     case 'n':
                         throw "RETURN";
@@ -168,17 +151,7 @@ void Interface::gamesMenu() {
                 switch (input) {
                 case REVERSI:
                 {
-                    if (player2 == nullptr) {
-                        player2 = loginPlayer("JOGADOR 2");
-                        clearBuffer();
-
-                        if (player1 == player2) {
-                            cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
-                            throw "RETURN";
-                        }
-                        else
-                            cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
-                    }
+                    player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
                     cout << "\n" << BLUE_COLOR << "Reversi" << RESET_ALL << endl;
 
@@ -206,17 +179,8 @@ void Interface::gamesMenu() {
                 {
                     cout << "\n" << BLUE_COLOR << "Lig4" << RESET_ALL << endl;
 
-                    if (player2 == nullptr) {
-                        player2 = loginPlayer("JOGADOR 2");
-                        clearBuffer();
-
-                        if (player1 == player2) {
-                            cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
-                            throw "RETURN";
-                        }
-                        else
-                            cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
-                    }
+                    player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
+                    cout << "PRINTANDOO" << player2->getNickname() << endl;
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
                     // Lig4 lig4;
@@ -242,17 +206,7 @@ void Interface::gamesMenu() {
                 {
                     cout << "\n" << BLUE_COLOR << "Jogo da Velha" << RESET_ALL << endl;
 
-                    if (player2 == nullptr) {
-                        player2 = loginPlayer("JOGADOR 2");
-                        clearBuffer();
-
-                        if (player1 == player2) {
-                            cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
-                            throw "RETURN";
-                        }
-                        else
-                            cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
-                    }
+                    player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
                     // TicTacToe ticTacToe;
@@ -295,17 +249,7 @@ void Interface::gamesMenu() {
                 {
                     cout << "\n" << BLUE_COLOR << "Damas" << RESET_ALL << endl;
 
-                    if (player2 == nullptr) {
-                        player2 = loginPlayer("JOGADOR 2");
-                        clearBuffer();
-
-                        if (player1 == player2) {
-                            cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
-                            throw "RETURN";
-                        }
-                        else
-                            cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
-                    }
+                    player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
                     cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
                     // CheckersGame checkersGame;
@@ -366,6 +310,25 @@ Player* Interface::createPlayer() {
     }
 }
 
+void Interface::removePlayer() {
+    clearBuffer();
+
+    string nickname;
+    cout << "\nDigite o apelido do jogador a ser removido: ";
+    cin >> nickname;
+
+    int removed = controller->removePlayer(nickname);
+
+    if (removed == 1)
+        cout << "\n" << GREEN_COLOR << "Jogador " << nickname << " removido com sucesso!" << RESET_ALL << endl;
+
+    else if (removed == -1)
+        cout << "\n" << RED_COLOR << "Jogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << RESET_ALL << endl;
+
+    else
+        cout << "\n" << RED_COLOR << "Nenhum jogador cadastrado! Tente novamente!" << RESET_ALL << endl;
+}
+
 Player* Interface::loginPlayer(string playerNumber) {
     int input = 0;
     while (1) {
@@ -418,6 +381,24 @@ Player* Interface::loginPlayer(string playerNumber) {
 
         clearBuffer();
     }
+}
+
+Player* Interface::playerLoginVerification(Player* player1, Player* player2, string playerNumber) {
+    if (player2 == nullptr) {
+        player2 = loginPlayer(playerNumber);
+        clearBuffer();
+
+        if (player1 == player2) {
+            cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
+            throw "RETURN";
+        }
+        else {
+            cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player2->getName() << "!" << RESET_ALL << endl;
+            return player2;
+        }
+    }
+    else
+        return player2;
 }
 
 void Interface::clearBuffer() {
