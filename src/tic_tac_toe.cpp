@@ -1,114 +1,82 @@
 #include <iostream>
+#include "jogodavelha.hpp"
 using namespace std;
 
-void printBoard(char board[9]) {
-    cout << board[0] << " " << board[1] << " " << board[2] << endl;
-    cout << board[3] << " " << board[4] << " " << board[5] << endl;
-    cout << board[6] << " " << board[7] << " " << board[8] << endl;
+
+void printBoard(int board[3][3]){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<"|"<<board[i][j]<<"|";
+        }
+        cout<<endl;
+    }
+
 }
 
-bool checkXwin(char board[9]) {
-    if (board[0] == 'x' && board[0] == board[1] && board[1] == board[2])
-        cout << "x wins!" << endl;
-    else if (board[3] == 'x' && board[3] == board[4] && board[4] == board[5])
-        cout << "x wins!" << endl;
-    else if (board[6] == 'x' && board[6] == board[7] && board[7] == board[8])
-        cout << "x wins!" << endl;
-    else if (board[0] == 'x' && board[0] == board[3] && board[3] == board[6])
-        cout << "x wins!" << endl;
-    else if (board[1] == 'x' && board[1] == board[4] && board[4] == board[7])
-        cout << "x wins!" << endl;
-    else if (board[2] == 'x' && board[2] == board[5] && board[5] == board[8])
-        cout << "x wins!" << endl;
-    else if (board[0] == 'x' && board[0] == board[4] && board[4] == board[8])
-        cout << "x wins!" << endl;
-    else if (board[2] == 'x' && board[2] == board[4] && board[4] == board[6])
-        cout << "x wins!" << endl;
-    else
-        return false;
-    return true;
-}
-
-bool checkOwin(char board[9]) {
-    if (board[0] == 'o' && board[0] == board[1] && board[1] == board[2])
-        cout << "o wins!" << endl;
-    else if (board[3] == 'o' && board[3] == board[4] && board[4] == board[5])
-        cout << "o wins!" << endl;
-    else if (board[6] == 'o' && board[6] == board[7] && board[7] == board[8])
-        cout << "o wins!" << endl;
-    else if (board[0] == 'o' && board[0] == board[3] && board[3] == board[6])
-        cout << "o wins!" << endl;
-    else if (board[1] == 'o' && board[1] == board[4] && board[4] == board[7])
-        cout << "o wins!" << endl;
-    else if (board[2] == 'o' && board[2] == board[5] && board[5] == board[8])
-        cout << "o wins!" << endl;
-    else if (board[0] == 'o' && board[0] == board[4] && board[4] == board[8])
-        cout << "o wins!" << endl;
-    else if (board[2] == 'o' && board[2] == board[4] && board[4] == board[6])
-        cout << "o wins!" << endl;
-    else
-        return false;
-    return true;
-}
-
-bool checkTie(char board[9]) {
-    for (int i = 0;i < 9;i++) {
-        if (board[i] == '?')
+bool JogoDaVelha::checkVictory(int board[3][3], int currentPlayer) {
+    for(int i=0;i<3;i++){
+        if(board[i][0]==currentPlayer && board[i][0]==board[i][1] && board[i][1]==board[i][2])
+            return true;
+        else if(board[0][i]==currentPlayer && board[0][i]==board[1][i] && board[1][i]==board[2][i])
+            return true;
+        else if(board[0][0]==currentPlayer && board[0][0]==board[1][1] && board[1][1]==board[2][2])
+            return true;
+        else if(board[0][2]==currentPlayer && board[0][2]==board[1][1] && board[1][1]==board[2][0])
+            return true;
+        else
             return false;
     }
-    cout << "its a tie!" << endl;
+}
+
+bool JogoDaVelha::checkTie(int board [3][3]) {
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            if(board[i][j]==0)
+                return false;
+        }
+    }
     return true;
 }
 
-void xPlay(char board[9], string playerx) {
-    int i;
-    cout << playerx << " play: " << endl;
-    cin >> i;
-    if (board[i] == '?')
-        board[i] = 'x';
-}
-void oPlay(char board[9], string playero) {
-    int i;
-    cout << playero << " play: " << endl;
-    cin >> i;
-    if (board[i] == '?')
-        board[i] = 'o';
+bool JogoDaVelha::validMove(int board[3][3],int line, int column) {
+    if(board[line][column]==0)
+        return true;
+    else
+        return false;
 }
 
-// int main(){
-//     string playerx,playero;
-//     cout<<"enter player X name"<<endl;
-//     cin>>playerx;
-//     cout<<"enter player O name"<<endl;
-//     cin>>playero;
-//     bool running=true;
+void JogoDaVelha::switchPlayer(int currentPlayer,int playerX,int playerO){
+    if(currentPlayer==playerX)
+        currentPlayer=playerO;
+    else
+        currentPlayer=playerX;
+}
 
-//     char board[9]={'?','?','?','?','?','?','?','?','?'};
-//     printBoard(board);
+void JogoDaVelha:: makeMove(int board[3][3],int currentPlayer,int line,int column){
+    cin>>line;
+    cin>>column;
+    if(validMove(board,line,column))
+        board[line][column]=currentPlayer;
+    else
+        makeMove(board,currentPlayer,line,column);
+}
 
-//     while(running){
-//         xPlay(board,playerx);
-//         printBoard(board);
-//         if(checkXwin(board)) {
-//             running = false;
-//             break;
-//         }
-//         else if(checkTie(board)){
-//             running=false;
-//             break;
-//         }
-//         oPlay(board,playero);
-//         printBoard(board);
-//         if(checkOwin(board)) {
-//             running = false;
-//             break;
-//         }
-//         else if(checkTie(board)){
-//             running=false;
-//             break;
-//         }
-//     }
-//     cout<<"game over"<<endl;
-
-//     return 0;
-// }
+void JogoDaVelha::play(int board[3][3]){
+    int line;
+    int column;
+    printBoard(board);
+    int playerX,playerO;
+    currentPlayer=playerX;
+    while(!checkVictory(board,currentPlayer)&&!checkTie(board)) {
+        makeMove(board, currentPlayer,line,column);
+        printBoard(board);
+        if (checkVictory(board,currentPlayer)) {
+            break;
+        }
+        else if (checkTie(board)) {
+            break;
+        }
+        switchPlayer(currentPlayer,playerX,playerO);
+    }
+    cout<<"game over"<<endl;
+}

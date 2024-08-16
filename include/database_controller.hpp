@@ -24,19 +24,22 @@ class PlayerController;
  * e para arquivos. Ela utiliza os métodos de leitura e escrita para interagir com a classe `PlayerController`.
  */
 class DatabaseController {
+private:
+
     /** 
      * @brief Caminho para o arquivo de dados.
      * 
      * Armazena o caminho do arquivo usado para ler e escrever dados dos jogadores.
      */
-private:
     string _filePath;
+
     /** 
      * @brief Fluxo de entrada para leitura de arquivos.
      * 
      * Usado para ler dados do arquivo especificado por `_filePath`.
      */
     ifstream _inputFile;
+
     /** 
      * @brief Fluxo de saída para escrita de arquivos.
      * 
@@ -52,6 +55,7 @@ public:
      * antes da leitura ou escrita.
      */
     DatabaseController();
+
     /**
      * @brief Lê os dados dos jogadores a partir de um arquivo e atualiza o PlayerController.
      * 
@@ -61,6 +65,7 @@ public:
      * @param playerController Ponteiro para o `PlayerController` que será atualizado com os dados lidos.
      */
     void readFile(PlayerController* playerController);
+    
     /**
      * @brief Escreve os dados dos jogadores em um arquivo.
      * 
