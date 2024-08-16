@@ -182,17 +182,17 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         }
     }
 
-    checkVictory();
+    checkVictory;
 
     return sumX > sumO ? player1 : player2;
 }
 
-void ReversiGame::checkVictory() {
+Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
     if (sumX > sumO) {
-        cout << "PARABENS X VOCÊ GANHOU!" << endl;
+        cout << "PARABENS"<< player1->getNickname()<<"VOCÊ GANHOU!" << endl;
     }
     else if (sumO > sumX) {
-        cout << "PARABENS O VOCÊ GANHOU!" << endl;
+        cout << "PARABENS " <<player2->getNickname() <<"VOCÊ GANHOU!" << endl;
     }
     else {
         cout << "O jogo terminou em empate!" << endl;

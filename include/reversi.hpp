@@ -65,7 +65,7 @@ private:
      * @brief Verifica e exibe o resultado final do jogo.
      * @return true se o jogador X venceu, false se o jogador O venceu.
      */
-    void checkVictory();
+    Player* checkVictory(Player* player1, Player* player2);
 
 public:
     ReversiGame();
