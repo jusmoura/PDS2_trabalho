@@ -1,88 +1,87 @@
 #include "../include/lig4.hpp"
 
-void setBoard(int board[6][7]) {
-    for (int i = 0;i < 6;i++) {
-        for (int j = 0;j < 7;j++) {
-            board[i][j] = 0;
-        }
-    }
-}
+Lig4::Lig4():Board(6,7),currentPlayer(PLAYER_X){}
 
-void printBoard(int board[6][7]) {
-    for (int i = 0;i < 6;i++) {
-        for (int j = 0;j < 7;j++) {
-            std::cout << "|" << board[i][j] << "|";
-        }
-        std::cout << std::endl;
-    }
-}
-
-void Lig4::switchPlayer(int currentPlayer, int playerX, int playerO) {
-    if (currentPlayer == playerX)
-        currentPlayer = playerO;
+void Lig4::switchPlayer() {
+    if (currentPlayer == PLAYER_X)
+        currentPlayer = PLAYER_O;
     else
-        currentPlayer = playerX;
+        currentPlayer = PLAYER_X;
 }
 
-void Lig4::makeMove(int currentPlayer, int board[6][7], int column) {
-    std::cin >> column;
-    if (board[0][column] == 0)
-        board[0][column] = currentPlayer;
-    else if (board[1][column] == 0)
-        board[1][column] = currentPlayer;
-    else if (board[2][column] == 0)
-        board[2][column] = currentPlayer;
-    else if (board[3][column] == 0)
-        board[3][column] = currentPlayer;
-    else if (board[4][column] == 0)
-        board[4][column] = currentPlayer;
-    else if (board[5][column] == 0)
-        board[5][column] = currentPlayer;
+void Lig4::makeMove(int column) {
+    if(column>0 && column<7){
+        if (_board[0][column].getValue() == EMPTY)
+            _board[0][column].setValue(currentPlayer);
+        else if (_board[1][column].getValue() == EMPTY)
+            _board[1][column].setValue(currentPlayer);
+        else if (_board[2][column].getValue() == EMPTY)
+            _board[2][column].setValue(currentPlayer);
+        else if (_board[3][column].getValue() == EMPTY)
+            _board[3][column].setValue(currentPlayer);
+        else if (_board[4][column].getValue() == EMPTY)
+            _board[4][column].setValue(currentPlayer);
+        else if (_board[5][column].getValue() == EMPTY)
+            _board[5][column].setValue(currentPlayer);
+        switchPlayer();    
+    }
     else
-        makeMove(currentPlayer, board, column);
+        makeMove(column);    
 }
 
-bool Lig4::checkTie(int board[6][7]) {
+bool Lig4::checkTie() {
     for (int i = 0;i < 6;i++) {
         for (int j = 0;j < 7;j++) {
-            if (board[i][j] == 0)
+            if (_board[i][j].getValue() == EMPTY)
                 return false;
         }
     }
     return true;
 }
 
-bool Lig4::checkVictory(int currentPlayer, int board[6][7]) {
+bool Lig4::checkVictory() {
     for (int i = 0;i < 6;i++) {
         for (int j = 0;j < 7;j++) {
-            if (board[i][j] == currentPlayer && board[i][j] == board[i][j + 1] && board[i][j + 1] == board[i][j + 2] && board[i][j + 2] == board[i][j + 3])
+            if (_board[i][j].getValue() == currentPlayer && _board[i][j].getValue() == _board[i][j+1].getValue() && _board[i][j+1].getValue() == _board[i][j+2].getValue() && _board[i][j+2].getValue() == _board[i][j+3].getValue())
                 return true;
-            else if (board[i][j] == currentPlayer && board[i][j] == board[i + 1][j] && board[i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j])
+            else if (_board[i][j].getValue() == currentPlayer && _board[i][j].getValue() == _board[i+1][j].getValue() && _board[i+1][j].getValue() == _board[i+2][j].getValue() && _board[i+2][j].getValue() == _board[i+3][j].getValue())
                 return true;
-            else if (board[i][j] == currentPlayer && board[i][j] == board[i + 1][j + 1] && board[i + 1][j + 1] == board[i + 2][j + 2] && board[i + 2][j + 2] == board[i + 3][j + 3])
+            else if (_board[i][j].getValue() == currentPlayer && _board[i][j].getValue() == _board[i+1][j+1].getValue() && _board[i+1][j+1].getValue() == _board[i+2][j+2].getValue() && _board[i+2][j+2].getValue() == _board[i+3][j+3].getValue())
                 return true;
-            else if (board[i][j] == currentPlayer && board[i][j] == board[i - 1][j + 1] && board[i - 1][j + 1] == board[i - 2][j + 2] && board[i - 2][j + 2] == board[i - 3][j + 3])
+            else if (_board[i][j].getValue() == currentPlayer && _board[i][j].getValue() == _board[i-1][j+1].getValue() && _board[i-1][j+1].getValue() == _board[i-2][j+2].getValue() && _board[i-2][j+2].getValue() == _board[i-3][j+3].getValue())
                 return true;
         }
     }
     return false;
 }
 
-void Lig4::play(int board[6][7]) {
-    setBoard(board);
-    printBoard();
+Player* Lig4::play(Player* player1,Player* player2) {
+    Player* currentPlayerPtr=player1;
+    Player* otherPlayerPtr=player2;
+
+    string player1Nickname=player1->getNickname();
+    string player2Nickname=player2->getNickname();
+
+    Board::printBoard();
     int column;
-    int playerX = 1;
-    int playerO = 2;
-    currentPlayer = playerX;
-    while (!checkVictory(currentPlayer, board) && !checkTie(board)) {
-        std::cout << currentPlayer << " play: " << std::endl;
-        makeMove(currentPlayer, board, column);
-        printBoard();
-        if (checkVictory(currentPlayer, board))
+
+    while (!checkVictory() && !checkTie()) {
+        std::cout<<(currentPlayerPtr==player1? player1Nickname:player2Nickname)<<": insira [coluna]"<<std::endl;
+        std::cin>>column;
+        makeMove(column);
+        Board::printBoard();
+        if (checkVictory()){
+            std::cout<<"PARABENS "<<currentPlayerPtr->getNickname()<<",VOCÊ GANHOU!"<<std::endl;
+            return currentPlayerPtr;
             break;
-        if (checkTie(board))
+        }
+            
+        if (checkTie()){
+            std::cout<<"O jogo terminou em empate!"<<std::endl;
             break;
-        switchPlayer(currentPlayer, playerX, playerO);
+        }
+    
+        std::swap(currentPlayerPtr,otherPlayerPtr);
     }
+    
 }
