@@ -77,25 +77,23 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classLig4.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLig4.html">Lig4</a> : <span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classLig4.html#adffdeddf3d20829f752913801554126d">Lig4</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLig4.html#ab222b144c5961607c4369077ecb28ce8">checkVictory</a>(<span class="keywordtype">int</span> currentPlayer,<span class="keywordtype">int</span> board[6][7]);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLig4.html#a20e74d6cd54598f7e9fba7942f290f23">checkTie</a>(<span class="keywordtype">int</span> board[6][7]);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLig4.html#a77f7fefbe608306888976cf52a6fec9e">makeMove</a>(<span class="keywordtype">int</span> currentPlayer,<span class="keywordtype">int</span> board[6][7],<span class="keywordtype">int</span> column);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLig4.html#aa79a4b2d31e1a2d914c34f8e6f91fad7">switchPlayer</a>(<span class="keywordtype">int</span> currentPlayer, <span class="keywordtype">int</span> playerX,<span class="keywordtype">int</span> playerO);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLig4.html#af171607022da141cd872dc0d4220bd8d">play</a>(<span class="keywordtype">int</span> board[6][7]);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//LIG4_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE=7;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">bool</span> checkVictory();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">bool</span> checkTie();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> makeMove(<span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> switchPlayer();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classLig4.html#adffdeddf3d20829f752913801554126d">Lig4</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classLig4.html#ab5f39cf042ada426477bc0ede9e7c050">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1, <a class="code" href="classPlayer.html">Player</a>* player2);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//LIG4_HPP</span></div>
 <div class="ttc" id="aboard_8hpp_html"><div class="ttname"><a href="board_8hpp.html">board.hpp</a></div></div>
 <div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo.</div><div class="ttdef"><b>Definition:</b> board.hpp:36</div></div>
 <div class="ttc" id="aclassLig4_html"><div class="ttname"><a href="classLig4.html">Lig4</a></div><div class="ttdef"><b>Definition:</b> lig4.hpp:6</div></div>
-<div class="ttc" id="aclassLig4_html_a20e74d6cd54598f7e9fba7942f290f23"><div class="ttname"><a href="classLig4.html#a20e74d6cd54598f7e9fba7942f290f23">Lig4::checkTie</a></div><div class="ttdeci">bool checkTie(int board[6][7])</div><div class="ttdef"><b>Definition:</b> lig4.cpp:32</div></div>
-<div class="ttc" id="aclassLig4_html_a77f7fefbe608306888976cf52a6fec9e"><div class="ttname"><a href="classLig4.html#a77f7fefbe608306888976cf52a6fec9e">Lig4::makeMove</a></div><div class="ttdeci">void makeMove(int currentPlayer, int board[6][7], int column)</div><div class="ttdef"><b>Definition:</b> lig4.cpp:12</div></div>
-<div class="ttc" id="aclassLig4_html_aa79a4b2d31e1a2d914c34f8e6f91fad7"><div class="ttname"><a href="classLig4.html#aa79a4b2d31e1a2d914c34f8e6f91fad7">Lig4::switchPlayer</a></div><div class="ttdeci">void switchPlayer(int currentPlayer, int playerX, int playerO)</div><div class="ttdef"><b>Definition:</b> lig4.cpp:5</div></div>
-<div class="ttc" id="aclassLig4_html_ab222b144c5961607c4369077ecb28ce8"><div class="ttname"><a href="classLig4.html#ab222b144c5961607c4369077ecb28ce8">Lig4::checkVictory</a></div><div class="ttdeci">bool checkVictory(int currentPlayer, int board[6][7])</div><div class="ttdef"><b>Definition:</b> lig4.cpp:42</div></div>
+<div class="ttc" id="aclassLig4_html_ab5f39cf042ada426477bc0ede9e7c050"><div class="ttname"><a href="classLig4.html#ab5f39cf042ada426477bc0ede9e7c050">Lig4::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2)</div><div class="ttdoc">Executa a jogada dos jogadores.</div><div class="ttdef"><b>Definition:</b> lig4.cpp:58</div></div>
 <div class="ttc" id="aclassLig4_html_adffdeddf3d20829f752913801554126d"><div class="ttname"><a href="classLig4.html#adffdeddf3d20829f752913801554126d">Lig4::Lig4</a></div><div class="ttdeci">Lig4()</div><div class="ttdef"><b>Definition:</b> lig4.cpp:3</div></div>
-<div class="ttc" id="aclassLig4_html_af171607022da141cd872dc0d4220bd8d"><div class="ttname"><a href="classLig4.html#af171607022da141cd872dc0d4220bd8d">Lig4::play</a></div><div class="ttdeci">void play(int board[6][7])</div><div class="ttdef"><b>Definition:</b> lig4.cpp:58</div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Representa um jogador com estatísticas de jogos.</div><div class="ttdef"><b>Definition:</b> player.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
