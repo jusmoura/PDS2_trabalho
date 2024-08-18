@@ -5,18 +5,16 @@ TicTacToe::TicTacToe():Board(3,3),currentPlayer(PLAYER_X){}
 
 bool TicTacToe::checkVictory() {
     for (int i = 0;i < 3;i++) {
-        Player* player;
-        if (_board[i][0].getValue() == currentPlayer && _board[i][0].getValue() == _board[i][1].getValue() && _board[i][1].getValue() == _board[i][2].getValue())
+        if (_board[i][0].getValue() == currentPlayer && _board[i][1].getValue() == currentPlayer && _board[i][2].getValue() == currentPlayer)
             return true;    
-        else if (_board[0][i].getValue() == currentPlayer && _board[0][i].getValue() == _board[1][i].getValue() && _board[1][i].getValue() == _board[2][i].getValue())
-            return true;
-        else if (_board[0][0].getValue() == currentPlayer && _board[0][0].getValue() == _board[1][1].getValue() && _board[1][1].getValue() == _board[2][2].getValue())
-            return true;
-        else if (_board[0][2].getValue() == currentPlayer && _board[0][2].getValue() == _board[1][1].getValue() && _board[1][1].getValue() == _board[2][0].getValue())
-            return true;
-        else
-            return false;
+        if (_board[0][i].getValue() == currentPlayer && _board[1][i].getValue() == currentPlayer && _board[2][i].getValue() == currentPlayer)
+            return true; 
     }
+    if (_board[0][0].getValue() == currentPlayer && _board[1][1].getValue() == currentPlayer && _board[2][2].getValue() == currentPlayer)
+        return true;
+    if (_board[0][2].getValue() == currentPlayer && _board[1][1].getValue() == currentPlayer && _board[2][0].getValue() == currentPlayer)
+        return true;
+    return false;    
 }
 
 bool TicTacToe::checkTie() {
@@ -45,7 +43,6 @@ void TicTacToe::switchPlayer() {
 void TicTacToe::makeMove(int row, int column) {
     if (validMove(row, column)){
         _board[row][column].setValue(currentPlayer);
-        switchPlayer();
     }    
     else
         makeMove(row, column);
@@ -76,6 +73,7 @@ Player* TicTacToe::play(Player* player1,Player* player2) {
             std::cout<<"O jogo terminou em empate!"<<std::endl;
             break;
         }
+        switchPlayer();
         std::swap(currentPlayerPtr,otherPlayerPtr);
     }
     std::cout << "game over" <<std::endl;
