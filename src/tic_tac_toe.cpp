@@ -1,80 +1,82 @@
 #include "../include/tic_tac_toe.hpp"
 
-using namespace std;
 
-void TicTacToe::printBoard(int board[3][3]) {
-    for (int i = 0;i < 3;i++) {
-        for (int j = 0;j < 3;j++) {
-            cout << "|" << board[i][j] << "|";
-        }
-        cout << endl;
-    }
-}
+TicTacToe::TicTacToe():Board(3,3),currentPlayer(PLAYER_X){}
 
-bool TicTacToe::checkVictory(int board[3][3], int currentPlayer) {
+bool TicTacToe::checkVictory() {
     for (int i = 0;i < 3;i++) {
-        if (board[i][0] == currentPlayer && board[i][0] == board[i][1] && board[i][1] == board[i][2])
+        Player* player;
+        if (_board[i][0].getValue() == currentPlayer && _board[i][0].getValue() == _board[i][1].getValue() && _board[i][1].getValue() == _board[i][2].getValue())
+            return true;    
+        else if (_board[0][i].getValue() == currentPlayer && _board[0][i].getValue() == _board[1][i].getValue() && _board[1][i].getValue() == _board[2][i].getValue())
             return true;
-        else if (board[0][i] == currentPlayer && board[0][i] == board[1][i] && board[1][i] == board[2][i])
+        else if (_board[0][0].getValue() == currentPlayer && _board[0][0].getValue() == _board[1][1].getValue() && _board[1][1].getValue() == _board[2][2].getValue())
             return true;
-        else if (board[0][0] == currentPlayer && board[0][0] == board[1][1] && board[1][1] == board[2][2])
-            return true;
-        else if (board[0][2] == currentPlayer && board[0][2] == board[1][1] && board[1][1] == board[2][0])
+        else if (_board[0][2].getValue() == currentPlayer && _board[0][2].getValue() == _board[1][1].getValue() && _board[1][1].getValue() == _board[2][0].getValue())
             return true;
         else
             return false;
     }
 }
 
-bool TicTacToe::checkTie(int board[3][3]) {
+bool TicTacToe::checkTie() {
     for (int i = 0;i < 3;i++) {
         for (int j = 0;j < 3;j++) {
-            if (board[i][j] == 0)
+            if (_board[i][j].getValue() == EMPTY)
                 return false;
         }
     }
     return true;
 }
 
-bool TicTacToe::validMove(int board[3][3], int line, int column) {
-    if (board[line][column] == 0)
-        return true;
-    else
+bool TicTacToe::validMove(int line, int column) {
+    if (_board[line][column].getValue()!=EMPTY||line<0||column<0||line>=3||column>=3)
         return false;
+    
 }
 
-void TicTacToe::switchPlayer(int currentPlayer, int playerX, int playerO) {
-    if (currentPlayer == playerX)
-        currentPlayer = playerO;
+void TicTacToe::switchPlayer() {
+    if (currentPlayer == PLAYER_X)
+        currentPlayer = PLAYER_O;
     else
-        currentPlayer = playerX;
+        currentPlayer = PLAYER_X;
 }
 
-void TicTacToe::makeMove(int board[3][3], int currentPlayer, int line, int column) {
-    cin >> line;
-    cin >> column;
-    if (validMove(board, line, column))
-        board[line][column] = currentPlayer;
+void TicTacToe::makeMove(int row, int column) {
+    if (validMove(row, column)){
+        _board[row][column].setValue(currentPlayer);
+        switchPlayer();
+    }    
     else
-        makeMove(board, currentPlayer, line, column);
+        makeMove(row, column);
 }
 
-void TicTacToe::play(int board[3][3]) {
-    int line;
-    int column;
-    printBoard(board);
-    int playerX, playerO;
-    currentPlayer = playerX;
-    while (!checkVictory(board, currentPlayer) && !checkTie(board)) {
-        makeMove(board, currentPlayer, line, column);
-        printBoard(board);
-        if (checkVictory(board, currentPlayer)) {
+Player* TicTacToe::play(Player* player1,Player* player2) {
+    Player* currentPlayerPtr=player1;
+    Player* otherPlayerPtr=player2;
+
+    string player1Nickname=player1->getNickname();
+    string player2Nickname=player2->getNickname();    
+
+    
+    Board::printBoard();
+    while (!checkVictory() && !checkTie()) {
+        int row;
+        int column;
+        std::cout<<(currentPlayerPtr==player1? player1Nickname:player2Nickname)<<": insira [linha coluna]"<<std::endl;
+        std::cin>>row>>column;
+        makeMove(row, column);
+        Board::printBoard();
+        if (checkVictory()) {
+            std::cout<<"PARABENS "<<currentPlayerPtr->getNickname()<<",VOCÊ GANHOU!"<<std::endl;
+            return currentPlayerPtr;
             break;
         }
-        else if (checkTie(board)) {
+        else if (checkTie()) {
+            std::cout<<"O jogo terminou em empate!"<<std::endl;
             break;
         }
-        switchPlayer(currentPlayer, playerX, playerO);
+        std::swap(currentPlayerPtr,otherPlayerPtr);
     }
-    cout << "game over" << endl;
+    std::cout << "game over" <<std::endl;
 }

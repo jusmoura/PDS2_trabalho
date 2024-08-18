@@ -2,19 +2,20 @@
 #define TIC_TAC_TOE_HPP
 
 #include <iostream>
+#include "board.hpp"
 
-class TicTacToe {
+class TicTacToe:public Board {
 private:
     int currentPlayer;
+    const int BOARD_SIZE=3;
 public:
     TicTacToe();
-    void printBoard(int board[3][3]);
-    void makeMove(int board[3][3], int currentPlayer, int line, int column);
-    bool validMove(int board[3][3], int line, int column);
-    void play(int board[3][3]);
-    bool checkVictory(int board[3][3], int currentPlayer);
-    bool checkTie(int board[3][3]);
-    void switchPlayer(int currentPlayer, int playerX, int playerO);
+    void makeMove(int line, int column);
+    bool validMove(int line, int column);
+    Player* play(Player* player1,Player* player2) override;
+    bool checkVictory();
+    bool checkTie();
+    void switchPlayer();
 };
 
 #endif

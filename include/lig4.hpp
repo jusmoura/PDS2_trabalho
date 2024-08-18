@@ -6,13 +6,14 @@
 class Lig4 : public Board {
 private:
     int currentPlayer;
+    const int BOARD_SIZE=7;
 public:
     Lig4();
-    bool checkVictory(int currentPlayer,int board[6][7]);
-    bool checkTie(int board[6][7]);
-    void makeMove(int currentPlayer,int board[6][7],int column);
-    void switchPlayer(int currentPlayer, int playerX,int playerO);
-    void play(int board[6][7]);
+    bool checkVictory();
+    bool checkTie();
+    void makeMove(int column);
+    void switchPlayer();
+    Player* play(Player* player1, Player* player2);
 };
 
 #endif //LIG4_HPP
