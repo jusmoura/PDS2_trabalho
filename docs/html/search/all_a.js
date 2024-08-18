@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['operator_3c_3c_68',['operator&lt;&lt;',['../classPlayer.html#ada30a5e6a8a8125959b8a0f21301f6cd',1,'Player::operator&lt;&lt;()'],['../player_8cpp.html#a880c6592231e57f46f2c22406330d890',1,'operator&lt;&lt;():&#160;player.cpp']]]
+  ['last_510',['last',['../structdoctest_1_1ContextOptions.html#a5aaf1b28f6a46d8acb40898a502b6bef',1,'doctest::ContextOptions']]],
+  ['le_511',['le',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569a58efccb94f787a00914adc6db077347b',1,'doctest::detail::binaryAssertComparison']]],
+  ['lig4_512',['Lig4',['../classLig4.html#adffdeddf3d20829f752913801554126d',1,'Lig4::Lig4()'],['../classLig4.html',1,'Lig4']]],
+  ['lig4_513',['LIG4',['../game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309',1,'game_controller.hpp']]],
+  ['lig4_2ecpp_514',['lig4.cpp',['../lig4_8cpp.html',1,'']]],
+  ['lig4_2ehpp_515',['lig4.hpp',['../lig4_8hpp.html',1,'']]],
+  ['lightgrey_516',['LightGrey',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a44f079a43a4709abd7d6f22b317838a2',1,'doctest::Color']]],
+  ['linessize_517',['linesSize',['../classBoard.html#a2331cf0e362f0487b0d1f1cba5b82aea',1,'Board']]],
+  ['list_5freporters_518',['list_reporters',['../structdoctest_1_1ContextOptions.html#ad3daf077ac3182db5175f8baff49fce0',1,'doctest::ContextOptions']]],
+  ['list_5ftest_5fcases_519',['list_test_cases',['../structdoctest_1_1ContextOptions.html#a813e1543c358ab8a7a432b4ad2b32e56',1,'doctest::ContextOptions']]],
+  ['list_5ftest_5fsuites_520',['list_test_suites',['../structdoctest_1_1ContextOptions.html#a579399a66b278cbf96b6183d337f486b',1,'doctest::ContextOptions']]],
+  ['log_521',['log',['../structdoctest_1_1detail_1_1MessageBuilder.html#a9bcc5d56e1764a7e07efebca55e43cce',1,'doctest::detail::MessageBuilder::log()'],['../structdoctest_1_1detail_1_1ResultBuilder.html#a2af75dd1d8db8d3aa949d78025854085',1,'doctest::detail::ResultBuilder::log()']]],
+  ['log_5fassert_522',['log_assert',['../structdoctest_1_1IReporter.html#a5bb54923eab233bb02f2fcfc178fa12a',1,'doctest::IReporter']]],
+  ['log_5fmessage_523',['log_message',['../structdoctest_1_1IReporter.html#a2b2cb4f15aa7417d4903a0edc3147018',1,'doctest::IReporter']]],
+  ['logged_524',['logged',['../structdoctest_1_1detail_1_1MessageBuilder.html#ab99f0292c65f7a4311a6ecd94f313bf3',1,'doctest::detail::MessageBuilder']]],
+  ['loginplayer_525',['loginPlayer',['../classInterface.html#aae0f4945248d6acd6215666ff199a400',1,'Interface']]],
+  ['loser_5fstyle_526',['LOSER_STYLE',['../colors_8hpp.html#a7caf351fcd0601db8b0733989245a3ee',1,'colors.hpp']]],
+  ['lt_527',['lt',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569aea0e8621512e05d78d88ff2d2c164a6b',1,'doctest::detail::binaryAssertComparison']]]
 ];

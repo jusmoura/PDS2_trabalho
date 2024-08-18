@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['lig4_53',['Lig4',['../classLig4.html',1,'Lig4'],['../classLig4.html#adffdeddf3d20829f752913801554126d',1,'Lig4::Lig4()']]],
-  ['lig4_54',['LIG4',['../game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309',1,'game_controller.hpp']]],
-  ['lig4_2ecpp_55',['lig4.cpp',['../lig4_8cpp.html',1,'']]],
-  ['lig4_2ehpp_56',['lig4.hpp',['../lig4_8hpp.html',1,'']]],
-  ['linessize_57',['linesSize',['../classBoard.html#a2331cf0e362f0487b0d1f1cba5b82aea',1,'Board']]],
-  ['loginplayer_58',['loginPlayer',['../classInterface.html#aae0f4945248d6acd6215666ff199a400',1,'Interface']]]
+  ['has_5finsertion_5foperator_467',['has_insertion_operator',['../structdoctest_1_1detail_1_1has__insertion__operator.html',1,'doctest::detail']]],
+  ['has_5finsertion_5foperator_3c_20t_2c_20decltype_28operator_3c_3c_28declval_3c_20std_3a_3aostream_20_26_20_3e_28_29_2c_20declval_3c_20const_20t_20_26_20_3e_28_29_29_2c_20void_28_29_29_3e_468',['has_insertion_operator&lt; T, decltype(operator&lt;&lt;(declval&lt; std::ostream &amp; &gt;(), declval&lt; const T &amp; &gt;()), void())&gt;',['../structdoctest_1_1detail_1_1has__insertion__operator_3_01T_00_01decltype_07operator_3_3_07declvald5a5a279653bbfeef238ad5c984744e2.html',1,'doctest::detail']]],
+  ['help_469',['help',['../structdoctest_1_1ContextOptions.html#a9d542a95ee03f61c233fff51e7461400',1,'doctest::ContextOptions']]]
 ];

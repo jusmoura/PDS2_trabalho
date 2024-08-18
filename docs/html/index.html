@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pixel Patterns: PDS2_trabalho</title>
+<title>Pixel Patterns: Pixel Patterns</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,20 +62,256 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">PDS2_trabalho </div>  </div>
+<div class="title">Pixel Patterns </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_julia_Julia_PDS2_trabalho_README"></a> Bem-vindo ao repositório do projeto de Jogos de Tabuleiro! Este projeto é uma coleção de jogos de tabuleiro implementados em C++, incluindo Reversi, <a class="el" href="classLig4.html">Lig4</a>, Jogo da Velha, Campo Minado, e Damas.</p>
+<div class="textblock"><p><a class="anchor" id="md__home_julia_Julia_PDS2_trabalho_README"></a> O <b>Pixel Patterns</b> é um sistema projetado para gerenciar jogadores e jogar uma variedade de jogos de tabuleiro, incluindo Reversi, Jogo da Velha, Campo Minado e Damas. O sistema oferece uma interface amigável e colorida para facilitar a navegação e a interação.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Descrição</h1>
-<p>Este projeto oferece uma interface para gerenciar jogadores e jogar uma variedade de jogos de tabuleiro.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Estrutura do Projeto</h1>
+Funcionalidades</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Menu Principal</h2>
+<p>O menu principal permite acessar as seguintes opções:</p>
 <ul>
-<li><code>include/</code> - Contém os arquivos de cabeçalho (.hpp) do projeto.</li>
-<li><code>src/</code> - Contém os arquivos de implementação (.cpp) do projeto.</li>
-<li><code>docs/</code> - Contém a documentação gerada pelo Doxygen. </li>
+<li><b>Gerenciar Jogadores</b>: Adicionar, remover e listar jogadores.</li>
+<li><b>Jogar!</b>: Selecionar e jogar um dos jogos disponíveis.</li>
+<li><b>Sair do Programa</b>: Encerrar a execução do sistema.</li>
 </ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Gerenciar Jogadores</h2>
+<p>Nesta seção, você pode:</p>
+<ul>
+<li><b>Criar Jogador</b>: Adicionar um novo jogador com um nome e apelido único.</li>
+<li><b>Remover Jogador</b>: Excluir um jogador existente pelo apelido.</li>
+<li><b>Listar Jogadores</b>: Exibir uma lista de jogadores ordenada por nome ou apelido.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Criar Jogador</h3>
+<ol type="1">
+<li>Selecione "Criar Jogador" no menu de gerenciamento.</li>
+<li>Digite o nome do jogador.</li>
+<li>Digite o apelido do jogador. O apelido deve ser único.</li>
+</ol>
+<p><b>Exemplos de Saída:</b></p>
+<ul>
+<li>Sucesso: <code>Jogador &lt;nickname&gt; criado com sucesso</code></li>
+<li>Erro: <code>Jogador com apelido &lt;nickname&gt; ja cadastrado! Tente novamente!</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Remover Jogador</h3>
+<ol type="1">
+<li>Selecione "Remover Jogador" no menu de gerenciamento.</li>
+<li>Digite o apelido do jogador a ser removido.</li>
+</ol>
+<p><b>Exemplos de Saída:</b></p>
+<ul>
+<li>Sucesso: <code>Jogador &lt;nickname&gt; removido com sucesso.</code></li>
+<li>Erro: <code>Jogador com apelido &lt;nickname&gt; nao encontrado! Tente novamente!</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Listar Jogadores</h3>
+<ol type="1">
+<li>Selecione "Listar Jogadores" no menu de gerenciamento.</li>
+<li>Escolha ordenar por nome ou apelido.</li>
+</ol>
+<p><b>Formato da Lista:</b></p>
+<p>Nome: Daniela, Apelido: Dani</p>
+<p>Nome: Júlia, Apelido: jusmoura</p>
+<p>Nome: Pedro Henrique, Apelido: Piter</p>
+<p>Nome: Vanessa, Apelido: Nessa</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Jogar!</h2>
+<p>Permite iniciar uma nova partida de um dos seguintes jogos:</p>
+<ul>
+<li><b>Reversi</b></li>
+<li><b><a class="el" href="classLig4.html">Lig4</a></b></li>
+<li><b>Jogo da Velha</b></li>
+<li><b>Campo Minado</b></li>
+<li><b>Damas</b></li>
+</ul>
+<p>Para cada jogo, o sistema solicitará o login dos jogadores e, em alguns casos, a seleção de jogadores adicionais, caso o jogo não seja individual, mas em dupla, como no Reversi e no Damas.</p>
+<p><b>Exemplos de Mensagens Durante o Jogo:</b></p>
+<ul>
+<li><b>Bem-vindo(a), <code>&lt;Nickname&gt;</code>!</b></li>
+<li><b>Iniciando o jogo <code>&lt;Nome do Jogo&gt;</code>...</b></li>
+<li><b>Encerrando <code>&lt;Nome do Jogo&gt;</code>...</b></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Encerrar o Programa</h2>
+<p>Permite sair do sistema e liberar os recursos.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Entradas e Saídas</h1>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Entradas</h2>
+<ul>
+<li><b>Criar Jogador</b>: Apelido do jogador.</li>
+<li><b>Remover Jogador</b>: Apelido do jogador.</li>
+<li><b>Listar Jogadores</b>: Ordenação por nome ou apelido.</li>
+<li><b>Selecionar Jogo</b>: Índice do jogo desejado (Reversi(0), <a class="el" href="classLig4.html">Lig4(1)</a>, Jogo da velha(2), Campo minado(3), Damas(4))</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Saídas</h2>
+<ul>
+<li><b>Sucesso</b>: Mensagens de confirmação para criação, remoção de jogadores e início de jogos.</li>
+<li><b>Erros</b>: Mensagens de erro para dados incorretos ou jogadores não encontrados.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md12"></a>
+CheckersGame</h1>
+<p>A classe <code><a class="el" href="classCheckersGame.html" title="Implementa a lógica do jogo de damas (checkers) baseado na classe Board.">CheckersGame</a></code> gerencia o jogo de Damas (Checkers) com um tabuleiro 8x8 e permite que dois jogadores joguem uma partida.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Visão geral</h2>
+<ul>
+<li><b>Inicialização do Jogo</b>: Configura o tabuleiro com peças dos jogadores nos lugares iniciais.</li>
+<li><b>Movimentos</b>: Permite que os jogadores façam movimentos simples e capturas de peças adversárias.</li>
+<li><b>Gerenciamento de Jogo</b>: Alterna entre os jogadores, atualiza o tabuleiro após cada jogada e verifica se há um vencedor.</li>
+<li><b>Condições de Vitória</b>: Determina o vencedor com base no número de peças restantes.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Como Funciona</h2>
+<ol type="1">
+<li><b>Início do Jogo</b>: O tabuleiro é configurado com peças dos jogadores.</li>
+<li><b>Jogadas</b>: Jogadores alternam turnos para fazer movimentos ou capturas, sendo a primeira entrada a peça a ser movida e a segunda qual é o destino dela.</li>
+<li><b>Atualização</b>: O tabuleiro é atualizado com as novas posições das peças após cada movimento.</li>
+<li><b>Verificação de Vitória</b>: O jogo continua até que um jogador vença, com base na quantidade de peças restantes.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md15"></a>
+Lig4</h1>
+<p>A classe <code><a class="el" href="classLig4.html">Lig4</a></code> implementa o jogo <a class="el" href="classLig4.html">Lig4</a>. Este é um jogo de tabuleiro onde os jogadores se alternam para que peças caiam verticalmente, e o objetivo é formar uma linha de quatro peças consecutivas horizontalmente, verticalmente ou diagonalmente.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Visão geral</h2>
+<ul>
+<li><b>Inicialização do Jogo</b>: Configura um tabuleiro 6x7 vazio e define o jogador inicial.</li>
+<li><b>Movimentos</b>: Permite que os jogadores coloquem peças nas colunas do tabuleiro. As peças caem para a posição mais baixa disponível na coluna.</li>
+<li><b>Alternância de Jogadores</b>: Alterna entre os jogadores após cada movimento.</li>
+<li><b>Verificação de Vitória</b>: Verifica se o jogador atual conseguiu alinhar quatro peças consecutivas em qualquer direção (horizontal, vertical ou diagonal).</li>
+<li><b>Empate</b>: Verifica se o tabuleiro está cheio e não há vencedor, resultando em empate.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Como Funciona</h2>
+<ol type="1">
+<li><b>Início do Jogo</b>: O tabuleiro é inicializado vazio, e o jogador X começa.</li>
+<li><b>Jogadas</b>: Cada jogador escolhe uma coluna para colocar sua peça, que cai para a posição mais baixa disponível.</li>
+<li><b>Alternância de Turnos</b>: Após cada jogada, o sistema alterna o jogador atual.</li>
+<li><b>Verificação de Vitória e Empate</b>:<ul>
+<li><b>Vitória</b>: O jogo verifica se há uma linha de quatro peças consecutivas do mesmo jogador.</li>
+<li><b>Empate</b>: O jogo verifica se o tabuleiro está cheio e não há vencedor.</li>
+</ul>
+</li>
+<li><b>Final do Jogo</b>: O jogo termina quando um jogador vence ou o tabuleiro está cheio, resultando em empate.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Minesweeper (Campo Minado)</h1>
+<p>A classe <code><a class="el" href="classMinesweeper.html" title="Implementa o jogo Campo Minado.">Minesweeper</a></code> gerencia o jogo Campo Minado em um tabuleiro 8x8, onde o objetivo é revelar todas as células sem explosões de bombas.</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Visão Geral</h2>
+<ul>
+<li><b>Inicialização do Jogo</b>: Configura um tabuleiro 8x8 e posiciona as bombas aleatoriamente. As células ao redor das bombas são atualizadas para refletir o número de bombas adjacentes.</li>
+<li><b>Exibição do Tabuleiro</b>: Mostra o estado atual do tabuleiro com células selecionadas, bombas e números que indicam a quantidade de bombas adjacentes.</li>
+<li><b>Movimentos do Jogador</b>: Permite ao jogador escolher uma célula para revelar. Se a célula contiver uma bomba, o jogo termina. Se a célula for vazia, revela células adjacentes recursivamente.</li>
+<li><b>Verificação de Vitória e Derrota</b>: Determina se o jogador venceu (revelando todas as células sem bombas) ou perdeu (revelando uma célula com bomba).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Como Funciona</h2>
+<ol type="1">
+<li><b>Inicialização</b>: O tabuleiro é criado e as posições das bombas são definidas. Cada célula ao redor de uma bomba é atualizada com o número de bombas adjacentes.</li>
+<li><b>Exibição do Tabuleiro</b>: O método <code>printBoard</code> exibe o tabuleiro com cores diferentes para células vazias, números, e bombas.</li>
+<li><b>Jogadas</b>:<ul>
+<li><b>Entrada do Jogador</b>: O jogador insere uma posição no formato "linha coluna".</li>
+<li><b>Validação e Revelação</b>: A posição é validada. Se for uma célula vazia, as células adjacentes são reveladas. Se for uma bomba, o jogo termina.</li>
+</ul>
+</li>
+<li><b>Verificação de Vitória e Derrota</b>:<ul>
+<li><b>Derrota</b>: Se uma célula com bomba for revelada, o jogo exibe uma mensagem de derrota.</li>
+<li><b>Vitória</b>: O jogo verifica se todas as células sem bombas foram reveladas, indicando vitória.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md21"></a>
+Reversi</h1>
+<p>A classe <code><a class="el" href="classReversiGame.html" title="Classe que implementa o jogo Reversi.">ReversiGame</a></code> implementa o jogo Reversi, um jogo de estratégia de dois jogadores em um tabuleiro 8x8. O objetivo é ter a maioria das peças na cor do jogador ao final do jogo, invertendo as peças do adversário durante as jogadas.</p>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Visão Geral</h2>
+<ul>
+<li><b>Inicialização do Tabuleiro</b>: Configura o tabuleiro com peças iniciais e disponibiliza as posições para jogadas.</li>
+<li><b>Realizar Jogada</b>: Permite que os jogadores façam jogadas e atualizem o estado do tabuleiro.</li>
+<li><b>Verificação de Vitória</b>: Checa se há um vencedor ou se o jogo terminou empatado.</li>
+<li><b>Impressão do Tabuleiro</b>: Exibe o estado atual do tabuleiro no console.</li>
+<li><b>Dicas</b>: Fornece dicas sobre movimentos válidos e suas pontuações potenciais.</li>
+<li><b>Ajuda</b>: Lista todos os movimentos válidos disponíveis no momento.</li>
+<li><b>Acompanhamento de Pontuação</b>: Atualiza e exibe a pontuação em tempo real durante o jogo.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md23"></a>
+Como Funciona</h3>
+<ol type="1">
+<li><b>Inicialização do Jogo</b>:<ul>
+<li>O tabuleiro é inicializado com peças nas posições iniciais no centro do tabuleiro. Cada jogador alterna turnos para fazer jogadas.</li>
+</ul>
+</li>
+<li><b>Jogadas</b>:<ul>
+<li>Os jogadores fazem jogadas em posições válidas do tabuleiro. A jogada é validada para garantir que as peças adversárias possam ser invertidas.</li>
+</ul>
+</li>
+<li><b>Verificação de Vitória</b>:<ul>
+<li>O jogo verifica se há um vencedor ao final de cada turno, com base no número de peças de cada jogador. Se o tabuleiro estiver cheio ou nenhum jogador puder fazer uma jogada válida, o jogo termina.</li>
+</ul>
+</li>
+<li><b>Impressão do Tabuleiro</b>:<ul>
+<li>O estado atual do tabuleiro é exibido no console, mostrando as peças dos jogadores em suas posições.</li>
+</ul>
+</li>
+<li><b>Dicas</b>:<ul>
+<li>O sistema pode fornecer dicas sobre movimentos válidos e suas pontuações potenciais para ajudar o jogador a escolher a melhor jogada, são fornecidas 5 dicas por jogador durante a partida.</li>
+</ul>
+</li>
+<li><b>Ajuda</b>:<ul>
+<li>O sistema pode listar todos os movimentos válidos disponíveis no momento para o jogador, facilitando a visualização das opções.</li>
+</ul>
+</li>
+<li><b>Acompanhamento de Pontuação</b>:<ul>
+<li>A pontuação é atualizada e exibida em tempo real durante o jogo, refletindo o número de peças de cada jogador no tabuleiro.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md24"></a>
+TicTacToe</h1>
+<p>A classe <code><a class="el" href="classTicTacToe.html">TicTacToe</a></code> implementa o clássico jogo da velha, um jogo de estratégia simples para dois jogadores. O objetivo é alinhar três peças em uma linha, seja horizontal, vertical ou diagonal, antes que o adversário o faça.</p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Visão Geral</h2>
+<ul>
+<li><b>Inicialização do Tabuleiro</b>: Configura um tabuleiro 3x3 vazio.</li>
+<li><b>Realizar Jogada</b>: Permite que os jogadores coloquem suas peças em uma posição válida no tabuleiro.</li>
+<li><b>Verificação de Vitória</b>: Checa se há um vencedor ou se o jogo terminou em empate.</li>
+<li><b>Impressão do Tabuleiro</b>: Exibe o estado atual do tabuleiro no console.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md26"></a>
+Como Funciona</h3>
+<ol type="1">
+<li><b>Inicialização do Jogo</b>:<ul>
+<li>O tabuleiro é inicializado com 9 células vazias. Cada jogador alterna turnos para colocar suas peças.</li>
+</ul>
+</li>
+<li><b>Jogadas</b>:<ul>
+<li>Os jogadores alternam os turnos, colocando suas peças em uma posição não ocupada do tabuleiro. A jogada é validada para garantir que a posição esteja disponível.</li>
+</ul>
+</li>
+<li><b>Verificação de Vitória</b>:<ul>
+<li>O jogo verifica se há uma linha de três peças iguais (X ou O) em qualquer direção (horizontal, vertical ou diagonal) após cada jogada. Se sim, o jogo termina com um vencedor. Se todas as posições estiverem preenchidas e não houver um vencedor, o jogo termina em empate.</li>
+</ul>
+</li>
+<li><b>Impressão do Tabuleiro</b>:<ul>
+<li>O estado atual do tabuleiro é exibido no console, mostrando as peças dos jogadores (X e O) nas posições correspondentes.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md27"></a>
+Compilação e Execução</h1>
+<h3><a class="anchor" id="autotoc_md28"></a>
+No Linux</h3>
+<p>Navegue até o diretório onde o Makefile está localizado e execute o comando:</p>
+<ol type="1">
+<li>make</li>
+<li>Em seguida, vá até a pasta "bin"</li>
+<li>Complete a execução com ./main </li>
+</ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

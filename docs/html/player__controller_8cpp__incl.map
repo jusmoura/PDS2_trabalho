@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$player__controller_8hpp.html" title="Declaração da classe PlayerController responsável pelo gerenciamento dos jogadores." alt="" coords="387,95,609,121"/>
 <area shape="rect" id="node3" href="$player_8hpp.html" title="Declaração da classe Player responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="319,169,410,196"/>
 <area shape="rect" id="node7" title=" " alt="" coords="5,319,68,345"/>
-<area shape="rect" id="node8" href="$colors_8hpp.html" title="Declaração de constantes para cores e estilos de texto para a saída no terminal." alt="" coords="403,244,492,271"/>
+<area shape="rect" id="node8" href="$colors_8hpp.html" title="Declaração de constantes para cores e estilos de texto para alterar a saída no terminal." alt="" coords="403,244,492,271"/>
 <area shape="rect" id="node9" title=" " alt="" coords="517,244,597,271"/>
 <area shape="rect" id="node11" href="$database__controller_8hpp.html" title="Declaração da classe DatabaseController para gerenciar operações de leitura e escrita de arquivos." alt="" coords="535,169,714,196"/>
 <area shape="rect" id="node13" title=" " alt="" coords="738,169,823,196"/>

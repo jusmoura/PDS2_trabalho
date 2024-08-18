@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['checkers_220',['CHECKERS',['../game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b',1,'game_controller.hpp']]],
-  ['columnssize_221',['columnsSize',['../classBoard.html#aef04ad05883167e88785214111bddaaf',1,'Board']]],
-  ['cyan_5fcolor_222',['CYAN_COLOR',['../colors_8hpp.html#a5f407a95d0b458f7303cb3ea005c714e',1,'colors.hpp']]]
+  ['binary_5fname_1134',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
+  ['blue_5fcolor_1135',['BLUE_COLOR',['../colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb',1,'colors.hpp']]],
+  ['bold_1136',['BOLD',['../colors_8hpp.html#ac9a7670c3012a412bd3fefd424da3f50',1,'colors.hpp']]],
+  ['buf_1137',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]]
 ];

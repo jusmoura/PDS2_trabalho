@@ -1,18 +1,9 @@
 var searchData=
 [
-  ['game_169',['Game',['../classGame.html#a1c9a4174dbb93c53e97d9d83d456a975',1,'Game']]],
-  ['gamecontroller_170',['GameController',['../classGameController.html#a7d72ff3f639acb68578e20fee3649b42',1,'GameController']]],
-  ['gamesmenu_171',['gamesMenu',['../classInterface.html#af18c2f781ee9cf0d9939e0d44c468202',1,'Interface']]],
-  ['getavailablegames_172',['getAvailableGames',['../classGameController.html#a61bd51c45c1c322d5e50a1590a48ec0d',1,'GameController']]],
-  ['getgamesstats_173',['getGamesStats',['../classPlayer.html#adee9bae49885d7e5f51d0be17afb235c',1,'Player']]],
-  ['getname_174',['getName',['../classGame.html#a5367d236c0f6d742b296847ab6eeefa0',1,'Game::getName()'],['../classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5',1,'Player::getName()']]],
-  ['getnickname_175',['getNickname',['../classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca',1,'Player']]],
-  ['getnumdefeats_176',['getNumDefeats',['../classPlayer.html#ab1b9e62f67557f2b88042b23b7d77669',1,'Player::getNumDefeats()'],['../classGame.html#ae2acb0cccf5ff9b784e11be07d39c870',1,'Game::getNumDefeats()']]],
-  ['getnumdraws_177',['getNumDraws',['../classGame.html#a5c43d42f7b948da9b3802e0d7d72f862',1,'Game::getNumDraws()'],['../classPlayer.html#a66f6279684c3ec631e36c410f92d712b',1,'Player::getNumDraws()']]],
-  ['getnumwins_178',['getNumWins',['../classGame.html#ae65d1d114c754b201a15ca574c63937b',1,'Game::getNumWins()'],['../classPlayer.html#a0a3beac3af36ced426cbac1d39b10517',1,'Player::getNumWins()']]],
-  ['getplayerbyindex_179',['getPlayerByIndex',['../classPlayerController.html#a204624e888162292f06274b51bb5d550',1,'PlayerController']]],
-  ['getplayerbynickname_180',['getPlayerByNickname',['../classPlayerController.html#ae82375e6158343f33060a1a27284892f',1,'PlayerController']]],
-  ['getselected_181',['getSelected',['../classCell.html#aae5ef909b35f30e21e865d1a69deffa9',1,'Cell']]],
-  ['gettotalnumberofplayers_182',['getTotalNumberOfPlayers',['../classPlayerController.html#afec478d888b4a9c8fdd594695a6d4853',1,'PlayerController']]],
-  ['getvalue_183',['getValue',['../classCell.html#a9b1ec60e70cebbcf06291e58e98bb402',1,'Cell']]]
+  ['failed_5fout_5fof_5fa_5ftesting_5fcontext_996',['failed_out_of_a_testing_context',['../namespacedoctest_1_1detail.html#a0ff832be68bf666d856aefd539e1ce81',1,'doctest::detail']]],
+  ['failurestring_997',['failureString',['../namespacedoctest.html#a9d2d487c802fb0e66172a0ed2c9f76db',1,'doctest']]],
+  ['fill_998',['fill',['../structdoctest_1_1detail_1_1filldata.html#ac59161273947acc06c938dc7dbe1f7cd',1,'doctest::detail::filldata::fill()'],['../structdoctest_1_1detail_1_1filldata_3_01T_0fN_0e_4.html#a28c8a80e176bede55e829dead140c80a',1,'doctest::detail::filldata&lt; T[N]&gt;::fill()'],['../structdoctest_1_1detail_1_1filldata_3_01const_01char_0fN_0e_4.html#afa67e21a2edf616c099c7eec76b60bb9',1,'doctest::detail::filldata&lt; const char[N]&gt;::fill()'],['../structdoctest_1_1detail_1_1filldata_3_01const_01void_01_5_01_4.html#a4988e62e00fd190970beb8d449fe48c8',1,'doctest::detail::filldata&lt; const void * &gt;::fill()'],['../structdoctest_1_1detail_1_1filldata_3_01T_01_5_01_4.html#a1d84a050e15d9380ccc4f04288cab504',1,'doctest::detail::filldata&lt; T * &gt;::fill()']]],
+  ['filloss_999',['filloss',['../namespacedoctest_1_1detail.html#a2d66bdaf42017e18b4a08849c13a72bf',1,'doctest::detail::filloss(std::ostream *stream, const T &amp;in)'],['../namespacedoctest_1_1detail.html#a8c9475de1a743a6c4dcc991b979fad78',1,'doctest::detail::filloss(std::ostream *stream, const T(&amp;in)[N])']]],
+  ['find_1000',['find',['../classdoctest_1_1String.html#aa7b27b07ca5bf081b3ec25a3224a7a05',1,'doctest::String']]],
+  ['forward_1001',['forward',['../namespacedoctest_1_1detail.html#a9817985488551f16ddd7be48bda0e186',1,'doctest::detail::forward(typename types::remove_reference&lt; T &gt;::type &amp;t) DOCTEST_NOEXCEPT'],['../namespacedoctest_1_1detail.html#a5dc6fba20b3dbcaa5b9698e18e953129',1,'doctest::detail::forward(typename types::remove_reference&lt; T &gt;::type &amp;&amp;t) DOCTEST_NOEXCEPT']]]
 ];

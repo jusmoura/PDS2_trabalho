@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['setboard_203',['setBoard',['../lig4_8cpp.html#a57702fa8377aa1083e1eb1a4c8d184f8',1,'lig4.cpp']]],
-  ['setname_204',['setName',['../classGame.html#a175255b8daeea9ae4309858372a8af21',1,'Game::setName()'],['../classPlayer.html#aa9728db5b22d438505b4694c5ea03f75',1,'Player::setName(string name)']]],
-  ['setnickname_205',['setNickname',['../classPlayer.html#a1b0d3bf0f2bf6be13708b0ea2a267724',1,'Player']]],
-  ['setnumdefeats_206',['setNumDefeats',['../classGame.html#ab0832982290eed9aef4d46f846512eb0',1,'Game::setNumDefeats()'],['../classPlayer.html#ab5d271d14f2121ea72324ee9c2ffa4f5',1,'Player::setNumDefeats()']]],
-  ['setnumdraws_207',['setNumDraws',['../classGame.html#ac40c57796b5944049d26de3bd7dcf0f3',1,'Game::setNumDraws()'],['../classPlayer.html#abb4ea78c0e16f9480d19a4ad98d42d15',1,'Player::setNumDraws()']]],
-  ['setnumwins_208',['setNumWins',['../classGame.html#a8b3b8a45e880cc9007787a22e0465f1f',1,'Game::setNumWins()'],['../classPlayer.html#a2587c9f305a3aa9a587d1cfdd47d2812',1,'Player::setNumWins()']]],
-  ['setselected_209',['setSelected',['../classCell.html#a71c18578d41589506ddeaef3fbe080f7',1,'Cell']]],
-  ['setvalue_210',['setValue',['../classCell.html#a9b58034e57c99329a534189428882e0e',1,'Cell']]],
-  ['switchplayer_211',['switchPlayer',['../classLig4.html#aa79a4b2d31e1a2d914c34f8e6f91fad7',1,'Lig4::switchPlayer()'],['../classTicTacToe.html#a4767e765201d6d3220886813a2f660c7',1,'TicTacToe::switchPlayer()']]]
+  ['react_1063',['react',['../structdoctest_1_1detail_1_1MessageBuilder.html#a3a65c5e39a0c04ae8e2a7c34997a2e4d',1,'doctest::detail::MessageBuilder::react()'],['../structdoctest_1_1detail_1_1ResultBuilder.html#a03686f862471728c2980d72e02980213',1,'doctest::detail::ResultBuilder::react()']]],
+  ['readfile_1064',['readFile',['../classDatabaseController.html#aebb748bd192ea993bb969ff8f8fd9367',1,'DatabaseController']]],
+  ['registerexceptiontranslator_1065',['registerExceptionTranslator',['../namespacedoctest.html#a8e23e6bb4c6982688652060dbe41385d',1,'doctest']]],
+  ['registerexceptiontranslatorimpl_1066',['registerExceptionTranslatorImpl',['../namespacedoctest_1_1detail.html#a3887426da16e0d12e6f0e270a767a6a5',1,'doctest::detail']]],
+  ['registerreporter_1067',['registerReporter',['../namespacedoctest.html#a9e878a811f7bf0a615b3a39de3004673',1,'doctest']]],
+  ['registerreporterimpl_1068',['registerReporterImpl',['../namespacedoctest_1_1detail.html#a828e011bb6028ab94eb14a3c7d8bd2c4',1,'doctest::detail']]],
+  ['regtest_1069',['regTest',['../namespacedoctest_1_1detail.html#a00f99edefb8490a8e2602d58c96431f4',1,'doctest::detail']]],
+  ['removeplayer_1070',['removePlayer',['../classInterface.html#a42586bd80716c883800641ab172c8758',1,'Interface::removePlayer()'],['../classPlayerController.html#ae050cea20b0a2909c304414512ce7395',1,'PlayerController::removePlayer()']]],
+  ['report_5fquery_1071',['report_query',['../structdoctest_1_1IReporter.html#ae7e30d1c2cd332094c66d39bf3a85e52',1,'doctest::IReporter']]],
+  ['reportercreator_1072',['reporterCreator',['../namespacedoctest_1_1detail.html#a575cd92f018bfe3c702432a2144ebaca',1,'doctest::detail']]],
+  ['result_1073',['Result',['../structdoctest_1_1detail_1_1Result.html#ae4d2e8633aedaffa31f5c8b8530f522c',1,'doctest::detail::Result::Result(bool passed, const String &amp;decomposition=String())'],['../structdoctest_1_1detail_1_1Result.html#ae38382da1a2d2f8e33aebc7da15febc9',1,'doctest::detail::Result::Result()=default']]],
+  ['resultbuilder_1074',['ResultBuilder',['../structdoctest_1_1detail_1_1ResultBuilder.html#ab55660e3aaa5d8fccbe19360f65bb1f3',1,'doctest::detail::ResultBuilder::ResultBuilder(assertType::Enum at, const char *file, int line, const char *expr, const char *exception_type, const Contains &amp;exception_string)'],['../structdoctest_1_1detail_1_1ResultBuilder.html#a135e00690002d376f3d050700a635680',1,'doctest::detail::ResultBuilder::ResultBuilder(assertType::Enum at, const char *file, int line, const char *expr, const char *exception_type=&quot;&quot;, const String &amp;exception_string=&quot;&quot;)']]],
+  ['reversigame_1075',['ReversiGame',['../classReversiGame.html#adbddca50641cae543bcf0b2491527191',1,'ReversiGame']]],
+  ['rfind_1076',['rfind',['../classdoctest_1_1String.html#a6e22f4f3820de5ffdf82e0acc6646759',1,'doctest::String']]],
+  ['run_1077',['run',['../classdoctest_1_1Context.html#a8059b137ef41cbe6c5d8160806a3cc63',1,'doctest::Context']]]
 ];

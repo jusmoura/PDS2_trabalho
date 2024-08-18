@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['lig4_185',['Lig4',['../classLig4.html#adffdeddf3d20829f752913801554126d',1,'Lig4']]],
-  ['loginplayer_186',['loginPlayer',['../classInterface.html#aae0f4945248d6acd6215666ff199a400',1,'Interface']]]
+  ['insertnewplayer_1023',['insertNewPlayer',['../classPlayerController.html#a83bff4209bc5adbcefaf68561d22c72e',1,'PlayerController']]],
+  ['instantiationhelper_1024',['instantiationHelper',['../namespacedoctest_1_1detail.html#aad401b097a9af4df1d4a9d0911957c0f',1,'doctest::detail']]],
+  ['isdebuggeractive_1025',['isDebuggerActive',['../namespacedoctest_1_1detail.html#a013828c4e677241cc26aeea33f762710',1,'doctest::detail']]],
+  ['isnan_1026',['IsNaN',['../structdoctest_1_1IsNaN.html#a47f3957c504f7d8bc40dd4014cce5ee1',1,'doctest::IsNaN']]]
 ];
