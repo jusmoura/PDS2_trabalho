@@ -229,3 +229,13 @@ A classe `TicTacToe` implementa o clássico jogo da velha, um jogo de estratégi
    2. Em seguida, vá até a pasta "bin" 
 
    3. Complete a execução com ./main
+
+### No Windows
+
+# Doxyfile
+Para abrir o doxyfile:
+1. Vá até a pasta docs
+2. Abra a subpasta html
+3. Execute o comando
+    xdg-open index.html   # No Linux
+    start index.html      # No Windows
