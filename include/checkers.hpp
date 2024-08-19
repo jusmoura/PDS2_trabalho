@@ -11,7 +11,9 @@
 #define CHECKERS_HPP
 
 #include <iostream>
+#include <string>
 #include <cmath>
+#include <limits>
 #include "board.hpp"
 
 /**

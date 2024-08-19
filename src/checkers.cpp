@@ -40,10 +40,35 @@ void CheckersGame::checkIfBecameQueen(int x, int y) {
 }
 
 void CheckersGame::readMove(int x[]) {
+    std::string input;
     std::cout << "Digite linha e coluna da peca: " << std::endl;
-    std::cin >> x[1] >> x[2];
+    std::cin >> input;
+    if (input == "SAIR" || input == "sair") {
+        throw SIMPLE_RETURN;
+    }
+    try {
+        x[1] = std::stoi(input);
+        std::cin >> input;
+        x[2] = std::stoi(input);
+    } catch (const std::invalid_argument&) {
+        std::cout << "Entrada invalida." << std::endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
     std::cout << "Digite linha e coluna da jogada: " << std::endl;
-    std::cin >> x[3] >> x[4];
+    std::cin >> input;
+    if (input == "SAIR" || input == "sair") {
+        throw SIMPLE_RETURN;
+    }
+    try {
+        x[3] = std::stoi(input);
+        std::cin >> input;
+        x[4] = std::stoi(input);
+    } catch (const std::invalid_argument&) {
+        std::cout << "Entrada invalida." << std::endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    } 
 }
 
 bool CheckersGame::validMove(int x[4]) {
