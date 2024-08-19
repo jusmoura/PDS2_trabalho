@@ -30,7 +30,15 @@ private:
      * O tamanho padrão do tabuleiro de damas é 8x8.
      */
     const int BOARD_SIZE = 8;
+
+    /**
+     * @brief Constante que representa a 'Dama' do jogador X no tabuleiro.
+     */
     const int PLAYER_X_QUEEN = 3;
+
+    /**
+     * @brief Constante que representa a 'Dama' do jogador O no tabuleiro.
+     */
     const int PLAYER_O_QUEEN = 4;
 
     /** 
