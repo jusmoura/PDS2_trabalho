@@ -59,7 +59,7 @@ void CheckersGame::readMove(int x[])
 bool CheckersGame::validMove(int x[4])
 {
     if(x[1] < 0 || x[1] >= BOARD_SIZE || x[2] < 0 || x[2] > BOARD_SIZE) {
-        std::cout << "Jogada invalida 1: Coordenadas da peça invalidas." << std::endl;
+        std::cout << "Jogada invalida 1: Coordenadas da peca invalidas." << std::endl;
         return false;
     }
     else if(x[3] < 0 || x[3] >= BOARD_SIZE || x[4] < 0 || x[4] > BOARD_SIZE) {
@@ -67,7 +67,15 @@ bool CheckersGame::validMove(int x[4])
         return false;
     }
     else if(_board[x[3]][x[4]].getValue() == 1 || _board[x[3]][x[4]].getValue() == 2 || _board[x[3]][x[4]].getValue() == 3 || _board[x[3]][x[4]].getValue() == 4) {
-        std::cout << "Jogada invalida 3: Já existe uma peça na coordenada da jogada." << std::endl;
+        std::cout << "Jogada invalida 3: Ja existe uma peca na coordenada da jogada." << std::endl;
+        return false;
+    }
+    else if(_board[x[1].getValue() == 1] && _board[x[3]] < _board[x[1]]) {
+        std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
+        return false;
+    }
+    else if(_board[x[1].getValue() == 2] && _board[x[3]] > _board[x[1]]) {
+        std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
     else {
