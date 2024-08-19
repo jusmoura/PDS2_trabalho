@@ -1,6 +1,81 @@
 #include "../include/lig4.hpp"
 
+
 Lig4::Lig4() :Board(6, 7), currentPlayer(PLAYER_X) {
+}
+
+bool Lig4::checkVictory() {
+    //Itera por todas as casas do tabuleiro; de baixo para cima, da esquerda para a direita
+    for (int line = linesSize - 1; line >= 0; line--) {
+        for (int col = 0; col < columnsSize; col++) {
+            //Verificando vitórias
+            int sum = 1;
+            //Verificação horizontal
+            for (int i = 1; col + i < columnsSize; i++) {
+                if (Board::validateMove(line, col + i) && _board[line][col + i].getValue() != EMPTY) {
+                    if (_board[line][col + i].getValue() == currentPlayer)
+                        sum++;
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
+                return true;
+            else
+                sum = 1;
+
+            //Verificação Vertical
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col) && _board[line - i][col].getValue() != EMPTY) {
+                    if (_board[line - i][col].getValue() == currentPlayer)
+                        sum++;
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
+                return true;
+            else
+                sum = 1;
+
+            //Verificação Diagonal Superior Direita
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col + i) && _board[line - i][col + i].getValue() != EMPTY) {
+                    if (_board[line - i][col + i].getValue() == currentPlayer)
+                        sum++;
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
+                return true;
+            else
+                sum = 1;
+
+            //Verificação Diagonal Superior Esquerda
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col - i) && _board[line - i][col - i].getValue() != EMPTY) {
+                    if (_board[line - i][col - i].getValue() == currentPlayer)
+                        sum++;
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
+                return true;
+            else
+                sum = 1;
+        }
+    }
+    return false;
 }
 
 void Lig4::switchPlayer() {
@@ -39,83 +114,6 @@ bool Lig4::checkTie() {
     return true;
 }
 
-bool Lig4::checkVictory() {
-    //Itera por todas as casas do tabuleiro
-    for (int line = linesSize - 1; line >= 0; line--) {
-        for (int col = 0; col < columnsSize; col++) {
-            //Verificando vitórias
-            int sum = 1;
-            //Direita
-            for (int i = 1; col + i < columnsSize; i++) {
-                if (Board::validateMove(line, col + i) && _board[line][col + i].getValue() != EMPTY) {
-                    if (_board[line][col + i].getValue() == currentPlayer)
-                        sum++;
-
-                    else
-                        break;
-                }
-                else
-                    break;
-            }
-            if (sum == 4)
-                return true;
-            else
-                sum = 1;
-
-            //Cima
-            for (int i = 1; line - i >= 0; i++) {
-                if (Board::validateMove(line - i, col) && _board[line - i][col].getValue() != EMPTY) {
-                    if (_board[line - i][col].getValue() == currentPlayer)
-                        sum++;
-
-                    else
-                        break;
-                }
-                else
-                    break;
-            }
-            if (sum == 4)
-                return true;
-            else
-                sum = 1;
-
-            //Diagonal Superior Direita
-            for (int i = 1; line - i >= 0; i++) {
-                if (Board::validateMove(line - i, col + i) && _board[line - i][col + i].getValue() != EMPTY) {
-                    if (_board[line - i][col + i].getValue() == currentPlayer)
-                        sum++;
-
-                    else
-                        break;
-                }
-                else
-                    break;
-            }
-            if (sum == 4)
-                return true;
-            else
-                sum = 1;
-
-            //Diagonal Superior Esquerda
-            for (int i = 1; line - i >= 0; i++) {
-                if (Board::validateMove(line - i, col - i) && _board[line - i][col - i].getValue() != EMPTY) {
-                    if (_board[line - i][col - i].getValue() == currentPlayer)
-                        sum++;
-
-                    else
-                        break;
-                }
-                else
-                    break;
-            }
-            if (sum == 4)
-                return true;
-            else
-                sum = 1;
-        }
-    }
-    return false;
-}
 
 Player* Lig4::play(Player* player1, Player* player2) {
     Player* currentPlayerPtr = player1;
