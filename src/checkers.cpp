@@ -50,7 +50,7 @@ void CheckersGame::checkIfBecameQueen(int x, int y)
 
 void CheckersGame::readMove(int x[])
 {
-    std::cout << "Digite linha e coluna da peça: " << std::endl;
+    std::cout << "Digite linha e coluna da peca: " << std::endl;
     std::cin >> x[1] >> x[2];
     std::cout << "Digite linha e coluna da jogada: " << std::endl;
     std::cin >> x[3] >> x[4];
