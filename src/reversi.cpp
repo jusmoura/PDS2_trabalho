@@ -150,6 +150,7 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         vector<pair<int, int>> possibleMoves = help();
         if (possibleMoves.empty()) {
             cout << YELLOW_COLOR << "\nNenhuma jogada valida! Passando a vez..." << RESET_ALL << endl;
+            std::swap(currentPlayerPtr, otherPlayerPtr);
             switchPlayer();
             continue;
         }
@@ -213,11 +214,11 @@ Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
     calculateScore();
     Board::printBoard();
     if (sumX > sumO) {
-        cout << GREEN_COLOR << "PARABENS " << player1->getNickname() << ", VOCÊ GANHOU!" << RESET_ALL << endl;
+        cout << GREEN_COLOR << "PARABENS " << player1->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
         return player1;
     }
     else if (sumO > sumX) {
-        cout << GREEN_COLOR << "PARABENS " << player2->getNickname() << ", VOCÊ GANHOU!" << RESET_ALL << endl;
+        cout << GREEN_COLOR << "PARABENS " << player2->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
         return player2;
     }
     else {
