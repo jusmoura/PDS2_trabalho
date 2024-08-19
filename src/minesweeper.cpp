@@ -77,7 +77,7 @@ void Minesweeper::printBoard() {
                         cout << " " << GREEN_COLOR << value << RESET_ALL << " |";
                         break;
                     case 2:
-                        cout << " " << BLUE_COLOR << value << RESET_ALL << " |";
+                        cout << " " << CYAN_COLOR << value << RESET_ALL << " |";
                         break;
                     case 3:
                         cout << " " << YELLOW_COLOR << value << RESET_ALL << " |";

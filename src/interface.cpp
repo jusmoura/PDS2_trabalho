@@ -5,34 +5,39 @@ using namespace std;
 void Interface::mainMenu() {
     cout << "\n" << MAIN_TITLE_STYLE << "=== Bem vindo(a) ao Hub de Jogos de Tabuleiro! ===" << RESET_ALL << endl;
 
-    int input = 0;
-    while (input != SAIR) {
+    while (1) {
         try {
             cout << "\n" << BLUE_COLOR << "MENU PRINCIPAL:\n\n" << RESET_ALL;
             cout << "    1 - Gerenciar jogadores" << endl;
             cout << "    2 - Jogar!" << endl;
             cout << "    9 - Sair do programa" << endl;
             cout << "\nDigite o indice da opcao desejada: ";
-            cin >> input;
 
-            switch (input) {
-            case 1:
-                playersMenu();
-                break;
+            int option;
+            string input;
+            getline(cin, input);
 
-            case 2:
-                gamesMenu();
-                break;
+            stringstream ss(input);
+            if (ss >> option) {
+                switch (option) {
+                case 1:
+                    playersMenu();
+                    break;
 
-            case SAIR:
-                throw SAIR;
-                break;
+                case 2:
+                    gamesMenu();
+                    break;
 
-            default:
-                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
+                case SAIR:
+                    throw SAIR;
+                    break;
+
+                default:
+                    cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
+                }
             }
-
-            clearBuffer();
+            else
+                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
         }
         //Catch para capturar o retorno do jogador para o menu principal ou encerrar o programa
         catch (int value) {
@@ -46,11 +51,7 @@ void Interface::mainMenu() {
 }
 
 void Interface::playersMenu() {
-    clearBuffer();
-
-    int input = 0;
-
-    while (input != SAIR) {
+    while (1) {
         cout << "\n" << BLUE_COLOR << "Gerenciando jogadores...\n\n" << RESET_ALL;
         cout << "    1 - Criar jogador" << endl;
         cout << "    2 - Remover jogador" << endl;
@@ -59,50 +60,53 @@ void Interface::playersMenu() {
         cout << "    8 - Voltar" << endl;
         cout << "    9 - Sair do programa" << endl;
         cout << "\nDigite o indice da opcao desejada: ";
-        cin >> input;
 
-        switch (input) {
-        case 1:
-            createPlayer();
-            break;
+        int option;
+        string input;
+        getline(cin, input);
 
-        case 2:
-            removePlayer();
-            break;
+        stringstream ss(input);
+        if (ss >> option) {
+            switch (option) {
+            case 1:
+                createPlayer();
+                break;
 
-        case 3:
-            controller->printPlayersByName();
-            break;
+            case 2:
+                removePlayer();
+                break;
 
-        case 4:
-            controller->printPlayersByNickname();
-            break;
+            case 3:
+                controller->printPlayersByName();
+                break;
 
-        case VOLTAR:
-            return;
+            case 4:
+                controller->printPlayersByNickname();
+                break;
 
-        case SAIR:
-            throw SAIR;
-            break;
+            case VOLTAR:
+                return;
 
-        default:
-            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
-            break;
+            case SAIR:
+                throw SAIR;
+                break;
+
+            default:
+                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
+                break;
+            }
         }
-
-        clearBuffer();
+        else
+            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
     }
 }
 
 void Interface::gamesMenu() {
-    clearBuffer();
-
     cout << "\n" << BLUE_COLOR << "Jogar!" << RESET_ALL << endl;
     while (1) {
         try {
             Player* player1 = loginPlayer("JOGADOR 1");
             cout << "\n" << GREEN_COLOR << "Bem vindo(a), " << player1->getName() << "!" << RESET_ALL << endl;
-            clearBuffer();
 
             Player* player2 = nullptr;
 
@@ -114,25 +118,30 @@ void Interface::gamesMenu() {
                         cout << "Jogador 2: " << player2->getNickname() << endl;
 
                         cout << "\nDeseja continuar com os mesmos jogadores (S/N)? ";
-                        char input;
-                        cin >> input;
 
-                        switch (input) {
-                        case 'N':
-                        case 'n':
-                            throw "RETURN";
-                            break;
+                        char option;
+                        string input;
+                        getline(cin, input);
 
-                        case 'S':
-                        case 's':
-                            break;
+                        stringstream ss(input);
+                        if (ss >> option) {
+                            switch (option) {
+                            case 'N':
+                            case 'n':
+                                throw "RETURN";
+                                break;
 
-                        default:
-                            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Continuando com os mesmos jogadores..." << RESET_ALL << endl;
-                            break;
+                            case 'S':
+                            case 's':
+                                break;
+
+                            default:
+                                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Continuando com os mesmos jogadores..." << RESET_ALL << endl;
+                                break;
+                            }
                         }
-
-                        clearBuffer();
+                        else
+                            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
                     }
 
                     Player* winner;
@@ -146,134 +155,105 @@ void Interface::gamesMenu() {
                     cout << "    8 - Voltar" << endl;
                     cout << "    9 - Sair do programa" << endl;
                     cout << "\nDigite o indice do jogo que quer jogar: ";
-                    int input;
-                    cin >> input;
 
-                    clearBuffer();
-                    switch (input) {
-                    case REVERSI:
-                    {
-                        player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
+                    int selectedGame;
+                    string input;
+                    getline(cin, input);
 
-                        cout << "\n" << BLUE_COLOR << "Reversi" << RESET_ALL << endl;
+                    stringstream ss(input);
+                    if (ss >> selectedGame) {
+                        switch (selectedGame) {
+                        case REVERSI:
+                        {
+                            player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
-                        ReversiGame reversiGame;
-                        winner = reversiGame.play(player1, player2);
+                            cout << "\n" << BLUE_COLOR << "Reversi" << RESET_ALL << endl;
 
-                        if (winner == player1) {
-                            player1->addWin(REVERSI);
-                            player2->addDefeat(REVERSI);
+                            ReversiGame reversiGame;
+                            winner = reversiGame.play(player1, player2);
+
+                            controller->victoryAndDefeatManagement(winner, player1, player2, selectedGame);
+
+                            cout << "\n" << GRAY_COLOR << "Encerrando Reversi..." << RESET_ALL << endl;
+
+                        } break;
+
+                        case LIG4:
+                        {
+                            cout << "\n" << BLUE_COLOR << "Lig4" << RESET_ALL << endl;
+
+                            player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
+
+                            Lig4 lig4;
+                            winner = lig4.play(player1, player2);
+
+                            controller->victoryAndDefeatManagement(winner, player1, player2, selectedGame);
+
+                            cout << "\n" << GRAY_COLOR << "Encerrando Lig4..." << RESET_ALL << endl;
+
+                        } break;
+
+                        case TIC_TAC_TOE:
+                        {
+                            cout << "\n" << BLUE_COLOR << "Jogo da Velha" << RESET_ALL << endl;
+
+                            player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
+
+                            TicTacToe ticTacToe;
+                            winner = ticTacToe.play(player1, player2);
+
+                            controller->victoryAndDefeatManagement(winner, player1, player2, selectedGame);
+
+                            cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha..." << RESET_ALL << endl;
+
+                        } break;
+
+                        case MINESWEEPER:
+                        {
+                            cout << "\n" << BLUE_COLOR << "Campo Minado" << RESET_ALL << endl;
+
+                            Minesweeper minesweeper;
+                            winner = minesweeper.play(player1);
+
+                            if (winner == player1)
+                                player1->addWin(MINESWEEPER);
+
+                            else
+                                player1->addDefeat(MINESWEEPER);
+
+                            cout << "\n" << GRAY_COLOR << "Encerrando Campo Minado..." << RESET_ALL << endl;
+                        } break;
+
+                        case CHECKERS:
+                        {
+                            cout << "\n" << BLUE_COLOR << "Damas" << RESET_ALL << endl;
+
+                            player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
+
+                            CheckersGame checkersGame;
+                            winner = checkersGame.play(player1, player2);
+
+                            controller->victoryAndDefeatManagement(winner, player1, player2, selectedGame);
+
+                            cout << "\n" << GRAY_COLOR << "Encerrando Damas..." << RESET_ALL << endl;
+
+                        } break;
+
+                        case VOLTAR: //Voltar
+                            throw VOLTAR;
+                            break;
+
+                        case SAIR: //Sair do programa
+                            throw SAIR;
+                            break;
+
+                        default:
+                            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
+                            break;
                         }
-                        else if (winner == player2) {
-                            player2->addWin(REVERSI);
-                            player1->addDefeat(REVERSI);
-                        }
-                        else {
-                            player1->addDraw(REVERSI);
-                            player2->addDraw(REVERSI);
-                        }
-                        cout << "\n" << GRAY_COLOR << "Encerrando Reversi..." << RESET_ALL << endl;
-
-                    } break;
-
-                    case LIG4:
-                    {
-                        cout << "\n" << BLUE_COLOR << "Lig4" << RESET_ALL << endl;
-
-                        player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
-
-                        Lig4 lig4;
-                        winner = lig4.play(player1, player2);
-
-                        if (winner == player1) {
-                            player1->addWin(LIG4);
-                            player2->addDefeat(LIG4);
-                        }
-                        else if (winner == player2) {
-                            player2->addWin(LIG4);
-                            player1->addDefeat(LIG4);
-                        }
-                        else {
-                            player1->addDraw(LIG4);
-                            player2->addDraw(LIG4);
-                        }
-                        cout << "\n" << GRAY_COLOR << "Encerrando Lig4..." << RESET_ALL << endl;
-
-                    } break;
-
-                    case TIC_TAC_TOE:
-                    {
-                        cout << "\n" << BLUE_COLOR << "Jogo da Velha" << RESET_ALL << endl;
-
-                        player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
-
-                        TicTacToe ticTacToe;
-                        winner = ticTacToe.play(player1, player2);
-
-                        if (winner == player1) {
-                            player1->addWin(TIC_TAC_TOE);
-                            player2->addDefeat(TIC_TAC_TOE);
-                        }
-                        else if (winner == player2) {
-                            player2->addWin(TIC_TAC_TOE);
-                            player1->addDefeat(TIC_TAC_TOE);
-                        }
-                        else {
-                            player1->addDraw(TIC_TAC_TOE);
-                            player2->addDraw(TIC_TAC_TOE);
-                        }
-                        cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha..." << RESET_ALL << endl;
-
-                    } break;
-
-                    case MINESWEEPER:
-                    {
-                        cout << "\n" << BLUE_COLOR << "Campo Minado" << RESET_ALL << endl;
-
-                        Minesweeper minesweeper;
-                        winner = minesweeper.play(player1);
-
-                        if (winner == player1)
-                            player1->addWin(MINESWEEPER);
-
-                        else
-                            player1->addDefeat(MINESWEEPER);
-
-                        cout << "\n" << GRAY_COLOR << "Encerrando Campo Minado..." << RESET_ALL << endl;
-                    } break;
-
-                    case CHECKERS:
-                    {
-                        cout << "\n" << BLUE_COLOR << "Damas" << RESET_ALL << endl;
-
-                        player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
-
-                        CheckersGame checkersGame;
-                        winner = checkersGame.play(player1, player2);
-                        if (winner == player1) {
-                            player1->addWin(CHECKERS);
-                            player2->addDefeat(CHECKERS);
-                        }
-                        else if (winner == player2) {
-                            player2->addWin(CHECKERS);
-                            player1->addDefeat(CHECKERS);
-                        }
-                        cout << "\n" << GRAY_COLOR << "Encerrando Damas..." << RESET_ALL << endl;
-
-                    } break;
-
-                    case VOLTAR: //Voltar
-                        throw VOLTAR;
-                        break;
-
-                    case SAIR: //Sair do programa
-                        throw SAIR;
-                        break;
-
-                    default:
-                        cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
-                        break;
                     }
+                    else
+                        cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
                 }
                 //Catch para capturar o retorno do jogador caso ele decida sair de um jogo prematuramente
                 catch (int value) {
@@ -291,13 +271,13 @@ void Interface::gamesMenu() {
 }
 
 Player* Interface::createPlayer() {
-    clearBuffer();
-
     string name, nickname;
     cout << "\nDigite o nome do novo jogador: ";
     getline(cin, name);
     cout << "Digite o apelido do novo jogador: ";
     cin >> nickname;
+    clearBuffer();
+
     Player* newPlayer = new Player(name, nickname);
 
     bool inserted = controller->insertNewPlayer(newPlayer);
@@ -314,11 +294,10 @@ Player* Interface::createPlayer() {
 }
 
 void Interface::removePlayer() {
-    clearBuffer();
-
     string nickname;
     cout << "\nDigite o apelido do jogador a ser removido: ";
     cin >> nickname;
+    clearBuffer();
 
     int removed = controller->removePlayer(nickname);
 
@@ -333,7 +312,6 @@ void Interface::removePlayer() {
 }
 
 Player* Interface::loginPlayer(string playerNumber) {
-    int input = 0;
     while (1) {
         cout << "\n" << BOLD << playerNumber << RESET_ALL << ", entre em um perfil ja existe ou crie um novo jogador:\n" << endl;
         cout << "    1 - Entrar" << endl;
@@ -341,55 +319,60 @@ Player* Interface::loginPlayer(string playerNumber) {
         cout << "    8 - Voltar" << endl;
         cout << "    9 - Sair do programa" << endl;
         cout << "\nDigite o indice da opcao desejada: ";
-        cin >> input;
 
-        switch (input) {
-        case 1:
-        {
-            clearBuffer();
+        int option;
+        string input;
+        getline(cin, input);
 
-            string nickname;
-            cout << "\nDigite o apelido do " << playerNumber << ": ";
-            cin >> nickname;
-            Player* player = controller->getPlayerByNickname(nickname);
+        stringstream ss(input);
+        if (ss >> option) {
+            switch (option) {
+            case 1:
+            {
+                string nickname;
+                cout << "\nDigite o apelido do " << playerNumber << ": ";
+                cin >> nickname;
+                clearBuffer();
 
-            if (player == nullptr) {
-                cout << "\n" << RED_COLOR << "Jogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << RESET_ALL << endl;
+                Player* player = controller->getPlayerByNickname(nickname);
+
+                if (player == nullptr) {
+                    cout << "\n" << RED_COLOR << "Jogador com apelido \"" << nickname << "\" nao encontrado! Tente novamente!" << RESET_ALL << endl;
+                    break;
+                }
+                else
+                    return player;
+
+            } break;
+
+            case 2:
+            {
+                Player* player = createPlayer();
+                if (player != nullptr)
+                    return player;
+            } break;
+
+            case VOLTAR:
+                throw VOLTAR;
+                break;
+
+            case SAIR:
+                throw SAIR;
+                break;
+
+            default:
+                cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
                 break;
             }
-            else
-                return player;
-
-        } break;
-
-        case 2:
-        {
-            Player* player = createPlayer();
-            if (player != nullptr)
-                return player;
-        } break;
-
-        case VOLTAR:
-            throw VOLTAR;
-            break;
-
-        case SAIR:
-            throw SAIR;
-            break;
-
-        default:
-            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
-            break;
         }
-
-        clearBuffer();
+        else
+            cout << "\n" << YELLOW_COLOR << "Opcao nao cadastrada. Tente novamente!" << RESET_ALL << endl;
     }
 }
 
 Player* Interface::playerLoginVerification(Player* player1, Player* player2, string playerNumber) {
     if (player2 == nullptr) {
         player2 = loginPlayer(playerNumber);
-        clearBuffer();
 
         if (player1 == player2) {
             cout << "\n" << RED_COLOR << "Jogador com apelido \"" << player1->getNickname() << "\" ja selecionado! Tente novamente!" << RESET_ALL << endl;
@@ -412,6 +395,5 @@ void Interface::clearBuffer() {
 
 void Interface::endProcess() {
     delete controller;
-    cout << "\nSaindo...\n" << endl;
     throw "CLOSE_PROGRAM";
 }

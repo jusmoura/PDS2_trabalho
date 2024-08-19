@@ -125,6 +125,23 @@ int PlayerController::findIndexOfPlayer(string nickname) {
     return -1;
 }
 
+void PlayerController::victoryAndDefeatManagement(Player* winner, Player* player1, Player* player2, int selectedGame) {
+    if (winner == player1) {
+        player1->addWin(selectedGame);
+        player2->addDefeat(selectedGame);
+    }
+    else if (winner == player2) {
+        player2->addWin(selectedGame);
+        player1->addDefeat(selectedGame);
+    }
+    else {
+        if (selectedGame != CHECKERS) {
+            player1->addDraw(selectedGame);
+            player2->addDraw(selectedGame);
+        }
+    }
+}
+
 void PlayerController::printPlayers() {
     for (auto player : _players)
         cout << *player;

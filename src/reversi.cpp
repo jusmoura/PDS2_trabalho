@@ -137,6 +137,8 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
 
     int size = (size1 >= size2) ? size1 : size2;
 
+    cout << "\nIniciando tabuleiro...\n" << endl;
+
     while (sumX + sumO < 64) {
         cout << endl;
         cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
