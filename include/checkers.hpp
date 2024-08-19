@@ -13,7 +13,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <limits>
 #include "board.hpp"
 
  /**
@@ -75,10 +74,10 @@ private:
     /**
      * @brief Verifica se uma peça se tornou uma dama após um movimento.
      *
-     * @param x Coordenada x da peça no tabuleiro.
-     * @param y Coordenada y da peça no tabuleiro.
+     * @param line Coordenada linha da peça no tabuleiro.
+     * @param column Coordenada coluna da peça no tabuleiro.
      */
-    void checkIfBecameQueen(int x, int y);
+    void checkIfBecameQueen(int line, int column);
 
     /**
      * @brief Lê e interpreta um movimento de jogador.
