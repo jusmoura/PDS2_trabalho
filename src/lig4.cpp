@@ -169,7 +169,7 @@ Player* Lig4::play(Player* player1, Player* player2) {
                 swap(currentPlayerPtr, otherPlayerPtr);
             }
             else
-                cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
+                cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha] ou 'sair'\n" << RESET_ALL << endl;
         }
         catch (const char* e) {
             if (e != "INVALID_MOVE")

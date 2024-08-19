@@ -1,25 +1,83 @@
 #include "../include/tic_tac_toe.hpp"
 
-
-TicTacToe::TicTacToe():Board(3,3),currentPlayer(PLAYER_X){}
+TicTacToe::TicTacToe() :Board(3, 3), currentPlayer(PLAYER_X) {
+}
 
 bool TicTacToe::checkVictory() {
-    for (int i = 0;i < 3;i++) {
-        if (_board[i][0].getValue() == currentPlayer && _board[i][1].getValue() == currentPlayer && _board[i][2].getValue() == currentPlayer)
-            return true;    
-        if (_board[0][i].getValue() == currentPlayer && _board[1][i].getValue() == currentPlayer && _board[2][i].getValue() == currentPlayer)
-            return true; 
+    int currentValue;
+    //Verificação horizontal
+    for (int i = 0; i < linesSize; i++) {
+        currentValue = _board[i][0].getValue();
+        if (currentValue != EMPTY) {
+            int sum = 1;
+            for (int j = 1; j < columnsSize; j++) {
+                if (_board[i][j].getValue() == currentValue)
+                    sum++;
+                else
+                    break;
+            }
+            if (sum == 3)
+                return currentValue;
+        }
     }
-    if (_board[0][0].getValue() == currentPlayer && _board[1][1].getValue() == currentPlayer && _board[2][2].getValue() == currentPlayer)
-        return true;
-    if (_board[0][2].getValue() == currentPlayer && _board[1][1].getValue() == currentPlayer && _board[2][0].getValue() == currentPlayer)
-        return true;
-    return false;    
+
+    //Verificação vertical
+    for (int j = 0; j < columnsSize; j++) {
+        currentValue = _board[0][j].getValue();
+        if (currentValue != EMPTY) {
+            int sum = 1;
+            for (int i = 1; i < linesSize; i++) {
+                if (_board[i][j].getValue() == currentValue)
+                    sum++;
+                else
+                    break;
+            }
+            if (sum == 3)
+                return currentValue;
+        }
+    }
+
+    //Verificação diagonal principal
+    //Primeira celula: de baixo para cima; da esquerda para direita
+    int line = linesSize - 1;
+    int col = 0;
+    currentValue = _board[line][col].getValue();
+
+    if (currentValue != EMPTY) {
+        int sum = 1;
+        for (int i = 1; i < BOARD_SIZE; i++) {
+            if (_board[line - i][col + i].getValue() == currentValue)
+                sum++;
+            else
+                break;
+        }
+        if (sum == 3)
+            return currentValue;
+    }
+
+    //Verificação diagonal secundária
+    //Primeira celula: de baixo para cima; da direita para esquerda
+    line = linesSize - 1;
+    col = columnsSize - 1;
+    currentValue = _board[line][col].getValue();
+
+    if (currentValue != EMPTY) {
+        int sum = 1;
+        for (int i = 1; i < BOARD_SIZE; i++) {
+            if (_board[line - i][col - i].getValue() == currentValue)
+                sum++;
+            else
+                break;
+        }
+        if (sum == 3)
+            return currentValue;
+    }
+    return 0;
 }
 
 bool TicTacToe::checkTie() {
-    for (int i = 0;i < 3;i++) {
-        for (int j = 0;j < 3;j++) {
+    for (int i = 0;i < BOARD_SIZE;i++) {
+        for (int j = 0;j < BOARD_SIZE;j++) {
             if (_board[i][j].getValue() == EMPTY)
                 return false;
         }
@@ -28,9 +86,10 @@ bool TicTacToe::checkTie() {
 }
 
 bool TicTacToe::validMove(int line, int column) {
-    if (_board[line][column].getValue()!=EMPTY||line<0||column<0||line>=3||column>=3)
+    if (_board[line][column].getValue() != EMPTY || line < 0 || column < 0 || line >= BOARD_SIZE || column >= BOARD_SIZE)
         return false;
-    
+    else
+        return true;
 }
 
 void TicTacToe::switchPlayer() {
@@ -40,41 +99,69 @@ void TicTacToe::switchPlayer() {
         currentPlayer = PLAYER_X;
 }
 
-void TicTacToe::makeMove(int row, int column) {
-    if (validMove(row, column)){
-        _board[row][column].setValue(currentPlayer);
-    }    
-    else
-        makeMove(row, column);
+void TicTacToe::makeMove(int line, int column) {
+    if (validMove(line, column))
+        _board[line][column].setValue(currentPlayer);
+    else {
+        cout << "\n" << YELLOW_COLOR << "Jogada invalida. Tente novamente!\n" << RESET_ALL << endl;
+        throw "INVALID_MOVE";
+    }
 }
 
-Player* TicTacToe::play(Player* player1,Player* player2) {
-    Player* currentPlayerPtr=player1;
-    Player* otherPlayerPtr=player2;
+Player* TicTacToe::play(Player* player1, Player* player2) {
+    Player* currentPlayerPtr = player1;
+    Player* otherPlayerPtr = player2;
 
-    string player1Nickname=player1->getNickname();
-    string player2Nickname=player2->getNickname();    
+    string player1Nickname = player1->getNickname();
+    string player2Nickname = player2->getNickname();
 
-    
+    int size1 = player1Nickname.size();
+    int size2 = player2Nickname.size();
+
+    int size = (size1 >= size2) ? size1 : size2;
+
+    cout << "\nIniciando tabuleiro...\n" << endl;
+    cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
+    cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
     Board::printBoard();
-    while (!checkVictory() && !checkTie()) {
-        int row;
-        int column;
-        std::cout<<(currentPlayerPtr==player1? player1Nickname:player2Nickname)<<": insira [linha coluna]"<<std::endl;
-        std::cin>>row>>column;
-        makeMove(row, column);
-        Board::printBoard();
-        if (checkVictory()) {
-            std::cout<<"PARABENS "<<currentPlayerPtr->getNickname()<<",VOCÊ GANHOU!"<<std::endl;
-            return currentPlayerPtr;
-            break;
+
+    int line;
+    int column;
+    string input;
+
+    while (1) {
+        try {
+            std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [linha coluna] ou 'sair' para voltar ao menu de jogos" << endl;
+            getline(cin, input);
+
+            if (input == "SAIR" || input == "sair")
+                throw SIMPLE_RETURN;
+
+            stringstream ss(input);
+
+            if (ss >> line >> column) {
+                makeMove(line, column);
+                cout << endl;
+                cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
+                cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
+                Board::printBoard();
+                if (checkVictory()) {
+                    std::cout << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << std::endl;
+                    return currentPlayerPtr;
+                }
+                else if (checkTie()) {
+                    std::cout << YELLOW_COLOR << "VELHA! O jogo terminou em empate!" << RESET_ALL << std::endl;
+                    return nullptr;
+                }
+                switchPlayer();
+                std::swap(currentPlayerPtr, otherPlayerPtr);
+            }
+            else
+                cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
         }
-        else if (checkTie()) {
-            std::cout<<"O jogo terminou em empate!"<<std::endl;
-            break;
+        catch (const char* e) {
+            if (e != "INVALID_MOVE")
+                throw;
         }
-        switchPlayer();
-        std::swap(currentPlayerPtr,otherPlayerPtr);
     }
-    std::cout << "game over" <<std::endl;
 }
