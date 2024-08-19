@@ -70,11 +70,11 @@ bool CheckersGame::validMove(int x[4])
         std::cout << "Jogada invalida 3: Ja existe uma peca na coordenada da jogada." << std::endl;
         return false;
     }
-    else if(_board[x[1].getValue() == 1] && _board[x[3]] < _board[x[1]]) {
+    else if(_board[x[1]][x[2]].getValue() == 1 && _board[x[3]] < _board[x[1]]) {
         std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
-    else if(_board[x[1].getValue() == 2] && _board[x[3]] > _board[x[1]]) {
+    else if(_board[x[1]][x[2]].getValue() == 2 && _board[x[3]] > _board[x[1]]) {
         std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
