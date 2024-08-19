@@ -271,11 +271,25 @@ A classe `TicTacToe` implementa o clássico jogo da velha, um jogo de estratégi
 **Observação**: Certifique-se de que o `mingw32-make` esteja instalado e configurado corretamente no seu sistema, e que o `Makefile` esteja corretamente configurado para gerar os binários na pasta `bin`.
 
 # Doxyfile
-Para abrir o doxyfile:
-1. Vá até a pasta docs
-2. Abra a subpasta html
-3. Execute o comando
+### Como Abrir a Documentação Gerada pelo Doxygen
 
-    xdg-open index.html   # No Linux
+Após a geração da documentação com o Doxygen, siga os passos abaixo para visualizar a documentação em HTML:
+
+1. **Navegue até a pasta de documentação**:
+   - Acesse a pasta `docs`.
+
+2. **Acesse a subpasta HTML**:
+   - Dentro da pasta `docs`, entre na subpasta `html`, onde a documentação HTML gerada pelo Doxygen está localizada.
+
+3. **Abra a documentação**:
+   - Execute o comando correspondente ao seu sistema operacional para abrir o arquivo `index.html`:
+
+   **No Linux**:
+   ```bash
+   xdg-open index.html
+   ```
     
-    start index.html      # No Windows
+   **No Windows**:
+   ```bash
+    start index.html
+    ```
