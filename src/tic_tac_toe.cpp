@@ -131,7 +131,7 @@ Player* TicTacToe::play(Player* player1, Player* player2) {
 
     while (1) {
         try {
-            std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [linha coluna] ou 'sair' para voltar ao menu de jogos" << endl;
+            cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [linha coluna] ou 'sair' para voltar ao menu de jogos" << endl;
             getline(cin, input);
 
             if (input == "SAIR" || input == "sair")
@@ -146,15 +146,15 @@ Player* TicTacToe::play(Player* player1, Player* player2) {
                 cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
                 Board::printBoard();
                 if (checkVictory()) {
-                    std::cout << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << std::endl;
+                    cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
                     return currentPlayerPtr;
                 }
                 else if (checkTie()) {
-                    std::cout << YELLOW_COLOR << "VELHA! O jogo terminou em empate!" << RESET_ALL << std::endl;
+                    cout << YELLOW_COLOR << "VELHA! O jogo terminou em empate!" << RESET_ALL << endl;
                     return nullptr;
                 }
                 switchPlayer();
-                std::swap(currentPlayerPtr, otherPlayerPtr);
+                swap(currentPlayerPtr, otherPlayerPtr);
             }
             else
                 cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
