@@ -222,15 +222,53 @@ A classe `TicTacToe` implementa o clássico jogo da velha, um jogo de estratégi
 
 ### No Linux
 
-   Navegue até o diretório onde o Makefile está localizado e execute o comando:
+1. **Navegue até o diretório do projeto**:
+   - Abra o terminal.
+   - Use o comando `cd` para navegar até o diretório onde o `Makefile` está localizado.
 
-   1. make
+2. **Compile o projeto**:
+   - Execute o seguinte comando para compilar o projeto:
+     ```bash
+     make
+     ```
 
-   2. Em seguida, vá até a pasta "bin" 
+3. **Executar o programa**:
+   - Após a compilação, navegue até a pasta `bin`:
+     ```bash
+     cd bin
+     ```
+   - Execute o arquivo gerado (`main`):
+     ```bash
+     ./main
+     ```
 
-   3. Complete a execução com ./main
+**Observação**: Certifique-se de que o `make` esteja instalado no seu sistema e que o `Makefile` esteja corretamente configurado para gerar os binários na pasta `bin`.
+
 
 ### No Windows
+
+1. **Navegue até o diretório do projeto**:
+   - Abra o terminal ou prompt de comando (cmd).
+   - Use o comando `cd` para navegar até o diretório onde o `Makefile` está localizado.
+
+2. **Compile o projeto**:
+   - Execute o seguinte comando para compilar o projeto:
+     ```bash
+     mingw32-make
+     ```
+   - Isso irá compilar os arquivos e gerar os binários necessários.
+
+3. **Executar o programa**:
+   - Após a compilação, navegue até a pasta `bin`:
+     ```bash
+     cd bin
+     ```
+   - Execute o arquivo gerado (`main.exe`):
+     ```bash
+     ./main.exe
+     ```
+
+**Observação**: Certifique-se de que o `mingw32-make` esteja instalado e configurado corretamente no seu sistema, e que o `Makefile` esteja corretamente configurado para gerar os binários na pasta `bin`.
 
 # Doxyfile
 Para abrir o doxyfile:
