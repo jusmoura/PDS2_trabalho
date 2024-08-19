@@ -186,7 +186,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inicia e gerencia o jogo Campo Minado. </p>
-<p>Inicia o jogo e gerencia o fluxo de jogo entre dois jogadores. O segundo jogador pode ser <code>nullptr</code> se apenas um jogador estiver participando.</p>
+<p>Inicia o jogo e gerencia o fluxo. Inicializa o segundo jogador como <code>nullptr</code> pois apenas um player joga o jogo</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">player1</td><td>Ponteiro para o primeiro jogador. </td></tr>
@@ -194,7 +194,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o jogador que venceu, ou <code>nullptr</code> se não houver vencedor. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o jogador que venceu, ou <code>nullptr</code> em caso de derrota. </dd></dl>
 
 <p>Implements <a class="el" href="classBoard.html#ae6190d11118d6b2840d1569d41da8af3">Board</a>.</p>
 

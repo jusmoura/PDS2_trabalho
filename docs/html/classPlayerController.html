@@ -100,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7aa8869f04cb3f259ee23647c45c1bb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#a7aa8869f04cb3f259ee23647c45c1bb0">printPlayersByNickname</a> ()</td></tr>
 <tr class="memdesc:a7aa8869f04cb3f259ee23647c45c1bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime a lista de jogadores ordenada por apelido.  <a href="classPlayerController.html#a7aa8869f04cb3f259ee23647c45c1bb0">More...</a><br /></td></tr>
 <tr class="separator:a7aa8869f04cb3f259ee23647c45c1bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb46654f549e30398b2c4cb69c27161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#a0fb46654f549e30398b2c4cb69c27161">victoryAndDefeatManagement</a> (<a class="el" href="classPlayer.html">Player</a> *winner, <a class="el" href="classPlayer.html">Player</a> *player1, <a class="el" href="classPlayer.html">Player</a> *player2, int selectedGame)</td></tr>
+<tr class="memdesc:a0fb46654f549e30398b2c4cb69c27161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerenciador de atribuição de vitórias, derrotas e empates em jogos.  <a href="classPlayerController.html#a0fb46654f549e30398b2c4cb69c27161">More...</a><br /></td></tr>
+<tr class="separator:a0fb46654f549e30398b2c4cb69c27161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27b597bc2dbe06e2464dea6cdb3fac96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerController.html#a27b597bc2dbe06e2464dea6cdb3fac96">~PlayerController</a> ()</td></tr>
 <tr class="memdesc:a27b597bc2dbe06e2464dea6cdb3fac96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor da classe <code><a class="el" href="classPlayerController.html" title="Controlador responsável por gerenciar operações relacionadas aos jogadores.">PlayerController</a></code>.  <a href="classPlayerController.html#a27b597bc2dbe06e2464dea6cdb3fac96">More...</a><br /></td></tr>
 <tr class="separator:a27b597bc2dbe06e2464dea6cdb3fac96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -314,6 +317,49 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>O índice do jogador removido, ou -1 se o jogador não for encontrado. </dd></dl>
+
+</div>
+</div>
+<a id="a0fb46654f549e30398b2c4cb69c27161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb46654f549e30398b2c4cb69c27161">&#9670;&nbsp;</a></span>victoryAndDefeatManagement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerController::victoryAndDefeatManagement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>winner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPlayer.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>selectedGame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerenciador de atribuição de vitórias, derrotas e empates em jogos. </p>
+<p>Atribui vitória, derrota ou empate para os jogadores após o término de uma partida. </p>
 
 </div>
 </div>
