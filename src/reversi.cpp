@@ -146,6 +146,14 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
 
         Board::printBoard();
 
+        //Verificando jogadas possíveis 
+        vector<pair<int, int>> possibleMoves = help();
+        if (possibleMoves.empty()) {
+            cout << YELLOW_COLOR << "\nNenhuma jogada valida! Passando a vez..." << RESET_ALL << endl;
+            switchPlayer();
+            continue;
+        }
+
         int x, y;
         string line;
 
@@ -153,9 +161,8 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
         getline(cin, line);
 
         if (line == "help") {
-            vector<pair<int, int>> moves = help();
             cout << "\n" << GREEN_COLOR << "Jogadas validas:" << RESET_ALL << endl;
-            for (const auto& move : moves) {
+            for (const auto& move : possibleMoves) {
                 cout << "[" << move.first << " " << move.second << "]" << endl;
             }
             continue;
