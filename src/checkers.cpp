@@ -92,6 +92,22 @@ bool CheckersGame::validMove(int x[4]) {
         std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
+    else if(turn == 1 && _board[x[1]][x[2]].getValue() == 2) {
+        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+        return false;
+    }
+    else if(turn == 2 && _board[x[1]][x[2]].getValue() == 1) {
+        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+        return false;
+    }
+    else if(turn == 1 && _board[x[1]][x[2]].getValue() == 4) {
+        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+        return false;
+    }
+    else if(turn == 2 && _board[x[1]][x[2]].getValue() == 3) {
+        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+        return false;
+    }
     else {
         return true;
         std::cout << "Boa jogada!" << std::endl;
