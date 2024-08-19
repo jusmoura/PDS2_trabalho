@@ -6,11 +6,11 @@
 class Lig4 : public Board {
 private:
     int currentPlayer;
-    const int BOARD_SIZE=7;
     bool checkVictory();
     bool checkTie();
     void makeMove(int column);
     void switchPlayer();
+    void printBoard() override;
 public:
     Lig4();
     Player* play(Player* player1, Player* player2);

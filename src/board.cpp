@@ -27,7 +27,7 @@ bool Board::validateMove(int line, int column) {
 
 void Board::printBoard() {
     // Relação que permite uma exibição visual correta do campo
-    int lineSizeOfPrint = (this->linesSize * 4) + 1;
+    int lineSizeOfPrint = (this->columnsSize * 4) + 1;
 
     // Printa os números das colunas
     if (this->columnsSize <= 10) {
