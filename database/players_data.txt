@@ -1,10 +1,10 @@
 Daniela Dourado
 Dani
 0 0 0
-0 0 0
-0 0 0
-0 0 0
 0 1 0
+0 0 0
+0 0 0
+0 2 0
 Julia
 jusmoura
 2 8 0
@@ -22,7 +22,7 @@ Piter
 Vanessa
 Nessa
 0 0 0
-0 0 0
-0 0 0
-0 0 0
 1 0 0
+0 0 0
+0 0 0
+2 0 0
