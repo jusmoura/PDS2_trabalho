@@ -287,7 +287,9 @@ Após a geração da documentação com o Doxygen, siga os passos abaixo para vi
    **No Linux**:
    ```bash
    xdg-open index.html
+   ```
     
    **No Windows**:
    ```bash
     start index.html
+    ```
