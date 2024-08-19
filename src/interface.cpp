@@ -182,22 +182,21 @@ void Interface::gamesMenu() {
 
                         player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
-                        cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                        // Lig4 lig4;
-                        // winner = lig4.play(player1, player2);
+                        Lig4 lig4;
+                        winner = lig4.play(player1, player2);
 
-                        // if (winner == player1) {
-                        //     player1->addWin(LIG4);
-                        //     player2->addDefeat(LIG4);
-                        // }
-                        // else if (winner == player2) {
-                        //     player2->addWin(LIG4);
-                        //     player1->addDefeat(LIG4);
-                        // }
-                        // else {
-                        //     player1->addDraw(LIG4);
-                        //     player2->addDraw(LIG4);
-                        // }
+                        if (winner == player1) {
+                            player1->addWin(LIG4);
+                            player2->addDefeat(LIG4);
+                        }
+                        else if (winner == player2) {
+                            player2->addWin(LIG4);
+                            player1->addDefeat(LIG4);
+                        }
+                        else {
+                            player1->addDraw(LIG4);
+                            player2->addDraw(LIG4);
+                        }
                         cout << "\n" << GRAY_COLOR << "Encerrando Lig4..." << RESET_ALL << endl;
 
                     } break;
@@ -208,22 +207,21 @@ void Interface::gamesMenu() {
 
                         player2 = playerLoginVerification(player1, player2, "JOGADOR 2");
 
-                        cout << ">>>>>>>>>>INICIANDO O JOGO <<<<<<<<<" << endl;
-                        // TicTacToe ticTacToe;
-                        // winner = ticTacToe.play(player1, player2);
+                        TicTacToe ticTacToe;
+                        winner = ticTacToe.play(player1, player2);
 
-                        // if (winner == player1) {
-                        //     player1->addWin(TIC_TAC_TOE);
-                        //     player2->addDefeat(TIC_TAC_TOE);
-                        // }
-                        // else if (winner == player2) {
-                        //     player2->addWin(TIC_TAC_TOE);
-                        //     player1->addDefeat(TIC_TAC_TOE);
-                        // }
-                        // else {
-                        //     player1->addDraw(TIC_TAC_TOE);
-                        //     player2->addDraw(TIC_TAC_TOE);
-                        // }
+                        if (winner == player1) {
+                            player1->addWin(TIC_TAC_TOE);
+                            player2->addDefeat(TIC_TAC_TOE);
+                        }
+                        else if (winner == player2) {
+                            player2->addWin(TIC_TAC_TOE);
+                            player1->addDefeat(TIC_TAC_TOE);
+                        }
+                        else {
+                            player1->addDraw(TIC_TAC_TOE);
+                            player2->addDraw(TIC_TAC_TOE);
+                        }
                         cout << "\n" << GRAY_COLOR << "Encerrando Jogo da Velha..." << RESET_ALL << endl;
 
                     } break;

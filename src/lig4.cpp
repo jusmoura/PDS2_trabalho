@@ -1,6 +1,7 @@
 #include "../include/lig4.hpp"
 
-Lig4::Lig4():Board(6,7),currentPlayer(PLAYER_X){}
+Lig4::Lig4() :Board(6, 7), currentPlayer(PLAYER_X) {
+}
 
 void Lig4::switchPlayer() {
     if (currentPlayer == PLAYER_X)
@@ -10,23 +11,22 @@ void Lig4::switchPlayer() {
 }
 
 void Lig4::makeMove(int column) {
-    if(column>0 && column<7){
-        if (_board[0][column].getValue() == EMPTY)
-            _board[0][column].setValue(currentPlayer);
-        else if (_board[1][column].getValue() == EMPTY)
-            _board[1][column].setValue(currentPlayer);
-        else if (_board[2][column].getValue() == EMPTY)
-            _board[2][column].setValue(currentPlayer);
-        else if (_board[3][column].getValue() == EMPTY)
-            _board[3][column].setValue(currentPlayer);
-        else if (_board[4][column].getValue() == EMPTY)
-            _board[4][column].setValue(currentPlayer);
-        else if (_board[5][column].getValue() == EMPTY)
-            _board[5][column].setValue(currentPlayer);
-            
+    //Validando apenas a coluna
+    if (Board::validateMove(0, column)) {
+        bool cellWasFilled = false;
+        for (int i = linesSize - 1; i >= 0; i--) {
+            if (_board[i][column].getValue() == EMPTY) {
+                _board[i][column].setValue(currentPlayer);
+                cellWasFilled = true;
+                break;
+            }
+        }
+
+        if (!cellWasFilled)
+            cout << "Coluna totalmente preenchida, jogue novamente" << endl;
     }
     else
-        makeMove(column);    
+        cout << "Coluna invalida, jogue novamente" << endl;
 }
 
 bool Lig4::checkTie() {
@@ -40,48 +40,111 @@ bool Lig4::checkTie() {
 }
 
 bool Lig4::checkVictory() {
-    for (int i = 0;i < 6;i++) {
-        for (int j = 0;j < 7;j++) {
-            if (_board[i][j].getValue() == currentPlayer && _board[i][j+1].getValue() == currentPlayer && _board[i][j+2].getValue() == currentPlayer && _board[i][j+3].getValue() == currentPlayer)
+    //Itera por todas as casas do tabuleiro
+    for (int line = linesSize - 1; line >= 0; line--) {
+        for (int col = 0; col < columnsSize; col++) {
+            //Verificando vitórias
+            int sum = 1;
+            //Direita
+            for (int i = 1; col + i < columnsSize; i++) {
+                if (Board::validateMove(line, col + i) && _board[line][col + i].getValue() != EMPTY) {
+                    if (_board[line][col + i].getValue() == currentPlayer)
+                        sum++;
+
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
                 return true;
-            else if (_board[i][j].getValue() == currentPlayer && _board[i+1][j].getValue() == currentPlayer && _board[i+2][j].getValue() == currentPlayer && _board[i+3][j].getValue() == currentPlayer)
+            else
+                sum = 1;
+
+            //Cima
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col) && _board[line - i][col].getValue() != EMPTY) {
+                    if (_board[line - i][col].getValue() == currentPlayer)
+                        sum++;
+
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
                 return true;
-            else if (_board[i][j].getValue() == currentPlayer && _board[i+1][j+1].getValue() == currentPlayer && _board[i+2][j+2].getValue() == currentPlayer && _board[i+3][j+3].getValue() == currentPlayer)
+            else
+                sum = 1;
+
+            //Diagonal Superior Direita
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col + i) && _board[line - i][col + i].getValue() != EMPTY) {
+                    if (_board[line - i][col + i].getValue() == currentPlayer)
+                        sum++;
+
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
                 return true;
-            else if (_board[i][j].getValue() == currentPlayer && _board[i-1][j+1].getValue() == currentPlayer && _board[i-2][j+2].getValue() == currentPlayer && _board[i-3][j+3].getValue() == currentPlayer)
+            else
+                sum = 1;
+
+            //Diagonal Superior Esquerda
+            for (int i = 1; line - i >= 0; i++) {
+                if (Board::validateMove(line - i, col - i) && _board[line - i][col - i].getValue() != EMPTY) {
+                    if (_board[line - i][col - i].getValue() == currentPlayer)
+                        sum++;
+
+                    else
+                        break;
+                }
+                else
+                    break;
+            }
+            if (sum == 4)
                 return true;
+            else
+                sum = 1;
         }
     }
     return false;
 }
 
-Player* Lig4::play(Player* player1,Player* player2) {
-    Player* currentPlayerPtr=player1;
-    Player* otherPlayerPtr=player2;
+Player* Lig4::play(Player* player1, Player* player2) {
+    Player* currentPlayerPtr = player1;
+    Player* otherPlayerPtr = player2;
 
-    string player1Nickname=player1->getNickname();
-    string player2Nickname=player2->getNickname();
+    string player1Nickname = player1->getNickname();
+    string player2Nickname = player2->getNickname();
 
-    Board::printBoard();
+    cout << endl;
+    printBoard();
     int column;
 
     while (!checkVictory() && !checkTie()) {
-        std::cout<<(currentPlayerPtr==player1? player1Nickname:player2Nickname)<<": insira [coluna]"<<std::endl;
-        std::cin>>column;
+        std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [coluna]" << std::endl;
+        std::cin >> column;
         makeMove(column);
-        Board::printBoard();
-        if (checkVictory()){
-            std::cout<<"PARABENS "<<currentPlayerPtr->getNickname()<<",VOCÊ GANHOU!"<<std::endl;
+        printBoard();
+        if (checkVictory()) {
+            std::cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
             return currentPlayerPtr;
             break;
         }
-            
-        if (checkTie()){
-            std::cout<<"O jogo terminou em empate!"<<std::endl;
+
+        if (checkTie()) {
+            std::cout << YELLOW_COLOR << "O jogo terminou em empate!" << RESET_ALL << std::endl;
+            return nullptr;
             break;
         }
         switchPlayer();
-        std::swap(currentPlayerPtr,otherPlayerPtr);
+        std::swap(currentPlayerPtr, otherPlayerPtr);
     }
-    
 }
