@@ -39,79 +39,76 @@ void CheckersGame::checkIfBecameQueen(int x, int y) {
     }
 }
 
-void CheckersGame::readMove(int x[]) {
-    std::string input;
-    std::cout << "Digite linha e coluna da peca: " << std::endl;
-    std::cin >> input;
-    if (input == "SAIR" || input == "sair") {
-        throw SIMPLE_RETURN;
+bool CheckersGame::readMove(int x[4]) {
+    string input;
+    while (1) {
+        std::cout << "Digite linha e coluna da peca a ser movimentada (ou 'sair' para voltar): " << std::endl;
+        getline(cin, input);
+
+        if (input == "SAIR" || input == "sair")
+            throw SIMPLE_RETURN;
+
+        stringstream ss(input);
+        if (!(ss >> x[1] >> x[2])) {
+            cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
+            return false;
+        }
+
+        std::cout << "Digite linha e coluna do destino da peca (ou 'sair' para voltar): " << std::endl;
+        getline(cin, input);
+
+        if (input == "SAIR" || input == "sair")
+            throw SIMPLE_RETURN;
+
+        stringstream ss2(input);
+        if (ss2 >> x[3] >> x[4])
+            return validMove(x);
+        else {
+            cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
+            return false;
+        }
     }
-    try {
-        x[1] = std::stoi(input);
-        std::cin >> input;
-        x[2] = std::stoi(input);
-    } catch (const std::invalid_argument&) {
-        std::cout << "Entrada invalida." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-    std::cout << "Digite linha e coluna da jogada: " << std::endl;
-    std::cin >> input;
-    if (input == "SAIR" || input == "sair") {
-        throw SIMPLE_RETURN;
-    }
-    try {
-        x[3] = std::stoi(input);
-        std::cin >> input;
-        x[4] = std::stoi(input);
-    } catch (const std::invalid_argument&) {
-        std::cout << "Entrada invalida." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    } 
 }
 
 bool CheckersGame::validMove(int x[4]) {
     if (x[1] < 0 || x[1] >= BOARD_SIZE || x[2] < 0 || x[2] > BOARD_SIZE) {
-        std::cout << "Jogada invalida 1: Coordenadas da peca invalidas." << std::endl;
+        std::cout << "\nJogada invalida 1: Coordenadas da peca invalidas.\n" << std::endl;
         return false;
     }
     else if (x[3] < 0 || x[3] >= BOARD_SIZE || x[4] < 0 || x[4] > BOARD_SIZE) {
-        std::cout << "Jogada invalida 2: Coordenadas da jogada invalidas." << std::endl;
+        std::cout << "\nJogada invalida 2: Coordenadas da jogada invalidas.\n" << std::endl;
         return false;
     }
     else if (_board[x[3]][x[4]].getValue() == 1 || _board[x[3]][x[4]].getValue() == 2 || _board[x[3]][x[4]].getValue() == 3 || _board[x[3]][x[4]].getValue() == 4) {
-        std::cout << "Jogada invalida 3: Ja existe uma peca na coordenada da jogada." << std::endl;
+        std::cout << "\nJogada invalida 3: Ja existe uma peca na coordenada da jogada." << std::endl;
         return false;
     }
     else if (_board[x[1]][x[2]].getValue() == 1 && x[3] < x[1]) {
-        std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
+        std::cout << "\nJogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
     else if (_board[x[1]][x[2]].getValue() == 2 && x[3] > x[1]) {
-        std::cout << "Jogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
+        std::cout << "\nJogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
         return false;
     }
-    else if(turn == 1 && _board[x[1]][x[2]].getValue() == 2) {
-        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+    else if (turn == 1 && _board[x[1]][x[2]].getValue() == 2) {
+        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
         return false;
     }
-    else if(turn == 2 && _board[x[1]][x[2]].getValue() == 1) {
-        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+    else if (turn == 2 && _board[x[1]][x[2]].getValue() == 1) {
+        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
         return false;
     }
-    else if(turn == 1 && _board[x[1]][x[2]].getValue() == 4) {
-        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+    else if (turn == 1 && _board[x[1]][x[2]].getValue() == 4) {
+        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
         return false;
     }
-    else if(turn == 2 && _board[x[1]][x[2]].getValue() == 3) {
-        std::cout << "Jogada invalida 5: Essa peca nao e sua." << std::endl;
+    else if (turn == 2 && _board[x[1]][x[2]].getValue() == 3) {
+        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
         return false;
     }
-    else {
+    else
         return true;
-        std::cout << "Boa jogada!" << std::endl;
-    }
 }
 
 int CheckersGame::nextChainValid(int x[4]) {
@@ -155,30 +152,6 @@ void CheckersGame::updateBoard(int x[4]) {
     }
 }
 
-void CheckersGame::getCo() {
-    int x[4];
-    bool moveValido = false;
-    while (!moveValido) {
-        std::cout << ((turn % 2 == 1) ? "x's turn." : "o's turn.") << std::endl;
-        readMove(x);
-        if (validMove(x)) {
-            if (simpleMove(x)) {
-                updateBoard(x);
-                checkIfBecameQueen(x[3], x[4]);
-                moveValido = true;
-            }
-            else if (captureMove(x)) {
-                updateBoard(x);
-                checkIfBecameQueen(x[3], x[4]);
-                moveValido = true;
-            }
-            else {
-                std::cout << "Movimento invalido. Tente novamente." << std::endl;
-            }
-        }
-    }
-}
-
 int CheckersGame::winner(int x, int o) {
     if (x == 0) {
         std::cout << "O won!" << std::endl;
@@ -195,10 +168,46 @@ int CheckersGame::winner(int x, int o) {
 
 Player* CheckersGame::play(Player* player1, Player* player2) {
     setDefaults();
+    Player* currentPlayerPtr = player1;
+    Player* otherPlayerPtr = player2;
+
+    string player1Nickname = player1->getNickname();
+    string player2Nickname = player2->getNickname();
+
+    int size1 = player1Nickname.size();
+    int size2 = player2Nickname.size();
+
+    int size = (size1 >= size2) ? size1 : size2;
+
+    cout << "\nIniciando tabuleiro...\n" << endl;
+    cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "x" << RESET_ALL << " - peca comum)" << endl;
+    cout << setw(size) << left << " " << ": (" << RED_BOLD << "X" << RESET_ALL << " - Dama)" << endl;
+    cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "o" << RESET_ALL << " - peca comum)" << endl;
+    cout << setw(size) << left << " " << ": (" << YELLOW_BOLD << "O" << RESET_ALL << " - Dama)" << endl;
+    cout << endl;
     printBoard();
 
     while (true) {
-        getCo();
+        int x[4];
+        bool moveValido = false;
+        while (!moveValido) {
+            std::cout << ((turn % 2 == 1) ? "-- Turno do X --" : "-- Turno do O --") << std::endl;
+            if (readMove(x)) {
+                if (simpleMove(x)) {
+                    updateBoard(x);
+                    checkIfBecameQueen(x[3], x[4]);
+                    moveValido = true;
+                }
+                else if (captureMove(x)) {
+                    updateBoard(x);
+                    checkIfBecameQueen(x[3], x[4]);
+                    moveValido = true;
+                }
+                else {
+                    std::cout << "Movimento invalido. Tente novamente." << std::endl;
+                }
+            }
+        }
         printBoard();
         if (winner(pieces[0], pieces[1])) {
             break;
@@ -270,11 +279,11 @@ void CheckersGame::printBoard() {
                 cout << " " << YELLOW_COLOR << "o" << RESET_ALL << " |";
 
             else if (_board[i][j].getValue() == PLAYER_X_QUEEN) {
-                cout << " " << RED_COLOR << "X" << RESET_ALL << " |";
+                cout << " " << RED_BOLD << "X" << RESET_ALL << " |";
             }
 
             else if (_board[i][j].getValue() == PLAYER_O_QUEEN)
-                cout << " " << YELLOW_COLOR << "O" << RESET_ALL << " |";
+                cout << " " << YELLOW_BOLD << "O" << RESET_ALL << " |";
         }
         cout << endl;
 

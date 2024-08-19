@@ -24,8 +24,9 @@ const std::string WHITE_COLOR = "\033[37m";  // Cor branco
 /*Estilos*/
 const std::string MAIN_TITLE_STYLE = "\033[34;1m"; // Cor azul em negrito
 const std::string WINNER_STYLE = "\033[32;1m";     // Cor verde em negrito
-const std::string LOSER_STYLE = "\033[31;1m";      // Cor vermelha em negrito
 const std::string BOLD = "\033[;1m";               // Cor padrão em negrito
+const std::string RED_BOLD = "\033[31;1m";      // Cor vermelha em negrito
+const std::string YELLOW_BOLD = "\033[33;1m"; // Cor amarela em negrito
 
 /*RESET_ALL*/
 const std::string RESET_ALL = "\033[;10m";

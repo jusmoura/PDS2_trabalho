@@ -211,7 +211,7 @@ bool Minesweeper::checkDefeat(int line, int column) {
     // Determinando o fim do jogo caso uma bomba seja escolhida
     if (validateMove(line, column) && _board[line][column].getValue() >= IS_BOMB) {
         printBoard();
-        cout << "\n" << RED_COLOR << "Bumm! Voce selecionou uma bomba!\n" << LOSER_STYLE << "Fim de jogo!" << RESET_ALL << endl;
+        cout << "\n" << RED_COLOR << "Bumm! Voce selecionou uma bomba!\n" << RED_BOLD << "Fim de jogo!" << RESET_ALL << endl;
         return true;
     }
 
