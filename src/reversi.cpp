@@ -201,6 +201,8 @@ Player* ReversiGame::play(Player* player1, Player* player2) {
 }
 
 Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
+    calculateScore();
+    Board::printBoard();
     if (sumX > sumO) {
         cout << GREEN_COLOR << "PARABENS " << player1->getNickname() << ", VOCÊ GANHOU!" << RESET_ALL << endl;
         return player1;

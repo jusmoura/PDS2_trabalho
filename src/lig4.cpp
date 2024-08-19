@@ -100,11 +100,15 @@ void Lig4::makeMove(int column) {
             }
         }
 
-        if (!cellWasFilled)
-            cout << "Coluna totalmente preenchida, jogue novamente" << endl;
+        if (!cellWasFilled) {
+            cout << "\n" << YELLOW_COLOR << "Coluna totalmente preenchida, jogue novamente\n" << RESET_ALL << endl;
+            throw "INVALID_MOVE";
+        }
     }
-    else
-        cout << "Coluna invalida, jogue novamente" << endl;
+    else {
+        cout << "\n" << YELLOW_COLOR << "Coluna invalida, jogue novamente\n" << RESET_ALL << endl;
+        throw "INVALID_MOVE";
+    }
 }
 
 bool Lig4::checkTie() {
@@ -125,26 +129,52 @@ Player* Lig4::play(Player* player1, Player* player2) {
     string player1Nickname = player1->getNickname();
     string player2Nickname = player2->getNickname();
 
-    cout << endl;
+    int size1 = player1Nickname.size();
+    int size2 = player2Nickname.size();
+
+    int size = (size1 >= size2) ? size1 : size2;
+
+    cout << "\nIniciando tabuleiro...\n" << endl;
+    cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
+    cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
     printBoard();
     int column;
+    string input;
 
     while (1) {
-        std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [coluna]" << std::endl;
-        std::cin >> column;
-        makeMove(column);
-        printBoard();
-        if (checkVictory()) {
-            std::cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
-            return currentPlayerPtr;
-        }
+        try {
+            std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [coluna] ou 'sair' para voltar ao menu de jogos" << std::endl;
+            getline(cin, input);
 
-        if (checkTie()) {
-            std::cout << YELLOW_COLOR << "O jogo terminou em empate!" << RESET_ALL << std::endl;
-            return nullptr;
+            if (input == "SAIR" || input == "sair")
+                throw SIMPLE_RETURN;
+
+            stringstream ss(input);
+            if (ss >> column) {
+                makeMove(column);
+                cout << endl;
+                cout << setw(size) << left << player1Nickname << ": (" << RED_COLOR << "X" << RESET_ALL << ")" << endl;
+                cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
+                printBoard();
+                if (checkVictory()) {
+                    std::cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
+                    return currentPlayerPtr;
+                }
+
+                if (checkTie()) {
+                    std::cout << "O jogo terminou em empate!" << std::endl;
+                    return nullptr;
+                }
+                switchPlayer();
+                std::swap(currentPlayerPtr, otherPlayerPtr);
+            }
+            else
+                cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;
         }
-        switchPlayer();
-        std::swap(currentPlayerPtr, otherPlayerPtr);
+        catch (const char* e) {
+            if (e != "INVALID_MOVE")
+                throw;
+        }
     }
 }
 
