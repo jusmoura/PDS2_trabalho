@@ -10,7 +10,7 @@ bool Lig4::checkVictory() {
             //Verificando vitórias
             if (_board[line][col].getValue() == EMPTY)
                 continue;
-            else {
+            else if (_board[line][col].getValue() == currentPlayer) {
                 int sum = 1;
                 //Verificação horizontal
                 for (int i = 1; col + i < columnsSize; i++) {
@@ -143,7 +143,7 @@ Player* Lig4::play(Player* player1, Player* player2) {
 
     while (1) {
         try {
-            std::cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [coluna] ou 'sair' para voltar ao menu de jogos" << std::endl;
+            cout << (currentPlayerPtr == player1 ? player1Nickname : player2Nickname) << ": insira [coluna] ou 'sair' para voltar ao menu de jogos" << endl;
             getline(cin, input);
 
             if (input == "SAIR" || input == "sair")
@@ -157,16 +157,16 @@ Player* Lig4::play(Player* player1, Player* player2) {
                 cout << setw(size) << left << player2Nickname << ": (" << YELLOW_COLOR << "O" << RESET_ALL << ")\n" << endl;
                 printBoard();
                 if (checkVictory()) {
-                    std::cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
+                    cout << GREEN_COLOR << "PARABENS " << currentPlayerPtr->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
                     return currentPlayerPtr;
                 }
 
                 if (checkTie()) {
-                    std::cout << "O jogo terminou em empate!" << std::endl;
+                    cout << BOLD << "O jogo terminou em empate!" << RESET_ALL << endl;
                     return nullptr;
                 }
                 switchPlayer();
-                std::swap(currentPlayerPtr, otherPlayerPtr);
+                swap(currentPlayerPtr, otherPlayerPtr);
             }
             else
                 cout << "\n" << YELLOW_COLOR << "Entrada invalida! Insira [linha coluna] ou 'sair'\n" << RESET_ALL << endl;

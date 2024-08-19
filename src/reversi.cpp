@@ -212,7 +212,7 @@ Player* ReversiGame::checkVictory(Player* player1, Player* player2) {
         return player2;
     }
     else {
-        cout << "O jogo terminou em empate!" << endl;
+        cout << BOLD << "O jogo terminou em empate!" << RESET_ALL << endl;
         return nullptr;
     }
 }
