@@ -154,14 +154,103 @@ int CheckersGame::winner(int x, int o) {
 
 Player* CheckersGame::play(Player* player1, Player* player2) {
     setDefaults();
-    Board::printBoard();
+    printBoard();
 
     while (true) {
         getCo();
-        Board::printBoard();
+        printBoard();
         if (winner(pieces[0], pieces[1])) {
             break;
         }
         turn = (turn == 1) ? 2 : 1;
     }
+}
+
+void CheckersGame::printBoard() {
+    // Relação que permite uma exibição visual correta do campo
+    int lineSizeOfPrint = (this->columnsSize * 4) + 1;
+
+    // Printa os números das colunas
+    if (this->columnsSize <= 10) {
+        cout << "\t   ";
+        for (int i = 0; i < this->columnsSize; i++)
+            cout << " " << i << "  ";
+
+        cout << endl;
+    }
+    // Altera a exibição dos números das colunas para mostrar corretamente índices com dois dígitos
+    else {
+        cout << "\t    ";
+        for (int i = 0; i < this->columnsSize; i++) {
+            if (i < 10)
+                cout << " " << i << "  ";
+
+            else
+                cout << i << "  ";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < this->linesSize; i++) {
+        // Printa as linhas de separação
+        if (this->linesSize <= 10) {
+            cout << "\t  ";
+            for (int a = 0; a < lineSizeOfPrint; a++)
+                cout << "-";
+        }
+        // Altera a exibição das linhas para se adequar ao layout para índices com dois dígitos
+        else {
+            cout << "\t   ";
+            for (int a = 0; a < lineSizeOfPrint; a++)
+                cout << "-";
+        }
+
+        // Printa o número das linhas
+        if (this->linesSize <= 10)
+            cout << "\n\t" << i << " |";
+        // Altera a exibição dos números das linhas para mostrar corretamente índices com dois dígitos
+        else {
+            if (i < 10)
+                cout << "\n\t" << i << "  |";
+
+            else
+                cout << "\n\t" << i << " |";
+        }
+        // Printa o campo
+        for (int j = 0; j < this->columnsSize; j++) {
+            if (_board[i][j].getValue() == EMPTY)
+                cout << "   |";
+
+            else if (_board[i][j].getValue() == PLAYER_X) {
+                cout << " " << RED_COLOR << "x" << RESET_ALL << " |";
+            }
+
+            else if (_board[i][j].getValue() == PLAYER_O)
+                cout << " " << YELLOW_COLOR << "o" << RESET_ALL << " |";
+
+            else if (_board[i][j].getValue() == PLAYER_X_QUEEN) {
+                cout << " " << RED_COLOR << "X" << RESET_ALL << " |";
+            }
+
+            else if (_board[i][j].getValue() == PLAYER_O_QUEEN)
+                cout << " " << YELLOW_COLOR << "O" << RESET_ALL << " |";
+        }
+        cout << endl;
+
+        // Printa a última linha de separação
+        if (i == this->linesSize - 1) {
+            if (this->linesSize <= 10) {
+                cout << "\t  ";
+                for (int a = 0; a < lineSizeOfPrint; a++)
+                    cout << "-";
+            }
+            // Altera a exibição da linha para se adequar ao layout para índices com dois dígitos
+            else {
+                cout << "\t   ";
+                for (int a = 0; a < lineSizeOfPrint; a++)
+                    cout << "-";
+            }
+        }
+    }
+    cout << "\n\n";
 }

@@ -140,6 +140,8 @@ private:
      */
     int winner(int x, int o);
 
+    void printBoard();
+
 public:
     /**
      * @brief Construtor da classe CheckersGame.
