@@ -154,12 +154,10 @@ void CheckersGame::updateBoard(int x[4]) {
 
 int CheckersGame::winner(int x, int o) {
     if (x == 0) {
-        std::cout << "O won!" << std::endl;
-        return 1;
+        return PLAYER_O;
     }
     else if (o == 0) {
-        std::cout << "X won!" << std::endl;
-        return 1;
+        return PLAYER_X;
     }
     else {
         return 0;
@@ -168,8 +166,6 @@ int CheckersGame::winner(int x, int o) {
 
 Player* CheckersGame::play(Player* player1, Player* player2) {
     setDefaults();
-    Player* currentPlayerPtr = player1;
-    Player* otherPlayerPtr = player2;
 
     string player1Nickname = player1->getNickname();
     string player2Nickname = player2->getNickname();
@@ -208,9 +204,17 @@ Player* CheckersGame::play(Player* player1, Player* player2) {
                 }
             }
         }
+        cout << endl;
         printBoard();
-        if (winner(pieces[0], pieces[1])) {
-            break;
+        int playerWinner = winner(pieces[0], pieces[1]);
+
+        if (playerWinner == PLAYER_X) {
+            cout << GREEN_COLOR << "PARABENS " << player1->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
+            return player1;
+        }
+        else if (playerWinner == PLAYER_O) {
+            cout << GREEN_COLOR << "PARABENS " << player2->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
+            return player2;
         }
         turn = (turn == 1) ? 2 : 1;
     }
