@@ -123,7 +123,7 @@ Jogar!</h2>
 <p>Permite iniciar uma nova partida de um dos seguintes jogos:</p>
 <ul>
 <li><b>Reversi</b></li>
-<li><b><a class="el" href="classLig4.html">Lig4</a></b></li>
+<li><b><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a></b></li>
 <li><b>Jogo da Velha</b></li>
 <li><b>Campo Minado</b></li>
 <li><b>Damas</b></li>
@@ -146,7 +146,7 @@ Entradas</h2>
 <li><b>Criar Jogador</b>: Apelido do jogador.</li>
 <li><b>Remover Jogador</b>: Apelido do jogador.</li>
 <li><b>Listar Jogadores</b>: Ordenação por nome ou apelido.</li>
-<li><b>Selecionar Jogo</b>: Índice do jogo desejado (Reversi(0), <a class="el" href="classLig4.html">Lig4(1)</a>, Jogo da velha(2), Campo minado(3), Damas(4))</li>
+<li><b>Selecionar Jogo</b>: Índice do jogo desejado (Reversi(0), <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4(1)</a>, Jogo da velha(2), Campo minado(3), Damas(4))</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md11"></a>
 Saídas</h2>
@@ -175,7 +175,7 @@ Como Funciona</h2>
 </ol>
 <h1><a class="anchor" id="autotoc_md15"></a>
 Lig4</h1>
-<p>A classe <code><a class="el" href="classLig4.html">Lig4</a></code> implementa o jogo <a class="el" href="classLig4.html">Lig4</a>. Este é um jogo de tabuleiro onde os jogadores se alternam para que peças caiam verticalmente, e o objetivo é formar uma linha de quatro peças consecutivas horizontalmente, verticalmente ou diagonalmente.</p>
+<p>A classe <code><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a></code> implementa o jogo <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a>. Este é um jogo de tabuleiro onde os jogadores se alternam para que peças caiam verticalmente, e o objetivo é formar uma linha de quatro peças consecutivas horizontalmente, verticalmente ou diagonalmente.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Visão geral</h2>
 <ul>
@@ -273,7 +273,7 @@ Como Funciona</h3>
 </ol>
 <h1><a class="anchor" id="autotoc_md24"></a>
 TicTacToe</h1>
-<p>A classe <code><a class="el" href="classTicTacToe.html">TicTacToe</a></code> implementa o clássico jogo da velha, um jogo de estratégia simples para dois jogadores. O objetivo é alinhar três peças em uma linha, seja horizontal, vertical ou diagonal, antes que o adversário o faça.</p>
+<p>A classe <code><a class="el" href="classTicTacToe.html" title="Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.">TicTacToe</a></code> implementa o clássico jogo da velha, um jogo de estratégia simples para dois jogadores. O objetivo é alinhar três peças em uma linha, seja horizontal, vertical ou diagonal, antes que o adversário o faça.</p>
 <h2><a class="anchor" id="autotoc_md25"></a>
 Visão Geral</h2>
 <ul>
@@ -306,23 +306,63 @@ Como Funciona</h3>
 Compilação e Execução</h1>
 <h3><a class="anchor" id="autotoc_md28"></a>
 No Linux</h3>
-<p>Navegue até o diretório onde o Makefile está localizado e execute o comando:</p>
 <ol type="1">
-<li>make</li>
-<li>Em seguida, vá até a pasta "bin"</li>
-<li>Complete a execução com ./main</li>
+<li><b>Navegue até o diretório do projeto</b>:<ul>
+<li>Abra o terminal.</li>
+<li>Use o comando <code>cd</code> para navegar até o diretório onde o <code>Makefile</code> está localizado.</li>
+</ul>
+</li>
+<li><b>Compile o projeto</b>:<ul>
+<li>Execute o seguinte comando para compilar o projeto: ```bash make ```</li>
+</ul>
+</li>
+<li><b>Executar o programa</b>:<ul>
+<li>Após a compilação, navegue até a pasta <code>bin</code>: ```bash cd bin ``<code></code></li>
+<li><code>Execute o arquivo gerado (</code>main<code>): </code>``bash ./main ```</li>
+</ul>
+</li>
 </ol>
+<p><b>Observação</b>: Certifique-se de que o <code>make</code> esteja instalado no seu sistema e que o <code>Makefile</code> esteja corretamente configurado para gerar os binários na pasta <code>bin</code>.</p>
 <h3><a class="anchor" id="autotoc_md29"></a>
 No Windows</h3>
+<ol type="1">
+<li><b>Navegue até o diretório do projeto</b>:<ul>
+<li>Abra o terminal ou prompt de comando (cmd).</li>
+<li>Use o comando <code>cd</code> para navegar até o diretório onde o <code>Makefile</code> está localizado.</li>
+</ul>
+</li>
+<li><b>Compile o projeto</b>:<ul>
+<li>Execute o seguinte comando para compilar o projeto: ```bash mingw32-make ```</li>
+<li>Isso irá compilar os arquivos e gerar os binários necessários.</li>
+</ul>
+</li>
+<li><b>Executar o programa</b>:<ul>
+<li>Após a compilação, navegue até a pasta <code>bin</code>: ```bash cd bin ``<code></code></li>
+<li><code>Execute o arquivo gerado (</code>main.exe&lt;tt&gt;): ``bash ./main.exe ```</li>
+</ul>
+</li>
+</ol>
+<p><b>Observação</b>: Certifique-se de que o <code>mingw32-make</code> esteja instalado e configurado corretamente no seu sistema, e que o <code>Makefile</code> esteja corretamente configurado para gerar os binários na pasta <code>bin</code>.</p>
 <h1><a class="anchor" id="autotoc_md30"></a>
 Doxyfile</h1>
-<p>Para abrir o doxyfile:</p><ol type="1">
-<li>Vá até a pasta docs</li>
-<li>Abra a subpasta html</li>
-<li><p class="startli">Execute o comando</p>
-<p class="startli">xdg-open index.html # No Linux</p>
-<p class="startli">start index.html # No Windows </p>
+<h3><a class="anchor" id="autotoc_md31"></a>
+Como Abrir a Documentação Gerada pelo Doxygen</h3>
+<p>Após a geração da documentação com o Doxygen, siga os passos abaixo para visualizar a documentação em HTML:</p>
+<ol type="1">
+<li><b>Navegue até a pasta de documentação</b>:<ul>
+<li>Acesse a pasta <code>docs</code>.</li>
+</ul>
 </li>
+<li><b>Acesse a subpasta HTML</b>:<ul>
+<li>Dentro da pasta <code>docs</code>, entre na subpasta <code>html</code>, onde a documentação HTML gerada pelo Doxygen está localizada.</li>
+</ul>
+</li>
+<li><p class="startli"><b>Abra a documentação</b>:</p><ul>
+<li>Execute o comando correspondente ao seu sistema operacional para abrir o arquivo <code>index.html</code>:</li>
+</ul>
+<p class="startli"><b>No Linux</b>: </p><div class="fragment"><div class="line">xdg-open index.html</div>
+</div><!-- fragment --><p class="startli"><b>No Windows</b>: </p><div class="fragment"><div class="line">start index.html</div>
+</div><!-- fragment --> </li>
 </ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

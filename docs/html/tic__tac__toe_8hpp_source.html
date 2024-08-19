@@ -69,33 +69,40 @@ $(function() {
 <div class="title">tic_tac_toe.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="tic__tac__toe_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIC_TAC_TOE_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TIC_TAC_TOE_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classTicTacToe.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicTacToe.html">TicTacToe</a>:<span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE=3;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> makeMove(<span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">bool</span> validMove(<span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">bool</span> checkVictory();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">bool</span> checkTie();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> switchPlayer();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1,<a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="tic__tac__toe_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef TIC_TAC_TOE_HPP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define TIC_TAC_TOE_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="board_8hpp.html">board.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTicTacToe.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicTacToe.html">TicTacToe</a>:<span class="keyword">public</span> <a class="code" href="classBoard.html">Board</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> currentPlayer;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> BOARD_SIZE=3;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> makeMove(<span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> validMove(<span class="keywordtype">int</span> line, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> checkVictory();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> checkTie();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> switchPlayer();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classPlayer.html">Player</a>* <a class="code" href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">play</a>(<a class="code" href="classPlayer.html">Player</a>* player1,<a class="code" href="classPlayer.html">Player</a>* player2) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aboard_8hpp_html"><div class="ttname"><a href="board_8hpp.html">board.hpp</a></div></div>
 <div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo.</div><div class="ttdef"><b>Definition:</b> board.hpp:36</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Representa um jogador com estatísticas de jogos.</div><div class="ttdef"><b>Definition:</b> player.hpp:27</div></div>
-<div class="ttc" id="aclassTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdef"><b>Definition:</b> tic_tac_toe.hpp:7</div></div>
-<div class="ttc" id="aclassTicTacToe_html_a103fe9a5ae41b5ef756e20594a70cb7a"><div class="ttname"><a href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe::TicTacToe</a></div><div class="ttdeci">TicTacToe()</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:4</div></div>
-<div class="ttc" id="aclassTicTacToe_html_adbc918eac4a832462f498931dd618beb"><div class="ttname"><a href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">TicTacToe::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Executa a jogada dos jogadores.</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:54</div></div>
+<div class="ttc" id="aclassTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdoc">Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.hpp:17</div></div>
+<div class="ttc" id="aclassTicTacToe_html_a103fe9a5ae41b5ef756e20594a70cb7a"><div class="ttname"><a href="classTicTacToe.html#a103fe9a5ae41b5ef756e20594a70cb7a">TicTacToe::TicTacToe</a></div><div class="ttdeci">TicTacToe()</div><div class="ttdoc">Construtor padrão para inicializar um jogo da velha.</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:3</div></div>
+<div class="ttc" id="aclassTicTacToe_html_adbc918eac4a832462f498931dd618beb"><div class="ttname"><a href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">TicTacToe::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Inicia e gerencia o loop principal do jogo.</div><div class="ttdef"><b>Definition:</b> tic_tac_toe.cpp:111</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
