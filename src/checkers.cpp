@@ -18,10 +18,10 @@ void CheckersGame::setDefaults() {
 
 int CheckersGame::enemy(int piece) {
     if (piece == PLAYER_X || piece == PLAYER_X_QUEEN) {
-        return 2;
+        return PLAYER_O;
     }
     if (piece == PLAYER_O || piece == PLAYER_O_QUEEN) {
-        return 1;
+        return PLAYER_X;
     }
     return 0;
 }
@@ -72,39 +72,39 @@ bool CheckersGame::readMove(int coordinates[4]) {
 
 bool CheckersGame::validMove(int coordinates[4]) {
     if (coordinates[1] < 0 || coordinates[1] >= BOARD_SIZE || coordinates[2] < 0 || coordinates[2] > BOARD_SIZE) {
-        std::cout << "\nJogada invalida 1: Coordenadas da peca invalidas.\n" << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Coordenadas da peca invalidas.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (coordinates[3] < 0 || coordinates[3] >= BOARD_SIZE || coordinates[4] < 0 || coordinates[4] > BOARD_SIZE) {
-        std::cout << "\nJogada invalida 2: Coordenadas da jogada invalidas.\n" << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Coordenadas da jogada invalidas.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (_board[coordinates[3]][coordinates[4]].getValue() == PLAYER_X || _board[coordinates[3]][coordinates[4]].getValue() == PLAYER_O || _board[coordinates[3]][coordinates[4]].getValue() == PLAYER_X_QUEEN || _board[coordinates[3]][coordinates[4]].getValue() == PLAYER_O_QUEEN) {
-        std::cout << "\nJogada invalida 3: Ja existe uma peca na coordenada da jogada." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Ja existe uma peca na coordenada da jogada.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (_board[coordinates[1]][coordinates[2]].getValue() == PLAYER_X && coordinates[3] < coordinates[1]) {
-        std::cout << "\nJogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao pode se movimentar para tras.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (_board[coordinates[1]][coordinates[2]].getValue() == PLAYER_O && coordinates[3] > coordinates[1]) {
-        std::cout << "\nJogada invalida 4: Essa peca nao pode se movimentar para tras." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao pode se movimentar para tras.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (turn == PLAYER_X && _board[coordinates[1]][coordinates[2]].getValue() == PLAYER_O) {
-        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao e sua.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (turn == PLAYER_O && _board[coordinates[1]][coordinates[2]].getValue() == PLAYER_X) {
-        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao e sua.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (turn == PLAYER_X && _board[coordinates[1]][coordinates[2]].getValue() == PLAYER_O_QUEEN) {
-        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao e sua.\n" << RESET_ALL << std::endl;
         return false;
     }
     else if (turn == PLAYER_O && _board[coordinates[1]][coordinates[2]].getValue() == PLAYER_X_QUEEN) {
-        std::cout << "\nJogada invalida 5: Essa peca nao e sua." << std::endl;
+        std::cout << YELLOW_COLOR << "\nJogada invalida: Essa peca nao e sua.\n" << RESET_ALL << std::endl;
         return false;
     }
     else
@@ -200,7 +200,7 @@ Player* CheckersGame::play(Player* player1, Player* player2) {
                     moveValido = true;
                 }
                 else {
-                    std::cout << "Movimento invalido. Tente novamente." << std::endl;
+                    cout << "\n" << YELLOW_COLOR << "Movimento invalido. Tente novamente.\n" << RESET_ALL << endl;
                 }
             }
         }
@@ -216,7 +216,7 @@ Player* CheckersGame::play(Player* player1, Player* player2) {
             cout << GREEN_COLOR << "PARABENS " << player2->getNickname() << ", VOCE GANHOU!" << RESET_ALL << endl;
             return player2;
         }
-        turn = (turn == PLAYER_X) ? 2 : 1;
+        turn = (turn == PLAYER_X) ? PLAYER_O : PLAYER_X;
     }
 }
 
