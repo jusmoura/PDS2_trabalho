@@ -3,8 +3,7 @@
 using namespace std;
 
 DatabaseController::DatabaseController() {
-    // _filePath = "../database/players_data.txt";   // Caminho no Windows
-    _filePath = "./database/players_data.txt";    // Caminho no Linux/Unix
+    _filePath = "../database/players_data.txt"; 
 
     _inputFile.open(_filePath);
     if (!_inputFile.is_open())
