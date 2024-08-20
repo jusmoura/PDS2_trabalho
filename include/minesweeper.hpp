@@ -3,7 +3,7 @@
  * @brief Declaração da classe Minesweeper para implementar o jogo Campo Minado.
  *
  * Este arquivo define a classe `Minesweeper`, que herda da classe `Board` e implementa as funcionalidades
- * específicas do jogo Campo Minado, incluindo a colocação de bombas, verificação de derrota e vitória, e
+ * específicas do jogo Campo Minado, incluindo a colocação aleatória de bombas, verificação de derrota e vitória, e
  * exibição do tabuleiro.
  */
 #ifndef MINESWEEPER_H
@@ -20,7 +20,7 @@
   * @brief Implementa o jogo Campo Minado.
   *
   * A classe `Minesweeper` herda da classe `Board` e fornece a lógica específica para o jogo Campo Minado,
-  * incluindo a colocação de bombas, verificação de derrota e vitória, e exibição do tabuleiro com informações
+  * incluindo a colocação aleatória de bombas, verificação de derrota e vitória, e exibição do tabuleiro com informações
   * sobre as células adjacentes.
   */
 class Minesweeper : public Board {
@@ -41,7 +41,7 @@ private:
     void printBoard() override;
 
     /**
-     * @brief Define as posições das bombas no tabuleiro.
+     * @brief Define as posições das bombas no tabuleiro, de maneira aleatória.
      *
      * Coloca as bombas aleatoriamente no tabuleiro, garantindo que o número de bombas e suas posições
      * sejam adequados para o tamanho do tabuleiro.
@@ -69,7 +69,7 @@ private:
     bool checkVictory();
 
     /**
-     * @brief Verifica e exibe as células adjacentes a uma célula revelada.
+     * @brief Verifica e exibe, de maneira recursiva, as células adjacentes a uma célula revelada.
      *
      * Revela as células adjacentes e mostra as informações relacionadas a essas células.
      *
@@ -79,6 +79,9 @@ private:
     void checkAndShowAdjacentsCells(int row, int column);
 
 public:
+    /**
+    * @brief Construtor padrão para inicializar o jogo Campo Minado.
+    */
     Minesweeper();
     /**
      * @brief Inicia e gerencia o jogo Campo Minado.

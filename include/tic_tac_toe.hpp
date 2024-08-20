@@ -9,15 +9,23 @@
 #include <iostream>
 #include "board.hpp"
 
-/**
- * @class TicTacToe
- * @brief Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.
- */
+ /**
+  * @class TicTacToe
+  * @brief Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.
+  */
 
-class TicTacToe:public Board {
+class TicTacToe :public Board {
 private:
+    /**
+    * @brief Jogador que está executando a jogada durante sua iteração.
+    */
     int currentPlayer;
-    const int BOARD_SIZE=3;
+    /**
+    * @brief Tamanho do tabuleiro para o Jogo da Velha.
+    *
+    * O tamanho padrão do tabuleiro de Jogo da Velha é 3x3.
+    */
+    const int BOARD_SIZE = 3;
 
     /**
      * @brief Faz uma jogada no tabuleiro.
@@ -62,7 +70,7 @@ public:
      * @param player2 Ponteiro para o segundo jogador.
      * @return Retorna o ponteiro para o jogador vencedor ou nullptr em caso de empate.
      */
-    Player* play(Player* player1,Player* player2) override;
+    Player* play(Player* player1, Player* player2) override;
 };
 
 #endif

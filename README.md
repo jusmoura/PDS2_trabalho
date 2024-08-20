@@ -109,6 +109,12 @@ A classe `CheckersGame` gerencia o jogo de Damas (Checkers) com um tabuleiro 8x8
 2. **Jogadas**: Jogadores alternam turnos para fazer movimentos ou capturas, sendo a primeira entrada a peça a ser movida e a segunda qual é o destino dela.
 3. **Atualização**: O tabuleiro é atualizado com as novas posições das peças após cada movimento.
 4. **Verificação de Vitória**: O jogo continua até que um jogador vença, com base na quantidade de peças restantes.
+5. **Regras**: O jogo segue as regras das damas americanas. Para peças simples não há captura de peça 'para trás'; As damas movimentam-se apenas uma casa em qualquer direção.
+
+## Especificações
+
+- **play()**: A função play inicia o jogo de damas. Faz a chamada da função setDefaults, que inicializa o tabuleiro com as posições das peças do jogo de damas. Em seguida recebe os dois jogadores e chama printBoard, para imprimir o tabuleiro. O jogo funciona dentro de um loop para a leitura das jogadas, alternando entre os dois jogadores. Dentro do loop, há um if chamando a função readMove, que lê as jogadas. Dentro desse if, verifica-se se a jogada é um movimento simples ou um movimento de captura de peça. Após uma jogada válida, atualiza-se o tabuleiro e é checado se alguma peça se tornou 'Dama'. Então, verifica-se se há algum vencedor, chamando a função winner que checa se algum dos jogadores está sem peças restantes. Caso haja um vencedor, imprime a mensagem de vitória e encerra o jogo.
+
 
 # Lig4
 

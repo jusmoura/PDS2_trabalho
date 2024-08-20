@@ -7,12 +7,15 @@
 
 #include "board.hpp"
 
-/**
- * @class Lig4
- * @brief Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.
- */
+ /**
+  * @class Lig4
+  * @brief Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.
+  */
 class Lig4 : public Board {
 private:
+    /**
+    * @brief Jogador que está executando a jogada durante sua iteração.
+     */
     int currentPlayer;
 
     /**
@@ -39,13 +42,13 @@ private:
     void switchPlayer();
 
     /**
-     * @brief Imprime o tabuleiro do jogo. 
+     * @brief Imprime o tabuleiro do jogo.
      * Este método sobrescreve o método `printBoard` da classe base Board.
      */
     void printBoard() override;
 public:
     /**
-     * @brief Construtor padrão para inicializar um jogo Lig4.
+     * @brief Construtor padrão para inicializar o jogo Lig4.
      */
     Lig4();
 

@@ -1,5 +1,7 @@
 #include "../include/checkers.hpp"
 
+using namespace std;
+
 CheckersGame::CheckersGame() : Board(8, 8) {
 }
 

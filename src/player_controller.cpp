@@ -1,5 +1,7 @@
 #include "../include/player_controller.hpp"
 
+using namespace std;
+
 PlayerController::PlayerController() {
     databaseController = new DatabaseController();
     databaseController->readFile(this);

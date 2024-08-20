@@ -19,7 +19,7 @@
   * @class CheckersGame
   * @brief Implementa a lógica do jogo de damas (checkers) baseado na classe Board.
   *
-  * A classe `CheckersGame` é uma implementação específica de um jogo de damas que herda da classe
+  * A classe `CheckersGame` é uma implementação específica do jogo de damas que herda da classe
   * `Board`. Ela inclui métodos para definir o tabuleiro, validar movimentos, realizar jogadas e
   * determinar o vencedor do jogo.
   */
@@ -33,12 +33,12 @@ private:
     const int BOARD_SIZE = 8;
 
     /**
-     * @brief Constante que representa a 'Dama' do jogador X no tabuleiro.
+     * @brief Constante que representa a 'Dama' do jogador 'X' no tabuleiro.
      */
     const int PLAYER_X_QUEEN = 3;
 
     /**
-     * @brief Constante que representa a 'Dama' do jogador O no tabuleiro.
+     * @brief Constante que representa a 'Dama' do jogador 'O' no tabuleiro.
      */
     const int PLAYER_O_QUEEN = 4;
 
@@ -47,7 +47,7 @@ private:
      *
      * Valores possíveis são 1 ou 2, representando os dois jogadores.
      */
-    int turn = 2;
+    int turn = PLAYER_O;
 
     /**
      * @brief Armazena a quantidade de peças para cada jogador.
@@ -135,6 +135,12 @@ private:
      */
     int winner(int x, int o);
 
+    /**
+     * @brief Imprime o tabuleiro no console.
+     *
+     * Este método imprime o estado atual do tabuleiro no console. Baseado e adaptado a partir
+     * do printBoard existente na classe 'Board' (pai).
+     */
     void printBoard();
 
 public:
@@ -153,7 +159,7 @@ public:
      *
      * @param player1 Ponteiro para o primeiro jogador.
      * @param player2 Ponteiro para o segundo jogador.
-     * @return Ponteiro para o jogador que fez a jogada.
+     * @return Ponteiro para o jogador vencedor.
      */
     Player* play(Player* player1, Player* player2) override;
 };
