@@ -1,6 +1,7 @@
 # Pixel Patterns
 
-O **Pixel Patterns** é um sistema projetado para gerenciar jogadores e jogar uma variedade de jogos de tabuleiro, incluindo Reversi, Jogo da Velha, Campo Minado e Damas. O sistema oferece uma interface amigável e colorida para facilitar a navegação e a interação.
+O **Pixel Patterns** é um sistema projetado para gerenciar jogadores e jogar jogos de tabuleiro, como Reversi, Lig4, Jogo da Velha, Campo Minado e Damas. O sistema oferece uma interface amigável e colorida para facilitar a navegação e a interação.
+O link para acessar o repositório é https://github.com/jusmoura/PDS2_trabalho
 
 ## Funcionalidades
 
