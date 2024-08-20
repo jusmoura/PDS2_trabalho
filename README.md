@@ -109,12 +109,6 @@ A classe `CheckersGame` gerencia o jogo de Damas (Checkers) com um tabuleiro 8x8
 2. **Jogadas**: Jogadores alternam turnos para fazer movimentos ou capturas, sendo a primeira entrada a peça a ser movida e a segunda qual é o destino dela.
 3. **Atualização**: O tabuleiro é atualizado com as novas posições das peças após cada movimento.
 4. **Verificação de Vitória**: O jogo continua até que um jogador vença, com base na quantidade de peças restantes.
-5. **Regras**: O jogo segue as regras das damas americanas. Para peças simples não há captura de peça 'para trás'; As damas movimentam-se apenas uma casa em qualquer direção.
-
-## Especificações
-
-- **play()**: A função play inicia o jogo de damas. Faz a chamada da função setDefaults, que inicializa o tabuleiro com as posições das peças do jogo de damas. Em seguida recebe os dois jogadores e chama printBoard, para imprimir o tabuleiro. O jogo funciona dentro de um loop para a leitura das jogadas, alternando entre os dois jogadores. Dentro do loop, há um if chamando a função readMove, que lê as jogadas. Dentro desse if, verifica-se se a jogada é um movimento simples ou um movimento de captura de peça. Após uma jogada válida, atualiza-se o tabuleiro e é checado se alguma peça se tornou 'Dama'. Então, verifica-se se há algum vencedor, chamando a função winner que checa se algum dos jogadores está sem peças restantes. Caso haja um vencedor, imprime a mensagem de vitória e encerra o jogo.
-
 
 # Lig4
 
@@ -231,15 +225,16 @@ A classe `TicTacToe` implementa o clássico jogo da velha, um jogo de estratégi
 
 4. **Impressão do Tabuleiro**:
    - O estado atual do tabuleiro é exibido no console, mostrando as peças dos jogadores (X e O) nas posições correspondentes.
-
+   
 ## Especificações
 
 1. **play()**: inicia o jogo da velha com um tabuleiro 3x3 vazio e recebe os dois jogadores como parâmetro. O jogo funciona dentro de um while loop que lê a entrada [linha coluna] e preenche a casa do tabuleiro correspondente. O loop é interrompido quando há um vencedor ou todas as casas foram preenchidas;
-2. **makeMove()** recebe uma linha e coluna como parâmetro e preenche a casa correspondente se ela estiver vazia ou retorna uma mensagem de erro caso a jogada seja inválida; 
+2. **makeMove()** recebe uma linha e coluna como parâmetro e preenche a casa correspondente se ela estiver vazia ou retorna uma mensagem de erro caso a jogada seja inválida;
 3. **validMove()**: recebe uma linha e coluna como parâmetro e verifica se a jogada é válida, ou seja, se a casa escolhida está vazia e dentro do tabuleiro, retornando uma mensagem de erro caso seja inválida;
 4. **switchPlayer()**: é chamada após cada jogada e é responsável por trocar a vez dos jogadores X e O;
 5. **checkTie()**: verifica se o jogo empatou, isto é, todas as casas foram preenchidas mas não há vencedor;
-6. **checkVictory()**: verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal.   
+6. **checkVictory()**: verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal.  
+  
 
 # Compilação e Execução
 
