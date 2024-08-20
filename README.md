@@ -78,6 +78,10 @@ Para cada jogo, o sistema solicitará o login dos jogadores e, em alguns casos, 
 
 Permite sair do sistema e liberar os recursos.
 
+## Tratamento de Exceções e Entradas Inválidas
+
+Todos os tratamentos de possíveis erros, em todo o projeto, ocorrem por meio de if's e switch cases; todos os trys, catchs e throws presentes nos jogos e interface são utilizados, exclusivamente, para auxiliar no fluxo entre menus (voltar e sair) e na "desistência" do usuário durante os jogos, fazendo-o retornar na pilha stack de execução. Dessa forma, o usuário possui controle total de seu caminho entre os menus durante a utilização do sistema. 
+
 ## Entradas e Saídas
 
 ### Entradas
@@ -91,6 +95,8 @@ Permite sair do sistema e liberar os recursos.
 
 - **Sucesso**: Mensagens de confirmação para criação, remoção de jogadores e início de jogos.
 - **Erros**: Mensagens de erro para dados incorretos ou jogadores não encontrados.
+
+# Jogos
 
 # CheckersGame
 
@@ -169,6 +175,10 @@ A classe `Minesweeper` gerencia o jogo Campo Minado em um tabuleiro 8x8, onde o 
    - **Derrota**: Se uma célula com bomba for revelada, o jogo exibe uma mensagem de derrota.
    - **Vitória**: O jogo verifica se todas as células sem bombas foram reveladas, indicando vitória.
 
+## Especificações
+
+- **Construtor**: O contrutor é responsável por instanciar a função setBombsPositions, que aloca bombas em posições aleatórias no tabuleiro.
+- **play()**: A função play inicia o campo minado em um loop de jogadas, no qual são solicitados as entradas para realização da escolha de posição a ser revelada. Se o movimento for válido e a posição seleciona estiver vazia (valor 0), é chamada a função checkAndShowAdjacentsCells que, de maneira recursiva, revela todas as células adjacentes àquela jogada. Caso não seja 0, apenas a posição selecionada é revelada. Por fim, é verificado se uma bomba foi selecionada e, em caso positivo, o jogo é encerrado em derrota. Verifica-se, também (caso não tenha ocorrido a derrota), se houve vitória, na situação em que todas as casas, exceto bombas, foram reveladas.
 
 # Reversi
 
