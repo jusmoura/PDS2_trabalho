@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['help_1149',['help',['../structdoctest_1_1ContextOptions.html#a9d542a95ee03f61c233fff51e7461400',1,'doctest::ContextOptions']]]
+  ['lig4_314',['LIG4',['../game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309',1,'game_controller.hpp']]],
+  ['linessize_315',['linesSize',['../classBoard.html#a2331cf0e362f0487b0d1f1cba5b82aea',1,'Board']]]
 ];

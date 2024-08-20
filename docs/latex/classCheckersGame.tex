@@ -1,0 +1,92 @@
+\hypertarget{classCheckersGame}{}\doxysection{Checkers\+Game Class Reference}
+\label{classCheckersGame}\index{CheckersGame@{CheckersGame}}
+
+
+Implementa a lógica do jogo de damas (checkers) baseado na classe \mbox{\hyperlink{classBoard}{Board}}.  
+
+
+
+
+{\ttfamily \#include $<$checkers.\+hpp$>$}
+
+
+
+Inheritance diagram for Checkers\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCheckersGame__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Checkers\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classCheckersGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCheckersGame_a3c73b6c32e675ae38296adde22ea1ae6}{Checkers\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classCheckersGame}{Checkers\+Game}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classCheckersGame_a991d05190d73089b3a5cf624b08ff8fb}{play}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2) override
+\begin{DoxyCompactList}\small\item\em Realiza uma jogada no jogo de damas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementa a lógica do jogo de damas (checkers) baseado na classe \mbox{\hyperlink{classBoard}{Board}}. 
+
+A classe {\ttfamily \mbox{\hyperlink{classCheckersGame}{Checkers\+Game}}} é uma implementação específica de um jogo de damas que herda da classe {\ttfamily \mbox{\hyperlink{classBoard}{Board}}}. Ela inclui métodos para definir o tabuleiro, validar movimentos, realizar jogadas e determinar o vencedor do jogo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCheckersGame_a3c73b6c32e675ae38296adde22ea1ae6}\label{classCheckersGame_a3c73b6c32e675ae38296adde22ea1ae6}} 
+\index{CheckersGame@{CheckersGame}!CheckersGame@{CheckersGame}}
+\index{CheckersGame@{CheckersGame}!CheckersGame@{CheckersGame}}
+\doxysubsubsection{\texorpdfstring{CheckersGame()}{CheckersGame()}}
+{\footnotesize\ttfamily Checkers\+Game\+::\+Checkers\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \mbox{\hyperlink{classCheckersGame}{Checkers\+Game}}. 
+
+Inicializa o jogo de damas, configurando o tabuleiro e as peças de acordo com as regras do jogo. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCheckersGame_a991d05190d73089b3a5cf624b08ff8fb}\label{classCheckersGame_a991d05190d73089b3a5cf624b08ff8fb}} 
+\index{CheckersGame@{CheckersGame}!play@{play}}
+\index{play@{play}!CheckersGame@{CheckersGame}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Checkers\+Game\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Realiza uma jogada no jogo de damas. 
+
+Este método sobrepõe o método {\ttfamily play} da classe {\ttfamily \mbox{\hyperlink{classBoard}{Board}}} para implementar a lógica específica das jogadas no jogo de damas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador que fez a jogada. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae6190d11118d6b2840d1569d41da8af3}{Board}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{checkers_8hpp}{checkers.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/checkers.\+cpp\end{DoxyCompactItemize}

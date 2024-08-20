@@ -1,0 +1,186 @@
+\hypertarget{classPlayerController}{}\doxysection{Player\+Controller Class Reference}
+\label{classPlayerController}\index{PlayerController@{PlayerController}}
+
+
+Controlador responsável por gerenciar operações relacionadas aos jogadores.  
+
+
+
+
+{\ttfamily \#include $<$player\+\_\+controller.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayerController_af2d4e93f407c9cd40a5de9f14cbeadec}{Player\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayerController_afec478d888b4a9c8fdd594695a6d4853}{get\+Total\+Number\+Of\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o número total de jogadores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classPlayerController_a204624e888162292f06274b51bb5d550}{get\+Player\+By\+Index}} (int index)
+\begin{DoxyCompactList}\small\item\em Obtém um jogador pelo índice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classPlayerController_ae82375e6158343f33060a1a27284892f}{get\+Player\+By\+Nickname}} (string nickname)
+\begin{DoxyCompactList}\small\item\em Obtém um jogador pelo apelido. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlayerController_a83bff4209bc5adbcefaf68561d22c72e}{insert\+New\+Player}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Insere um novo jogador no sistema. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayerController_ae050cea20b0a2909c304414512ce7395}{remove\+Player}} (string nickname)
+\begin{DoxyCompactList}\small\item\em Remove um jogador do sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayerController_a2cbfb792b62db78e622f0ce89cab209b}{print\+Players\+By\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Imprime a lista de jogadores ordenada por nome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayerController_a7aa8869f04cb3f259ee23647c45c1bb0}{print\+Players\+By\+Nickname}} ()
+\begin{DoxyCompactList}\small\item\em Imprime a lista de jogadores ordenada por apelido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayerController_a0fb46654f549e30398b2c4cb69c27161}{victory\+And\+Defeat\+Management}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$winner, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2, int selected\+Game)
+\begin{DoxyCompactList}\small\item\em Gerenciador de atribuição de vitórias, derrotas e empates em jogos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayerController_a27b597bc2dbe06e2464dea6cdb3fac96}{$\sim$\+Player\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor da classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlador responsável por gerenciar operações relacionadas aos jogadores. 
+
+A classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}} lida com a adição, remoção, e acesso de jogadores dentro do sistema. Ela também fornece métodos para listar jogadores, tanto por nome quanto por apelido (nickname). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayerController_af2d4e93f407c9cd40a5de9f14cbeadec}\label{classPlayerController_af2d4e93f407c9cd40a5de9f14cbeadec}} 
+\index{PlayerController@{PlayerController}!PlayerController@{PlayerController}}
+\index{PlayerController@{PlayerController}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{PlayerController()}{PlayerController()}}
+{\footnotesize\ttfamily Player\+Controller\+::\+Player\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}. 
+
+Inicializa um novo controlador de jogadores. \mbox{\Hypertarget{classPlayerController_a27b597bc2dbe06e2464dea6cdb3fac96}\label{classPlayerController_a27b597bc2dbe06e2464dea6cdb3fac96}} 
+\index{PlayerController@{PlayerController}!````~PlayerController@{$\sim$PlayerController}}
+\index{````~PlayerController@{$\sim$PlayerController}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{$\sim$PlayerController()}{~PlayerController()}}
+{\footnotesize\ttfamily Player\+Controller\+::$\sim$\+Player\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destrutor da classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}. 
+
+Libera os recursos alocados pelo controlador de jogadores. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayerController_a204624e888162292f06274b51bb5d550}\label{classPlayerController_a204624e888162292f06274b51bb5d550}} 
+\index{PlayerController@{PlayerController}!getPlayerByIndex@{getPlayerByIndex}}
+\index{getPlayerByIndex@{getPlayerByIndex}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{getPlayerByIndex()}{getPlayerByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Player\+Controller\+::get\+Player\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém um jogador pelo índice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & O índice do jogador a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador correspondente ao índice. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayerController_ae82375e6158343f33060a1a27284892f}\label{classPlayerController_ae82375e6158343f33060a1a27284892f}} 
+\index{PlayerController@{PlayerController}!getPlayerByNickname@{getPlayerByNickname}}
+\index{getPlayerByNickname@{getPlayerByNickname}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{getPlayerByNickname()}{getPlayerByNickname()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Player\+Controller\+::get\+Player\+By\+Nickname (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Obtém um jogador pelo apelido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & O apelido do jogador a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador correspondente ao apelido. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayerController_afec478d888b4a9c8fdd594695a6d4853}\label{classPlayerController_afec478d888b4a9c8fdd594695a6d4853}} 
+\index{PlayerController@{PlayerController}!getTotalNumberOfPlayers@{getTotalNumberOfPlayers}}
+\index{getTotalNumberOfPlayers@{getTotalNumberOfPlayers}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{getTotalNumberOfPlayers()}{getTotalNumberOfPlayers()}}
+{\footnotesize\ttfamily int Player\+Controller\+::get\+Total\+Number\+Of\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o número total de jogadores. 
+
+\begin{DoxyReturn}{Returns}
+Número de jogadores atualmente armazenados. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayerController_a83bff4209bc5adbcefaf68561d22c72e}\label{classPlayerController_a83bff4209bc5adbcefaf68561d22c72e}} 
+\index{PlayerController@{PlayerController}!insertNewPlayer@{insertNewPlayer}}
+\index{insertNewPlayer@{insertNewPlayer}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{insertNewPlayer()}{insertNewPlayer()}}
+{\footnotesize\ttfamily bool Player\+Controller\+::insert\+New\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+
+
+Insere um novo jogador no sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Ponteiro para o jogador a ser inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} se a inserção for bem-\/sucedida, {\ttfamily false} caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayerController_a2cbfb792b62db78e622f0ce89cab209b}\label{classPlayerController_a2cbfb792b62db78e622f0ce89cab209b}} 
+\index{PlayerController@{PlayerController}!printPlayersByName@{printPlayersByName}}
+\index{printPlayersByName@{printPlayersByName}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{printPlayersByName()}{printPlayersByName()}}
+{\footnotesize\ttfamily void Player\+Controller\+::print\+Players\+By\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime a lista de jogadores ordenada por nome. 
+
+Exibe os jogadores em ordem alfabética pelo nome. \mbox{\Hypertarget{classPlayerController_a7aa8869f04cb3f259ee23647c45c1bb0}\label{classPlayerController_a7aa8869f04cb3f259ee23647c45c1bb0}} 
+\index{PlayerController@{PlayerController}!printPlayersByNickname@{printPlayersByNickname}}
+\index{printPlayersByNickname@{printPlayersByNickname}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{printPlayersByNickname()}{printPlayersByNickname()}}
+{\footnotesize\ttfamily void Player\+Controller\+::print\+Players\+By\+Nickname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Imprime a lista de jogadores ordenada por apelido. 
+
+Exibe os jogadores em ordem alfabética pelo apelido. \mbox{\Hypertarget{classPlayerController_ae050cea20b0a2909c304414512ce7395}\label{classPlayerController_ae050cea20b0a2909c304414512ce7395}} 
+\index{PlayerController@{PlayerController}!removePlayer@{removePlayer}}
+\index{removePlayer@{removePlayer}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{removePlayer()}{removePlayer()}}
+{\footnotesize\ttfamily int Player\+Controller\+::remove\+Player (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Remove um jogador do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & O apelido do jogador a ser removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O índice do jogador removido, ou -\/1 se o jogador não for encontrado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayerController_a0fb46654f549e30398b2c4cb69c27161}\label{classPlayerController_a0fb46654f549e30398b2c4cb69c27161}} 
+\index{PlayerController@{PlayerController}!victoryAndDefeatManagement@{victoryAndDefeatManagement}}
+\index{victoryAndDefeatManagement@{victoryAndDefeatManagement}!PlayerController@{PlayerController}}
+\doxysubsubsection{\texorpdfstring{victoryAndDefeatManagement()}{victoryAndDefeatManagement()}}
+{\footnotesize\ttfamily void Player\+Controller\+::victory\+And\+Defeat\+Management (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{winner,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2,  }\item[{int}]{selected\+Game }\end{DoxyParamCaption})}
+
+
+
+Gerenciador de atribuição de vitórias, derrotas e empates em jogos. 
+
+Atribui vitória, derrota ou empate para os jogadores após o término de uma partida. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{player__controller_8hpp}{player\+\_\+controller.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/player\+\_\+controller.\+cpp\end{DoxyCompactItemize}

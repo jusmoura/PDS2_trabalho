@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['c_5fstr_963',['c_str',['../classdoctest_1_1String.html#a35df67f11652bcc568ad3af470c344c0',1,'doctest::String::c_str()'],['../classdoctest_1_1AssertData_1_1StringContains.html#aed2f43aeb1b9182254187eefc61f8176',1,'doctest::AssertData::StringContains::c_str()'],['../classdoctest_1_1String.html#a607c6977b193fecf29622110e6081625',1,'doctest::String::c_str() const']]],
-  ['capacity_964',['capacity',['../classdoctest_1_1String.html#a1592b42fc76438d5a87a94654a828ced',1,'doctest::String']]],
-  ['cell_965',['Cell',['../classCell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell']]],
-  ['check_966',['check',['../classdoctest_1_1AssertData_1_1StringContains.html#af784258b8b4f99b8665e090d74610b26',1,'doctest::AssertData::StringContains']]],
-  ['checkersgame_967',['CheckersGame',['../classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6',1,'CheckersGame']]],
-  ['checkifshouldthrow_968',['checkIfShouldThrow',['../namespacedoctest_1_1detail.html#acec9ff072dd86af95225a8beb9c57298',1,'doctest::detail']]],
-  ['checkwith_969',['checkWith',['../classdoctest_1_1Contains.html#a1e503a63b1ebaef517d5ef50c97ae3e8',1,'doctest::Contains']]],
-  ['clearbuffer_970',['clearBuffer',['../classInterface.html#a737b66109e1e159752c9217689733743',1,'Interface']]],
-  ['clearfilters_971',['clearFilters',['../classdoctest_1_1Context.html#aaa878723e89310d5aa3f516bc7ab3165',1,'doctest::Context']]],
-  ['compare_972',['compare',['../classdoctest_1_1String.html#adb57becb56e054d981e7c2b967a7e359',1,'doctest::String::compare(const String &amp;other, bool no_case=false) const'],['../classdoctest_1_1String.html#aef87d1f106d32d8c31af87335b44164d',1,'doctest::String::compare(const char *other, bool no_case=false) const']]],
-  ['contains_973',['Contains',['../classdoctest_1_1Contains.html#a251f469eead28031994099c4437d95a5',1,'doctest::Contains']]],
-  ['context_974',['Context',['../classdoctest_1_1Context.html#a881bc2d0fe207d672e1debe830768a98',1,'doctest::Context::Context(int argc=0, const char *const *argv=nullptr)'],['../classdoctest_1_1Context.html#a1d40d57d7b4bee1c8e6e2ebe7eafbb3a',1,'doctest::Context::Context(const Context &amp;)=delete'],['../classdoctest_1_1Context.html#a1feb0418d15238aa805f0c1e16f5197e',1,'doctest::Context::Context(Context &amp;&amp;)=delete']]],
-  ['contextscope_975',['ContextScope',['../classdoctest_1_1detail_1_1ContextScope.html#a344c76a0374615d567a084c0a0ffd215',1,'doctest::detail::ContextScope::ContextScope(const L &amp;lambda)'],['../classdoctest_1_1detail_1_1ContextScope.html#aea8b6a27c0f1257529f9912ec2ab2991',1,'doctest::detail::ContextScope::ContextScope(L &amp;&amp;lambda)'],['../classdoctest_1_1detail_1_1ContextScope.html#aa2bc8edd40e227d9028b0cfca4911465',1,'doctest::detail::ContextScope::ContextScope(const ContextScope &amp;)=delete'],['../classdoctest_1_1detail_1_1ContextScope.html#aa6ab9a99670766e8ee26631cea4148f9',1,'doctest::detail::ContextScope::ContextScope(ContextScope &amp;&amp;) noexcept=default']]],
-  ['contextscopebase_976',['ContextScopeBase',['../structdoctest_1_1detail_1_1ContextScopeBase.html#a3fff412c7c41aeb8fc0314f3f4503ec4',1,'doctest::detail::ContextScopeBase::ContextScopeBase(const ContextScopeBase &amp;)=delete'],['../structdoctest_1_1detail_1_1ContextScopeBase.html#af3a3ff7ad6b98142ef0f7e1d01912d48',1,'doctest::detail::ContextScopeBase::ContextScopeBase()'],['../structdoctest_1_1detail_1_1ContextScopeBase.html#a13e4ac8d4ef5b7c3361618f6ad5efcfe',1,'doctest::detail::ContextScopeBase::ContextScopeBase(ContextScopeBase &amp;&amp;other) noexcept']]],
-  ['convert_977',['convert',['../structdoctest_1_1detail_1_1StringMakerBase.html#a67d29f2a5de9a522d8e8607c1a39db9b',1,'doctest::detail::StringMakerBase::convert()'],['../structdoctest_1_1detail_1_1StringMakerBase_3_01true_01_4.html#ae1a11dee413117f36e335677589b047f',1,'doctest::detail::StringMakerBase&lt; true &gt;::convert()']]],
-  ['createplayer_978',['createPlayer',['../classInterface.html#acf1b423b27b0def6aeb30e4e4a8a65d0',1,'Interface']]]
+  ['calculatescore_210',['calculateScore',['../classReversiGame.html#adba0628c2b444bbe28a36029b5119403',1,'ReversiGame']]],
+  ['capturemove_211',['captureMove',['../classCheckersGame.html#ab5b20283ae32eeddc3559e6fb2ad4954',1,'CheckersGame']]],
+  ['cell_212',['Cell',['../classCell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell']]],
+  ['checkandshowadjacentscells_213',['checkAndShowAdjacentsCells',['../classMinesweeper.html#a1f84005882cb137f981d09e0857872db',1,'Minesweeper']]],
+  ['checkdefeat_214',['checkDefeat',['../classMinesweeper.html#a824ee3efce6a1ff63f9e2544b3aeeeab',1,'Minesweeper']]],
+  ['checkersgame_215',['CheckersGame',['../classCheckersGame.html#a3c73b6c32e675ae38296adde22ea1ae6',1,'CheckersGame']]],
+  ['checkifbecamequeen_216',['checkIfBecameQueen',['../classCheckersGame.html#accd03840d7adc80f52ab2225dd151b33',1,'CheckersGame']]],
+  ['checktie_217',['checkTie',['../classLig4.html#a1475f4b76a3b03e87a8f1cad3bbf5060',1,'Lig4::checkTie()'],['../classTicTacToe.html#a8a03bdd163d41daa7247d56a6e7daed6',1,'TicTacToe::checkTie()']]],
+  ['checkvictory_218',['checkVictory',['../classLig4.html#a84eb2ead4553500ed1d4138487023d7a',1,'Lig4::checkVictory()'],['../classMinesweeper.html#aab424c9b0caa93c07b9921074705d8a6',1,'Minesweeper::checkVictory()'],['../classReversiGame.html#a85b436f641496f5762cc9853f0744a00',1,'ReversiGame::checkVictory()'],['../classTicTacToe.html#a71d8796bb0291ff8bc558063f6d32fe2',1,'TicTacToe::checkVictory()']]],
+  ['clearbuffer_219',['clearBuffer',['../classInterface.html#a737b66109e1e159752c9217689733743',1,'Interface']]],
+  ['createplayer_220',['createPlayer',['../classInterface.html#acf1b423b27b0def6aeb30e4e4a8a65d0',1,'Interface']]]
 ];

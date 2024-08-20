@@ -1,0 +1,5 @@
+<map id="Interface" name="Interface">
+<area shape="rect" id="node1" title="Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos." alt="" coords="39,184,119,211"/>
+<area shape="rect" id="node2" href="$classPlayerController.html" title="Controlador responsável por gerenciar operações relacionadas aos jogadores." alt="" coords="16,95,143,121"/>
+<area shape="rect" id="node3" href="$classDatabaseController.html" title="Gerencia a leitura e escrita de dados de jogadores em arquivos." alt="" coords="5,5,153,32"/>
+</map>

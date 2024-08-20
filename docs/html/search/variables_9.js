@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['is_5fcrash_1150',['is_crash',['../structdoctest_1_1TestCaseException.html#af30d801dae6dd2f4ea01690bbf5faeca',1,'doctest::TestCaseException']]],
-  ['is_5frunning_5fin_5ftest_1151',['is_running_in_test',['../namespacedoctest.html#a0b03060093b3894c976b6ae84e55f3f2',1,'doctest']]],
-  ['isnan_3c_20double_20_3e_1152',['IsNaN&lt; double &gt;',['../namespacedoctest.html#a4084d3d9bcaef83013a4789c1f41666b',1,'doctest']]],
-  ['isnan_3c_20float_20_3e_1153',['IsNaN&lt; float &gt;',['../namespacedoctest.html#ae635964db555b85aefd7874bc9cc7b51',1,'doctest']]],
-  ['isnan_3c_20long_20double_20_3e_1154',['IsNaN&lt; long double &gt;',['../namespacedoctest.html#a82230b0925bdd6dffac05c78f8f2d1b9',1,'doctest']]]
+  ['main_5ftitle_5fstyle_316',['MAIN_TITLE_STYLE',['../colors_8hpp.html#a97c4a761bb6dacb9bdb807e8021ba4dc',1,'colors.hpp']]],
+  ['minesweeper_317',['MINESWEEPER',['../game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340',1,'game_controller.hpp']]]
 ];

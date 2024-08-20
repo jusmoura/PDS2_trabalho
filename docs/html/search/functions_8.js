@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['lig4_1021',['Lig4',['../classLig4.html#adffdeddf3d20829f752913801554126d',1,'Lig4']]],
-  ['log_1022',['log',['../structdoctest_1_1detail_1_1ResultBuilder.html#a2af75dd1d8db8d3aa949d78025854085',1,'doctest::detail::ResultBuilder::log()'],['../structdoctest_1_1detail_1_1MessageBuilder.html#a9bcc5d56e1764a7e07efebca55e43cce',1,'doctest::detail::MessageBuilder::log()']]],
-  ['log_5fassert_1023',['log_assert',['../structdoctest_1_1IReporter.html#a5bb54923eab233bb02f2fcfc178fa12a',1,'doctest::IReporter']]],
-  ['log_5fmessage_1024',['log_message',['../structdoctest_1_1IReporter.html#a2b2cb4f15aa7417d4903a0edc3147018',1,'doctest::IReporter']]],
-  ['loginplayer_1025',['loginPlayer',['../classInterface.html#aae0f4945248d6acd6215666ff199a400',1,'Interface']]]
+  ['initboard_242',['initBoard',['../classBoard.html#a67cf113c045c8aec1565f48eef8e5770',1,'Board']]],
+  ['insertnewplayer_243',['insertNewPlayer',['../classPlayerController.html#a83bff4209bc5adbcefaf68561d22c72e',1,'PlayerController']]]
 ];

@@ -88,10 +88,12 @@ Include dependency graph for player.cpp:</div>
 <area shape="rect" href="game_8hpp.html" title="Declaração da classe Game para representar um jogo." alt="" coords="37,244,123,271"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="player_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a880c6592231e57f46f2c22406330d890"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacestd.html#a6d1736434ff6d516a3df38cbb7487ea5">ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8cpp.html#a880c6592231e57f46f2c22406330d890">operator&lt;&lt;</a> (<a class="el" href="namespacestd.html#a6d1736434ff6d516a3df38cbb7487ea5">ostream</a> &amp;os, <a class="el" href="classPlayer.html">Player</a> &amp;player)</td></tr>
+<tr class="memitem:a880c6592231e57f46f2c22406330d890"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8cpp.html#a880c6592231e57f46f2c22406330d890">operator&lt;&lt;</a> (ostream &amp;os, <a class="el" href="classPlayer.html">Player</a> &amp;player)</td></tr>
 <tr class="separator:a880c6592231e57f46f2c22406330d890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -102,9 +104,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacestd.html#a6d1736434ff6d516a3df38cbb7487ea5">ostream</a>&amp; operator&lt;&lt; </td>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacestd.html#a6d1736434ff6d516a3df38cbb7487ea5">std::ostream</a> &amp;&#160;</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
         </tr>
         <tr>
@@ -120,15 +122,51 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>O stream de saída. </td></tr>
-    <tr><td class="paramname">player</td><td>O jogador cujas informações serão exibidas. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>O stream de saída. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="player_8cpp_source.html#l00072">72</a> of file <a class="el" href="player_8cpp_source.html">player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                   {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    os &lt;&lt; <a class="code" href="colors_8hpp.html#a5f407a95d0b458f7303cb3ea005c714e">CYAN_COLOR</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Nome: &quot;</span> &lt;&lt; player.<a class="code" href="classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5">getName</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot;Apelido: &quot;</span> &lt;&lt; player.<a class="code" href="classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca">getNickname</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    os &lt;&lt; <a class="code" href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    os &lt;&lt; <span class="stringliteral">&quot; ------- Estatisticas dos Jogos -------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    os &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    vector&lt;Game&gt;* games = player.<a class="code" href="classPlayer.html#adee9bae49885d7e5f51d0be17afb235c">getGamesStats</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> gamesSize = games-&gt;size();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; gamesSize; i++) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">string</span> gameName = games-&gt;at(i).getName();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        os &lt;&lt; <a class="code" href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;| &quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        os &lt;&lt; setw(13) &lt;&lt; left &lt;&lt; gameName &lt;&lt; <span class="stringliteral">&quot; - &quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        os &lt;&lt; <a class="code" href="colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3">GREEN_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;V: &quot;</span> &lt;&lt; setw(3) &lt;&lt; left &lt;&lt; games-&gt;at(i).getNumWins() &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        os &lt;&lt; <a class="code" href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;D: &quot;</span> &lt;&lt; setw(3) &lt;&lt; left &lt;&lt; games-&gt;at(i).getNumDefeats() &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (gameName != <span class="stringliteral">&quot;Campo Minado&quot;</span> &amp;&amp; gameName != <span class="stringliteral">&quot;Damas&quot;</span>) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            os &lt;&lt; <a class="code" href="colors_8hpp.html#a6c0e23fcaf844d675cb89a78d59d36d3">YELLOW_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;E: &quot;</span> &lt;&lt; setw(2) &lt;&lt; left &lt;&lt; games-&gt;at(i).getNumDraws();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            os &lt;&lt; <a class="code" href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            os &lt;&lt; setw(10) &lt;&lt; left &lt;&lt; <a class="code" href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;|&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        os &lt;&lt; endl;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    os &lt;&lt; <a class="code" href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a> &lt;&lt; <span class="stringliteral">&quot; --------------------------------------\n\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="ttc" id="aclassPlayer_html_a36f1ada4456bcf9e0d98eb8e82f17cca"><div class="ttname"><a href="classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca">Player::getNickname</a></div><div class="ttdeci">string getNickname()</div><div class="ttdoc">Obtém o apelido do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00025">player.cpp:25</a></div></div>
+<div class="ttc" id="aclassPlayer_html_adee9bae49885d7e5f51d0be17afb235c"><div class="ttname"><a href="classPlayer.html#adee9bae49885d7e5f51d0be17afb235c">Player::getGamesStats</a></div><div class="ttdeci">vector&lt; Game &gt; * getGamesStats()</div><div class="ttdoc">Obtém as estatísticas de jogos do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00044">player.cpp:44</a></div></div>
+<div class="ttc" id="aclassPlayer_html_af9a6045fa96f736664c4eab4caa5e8e5"><div class="ttname"><a href="classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5">Player::getName</a></div><div class="ttdeci">string getName()</div><div class="ttdoc">Obtém o nome do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00017">player.cpp:17</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_a047c7da2ebaa65ee8efcd2e1426ca9c0"><div class="ttname"><a href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a></div><div class="ttdeci">const std::string GRAY_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00015">colors.hpp:15</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_a5f407a95d0b458f7303cb3ea005c714e"><div class="ttname"><a href="colors_8hpp.html#a5f407a95d0b458f7303cb3ea005c714e">CYAN_COLOR</a></div><div class="ttdeci">const std::string CYAN_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00021">colors.hpp:21</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_a6c0e23fcaf844d675cb89a78d59d36d3"><div class="ttname"><a href="colors_8hpp.html#a6c0e23fcaf844d675cb89a78d59d36d3">YELLOW_COLOR</a></div><div class="ttdeci">const std::string YELLOW_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00018">colors.hpp:18</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_a8d004b6af9a60bf3bc518aa139d41898"><div class="ttname"><a href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a></div><div class="ttdeci">const std::string RESET_ALL</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00032">colors.hpp:32</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_aea71658c8b9226f3a57cb8792ac71be3"><div class="ttname"><a href="colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3">GREEN_COLOR</a></div><div class="ttdeci">const std::string GREEN_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00017">colors.hpp:17</a></div></div>
+<div class="ttc" id="acolors_8hpp_html_af4ff33f31f564390ae6768a68afa3d5c"><div class="ttname"><a href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a></div><div class="ttdeci">const std::string RED_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00016">colors.hpp:16</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['failure_5fflags_1142',['failure_flags',['../structdoctest_1_1CurrentTestCaseStats.html#aaa58c52fd07a20e6e4daf19eecb2e2ba',1,'doctest::CurrentTestCaseStats']]],
-  ['first_1143',['first',['../structdoctest_1_1ContextOptions.html#a9f26ee60a5259e73f9f25ce3f4883a97',1,'doctest::ContextOptions']]],
-  ['flipped_1144',['flipped',['../structdoctest_1_1IsNaN.html#a3c25335f2708d9360b8e92813b3ac17d',1,'doctest::IsNaN']]],
-  ['force_5fcolors_1145',['force_colors',['../structdoctest_1_1ContextOptions.html#a8cd276e86a209f3d5486eb6c5a2a29bf',1,'doctest::ContextOptions']]]
+  ['hintso_311',['hintsO',['../classReversiGame.html#aeffacdd5c17c9da0e6f78b59106d3e7b',1,'ReversiGame']]],
+  ['hintsx_312',['hintsX',['../classReversiGame.html#ab1e3e8b35ffad81a525b5736cacc2e8b',1,'ReversiGame']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['unary_5fassert_792',['unary_assert',['../structdoctest_1_1detail_1_1ResultBuilder.html#a63a2a19638f4a761c70abd5563e2d23a',1,'doctest::detail::ResultBuilder::unary_assert()'],['../namespacedoctest_1_1detail.html#a0ffd8b760c2a9b355a1df02470fe2281',1,'doctest::detail::unary_assert()']]],
-  ['underlying_5ftype_793',['underlying_type',['../structdoctest_1_1detail_1_1types_1_1underlying__type.html',1,'doctest::detail::types']]]
+  ['validatemove_153',['validateMove',['../classBoard.html#a8ead14fa5b014a52a65c314747fefe2e',1,'Board']]],
+  ['validmove_154',['validMove',['../classCheckersGame.html#a6e1db6b584e181a1a56180258fd706d9',1,'CheckersGame::validMove()'],['../classReversiGame.html#a5431cbb2765d72289cadeca16a863a17',1,'ReversiGame::validMove()'],['../classTicTacToe.html#a6573bcf710f2d00d93fbec748fca1233',1,'TicTacToe::validMove()']]],
+  ['victoryanddefeatmanagement_155',['victoryAndDefeatManagement',['../classPlayerController.html#a0fb46654f549e30398b2c4cb69c27161',1,'PlayerController']]],
+  ['voltar_156',['VOLTAR',['../interface_8hpp.html#ae1b8fe57cacff311040a4664aa8f010b',1,'interface.hpp']]]
 ];

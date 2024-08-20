@@ -1,0 +1,76 @@
+\hypertarget{classTicTacToe}{}\doxysection{Tic\+Tac\+Toe Class Reference}
+\label{classTicTacToe}\index{TicTacToe@{TicTacToe}}
+
+
+Classe que implementa o jogo da velha (Tic-\/\+Tac-\/\+Toe) derivada da classe \mbox{\hyperlink{classBoard}{Board}}.  
+
+
+
+
+{\ttfamily \#include $<$tic\+\_\+tac\+\_\+toe.\+hpp$>$}
+
+
+
+Inheritance diagram for Tic\+Tac\+Toe\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classTicTacToe__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tic\+Tac\+Toe\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classTicTacToe__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTicTacToe_a103fe9a5ae41b5ef756e20594a70cb7a}\label{classTicTacToe_a103fe9a5ae41b5ef756e20594a70cb7a}} 
+\mbox{\hyperlink{classTicTacToe_a103fe9a5ae41b5ef756e20594a70cb7a}{Tic\+Tac\+Toe}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão para inicializar um jogo da velha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classTicTacToe_adbc918eac4a832462f498931dd618beb}{play}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2) override
+\begin{DoxyCompactList}\small\item\em Inicia e gerencia o loop principal do jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe que implementa o jogo da velha (Tic-\/\+Tac-\/\+Toe) derivada da classe \mbox{\hyperlink{classBoard}{Board}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTicTacToe_adbc918eac4a832462f498931dd618beb}\label{classTicTacToe_adbc918eac4a832462f498931dd618beb}} 
+\index{TicTacToe@{TicTacToe}!play@{play}}
+\index{play@{play}!TicTacToe@{TicTacToe}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Tic\+Tac\+Toe\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicia e gerencia o loop principal do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o ponteiro para o jogador vencedor ou nullptr em caso de empate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae6190d11118d6b2840d1569d41da8af3}{Board}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/tic\+\_\+tac\+\_\+toe.\+hpp\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/tic\+\_\+tac\+\_\+toe.\+cpp\end{DoxyCompactItemize}

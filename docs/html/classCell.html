@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCell-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Cell Class Reference</div>  </div>
@@ -91,10 +92,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a71c18578d41589506ddeaef3fbe080f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a71c18578d41589506ddeaef3fbe080f7">setSelected</a> (bool wasSelected)</td></tr>
 <tr class="memdesc:a71c18578d41589506ddeaef3fbe080f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o estado de seleção da célula.  <a href="classCell.html#a71c18578d41589506ddeaef3fbe080f7">More...</a><br /></td></tr>
 <tr class="separator:a71c18578d41589506ddeaef3fbe080f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a893d52f51ce9c98a618d6e24b157492c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">_value</a></td></tr>
+<tr class="memdesc:a893d52f51ce9c98a618d6e24b157492c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor armazenado na célula.  <a href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">More...</a><br /></td></tr>
+<tr class="separator:a893d52f51ce9c98a618d6e24b157492c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2951b78b6ec01875d8514ae57e07d676"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a></td></tr>
+<tr class="memdesc:a2951b78b6ec01875d8514ae57e07d676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica se a célula foi selecionada ou não.  <a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">More...</a><br /></td></tr>
+<tr class="separator:a2951b78b6ec01875d8514ae57e07d676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representa uma célula individual em um tabuleiro de jogo. </p>
 <p>A classe <code><a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a></code> é usada para representar uma célula em um tabuleiro. Ela armazena o valor da célula e um estado booleano que indica se a célula foi selecionada ou não. </p>
+
+<p class="definition">Definition at line <a class="el" href="cell_8hpp_source.html#l00019">19</a> of file <a class="el" href="cell_8hpp_source.html">cell.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a394510643e8664cf12b5efaf5cb99f71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a394510643e8664cf12b5efaf5cb99f71">&#9670;&nbsp;</a></span>Cell()</h2>
@@ -114,6 +126,14 @@ Public Member Functions</h2></td></tr>
 <p>Construtor padrão da classe <a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a>. </p>
 <p>Inicializa a célula com valores padrão. Normalmente, o valor é 0 e o estado de seleção é false. </p>
 
+<p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00003">3</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;           {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <a class="code" href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">_value</a> = 0;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="ttc" id="aclassCell_html_a2951b78b6ec01875d8514ae57e07d676"><div class="ttname"><a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">Cell::_wasSelected</a></div><div class="ttdeci">bool _wasSelected</div><div class="ttdoc">Indica se a célula foi selecionada ou não.</div><div class="ttdef"><b>Definition:</b> <a href="cell_8hpp_source.html#l00034">cell.hpp:34</a></div></div>
+<div class="ttc" id="aclassCell_html_a893d52f51ce9c98a618d6e24b157492c"><div class="ttname"><a href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">Cell::_value</a></div><div class="ttdeci">int _value</div><div class="ttdoc">Valor armazenado na célula.</div><div class="ttdef"><b>Definition:</b> <a href="cell_8hpp_source.html#l00027">cell.hpp:27</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -135,6 +155,11 @@ Public Member Functions</h2></td></tr>
 <p>Verifica se a célula foi selecionada. </p>
 <dl class="section return"><dt>Returns</dt><dd>Retorna true se a célula foi selecionada, caso contrário retorna false. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00016">16</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                       {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b1ec60e70cebbcf06291e58e98bb402"></a>
@@ -155,6 +180,11 @@ Public Member Functions</h2></td></tr>
 <p>Obtém o valor armazenado na célula. </p>
 <dl class="section return"><dt>Returns</dt><dd>O valor armazenado na célula. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00008">8</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                   {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">_value</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a71c18578d41589506ddeaef3fbe080f7"></a>
@@ -181,6 +211,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00020">20</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                       {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    this-&gt;<a class="code" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a> = wasSelected;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b58034e57c99329a534189428882e0e"></a>
@@ -207,11 +242,71 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00012">12</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                             {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;<a class="code" href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">_value</a> = value;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a893d52f51ce9c98a618d6e24b157492c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a893d52f51ce9c98a618d6e24b157492c">&#9670;&nbsp;</a></span>_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Valor armazenado na célula. </p>
+<p>Este valor pode representar diferentes estados ou informações dependendo do jogo. </p>
+
+<p class="definition">Definition at line <a class="el" href="cell_8hpp_source.html#l00027">27</a> of file <a class="el" href="cell_8hpp_source.html">cell.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2951b78b6ec01875d8514ae57e07d676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2951b78b6ec01875d8514ae57e07d676">&#9670;&nbsp;</a></span>_wasSelected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cell::_wasSelected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indica se a célula foi selecionada ou não. </p>
+<p>Esse estado pode ser usado para verificar se a célula foi jogada ou manipulada de alguma forma. </p>
+
+<p class="definition">Definition at line <a class="el" href="cell_8hpp_source.html#l00034">34</a> of file <a class="el" href="cell_8hpp_source.html">cell.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/julia/Julia/PDS2_trabalho/include/<a class="el" href="cell_8hpp_source.html">cell.hpp</a></li>
-<li>/home/julia/Julia/PDS2_trabalho/src/<a class="el" href="cell_8cpp.html">cell.cpp</a></li>
+<li>/home/julia/Julia/PDS2_trabalho/src/<a class="el" href="cell_8cpp_source.html">cell.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

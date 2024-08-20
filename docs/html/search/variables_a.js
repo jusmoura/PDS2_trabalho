@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['last_1155',['last',['../structdoctest_1_1ContextOptions.html#a5aaf1b28f6a46d8acb40898a502b6bef',1,'doctest::ContextOptions']]],
-  ['lig4_1156',['LIG4',['../game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309',1,'game_controller.hpp']]],
-  ['linessize_1157',['linesSize',['../classBoard.html#a2331cf0e362f0487b0d1f1cba5b82aea',1,'Board']]],
-  ['list_5freporters_1158',['list_reporters',['../structdoctest_1_1ContextOptions.html#ad3daf077ac3182db5175f8baff49fce0',1,'doctest::ContextOptions']]],
-  ['list_5ftest_5fcases_1159',['list_test_cases',['../structdoctest_1_1ContextOptions.html#a813e1543c358ab8a7a432b4ad2b32e56',1,'doctest::ContextOptions']]],
-  ['list_5ftest_5fsuites_1160',['list_test_suites',['../structdoctest_1_1ContextOptions.html#a579399a66b278cbf96b6183d337f486b',1,'doctest::ContextOptions']]],
-  ['logged_1161',['logged',['../structdoctest_1_1detail_1_1MessageBuilder.html#ab99f0292c65f7a4311a6ecd94f313bf3',1,'doctest::detail::MessageBuilder']]],
-  ['loser_5fstyle_1162',['LOSER_STYLE',['../colors_8hpp.html#a7caf351fcd0601db8b0733989245a3ee',1,'colors.hpp']]]
+  ['pieces_318',['pieces',['../classCheckersGame.html#aedb588ad398e05a587bf90a486580940',1,'CheckersGame']]],
+  ['player_5fo_319',['PLAYER_O',['../classBoard.html#a35cb79158b7ce262dae2e3f1ff58ffca',1,'Board']]],
+  ['player_5fo_5fqueen_320',['PLAYER_O_QUEEN',['../classCheckersGame.html#a638cbc4521c1862953290fc3c8db1a03',1,'CheckersGame']]],
+  ['player_5fx_321',['PLAYER_X',['../classBoard.html#a3ab2ec512d7ae7c57acd5e52311d8aea',1,'Board']]],
+  ['player_5fx_5fqueen_322',['PLAYER_X_QUEEN',['../classCheckersGame.html#af0730bb0dc6c4489e327c0e5fe9333df',1,'CheckersGame']]],
+  ['purple_5fcolor_323',['PURPLE_COLOR',['../colors_8hpp.html#a56e77f1cc8871ee0ca31f014d887b566',1,'colors.hpp']]]
 ];

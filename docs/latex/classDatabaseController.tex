@@ -1,0 +1,81 @@
+\hypertarget{classDatabaseController}{}\doxysection{Database\+Controller Class Reference}
+\label{classDatabaseController}\index{DatabaseController@{DatabaseController}}
+
+
+Gerencia a leitura e escrita de dados de jogadores em arquivos.  
+
+
+
+
+{\ttfamily \#include $<$database\+\_\+controller.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatabaseController_a0368a631e0488b14c619a0672620c84e}{Database\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classDatabaseController}{Database\+Controller}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabaseController_aebb748bd192ea993bb969ff8f8fd9367}{read\+File}} (\mbox{\hyperlink{classPlayerController}{Player\+Controller}} $\ast$player\+Controller)
+\begin{DoxyCompactList}\small\item\em Lê os dados dos jogadores a partir de um arquivo e atualiza o \mbox{\hyperlink{classPlayerController}{Player\+Controller}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatabaseController_abdb13accba52da40f717315def34b389}{write\+File}} (\mbox{\hyperlink{classPlayerController}{Player\+Controller}} $\ast$player\+Controller)
+\begin{DoxyCompactList}\small\item\em Escreve os dados dos jogadores em um arquivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gerencia a leitura e escrita de dados de jogadores em arquivos. 
+
+A classe {\ttfamily \mbox{\hyperlink{classDatabaseController}{Database\+Controller}}} é responsável por carregar e salvar informações sobre jogadores a partir e para arquivos. Ela utiliza os métodos de leitura e escrita para interagir com a classe {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDatabaseController_a0368a631e0488b14c619a0672620c84e}\label{classDatabaseController_a0368a631e0488b14c619a0672620c84e}} 
+\index{DatabaseController@{DatabaseController}!DatabaseController@{DatabaseController}}
+\index{DatabaseController@{DatabaseController}!DatabaseController@{DatabaseController}}
+\doxysubsubsection{\texorpdfstring{DatabaseController()}{DatabaseController()}}
+{\footnotesize\ttfamily Database\+Controller\+::\+Database\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \mbox{\hyperlink{classDatabaseController}{Database\+Controller}}. 
+
+Inicializa uma instância de {\ttfamily \mbox{\hyperlink{classDatabaseController}{Database\+Controller}}}. O caminho do arquivo deve ser definido antes da leitura ou escrita. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDatabaseController_aebb748bd192ea993bb969ff8f8fd9367}\label{classDatabaseController_aebb748bd192ea993bb969ff8f8fd9367}} 
+\index{DatabaseController@{DatabaseController}!readFile@{readFile}}
+\index{readFile@{readFile}!DatabaseController@{DatabaseController}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Database\+Controller\+::read\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayerController}{Player\+Controller}} $\ast$}]{player\+Controller }\end{DoxyParamCaption})}
+
+
+
+Lê os dados dos jogadores a partir de um arquivo e atualiza o \mbox{\hyperlink{classPlayerController}{Player\+Controller}}. 
+
+Este método abre o arquivo especificado por {\ttfamily \+\_\+file\+Path} para leitura e carrega as informações dos jogadores no {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Controller} & Ponteiro para o {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}} que será atualizado com os dados lidos. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatabaseController_abdb13accba52da40f717315def34b389}\label{classDatabaseController_abdb13accba52da40f717315def34b389}} 
+\index{DatabaseController@{DatabaseController}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!DatabaseController@{DatabaseController}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void Database\+Controller\+::write\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayerController}{Player\+Controller}} $\ast$}]{player\+Controller }\end{DoxyParamCaption})}
+
+
+
+Escreve os dados dos jogadores em um arquivo. 
+
+Este método abre o arquivo especificado por {\ttfamily \+\_\+file\+Path} para escrita e salva as informações dos jogadores a partir do {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Controller} & Ponteiro para o {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}} que fornece os dados a serem salvos. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{database__controller_8hpp}{database\+\_\+controller.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/database\+\_\+controller.\+cpp\end{DoxyCompactItemize}

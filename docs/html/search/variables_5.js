@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['empty_1139',['EMPTY',['../classBoard.html#a841d7094bbf7bfccfc1b21dd12136747',1,'Board']]],
-  ['error_5fstring_1140',['error_string',['../structdoctest_1_1TestCaseException.html#a656c8971ccbedc7d3a0a38f7c6af927e',1,'doctest::TestCaseException']]],
-  ['exit_1141',['exit',['../structdoctest_1_1ContextOptions.html#a85d785559ea88e0bd61890f77f00a82f',1,'doctest::ContextOptions']]]
+  ['gray_5fcolor_309',['GRAY_COLOR',['../colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0',1,'colors.hpp']]],
+  ['green_5fcolor_310',['GREEN_COLOR',['../colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3',1,'colors.hpp']]]
 ];

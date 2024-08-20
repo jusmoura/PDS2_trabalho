@@ -1,0 +1,107 @@
+\hypertarget{classCell}{}\doxysection{Cell Class Reference}
+\label{classCell}\index{Cell@{Cell}}
+
+
+Representa uma célula individual em um tabuleiro de jogo.  
+
+
+
+
+{\ttfamily \#include $<$cell.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a394510643e8664cf12b5efaf5cb99f71}{Cell}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \mbox{\hyperlink{classCell}{Cell}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCell_a9b1ec60e70cebbcf06291e58e98bb402}{get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o valor armazenado na célula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCell_a9b58034e57c99329a534189428882e0e}{set\+Value}} (int value)
+\begin{DoxyCompactList}\small\item\em Define o valor da célula. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCell_aae5ef909b35f30e21e865d1a69deffa9}{get\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se a célula foi selecionada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCell_a71c18578d41589506ddeaef3fbe080f7}{set\+Selected}} (bool was\+Selected)
+\begin{DoxyCompactList}\small\item\em Define o estado de seleção da célula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma célula individual em um tabuleiro de jogo. 
+
+A classe {\ttfamily \mbox{\hyperlink{classCell}{Cell}}} é usada para representar uma célula em um tabuleiro. Ela armazena o valor da célula e um estado booleano que indica se a célula foi selecionada ou não. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCell_a394510643e8664cf12b5efaf5cb99f71}\label{classCell_a394510643e8664cf12b5efaf5cb99f71}} 
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily Cell\+::\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe \mbox{\hyperlink{classCell}{Cell}}. 
+
+Inicializa a célula com valores padrão. Normalmente, o valor é 0 e o estado de seleção é false. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCell_aae5ef909b35f30e21e865d1a69deffa9}\label{classCell_aae5ef909b35f30e21e865d1a69deffa9}} 
+\index{Cell@{Cell}!getSelected@{getSelected}}
+\index{getSelected@{getSelected}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getSelected()}{getSelected()}}
+{\footnotesize\ttfamily bool Cell\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se a célula foi selecionada. 
+
+\begin{DoxyReturn}{Returns}
+Retorna true se a célula foi selecionada, caso contrário retorna false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCell_a9b1ec60e70cebbcf06291e58e98bb402}\label{classCell_a9b1ec60e70cebbcf06291e58e98bb402}} 
+\index{Cell@{Cell}!getValue@{getValue}}
+\index{getValue@{getValue}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily int Cell\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o valor armazenado na célula. 
+
+\begin{DoxyReturn}{Returns}
+O valor armazenado na célula. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCell_a71c18578d41589506ddeaef3fbe080f7}\label{classCell_a71c18578d41589506ddeaef3fbe080f7}} 
+\index{Cell@{Cell}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily void Cell\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{was\+Selected }\end{DoxyParamCaption})}
+
+
+
+Define o estado de seleção da célula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em was\+Selected} & O novo estado de seleção da célula. Deve ser true se a célula foi selecionada, ou false se não foi. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCell_a9b58034e57c99329a534189428882e0e}\label{classCell_a9b58034e57c99329a534189428882e0e}} 
+\index{Cell@{Cell}!setValue@{setValue}}
+\index{setValue@{setValue}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Cell\+::set\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Define o valor da célula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & O novo valor a ser armazenado na célula. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{cell_8hpp}{cell.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/cell.\+cpp\end{DoxyCompactItemize}

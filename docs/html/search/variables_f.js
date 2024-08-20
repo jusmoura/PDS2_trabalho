@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quiet_1231',['quiet',['../structdoctest_1_1ContextOptions.html#a2c1008b57ee51ad2c4917246b17b0ad6',1,'doctest::ContextOptions']]]
+  ['white_5fcolor_335',['WHITE_COLOR',['../colors_8hpp.html#a283dca3ed244c8d9a4ea11acb06e4cd9',1,'colors.hpp']]],
+  ['winner_5fstyle_336',['WINNER_STYLE',['../colors_8hpp.html#a0335455744b7327ecb14c4ed93a1a24f',1,'colors.hpp']]]
 ];

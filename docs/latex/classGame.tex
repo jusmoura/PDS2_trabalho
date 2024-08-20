@@ -1,0 +1,178 @@
+\hypertarget{classGame}{}\doxysection{Game Class Reference}
+\label{classGame}\index{Game@{Game}}
+
+
+Representa um jogo com estatísticas de desempenho.  
+
+
+
+
+{\ttfamily \#include $<$game.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame_a1c9a4174dbb93c53e97d9d83d456a975}{Game}} (string name)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classGame}{Game}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a175255b8daeea9ae4309858372a8af21}{set\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Define o nome do jogo. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classGame_a5367d236c0f6d742b296847ab6eeefa0}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome do jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_a8b3b8a45e880cc9007787a22e0465f1f}{set\+Num\+Wins}} (int num\+Wins)
+\begin{DoxyCompactList}\small\item\em Define o número de vitórias no jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_ae65d1d114c754b201a15ca574c63937b}{get\+Num\+Wins}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o número de vitórias no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_ab0832982290eed9aef4d46f846512eb0}{set\+Num\+Defeats}} (int num\+Defeats)
+\begin{DoxyCompactList}\small\item\em Define o número de derrotas no jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_ae2acb0cccf5ff9b784e11be07d39c870}{get\+Num\+Defeats}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o número de derrotas no jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGame_ac40c57796b5944049d26de3bd7dcf0f3}{set\+Num\+Draws}} (int num\+Draws)
+\begin{DoxyCompactList}\small\item\em Define o número de empates no jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGame_a5c43d42f7b948da9b3802e0d7d72f862}{get\+Num\+Draws}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o número de empates no jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um jogo com estatísticas de desempenho. 
+
+A classe {\ttfamily \mbox{\hyperlink{classGame}{Game}}} armazena informações sobre um jogo específico, incluindo seu nome e estatísticas relacionadas ao desempenho, como o número de vitórias, derrotas e empates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame_a1c9a4174dbb93c53e97d9d83d456a975}\label{classGame_a1c9a4174dbb93c53e97d9d83d456a975}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \mbox{\hyperlink{classGame}{Game}}. 
+
+Inicializa uma instância de {\ttfamily \mbox{\hyperlink{classGame}{Game}}} com o nome especificado. O número de vitórias, derrotas e empates é inicializado com zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & O nome do jogo. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame_a5367d236c0f6d742b296847ab6eeefa0}\label{classGame_a5367d236c0f6d742b296847ab6eeefa0}} 
+\index{Game@{Game}!getName@{getName}}
+\index{getName@{getName}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Game\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o nome do jogo. 
+
+\begin{DoxyReturn}{Returns}
+O nome do jogo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_ae2acb0cccf5ff9b784e11be07d39c870}\label{classGame_ae2acb0cccf5ff9b784e11be07d39c870}} 
+\index{Game@{Game}!getNumDefeats@{getNumDefeats}}
+\index{getNumDefeats@{getNumDefeats}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getNumDefeats()}{getNumDefeats()}}
+{\footnotesize\ttfamily int Game\+::get\+Num\+Defeats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de derrotas no jogo. 
+
+\begin{DoxyReturn}{Returns}
+O número de derrotas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_a5c43d42f7b948da9b3802e0d7d72f862}\label{classGame_a5c43d42f7b948da9b3802e0d7d72f862}} 
+\index{Game@{Game}!getNumDraws@{getNumDraws}}
+\index{getNumDraws@{getNumDraws}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getNumDraws()}{getNumDraws()}}
+{\footnotesize\ttfamily int Game\+::get\+Num\+Draws (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de empates no jogo. 
+
+\begin{DoxyReturn}{Returns}
+O número de empates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_ae65d1d114c754b201a15ca574c63937b}\label{classGame_ae65d1d114c754b201a15ca574c63937b}} 
+\index{Game@{Game}!getNumWins@{getNumWins}}
+\index{getNumWins@{getNumWins}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{getNumWins()}{getNumWins()}}
+{\footnotesize\ttfamily int Game\+::get\+Num\+Wins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de vitórias no jogo. 
+
+\begin{DoxyReturn}{Returns}
+O número de vitórias. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGame_a175255b8daeea9ae4309858372a8af21}\label{classGame_a175255b8daeea9ae4309858372a8af21}} 
+\index{Game@{Game}!setName@{setName}}
+\index{setName@{setName}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Game\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Define o nome do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & O novo nome do jogo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGame_ab0832982290eed9aef4d46f846512eb0}\label{classGame_ab0832982290eed9aef4d46f846512eb0}} 
+\index{Game@{Game}!setNumDefeats@{setNumDefeats}}
+\index{setNumDefeats@{setNumDefeats}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setNumDefeats()}{setNumDefeats()}}
+{\footnotesize\ttfamily void Game\+::set\+Num\+Defeats (\begin{DoxyParamCaption}\item[{int}]{num\+Defeats }\end{DoxyParamCaption})}
+
+
+
+Define o número de derrotas no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Defeats} & O novo número de derrotas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGame_ac40c57796b5944049d26de3bd7dcf0f3}\label{classGame_ac40c57796b5944049d26de3bd7dcf0f3}} 
+\index{Game@{Game}!setNumDraws@{setNumDraws}}
+\index{setNumDraws@{setNumDraws}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setNumDraws()}{setNumDraws()}}
+{\footnotesize\ttfamily void Game\+::set\+Num\+Draws (\begin{DoxyParamCaption}\item[{int}]{num\+Draws }\end{DoxyParamCaption})}
+
+
+
+Define o número de empates no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Draws} & O novo número de empates. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGame_a8b3b8a45e880cc9007787a22e0465f1f}\label{classGame_a8b3b8a45e880cc9007787a22e0465f1f}} 
+\index{Game@{Game}!setNumWins@{setNumWins}}
+\index{setNumWins@{setNumWins}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{setNumWins()}{setNumWins()}}
+{\footnotesize\ttfamily void Game\+::set\+Num\+Wins (\begin{DoxyParamCaption}\item[{int}]{num\+Wins }\end{DoxyParamCaption})}
+
+
+
+Define o número de vitórias no jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Wins} & O novo número de vitórias. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{game_8hpp}{game.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/game.\+cpp\end{DoxyCompactItemize}

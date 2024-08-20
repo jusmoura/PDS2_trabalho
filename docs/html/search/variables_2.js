@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['binary_5fname_1126',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
-  ['blue_5fcolor_1127',['BLUE_COLOR',['../colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb',1,'colors.hpp']]],
-  ['bold_1128',['BOLD',['../colors_8hpp.html#ac9a7670c3012a412bd3fefd424da3f50',1,'colors.hpp']]],
-  ['buf_1129',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]]
+  ['checkers_302',['CHECKERS',['../game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b',1,'game_controller.hpp']]],
+  ['columnssize_303',['columnsSize',['../classBoard.html#aef04ad05883167e88785214111bddaaf',1,'Board']]],
+  ['controller_304',['controller',['../classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c',1,'Interface']]],
+  ['currentplayer_305',['currentPlayer',['../classLig4.html#affbd1adbb5db28e50c8a095de09b5ae1',1,'Lig4::currentPlayer()'],['../classReversiGame.html#a53764680e0b5e9e098edacd872f368dd',1,'ReversiGame::currentPlayer()'],['../classTicTacToe.html#af08e882aac9cc73df15229cd08cc0cb4',1,'TicTacToe::currentPlayer()']]],
+  ['cyan_5fcolor_306',['CYAN_COLOR',['../colors_8hpp.html#a5f407a95d0b458f7303cb3ea005c714e',1,'colors.hpp']]]
 ];

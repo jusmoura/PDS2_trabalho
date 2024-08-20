@@ -1,0 +1,165 @@
+\hypertarget{classInterface}{}\doxysection{Interface Class Reference}
+\label{classInterface}\index{Interface@{Interface}}
+
+
+Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInterface_ae3c5680ac1fe3077ae7caffa54c737d3}{main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o menu principal e gerencia a navegação para outros menus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a9fb73e05e2f14feb1ca7b570152a6fb1}{players\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o menu de jogadores e gerencia operações relacionadas aos jogadores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_af18c2f781ee9cf0d9939e0d44c468202}{games\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Exibe o menu de jogos e gerencia a seleção de jogos disponíveis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classInterface_acf1b423b27b0def6aeb30e4e4a8a65d0}{create\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Cria um novo jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a42586bd80716c883800641ab172c8758}{remove\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Remove um jogador existente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classInterface_aae0f4945248d6acd6215666ff199a400}{login\+Player}} (string player\+Number)
+\begin{DoxyCompactList}\small\item\em Realiza o login de um jogador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classInterface_a274ecde6a62109d5e7babce7066ba4d6}{player\+Login\+Verification}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2, string player\+Number)
+\begin{DoxyCompactList}\small\item\em Verifica o login de um jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a737b66109e1e159752c9217689733743}{clear\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Limpa o buffer de entrada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInterface_a80e195c266c55e4198474bfd1a60edd3}{end\+Process}} ()
+\begin{DoxyCompactList}\small\item\em Encerra o processo atual e limpa recursos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos. 
+
+A classe {\ttfamily \mbox{\hyperlink{classInterface}{Interface}}} fornece métodos para exibir menus, criar e remover jogadores, realizar login de jogadores, e gerenciar a interação geral com o usuário. Ela se comunica com outras classes, como {\ttfamily \mbox{\hyperlink{classPlayerController}{Player\+Controller}}}, para manipular dados dos jogadores e iniciar diferentes jogos. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInterface_a737b66109e1e159752c9217689733743}\label{classInterface_a737b66109e1e159752c9217689733743}} 
+\index{Interface@{Interface}!clearBuffer@{clearBuffer}}
+\index{clearBuffer@{clearBuffer}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{clearBuffer()}{clearBuffer()}}
+{\footnotesize\ttfamily void Interface\+::clear\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpa o buffer de entrada. 
+
+Remove qualquer entrada residual do buffer de entrada para evitar problemas de leitura em métodos subsequentes. \mbox{\Hypertarget{classInterface_acf1b423b27b0def6aeb30e4e4a8a65d0}\label{classInterface_acf1b423b27b0def6aeb30e4e4a8a65d0}} 
+\index{Interface@{Interface}!createPlayer@{createPlayer}}
+\index{createPlayer@{createPlayer}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{createPlayer()}{createPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Interface\+::create\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria um novo jogador. 
+
+Solicita ao usuário as informações necessárias para criar um novo jogador e o adiciona ao controlador de jogadores.
+
+\begin{DoxyReturn}{Returns}
+Um ponteiro para o jogador recém-\/criado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a80e195c266c55e4198474bfd1a60edd3}\label{classInterface_a80e195c266c55e4198474bfd1a60edd3}} 
+\index{Interface@{Interface}!endProcess@{endProcess}}
+\index{endProcess@{endProcess}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{endProcess()}{endProcess()}}
+{\footnotesize\ttfamily void Interface\+::end\+Process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Encerra o processo atual e limpa recursos. 
+
+Este método finaliza o processo atual, limpa recursos alocados e realiza qualquer operação de encerramento necessária. \mbox{\Hypertarget{classInterface_af18c2f781ee9cf0d9939e0d44c468202}\label{classInterface_af18c2f781ee9cf0d9939e0d44c468202}} 
+\index{Interface@{Interface}!gamesMenu@{gamesMenu}}
+\index{gamesMenu@{gamesMenu}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{gamesMenu()}{gamesMenu()}}
+{\footnotesize\ttfamily void Interface\+::games\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exibe o menu de jogos e gerencia a seleção de jogos disponíveis. 
+
+Este método exibe o menu para escolher entre os jogos disponíveis e iniciar um jogo selecionado. \mbox{\Hypertarget{classInterface_aae0f4945248d6acd6215666ff199a400}\label{classInterface_aae0f4945248d6acd6215666ff199a400}} 
+\index{Interface@{Interface}!loginPlayer@{loginPlayer}}
+\index{loginPlayer@{loginPlayer}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{loginPlayer()}{loginPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Interface\+::login\+Player (\begin{DoxyParamCaption}\item[{string}]{player\+Number }\end{DoxyParamCaption})}
+
+
+
+Realiza o login de um jogador. 
+
+Solicita ao usuário o número do jogador para realizar o login e retorna um ponteiro para o jogador correspondente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Number} & O número do jogador para realizar o login. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um ponteiro para o jogador que fez login. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_ae3c5680ac1fe3077ae7caffa54c737d3}\label{classInterface_ae3c5680ac1fe3077ae7caffa54c737d3}} 
+\index{Interface@{Interface}!mainMenu@{mainMenu}}
+\index{mainMenu@{mainMenu}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{mainMenu()}{mainMenu()}}
+{\footnotesize\ttfamily void Interface\+::main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exibe o menu principal e gerencia a navegação para outros menus. 
+
+Este método exibe o menu principal e lida com a seleção do usuário para acessar diferentes opções, como gerenciar jogadores ou iniciar jogos. \mbox{\Hypertarget{classInterface_a274ecde6a62109d5e7babce7066ba4d6}\label{classInterface_a274ecde6a62109d5e7babce7066ba4d6}} 
+\index{Interface@{Interface}!playerLoginVerification@{playerLoginVerification}}
+\index{playerLoginVerification@{playerLoginVerification}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{playerLoginVerification()}{playerLoginVerification()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Interface\+::player\+Login\+Verification (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2,  }\item[{string}]{player\+Number }\end{DoxyParamCaption})}
+
+
+
+Verifica o login de um jogador. 
+
+Verifica se o jogador com o número fornecido está registrado e retorna o jogador correspondente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador. \\
+\hline
+{\em player\+Number} & O número do jogador a ser verificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um ponteiro para o jogador correspondente ou {\ttfamily nullptr} se o jogador não for encontrado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInterface_a9fb73e05e2f14feb1ca7b570152a6fb1}\label{classInterface_a9fb73e05e2f14feb1ca7b570152a6fb1}} 
+\index{Interface@{Interface}!playersMenu@{playersMenu}}
+\index{playersMenu@{playersMenu}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{playersMenu()}{playersMenu()}}
+{\footnotesize\ttfamily void Interface\+::players\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exibe o menu de jogadores e gerencia operações relacionadas aos jogadores. 
+
+Este método exibe o menu para criar, remover e gerenciar jogadores. \mbox{\Hypertarget{classInterface_a42586bd80716c883800641ab172c8758}\label{classInterface_a42586bd80716c883800641ab172c8758}} 
+\index{Interface@{Interface}!removePlayer@{removePlayer}}
+\index{removePlayer@{removePlayer}!Interface@{Interface}}
+\doxysubsubsection{\texorpdfstring{removePlayer()}{removePlayer()}}
+{\footnotesize\ttfamily void Interface\+::remove\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove um jogador existente. 
+
+Solicita ao usuário as informações necessárias para identificar e remover um jogador existente do controlador de jogadores. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{interface_8hpp}{interface.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/interface.\+cpp\end{DoxyCompactItemize}

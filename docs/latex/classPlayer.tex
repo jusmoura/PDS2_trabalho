@@ -1,0 +1,325 @@
+\hypertarget{classPlayer}{}\doxysection{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+Representa um jogador com estatísticas de jogos.  
+
+
+
+
+{\ttfamily \#include $<$player.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_ae5810f411f3288b9a4392dd86a5490ba}{Player}} (string name, string nickname)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classPlayer}{Player}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_aa9728db5b22d438505b4694c5ea03f75}{set\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Define o nome do jogador. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPlayer_af9a6045fa96f736664c4eab4caa5e8e5}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o nome do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a1b0d3bf0f2bf6be13708b0ea2a267724}{set\+Nickname}} (string name)
+\begin{DoxyCompactList}\small\item\em Define o apelido do jogador. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPlayer_a36f1ada4456bcf9e0d98eb8e82f17cca}{get\+Nickname}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o apelido do jogador. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classGame}{Game}} $>$ $\ast$ \mbox{\hyperlink{classPlayer_adee9bae49885d7e5f51d0be17afb235c}{get\+Games\+Stats}} ()
+\begin{DoxyCompactList}\small\item\em Obtém as estatísticas de jogos do jogador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ab67e57cd87d5112f234e047b4bbaf0c9}{add\+Win}} (int game)
+\begin{DoxyCompactList}\small\item\em Adiciona uma vitória para o jogador em um determinado jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a8f275ae090150d811a71f9b338c793f7}{add\+Defeat}} (int game)
+\begin{DoxyCompactList}\small\item\em Adiciona uma derrota para o jogador em um determinado jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ab9c9583e89cde0c1458ab562c3b9097d}{add\+Draw}} (int game)
+\begin{DoxyCompactList}\small\item\em Adiciona um empate para o jogador em um determinado jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_a2587c9f305a3aa9a587d1cfdd47d2812}{set\+Num\+Wins}} (int game, int num\+Wins)
+\begin{DoxyCompactList}\small\item\em Define o número de vitórias do jogador em um determinado jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayer_a0a3beac3af36ced426cbac1d39b10517}{get\+Num\+Wins}} (int index)
+\begin{DoxyCompactList}\small\item\em Obtém o número de vitórias do jogador em um determinado jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_ab5d271d14f2121ea72324ee9c2ffa4f5}{set\+Num\+Defeats}} (int game, int num\+Defeats)
+\begin{DoxyCompactList}\small\item\em Define o número de derrotas do jogador em um determinado jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayer_ab1b9e62f67557f2b88042b23b7d77669}{get\+Num\+Defeats}} (int index)
+\begin{DoxyCompactList}\small\item\em Obtém o número de derrotas do jogador em um determinado jogo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlayer_abb4ea78c0e16f9480d19a4ad98d42d15}{set\+Num\+Draws}} (int game, int num\+Draws)
+\begin{DoxyCompactList}\small\item\em Define o número de empates do jogador em um determinado jogo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlayer_a66f6279684c3ec631e36c410f92d712b}{get\+Num\+Draws}} (int index)
+\begin{DoxyCompactList}\small\item\em Obtém o número de empates do jogador em um determinado jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classPlayer_ada30a5e6a8a8125959b8a0f21301f6cd}{operator$<$$<$}} (std\+::ostream \&os, \mbox{\hyperlink{classPlayer}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Sobrecarga do operador de inserção de stream para exibir informações do jogador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um jogador com estatísticas de jogos. 
+
+A classe \mbox{\hyperlink{classPlayer}{Player}} armazena informações como nome, apelido e estatísticas de desempenho em diferentes jogos, permitindo o gerenciamento e exibição dessas informações. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_ae5810f411f3288b9a4392dd86a5490ba}\label{classPlayer_ae5810f411f3288b9a4392dd86a5490ba}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Construtor da classe \mbox{\hyperlink{classPlayer}{Player}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nome do jogador. \\
+\hline
+{\em nickname} & Apelido do jogador. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a8f275ae090150d811a71f9b338c793f7}\label{classPlayer_a8f275ae090150d811a71f9b338c793f7}} 
+\index{Player@{Player}!addDefeat@{addDefeat}}
+\index{addDefeat@{addDefeat}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addDefeat()}{addDefeat()}}
+{\footnotesize\ttfamily void Player\+::add\+Defeat (\begin{DoxyParamCaption}\item[{int}]{game }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma derrota para o jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ab9c9583e89cde0c1458ab562c3b9097d}\label{classPlayer_ab9c9583e89cde0c1458ab562c3b9097d}} 
+\index{Player@{Player}!addDraw@{addDraw}}
+\index{addDraw@{addDraw}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addDraw()}{addDraw()}}
+{\footnotesize\ttfamily void Player\+::add\+Draw (\begin{DoxyParamCaption}\item[{int}]{game }\end{DoxyParamCaption})}
+
+
+
+Adiciona um empate para o jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ab67e57cd87d5112f234e047b4bbaf0c9}\label{classPlayer_ab67e57cd87d5112f234e047b4bbaf0c9}} 
+\index{Player@{Player}!addWin@{addWin}}
+\index{addWin@{addWin}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addWin()}{addWin()}}
+{\footnotesize\ttfamily void Player\+::add\+Win (\begin{DoxyParamCaption}\item[{int}]{game }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma vitória para o jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_adee9bae49885d7e5f51d0be17afb235c}\label{classPlayer_adee9bae49885d7e5f51d0be17afb235c}} 
+\index{Player@{Player}!getGamesStats@{getGamesStats}}
+\index{getGamesStats@{getGamesStats}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getGamesStats()}{getGamesStats()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classGame}{Game}} $>$ $\ast$ Player\+::get\+Games\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém as estatísticas de jogos do jogador. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para o vetor de estatísticas de jogos. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_af9a6045fa96f736664c4eab4caa5e8e5}\label{classPlayer_af9a6045fa96f736664c4eab4caa5e8e5}} 
+\index{Player@{Player}!getName@{getName}}
+\index{getName@{getName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Player\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o nome do jogador. 
+
+\begin{DoxyReturn}{Returns}
+Nome do jogador. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a36f1ada4456bcf9e0d98eb8e82f17cca}\label{classPlayer_a36f1ada4456bcf9e0d98eb8e82f17cca}} 
+\index{Player@{Player}!getNickname@{getNickname}}
+\index{getNickname@{getNickname}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getNickname()}{getNickname()}}
+{\footnotesize\ttfamily string Player\+::get\+Nickname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtém o apelido do jogador. 
+
+\begin{DoxyReturn}{Returns}
+Apelido do jogador. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_ab1b9e62f67557f2b88042b23b7d77669}\label{classPlayer_ab1b9e62f67557f2b88042b23b7d77669}} 
+\index{Player@{Player}!getNumDefeats@{getNumDefeats}}
+\index{getNumDefeats@{getNumDefeats}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getNumDefeats()}{getNumDefeats()}}
+{\footnotesize\ttfamily int Player\+::get\+Num\+Defeats (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de derrotas do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de derrotas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a66f6279684c3ec631e36c410f92d712b}\label{classPlayer_a66f6279684c3ec631e36c410f92d712b}} 
+\index{Player@{Player}!getNumDraws@{getNumDraws}}
+\index{getNumDraws@{getNumDraws}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getNumDraws()}{getNumDraws()}}
+{\footnotesize\ttfamily int Player\+::get\+Num\+Draws (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de empates do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de empates. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a0a3beac3af36ced426cbac1d39b10517}\label{classPlayer_a0a3beac3af36ced426cbac1d39b10517}} 
+\index{Player@{Player}!getNumWins@{getNumWins}}
+\index{getNumWins@{getNumWins}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getNumWins()}{getNumWins()}}
+{\footnotesize\ttfamily int Player\+::get\+Num\+Wins (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Obtém o número de vitórias do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Índice do jogo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de vitórias. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_aa9728db5b22d438505b4694c5ea03f75}\label{classPlayer_aa9728db5b22d438505b4694c5ea03f75}} 
+\index{Player@{Player}!setName@{setName}}
+\index{setName@{setName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Player\+::set\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Define o nome do jogador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Novo nome do jogador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a1b0d3bf0f2bf6be13708b0ea2a267724}\label{classPlayer_a1b0d3bf0f2bf6be13708b0ea2a267724}} 
+\index{Player@{Player}!setNickname@{setNickname}}
+\index{setNickname@{setNickname}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setNickname()}{setNickname()}}
+{\footnotesize\ttfamily void Player\+::set\+Nickname (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Define o apelido do jogador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & Novo apelido do jogador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ab5d271d14f2121ea72324ee9c2ffa4f5}\label{classPlayer_ab5d271d14f2121ea72324ee9c2ffa4f5}} 
+\index{Player@{Player}!setNumDefeats@{setNumDefeats}}
+\index{setNumDefeats@{setNumDefeats}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setNumDefeats()}{setNumDefeats()}}
+{\footnotesize\ttfamily void Player\+::set\+Num\+Defeats (\begin{DoxyParamCaption}\item[{int}]{game,  }\item[{int}]{num\+Defeats }\end{DoxyParamCaption})}
+
+
+
+Define o número de derrotas do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+{\em num\+Defeats} & Número de derrotas a ser definido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_abb4ea78c0e16f9480d19a4ad98d42d15}\label{classPlayer_abb4ea78c0e16f9480d19a4ad98d42d15}} 
+\index{Player@{Player}!setNumDraws@{setNumDraws}}
+\index{setNumDraws@{setNumDraws}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setNumDraws()}{setNumDraws()}}
+{\footnotesize\ttfamily void Player\+::set\+Num\+Draws (\begin{DoxyParamCaption}\item[{int}]{game,  }\item[{int}]{num\+Draws }\end{DoxyParamCaption})}
+
+
+
+Define o número de empates do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+{\em num\+Draws} & Número de empates a ser definido. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a2587c9f305a3aa9a587d1cfdd47d2812}\label{classPlayer_a2587c9f305a3aa9a587d1cfdd47d2812}} 
+\index{Player@{Player}!setNumWins@{setNumWins}}
+\index{setNumWins@{setNumWins}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setNumWins()}{setNumWins()}}
+{\footnotesize\ttfamily void Player\+::set\+Num\+Wins (\begin{DoxyParamCaption}\item[{int}]{game,  }\item[{int}]{num\+Wins }\end{DoxyParamCaption})}
+
+
+
+Define o número de vitórias do jogador em um determinado jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game} & Índice do jogo. \\
+\hline
+{\em num\+Wins} & Número de vitórias a ser definido. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPlayer_ada30a5e6a8a8125959b8a0f21301f6cd}\label{classPlayer_ada30a5e6a8a8125959b8a0f21301f6cd}} 
+\index{Player@{Player}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga do operador de inserção de stream para exibir informações do jogador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & O stream de saída. \\
+\hline
+{\em player} & O jogador cujas informações serão exibidas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O stream de saída. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{player_8hpp}{player.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/player.\+cpp\end{DoxyCompactItemize}

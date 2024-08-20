@@ -1,0 +1,77 @@
+\hypertarget{classMinesweeper}{}\doxysection{Minesweeper Class Reference}
+\label{classMinesweeper}\index{Minesweeper@{Minesweeper}}
+
+
+Implementa o jogo Campo Minado.  
+
+
+
+
+{\ttfamily \#include $<$minesweeper.\+hpp$>$}
+
+
+
+Inheritance diagram for Minesweeper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classMinesweeper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Minesweeper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classMinesweeper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classMinesweeper_a1008ae502a99c3d445a3a4d3fea39b4c}{play}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2=nullptr) override
+\begin{DoxyCompactList}\small\item\em Inicia e gerencia o jogo Campo Minado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementa o jogo Campo Minado. 
+
+A classe {\ttfamily \mbox{\hyperlink{classMinesweeper}{Minesweeper}}} herda da classe {\ttfamily \mbox{\hyperlink{classBoard}{Board}}} e fornece a lógica específica para o jogo Campo Minado, incluindo a colocação de bombas, verificação de derrota e vitória, e exibição do tabuleiro com informações sobre as células adjacentes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMinesweeper_a1008ae502a99c3d445a3a4d3fea39b4c}\label{classMinesweeper_a1008ae502a99c3d445a3a4d3fea39b4c}} 
+\index{Minesweeper@{Minesweeper}!play@{play}}
+\index{play@{play}!Minesweeper@{Minesweeper}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Minesweeper\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2 = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicia e gerencia o jogo Campo Minado. 
+
+Inicia o jogo e gerencia o fluxo. Inicializa o segundo jogador como {\ttfamily nullptr} pois apenas um player joga o jogo
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador (opcional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador que venceu, ou {\ttfamily nullptr} em caso de derrota. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae6190d11118d6b2840d1569d41da8af3}{Board}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{minesweeper_8hpp}{minesweeper.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/minesweeper.\+cpp\end{DoxyCompactItemize}

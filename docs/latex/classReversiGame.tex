@@ -1,0 +1,75 @@
+\hypertarget{classReversiGame}{}\doxysection{Reversi\+Game Class Reference}
+\label{classReversiGame}\index{ReversiGame@{ReversiGame}}
+
+
+Classe que implementa o jogo Reversi.  
+
+
+
+
+{\ttfamily \#include $<$reversi.\+hpp$>$}
+
+
+
+Inheritance diagram for Reversi\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classReversiGame__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Reversi\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classReversiGame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classReversiGame_a18273a46b5252631955ded0a976d1b2d}{play}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2) override
+\begin{DoxyCompactList}\small\item\em Inicia o jogo entre dois jogadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Classe que implementa o jogo Reversi. 
+
+A classe {\ttfamily \mbox{\hyperlink{classReversiGame}{Reversi\+Game}}} herda da classe {\ttfamily \mbox{\hyperlink{classBoard}{Board}}} e implementa as regras e a lógica específicas do jogo Reversi, também conhecido como Othello. Esta classe gerencia o tabuleiro, a troca de jogadores, a validação de movimentos, o cálculo da pontuação, e o resultado final do jogo. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReversiGame_a18273a46b5252631955ded0a976d1b2d}\label{classReversiGame_a18273a46b5252631955ded0a976d1b2d}} 
+\index{ReversiGame@{ReversiGame}!play@{play}}
+\index{play@{play}!ReversiGame@{ReversiGame}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayer}{Player}} $\ast$ Reversi\+Game\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicia o jogo entre dois jogadores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador vencedor. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBoard_ae6190d11118d6b2840d1569d41da8af3}{Board}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/\mbox{\hyperlink{reversi_8hpp}{reversi.\+hpp}}\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/reversi.\+cpp\end{DoxyCompactItemize}

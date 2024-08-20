@@ -1,0 +1,159 @@
+\hypertarget{classBoard}{}\doxysection{Board Class Reference}
+\label{classBoard}\index{Board@{Board}}
+
+
+Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo.  
+
+
+
+
+{\ttfamily \#include $<$board.\+hpp$>$}
+
+
+
+Inheritance diagram for Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBoard__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoard_adf2a183cb8eee87b5b2f16fabbaad790}{Board}} (int line, int column)
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classBoard}{Board}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBoard_aca49f093314a104381d05998bbf62f7f}{print\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Imprime o tabuleiro no console. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBoard_a8ead14fa5b014a52a65c314747fefe2e}{validate\+Move}} (int line, int column)
+\begin{DoxyCompactList}\small\item\em Valida se a jogada nas coordenadas especificadas é permitida. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPlayer}{Player}} $\ast$ \mbox{\hyperlink{classBoard_ae6190d11118d6b2840d1569d41da8af3}{play}} (\mbox{\hyperlink{classPlayer}{Player}} $\ast$player1, \mbox{\hyperlink{classPlayer}{Player}} $\ast$player2)=0
+\begin{DoxyCompactList}\small\item\em Executa a jogada dos jogadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoard_a841d7094bbf7bfccfc1b21dd12136747}\label{classBoard_a841d7094bbf7bfccfc1b21dd12136747}} 
+const int \mbox{\hyperlink{classBoard_a841d7094bbf7bfccfc1b21dd12136747}{EMPTY}} = 0
+\begin{DoxyCompactList}\small\item\em Constante que representa uma célula vazia no tabuleiro. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoard_a3ab2ec512d7ae7c57acd5e52311d8aea}\label{classBoard_a3ab2ec512d7ae7c57acd5e52311d8aea}} 
+const int \mbox{\hyperlink{classBoard_a3ab2ec512d7ae7c57acd5e52311d8aea}{PLAYER\+\_\+X}} = 1
+\begin{DoxyCompactList}\small\item\em Constante que representa o jogador X no tabuleiro. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoard_a35cb79158b7ce262dae2e3f1ff58ffca}\label{classBoard_a35cb79158b7ce262dae2e3f1ff58ffca}} 
+const int \mbox{\hyperlink{classBoard_a35cb79158b7ce262dae2e3f1ff58ffca}{PLAYER\+\_\+O}} = 2
+\begin{DoxyCompactList}\small\item\em Constante que representa o jogador O no tabuleiro. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBoard_a2331cf0e362f0487b0d1f1cba5b82aea}{lines\+Size}}
+\begin{DoxyCompactList}\small\item\em Tamanho das linhas do tabuleiro. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoard_aef04ad05883167e88785214111bddaaf}\label{classBoard_aef04ad05883167e88785214111bddaaf}} 
+int \mbox{\hyperlink{classBoard_aef04ad05883167e88785214111bddaaf}{columns\+Size}}
+\begin{DoxyCompactList}\small\item\em Tamanho das colunas do tabuleiro. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBoard_afe70973eefed62656387c9f8615ac22f}\label{classBoard_afe70973eefed62656387c9f8615ac22f}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classCell}{Cell}} $>$ $>$ \mbox{\hyperlink{classBoard_afe70973eefed62656387c9f8615ac22f}{\+\_\+board}}
+\begin{DoxyCompactList}\small\item\em Matriz que representa o tabuleiro de jogo, composta por objetos da classe \mbox{\hyperlink{classCell}{Cell}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo. 
+
+A classe {\ttfamily \mbox{\hyperlink{classBoard}{Board}}} é uma classe abstrata que define as operações essenciais para manipular um tabuleiro de jogo. As classes derivadas devem implementar o método virtual puro {\ttfamily play} para realizar jogadas específicas do jogo. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBoard_adf2a183cb8eee87b5b2f16fabbaad790}\label{classBoard_adf2a183cb8eee87b5b2f16fabbaad790}} 
+\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily Board\+::\+Board (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Construtor da classe \mbox{\hyperlink{classBoard}{Board}}. 
+
+Inicializa o tabuleiro com o número de linhas e colunas especificado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Número de linhas do tabuleiro. \\
+\hline
+{\em column} & Número de colunas do tabuleiro. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoard_ae6190d11118d6b2840d1569d41da8af3}\label{classBoard_ae6190d11118d6b2840d1569d41da8af3}} 
+\index{Board@{Board}!play@{play}}
+\index{play@{play}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classPlayer}{Player}}$\ast$ Board\+::play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player1,  }\item[{\mbox{\hyperlink{classPlayer}{Player}} $\ast$}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Executa a jogada dos jogadores. 
+
+Este método é virtual puro e deve ser implementado pelas classes derivadas para realizar a jogada específica do jogo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Ponteiro para o primeiro jogador. \\
+\hline
+{\em player2} & Ponteiro para o segundo jogador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o jogador que fez a jogada. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classMinesweeper_a1008ae502a99c3d445a3a4d3fea39b4c}{Minesweeper}}, \mbox{\hyperlink{classTicTacToe_adbc918eac4a832462f498931dd618beb}{Tic\+Tac\+Toe}}, \mbox{\hyperlink{classReversiGame_a18273a46b5252631955ded0a976d1b2d}{Reversi\+Game}}, \mbox{\hyperlink{classCheckersGame_a991d05190d73089b3a5cf624b08ff8fb}{Checkers\+Game}}, and \mbox{\hyperlink{classLig4_ab5f39cf042ada426477bc0ede9e7c050}{Lig4}}.
+
+\mbox{\Hypertarget{classBoard_aca49f093314a104381d05998bbf62f7f}\label{classBoard_aca49f093314a104381d05998bbf62f7f}} 
+\index{Board@{Board}!printBoard@{printBoard}}
+\index{printBoard@{printBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{printBoard()}{printBoard()}}
+{\footnotesize\ttfamily void Board\+::print\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Imprime o tabuleiro no console. 
+
+Este método imprime o estado atual do tabuleiro no console. As classes derivadas podem sobrepor este método para fornecer uma representação visual específica do tabuleiro. \mbox{\Hypertarget{classBoard_a8ead14fa5b014a52a65c314747fefe2e}\label{classBoard_a8ead14fa5b014a52a65c314747fefe2e}} 
+\index{Board@{Board}!validateMove@{validateMove}}
+\index{validateMove@{validateMove}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{validateMove()}{validateMove()}}
+{\footnotesize\ttfamily bool Board\+::validate\+Move (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Valida se a jogada nas coordenadas especificadas é permitida. 
+
+Este método é virtual e deve ser implementado pelas classes derivadas para validar as jogadas específicas do jogo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Linha da célula a ser verificada. \\
+\hline
+{\em column} & Coluna da célula a ser verificada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna true se a jogada for válida, caso contrário retorna false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBoard_a2331cf0e362f0487b0d1f1cba5b82aea}\label{classBoard_a2331cf0e362f0487b0d1f1cba5b82aea}} 
+\index{Board@{Board}!linesSize@{linesSize}}
+\index{linesSize@{linesSize}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{linesSize}{linesSize}}
+{\footnotesize\ttfamily int Board\+::lines\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Tamanho das linhas do tabuleiro. 
+
+Tamanho das linhas do tabuleiro. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/include/board.\+hpp\item 
+/home/julia/\+Julia/\+PDS2\+\_\+trabalho/src/board.\+cpp\end{DoxyCompactItemize}
