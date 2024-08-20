@@ -1,5 +1,7 @@
 #include "../include/game.hpp"
 
+using namespace std;
+
 //Construtor inicial - player recém cadastrado
 Game::Game(string name) {
     this->_name = name;

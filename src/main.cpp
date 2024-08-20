@@ -10,7 +10,7 @@ int main() {
         interface.mainMenu();
     }
     catch (const char* e) {
-        cout << "\nSaindo...\n" << endl;
+        std::cout << "\nSaindo...\n" << std::endl;
         return 0;
     }
 }

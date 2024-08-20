@@ -1,5 +1,7 @@
 #include "../include/lig4.hpp"
 
+using namespace std;
+
 Lig4::Lig4() :Board(6, 7), currentPlayer(PLAYER_X) {
 }
 

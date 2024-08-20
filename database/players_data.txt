@@ -12,13 +12,6 @@ jusmoura
 0 0 0
 10 2 0
 0 0 0
-Pedro Fernandes
-Piter
-10 5 2
-0 1 0
-5 5 1
-2 2 0
-0 0 0
 Vanessa
 Nessa
 1 0 0
@@ -26,3 +19,10 @@ Nessa
 0 0 0
 0 0 0
 2 0 0
+Pedro Fernandes
+Piter
+10 5 2
+0 1 0
+5 5 1
+2 3 0
+0 0 0

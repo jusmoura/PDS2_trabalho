@@ -1,5 +1,7 @@
 #include "../include/tic_tac_toe.hpp"
 
+using namespace std;
+
 TicTacToe::TicTacToe() :Board(3, 3), currentPlayer(PLAYER_X) {
 }
 

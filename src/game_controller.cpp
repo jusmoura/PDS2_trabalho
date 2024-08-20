@@ -8,6 +8,6 @@ GameController::GameController() {
     }
 }
 
-vector<Game> GameController::getAvailableGames() {
+std::vector<Game> GameController::getAvailableGames() {
     return this->_availableGames;
 }

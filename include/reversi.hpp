@@ -1,9 +1,9 @@
 /**
  * @file reversi.hpp
  * @brief Declaração da classe ReversiGame para o jogo Reversi
- * 
+ *
  * Este arquivo contém a definição da classe `ReversiGame`, que herda da classe `Board` e implementa a lógica e as regras do jogo Reversi. A classe gerencia o estado do jogo, controla a troca de jogadores, valida movimentos, e calcula a pontuação e o resultado final do jogo.
- * 
+ *
  */
 
 #ifndef REVERSI_HPP
@@ -15,19 +15,43 @@
 #include <stdexcept>
 #include "board.hpp"
 
-/**
- * @brief Classe que implementa o jogo Reversi.
- * 
- * A classe `ReversiGame` herda da classe `Board` e implementa as regras e a lógica específicas do jogo Reversi, também conhecido como Othello. 
- * Esta classe gerencia o tabuleiro, a troca de jogadores, a validação de movimentos, o cálculo da pontuação, e o resultado final do jogo.
- */
+ /**
+  * @brief Classe que implementa o jogo Reversi.
+  *
+  * A classe `ReversiGame` herda da classe `Board` e implementa as regras e a lógica específicas do jogo Reversi, também conhecido como Othello.
+  * Esta classe gerencia o tabuleiro, a troca de jogadores, a validação de movimentos, o cálculo da pontuação, e o resultado final do jogo.
+  */
 class ReversiGame : public Board {
 private:
+    /**
+    * @brief Tamanho do tabuleiro para o jogo Reversi.
+    *
+    * O tamanho padrão do tabuleiro de Reversi é 8x8.
+    */
     const int BOARD_SIZE = 8;
+    /**
+    * @brief Número total de peças do jogador X.
+    *
+    */
     int sumX;
+    /**
+    * @brief Número total de peças do jogador O.
+    *
+    */
     int sumO;
+    /**
+    * @brief Número total de dicas disponíveis para o jogador O.
+    *
+    */
     int hintsO;
+    /**
+    * @brief Número total de dicas disponíveis para o jogador O.
+    *
+    */
     int hintsX;
+    /**
+    * @brief Jogador que está executando a jogada durante sua iteração.
+     */
     int currentPlayer;
 
     /**
@@ -37,7 +61,6 @@ private:
      *
      * Este método não possui parâmetros e não retorna nenhum valor.
      *
-     * Este método não lança exceções.
      */
     void switchPlayer();
 
@@ -46,7 +69,6 @@ private:
      * @param x Coordenada x.
      * @param y Coordenada y.
      * @return Número de peças que serão viradas, ou 0 se o movimento não for válido.
-     * @throw std::out_of_range Se o movimento estiver fora dos limites do tabuleiro.
      */
     int validMove(int x, int y);
 
@@ -66,7 +88,6 @@ private:
      * @brief Faz um movimento no tabuleiro na posição (x, y).
      * @param x Coordenada x.
      * @param y Coordenada y.
-     * @throw std::invalid_argument Se o movimento não for válido.
      */
     void makeMove(int x, int y);
 
@@ -77,11 +98,14 @@ private:
 
     /**
      * @brief Verifica e exibe o resultado final do jogo.
-     * @return true se o jogador X venceu, false se o jogador O venceu.
+     * @return O jogador vencedor.
      */
     Player* checkVictory(Player* player1, Player* player2);
 
 public:
+    /**
+    * @brief Construtor padrão para inicializar o jogo Reversi.
+    */
     ReversiGame();
 
     /**
