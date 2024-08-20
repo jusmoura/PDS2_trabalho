@@ -109,7 +109,7 @@ A classe `CheckersGame` gerencia o jogo de Damas (Checkers) com um tabuleiro 8x8
 2. **Jogadas**: Jogadores alternam turnos para fazer movimentos ou capturas, sendo a primeira entrada a peça a ser movida e a segunda qual é o destino dela.
 3. **Atualização**: O tabuleiro é atualizado com as novas posições das peças após cada movimento.
 4. **Verificação de Vitória**: O jogo continua até que um jogador vença, com base na quantidade de peças restantes.
-5. **Regras**: O jogo segue as regras das damas americanas; Para peças simples não há captura de peça 'para trás', as damas movimentam-se apenas uma casa em qualquer direção.
+5. **Regras**: O jogo segue as regras das damas americanas. Para peças simples não há captura de peça 'para trás'; As damas movimentam-se apenas uma casa em qualquer direção.
 
 ## Especificações
 
