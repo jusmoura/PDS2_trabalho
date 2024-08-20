@@ -102,12 +102,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42586bd80716c883800641ab172c8758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#a42586bd80716c883800641ab172c8758">removePlayer</a> ()</td></tr>
 <tr class="memdesc:a42586bd80716c883800641ab172c8758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um jogador existente.  <a href="classInterface.html#a42586bd80716c883800641ab172c8758">More...</a><br /></td></tr>
 <tr class="separator:a42586bd80716c883800641ab172c8758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae0f4945248d6acd6215666ff199a400"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#aae0f4945248d6acd6215666ff199a400">loginPlayer</a> (string playerNumber)</td></tr>
-<tr class="memdesc:aae0f4945248d6acd6215666ff199a400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza o login de um jogador.  <a href="classInterface.html#aae0f4945248d6acd6215666ff199a400">More...</a><br /></td></tr>
-<tr class="separator:aae0f4945248d6acd6215666ff199a400"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274ecde6a62109d5e7babce7066ba4d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">playerLoginVerification</a> (<a class="el" href="classPlayer.html">Player</a> *player1, <a class="el" href="classPlayer.html">Player</a> *player2, string playerNumber)</td></tr>
-<tr class="memdesc:a274ecde6a62109d5e7babce7066ba4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica o login de um jogador.  <a href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">More...</a><br /></td></tr>
-<tr class="separator:a274ecde6a62109d5e7babce7066ba4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ceecc5b3d66441b2d646b4fedd10cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd">loginPlayer</a> (std::string playerNumber)</td></tr>
+<tr class="memdesc:ac9ceecc5b3d66441b2d646b4fedd10cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza o login de um jogador.  <a href="classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd">More...</a><br /></td></tr>
+<tr class="separator:ac9ceecc5b3d66441b2d646b4fedd10cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5439dfebc08406e060257fe2540821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayer.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#a2f5439dfebc08406e060257fe2540821">playerLoginVerification</a> (<a class="el" href="classPlayer.html">Player</a> *player1, <a class="el" href="classPlayer.html">Player</a> *player2, std::string playerNumber)</td></tr>
+<tr class="memdesc:a2f5439dfebc08406e060257fe2540821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica o login de um jogador.  <a href="classInterface.html#a2f5439dfebc08406e060257fe2540821">More...</a><br /></td></tr>
+<tr class="separator:a2f5439dfebc08406e060257fe2540821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a737b66109e1e159752c9217689733743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInterface.html#a737b66109e1e159752c9217689733743">clearBuffer</a> ()</td></tr>
 <tr class="memdesc:a737b66109e1e159752c9217689733743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa o buffer de entrada.  <a href="classInterface.html#a737b66109e1e159752c9217689733743">More...</a><br /></td></tr>
 <tr class="separator:a737b66109e1e159752c9217689733743"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,9 +123,9 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos. </p>
-<p>A classe <code><a class="el" href="classInterface.html" title="Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos.">Interface</a></code> fornece métodos para exibir menus, criar e remover jogadores, realizar login de jogadores, e gerenciar a interação geral com o usuário. Ela se comunica com outras classes, como <code><a class="el" href="classPlayerController.html" title="Controlador responsável por gerenciar operações relacionadas aos jogadores.">PlayerController</a></code>, para manipular dados dos jogadores e iniciar diferentes jogos. </p>
+<p>A classe <code><a class="el" href="classInterface.html" title="Gerencia a interação com o usuário através de menus e operações relacionadas a jogadores e jogos.">Interface</a></code> fornece métodos para exibir menus, criar e remover jogadores, realizar login de jogadores, e gerenciar a interação geral com o usuário. Ela se comunica indiretamente com todas as outras classes, possibilitando gerenciar os jogos e os players. </p>
 
-<p class="definition">Definition at line <a class="el" href="interface_8hpp_source.html#l00030">30</a> of file <a class="el" href="interface_8hpp_source.html">interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8hpp_source.html#l00037">37</a> of file <a class="el" href="interface_8hpp_source.html">interface.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a737b66109e1e159752c9217689733743"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a737b66109e1e159752c9217689733743">&#9670;&nbsp;</a></span>clearBuffer()</h2>
@@ -170,7 +170,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cria um novo jogador. </p>
-<p>Solicita ao usuário as informações necessárias para criar um novo jogador e o adiciona ao controlador de jogadores.</p>
+<p>Método auxiliar que solicita ao usuário as informações necessárias para criar um novo jogador e o adiciona ao controlador de jogadores.</p>
 <dl class="section return"><dt>Returns</dt><dd>Um ponteiro para o jogador recém-criado. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00273">273</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
@@ -197,9 +197,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
 <div class="ttc" id="aclassInterface_html_a737b66109e1e159752c9217689733743"><div class="ttname"><a href="classInterface.html#a737b66109e1e159752c9217689733743">Interface::clearBuffer</a></div><div class="ttdeci">void clearBuffer()</div><div class="ttdoc">Limpa o buffer de entrada.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00390">interface.cpp:390</a></div></div>
-<div class="ttc" id="aclassInterface_html_abdf3b611a91189eb4e34ef0b24f80d5c"><div class="ttname"><a href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">Interface::controller</a></div><div class="ttdeci">PlayerController * controller</div><div class="ttdoc">Ponteiro para o controlador de jogadores.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00038">interface.hpp:38</a></div></div>
-<div class="ttc" id="aclassPlayerController_html_a83bff4209bc5adbcefaf68561d22c72e"><div class="ttname"><a href="classPlayerController.html#a83bff4209bc5adbcefaf68561d22c72e">PlayerController::insertNewPlayer</a></div><div class="ttdeci">bool insertNewPlayer(Player *player)</div><div class="ttdoc">Insere um novo jogador no sistema.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00026">player_controller.cpp:26</a></div></div>
-<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Representa um jogador com estatísticas de jogos.</div><div class="ttdef"><b>Definition:</b> <a href="player_8hpp_source.html#l00027">player.hpp:27</a></div></div>
+<div class="ttc" id="aclassInterface_html_abdf3b611a91189eb4e34ef0b24f80d5c"><div class="ttname"><a href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">Interface::controller</a></div><div class="ttdeci">PlayerController * controller</div><div class="ttdoc">Ponteiro para o controlador de jogadores.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00045">interface.hpp:45</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a83bff4209bc5adbcefaf68561d22c72e"><div class="ttname"><a href="classPlayerController.html#a83bff4209bc5adbcefaf68561d22c72e">PlayerController::insertNewPlayer</a></div><div class="ttdeci">bool insertNewPlayer(Player *player)</div><div class="ttdoc">Insere um novo jogador no vetor de players.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00028">player_controller.cpp:28</a></div></div>
+<div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Representa um jogador com estatísticas de jogos.</div><div class="ttdef"><b>Definition:</b> <a href="player_8hpp_source.html#l00026">player.hpp:26</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_a8d004b6af9a60bf3bc518aa139d41898"><div class="ttname"><a href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a></div><div class="ttdeci">const std::string RESET_ALL</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00032">colors.hpp:32</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_aea71658c8b9226f3a57cb8792ac71be3"><div class="ttname"><a href="colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3">GREEN_COLOR</a></div><div class="ttdeci">const std::string GREEN_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00017">colors.hpp:17</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_af4ff33f31f564390ae6768a68afa3d5c"><div class="ttname"><a href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a></div><div class="ttdeci">const std::string RED_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00016">colors.hpp:16</a></div></div>
@@ -255,7 +255,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Jogar!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classPlayer.html">Player</a>* player1 = <a class="code" href="classInterface.html#aae0f4945248d6acd6215666ff199a400">loginPlayer</a>(<span class="stringliteral">&quot;JOGADOR 1&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classPlayer.html">Player</a>* player1 = <a class="code" href="classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd">loginPlayer</a>(<span class="stringliteral">&quot;JOGADOR 1&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3">GREEN_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Bem vindo(a), &quot;</span> &lt;&lt; player1-&gt;<a class="code" href="classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5">getName</a>() &lt;&lt; <span class="stringliteral">&quot;!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="classPlayer.html">Player</a>* player2 = <span class="keyword">nullptr</span>;</div>
@@ -315,7 +315,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        <span class="keywordflow">switch</span> (selectedGame) {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a>:</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                            player2 = <a class="code" href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                            player2 = <a class="code" href="classInterface.html#a2f5439dfebc08406e060257fe2540821">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Reversi&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
@@ -332,7 +332,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        {</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Lig4&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            player2 = <a class="code" href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            player2 = <a class="code" href="classInterface.html#a2f5439dfebc08406e060257fe2540821">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                            <a class="code" href="classLig4.html">Lig4</a> lig4;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                            winner = lig4.<a class="code" href="classLig4.html#ab5f39cf042ada426477bc0ede9e7c050">play</a>(player1, player2);</div>
@@ -347,7 +347,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                        {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Jogo da Velha&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                            player2 = <a class="code" href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                            player2 = <a class="code" href="classInterface.html#a2f5439dfebc08406e060257fe2540821">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                            <a class="code" href="classTicTacToe.html">TicTacToe</a> ticTacToe;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                            winner = ticTacToe.<a class="code" href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">play</a>(player1, player2);</div>
@@ -378,7 +378,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        {</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Damas&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                            player2 = <a class="code" href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                            player2 = <a class="code" href="classInterface.html#a2f5439dfebc08406e060257fe2540821">playerLoginVerification</a>(player1, player2, <span class="stringliteral">&quot;JOGADOR 2&quot;</span>);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                            <a class="code" href="classCheckersGame.html">CheckersGame</a> checkersGame;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                            winner = checkersGame.<a class="code" href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">play</a>(player1, player2);</div>
@@ -420,38 +420,38 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
 <div class="ttc" id="aboard_8hpp_html_abcc378818bb5f42078cd5f752d44571b"><div class="ttname"><a href="board_8hpp.html#abcc378818bb5f42078cd5f752d44571b">SIMPLE_RETURN</a></div><div class="ttdeci">const int SIMPLE_RETURN</div><div class="ttdoc">Constante que auxilia no encerramento prematuro dos jogos e retorna o usuário para a interface princi...</div><div class="ttdef"><b>Definition:</b> <a href="board_8hpp_source.html#l00025">board.hpp:25</a></div></div>
-<div class="ttc" id="aclassCheckersGame_html"><div class="ttname"><a href="classCheckersGame.html">CheckersGame</a></div><div class="ttdoc">Implementa a lógica do jogo de damas (checkers) baseado na classe Board.</div><div class="ttdef"><b>Definition:</b> <a href="checkers_8hpp_source.html#l00027">checkers.hpp:27</a></div></div>
+<div class="ttc" id="aclassCheckersGame_html"><div class="ttname"><a href="classCheckersGame.html">CheckersGame</a></div><div class="ttdoc">Implementa a lógica do jogo de damas (checkers) baseado na classe Board.</div><div class="ttdef"><b>Definition:</b> <a href="checkers_8hpp_source.html#l00026">checkers.hpp:26</a></div></div>
 <div class="ttc" id="aclassCheckersGame_html_a991d05190d73089b3a5cf624b08ff8fb"><div class="ttname"><a href="classCheckersGame.html#a991d05190d73089b3a5cf624b08ff8fb">CheckersGame::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Realiza uma jogada no jogo de damas.</div><div class="ttdef"><b>Definition:</b> <a href="checkers_8cpp_source.html#l00169">checkers.cpp:169</a></div></div>
-<div class="ttc" id="aclassInterface_html_a274ecde6a62109d5e7babce7066ba4d6"><div class="ttname"><a href="classInterface.html#a274ecde6a62109d5e7babce7066ba4d6">Interface::playerLoginVerification</a></div><div class="ttdeci">Player * playerLoginVerification(Player *player1, Player *player2, string playerNumber)</div><div class="ttdoc">Verifica o login de um jogador.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00373">interface.cpp:373</a></div></div>
-<div class="ttc" id="aclassInterface_html_aae0f4945248d6acd6215666ff199a400"><div class="ttname"><a href="classInterface.html#aae0f4945248d6acd6215666ff199a400">Interface::loginPlayer</a></div><div class="ttdeci">Player * loginPlayer(string playerNumber)</div><div class="ttdoc">Realiza o login de um jogador.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00314">interface.cpp:314</a></div></div>
-<div class="ttc" id="aclassLig4_html"><div class="ttname"><a href="classLig4.html">Lig4</a></div><div class="ttdoc">Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.</div><div class="ttdef"><b>Definition:</b> <a href="lig4_8hpp_source.html#l00014">lig4.hpp:14</a></div></div>
-<div class="ttc" id="aclassLig4_html_ab5f39cf042ada426477bc0ede9e7c050"><div class="ttname"><a href="classLig4.html#ab5f39cf042ada426477bc0ede9e7c050">Lig4::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2)</div><div class="ttdoc">Inicia e gerencia o loop principal do jogo.</div><div class="ttdef"><b>Definition:</b> <a href="lig4_8cpp_source.html#l00125">lig4.cpp:125</a></div></div>
+<div class="ttc" id="aclassInterface_html_a2f5439dfebc08406e060257fe2540821"><div class="ttname"><a href="classInterface.html#a2f5439dfebc08406e060257fe2540821">Interface::playerLoginVerification</a></div><div class="ttdeci">Player * playerLoginVerification(Player *player1, Player *player2, std::string playerNumber)</div><div class="ttdoc">Verifica o login de um jogador.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00373">interface.cpp:373</a></div></div>
+<div class="ttc" id="aclassInterface_html_ac9ceecc5b3d66441b2d646b4fedd10cd"><div class="ttname"><a href="classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd">Interface::loginPlayer</a></div><div class="ttdeci">Player * loginPlayer(std::string playerNumber)</div><div class="ttdoc">Realiza o login de um jogador.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00314">interface.cpp:314</a></div></div>
+<div class="ttc" id="aclassLig4_html"><div class="ttname"><a href="classLig4.html">Lig4</a></div><div class="ttdoc">Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.</div><div class="ttdef"><b>Definition:</b> <a href="lig4_8hpp_source.html#l00014">lig4.hpp:14</a></div></div>
+<div class="ttc" id="aclassLig4_html_ab5f39cf042ada426477bc0ede9e7c050"><div class="ttname"><a href="classLig4.html#ab5f39cf042ada426477bc0ede9e7c050">Lig4::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2)</div><div class="ttdoc">Inicia e gerencia o loop principal do jogo.</div><div class="ttdef"><b>Definition:</b> <a href="lig4_8cpp_source.html#l00127">lig4.cpp:127</a></div></div>
 <div class="ttc" id="aclassMinesweeper_html"><div class="ttname"><a href="classMinesweeper.html">Minesweeper</a></div><div class="ttdoc">Implementa o jogo Campo Minado.</div><div class="ttdef"><b>Definition:</b> <a href="minesweeper_8hpp_source.html#l00026">minesweeper.hpp:26</a></div></div>
 <div class="ttc" id="aclassMinesweeper_html_a1008ae502a99c3d445a3a4d3fea39b4c"><div class="ttname"><a href="classMinesweeper.html#a1008ae502a99c3d445a3a4d3fea39b4c">Minesweeper::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2=nullptr) override</div><div class="ttdoc">Inicia e gerencia o jogo Campo Minado.</div><div class="ttdef"><b>Definition:</b> <a href="minesweeper_8cpp_source.html#l00116">minesweeper.cpp:116</a></div></div>
-<div class="ttc" id="aclassPlayerController_html_a0fb46654f549e30398b2c4cb69c27161"><div class="ttname"><a href="classPlayerController.html#a0fb46654f549e30398b2c4cb69c27161">PlayerController::victoryAndDefeatManagement</a></div><div class="ttdeci">void victoryAndDefeatManagement(Player *winner, Player *player1, Player *player2, int selectedGame)</div><div class="ttdoc">Gerenciador de atribuição de vitórias, derrotas e empates em jogos.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00128">player_controller.cpp:128</a></div></div>
-<div class="ttc" id="aclassPlayer_html_a36f1ada4456bcf9e0d98eb8e82f17cca"><div class="ttname"><a href="classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca">Player::getNickname</a></div><div class="ttdeci">string getNickname()</div><div class="ttdoc">Obtém o apelido do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00025">player.cpp:25</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a0fb46654f549e30398b2c4cb69c27161"><div class="ttname"><a href="classPlayerController.html#a0fb46654f549e30398b2c4cb69c27161">PlayerController::victoryAndDefeatManagement</a></div><div class="ttdeci">void victoryAndDefeatManagement(Player *winner, Player *player1, Player *player2, int selectedGame)</div><div class="ttdoc">Gerenciador de atribuição de vitórias, derrotas e empates em jogos.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00130">player_controller.cpp:130</a></div></div>
+<div class="ttc" id="aclassPlayer_html_a36f1ada4456bcf9e0d98eb8e82f17cca"><div class="ttname"><a href="classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca">Player::getNickname</a></div><div class="ttdeci">std::string getNickname()</div><div class="ttdoc">Obtém o apelido do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00025">player.cpp:25</a></div></div>
 <div class="ttc" id="aclassPlayer_html_a8f275ae090150d811a71f9b338c793f7"><div class="ttname"><a href="classPlayer.html#a8f275ae090150d811a71f9b338c793f7">Player::addDefeat</a></div><div class="ttdeci">void addDefeat(int game)</div><div class="ttdoc">Adiciona uma derrota para o jogador em um determinado jogo.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00034">player.cpp:34</a></div></div>
 <div class="ttc" id="aclassPlayer_html_ab67e57cd87d5112f234e047b4bbaf0c9"><div class="ttname"><a href="classPlayer.html#ab67e57cd87d5112f234e047b4bbaf0c9">Player::addWin</a></div><div class="ttdeci">void addWin(int game)</div><div class="ttdoc">Adiciona uma vitória para o jogador em um determinado jogo.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00029">player.cpp:29</a></div></div>
-<div class="ttc" id="aclassPlayer_html_af9a6045fa96f736664c4eab4caa5e8e5"><div class="ttname"><a href="classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5">Player::getName</a></div><div class="ttdeci">string getName()</div><div class="ttdoc">Obtém o nome do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00017">player.cpp:17</a></div></div>
+<div class="ttc" id="aclassPlayer_html_af9a6045fa96f736664c4eab4caa5e8e5"><div class="ttname"><a href="classPlayer.html#af9a6045fa96f736664c4eab4caa5e8e5">Player::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">Obtém o nome do jogador.</div><div class="ttdef"><b>Definition:</b> <a href="player_8cpp_source.html#l00017">player.cpp:17</a></div></div>
 <div class="ttc" id="aclassReversiGame_html"><div class="ttname"><a href="classReversiGame.html">ReversiGame</a></div><div class="ttdoc">Classe que implementa o jogo Reversi.</div><div class="ttdef"><b>Definition:</b> <a href="reversi_8hpp_source.html#l00024">reversi.hpp:24</a></div></div>
 <div class="ttc" id="aclassReversiGame_html_a18273a46b5252631955ded0a976d1b2d"><div class="ttname"><a href="classReversiGame.html#a18273a46b5252631955ded0a976d1b2d">ReversiGame::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Inicia o jogo entre dois jogadores.</div><div class="ttdef"><b>Definition:</b> <a href="reversi_8cpp_source.html#l00128">reversi.cpp:128</a></div></div>
 <div class="ttc" id="aclassTicTacToe_html"><div class="ttname"><a href="classTicTacToe.html">TicTacToe</a></div><div class="ttdoc">Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.</div><div class="ttdef"><b>Definition:</b> <a href="tic__tac__toe_8hpp_source.html#l00017">tic_tac_toe.hpp:17</a></div></div>
-<div class="ttc" id="aclassTicTacToe_html_adbc918eac4a832462f498931dd618beb"><div class="ttname"><a href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">TicTacToe::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Inicia e gerencia o loop principal do jogo.</div><div class="ttdef"><b>Definition:</b> <a href="tic__tac__toe_8cpp_source.html#l00111">tic_tac_toe.cpp:111</a></div></div>
+<div class="ttc" id="aclassTicTacToe_html_adbc918eac4a832462f498931dd618beb"><div class="ttname"><a href="classTicTacToe.html#adbc918eac4a832462f498931dd618beb">TicTacToe::play</a></div><div class="ttdeci">Player * play(Player *player1, Player *player2) override</div><div class="ttdoc">Inicia e gerencia o loop principal do jogo.</div><div class="ttdef"><b>Definition:</b> <a href="tic__tac__toe_8cpp_source.html#l00113">tic_tac_toe.cpp:113</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_a047c7da2ebaa65ee8efcd2e1426ca9c0"><div class="ttname"><a href="colors_8hpp.html#a047c7da2ebaa65ee8efcd2e1426ca9c0">GRAY_COLOR</a></div><div class="ttdeci">const std::string GRAY_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00015">colors.hpp:15</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_a444489245126b68dd3d0949c6cf982cb"><div class="ttname"><a href="colors_8hpp.html#a444489245126b68dd3d0949c6cf982cb">BLUE_COLOR</a></div><div class="ttdeci">const std::string BLUE_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00019">colors.hpp:19</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_a6c0e23fcaf844d675cb89a78d59d36d3"><div class="ttname"><a href="colors_8hpp.html#a6c0e23fcaf844d675cb89a78d59d36d3">YELLOW_COLOR</a></div><div class="ttdeci">const std::string YELLOW_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00018">colors.hpp:18</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_a5c927771131fe9c79030f5432ddee57b"><div class="ttname"><a href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a></div><div class="ttdeci">const int CHECKERS</div><div class="ttdoc">Índice para o jogo Damas (Checkers).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00039">game_controller.hpp:39</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_a8a7f40d67752cdde6bb244f5daed6dca"><div class="ttname"><a href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a></div><div class="ttdeci">const int REVERSI</div><div class="ttdoc">Índice para o jogo Reversi.</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00019">game_controller.hpp:19</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_aa626a9f1c0f8d28dea0bcbb42484f340"><div class="ttname"><a href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a></div><div class="ttdeci">const int MINESWEEPER</div><div class="ttdoc">Índice para o jogo Campo Minado (Minesweeper).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00034">game_controller.hpp:34</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_ac702853118dfd22413ba863dcf096a05"><div class="ttname"><a href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a></div><div class="ttdeci">const int TIC_TAC_TOE</div><div class="ttdoc">Índice para o jogo Jogo da Velha (Tic Tac Toe).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00029">game_controller.hpp:29</a></div></div>
-<div class="ttc" id="agame__controller_8hpp_html_ae9ab73858869b5f70cec9437b4ef5309"><div class="ttname"><a href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a></div><div class="ttdeci">const int LIG4</div><div class="ttdoc">Índice para o jogo Lig4 (Conecte 4).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00024">game_controller.hpp:24</a></div></div>
-<div class="ttc" id="ainterface_8hpp_html_a3daa728b3de0ac1befea16deb7afa451"><div class="ttname"><a href="interface_8hpp.html#a3daa728b3de0ac1befea16deb7afa451">SAIR</a></div><div class="ttdeci">const int SAIR</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00021">interface.hpp:21</a></div></div>
-<div class="ttc" id="ainterface_8hpp_html_ae1b8fe57cacff311040a4664aa8f010b"><div class="ttname"><a href="interface_8hpp.html#ae1b8fe57cacff311040a4664aa8f010b">VOLTAR</a></div><div class="ttdeci">const int VOLTAR</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00020">interface.hpp:20</a></div></div>
+<div class="ttc" id="agame__controller_8hpp_html_a5c927771131fe9c79030f5432ddee57b"><div class="ttname"><a href="game__controller_8hpp.html#a5c927771131fe9c79030f5432ddee57b">CHECKERS</a></div><div class="ttdeci">const int CHECKERS</div><div class="ttdoc">Índice para o jogo Damas (Checkers).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00041">game_controller.hpp:41</a></div></div>
+<div class="ttc" id="agame__controller_8hpp_html_a8a7f40d67752cdde6bb244f5daed6dca"><div class="ttname"><a href="game__controller_8hpp.html#a8a7f40d67752cdde6bb244f5daed6dca">REVERSI</a></div><div class="ttdeci">const int REVERSI</div><div class="ttdoc">Índice para o jogo Reversi.</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00021">game_controller.hpp:21</a></div></div>
+<div class="ttc" id="agame__controller_8hpp_html_aa626a9f1c0f8d28dea0bcbb42484f340"><div class="ttname"><a href="game__controller_8hpp.html#aa626a9f1c0f8d28dea0bcbb42484f340">MINESWEEPER</a></div><div class="ttdeci">const int MINESWEEPER</div><div class="ttdoc">Índice para o jogo Campo Minado (Minesweeper).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00036">game_controller.hpp:36</a></div></div>
+<div class="ttc" id="agame__controller_8hpp_html_ac702853118dfd22413ba863dcf096a05"><div class="ttname"><a href="game__controller_8hpp.html#ac702853118dfd22413ba863dcf096a05">TIC_TAC_TOE</a></div><div class="ttdeci">const int TIC_TAC_TOE</div><div class="ttdoc">Índice para o jogo Jogo da Velha (Tic Tac Toe).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00031">game_controller.hpp:31</a></div></div>
+<div class="ttc" id="agame__controller_8hpp_html_ae9ab73858869b5f70cec9437b4ef5309"><div class="ttname"><a href="game__controller_8hpp.html#ae9ab73858869b5f70cec9437b4ef5309">LIG4</a></div><div class="ttdeci">const int LIG4</div><div class="ttdoc">Índice para o jogo Lig4 (Conecte 4).</div><div class="ttdef"><b>Definition:</b> <a href="game__controller_8hpp_source.html#l00026">game_controller.hpp:26</a></div></div>
+<div class="ttc" id="ainterface_8hpp_html_a3daa728b3de0ac1befea16deb7afa451"><div class="ttname"><a href="interface_8hpp.html#a3daa728b3de0ac1befea16deb7afa451">SAIR</a></div><div class="ttdeci">const int SAIR</div><div class="ttdoc">Contante para padronizar a opção de 'Sair' durante o fluxo dos menus.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00028">interface.hpp:28</a></div></div>
+<div class="ttc" id="ainterface_8hpp_html_ae1b8fe57cacff311040a4664aa8f010b"><div class="ttname"><a href="interface_8hpp.html#ae1b8fe57cacff311040a4664aa8f010b">VOLTAR</a></div><div class="ttdeci">const int VOLTAR</div><div class="ttdoc">Contante para padronizar a opção de 'Voltar' durante o fluxo dos menus.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8hpp_source.html#l00024">interface.hpp:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aae0f4945248d6acd6215666ff199a400"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae0f4945248d6acd6215666ff199a400">&#9670;&nbsp;</a></span>loginPlayer()</h2>
+<a id="ac9ceecc5b3d66441b2d646b4fedd10cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ceecc5b3d66441b2d646b4fedd10cd">&#9670;&nbsp;</a></span>loginPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,7 +459,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classPlayer.html">Player</a> * Interface::loginPlayer </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>playerNumber</em></td><td>)</td>
           <td></td>
         </tr>
@@ -467,10 +467,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Realiza o login de um jogador. </p>
-<p>Solicita ao usuário o número do jogador para realizar o login e retorna um ponteiro para o jogador correspondente.</p>
+<p>Método auxiliar que solicita ao usuário o número do jogador para realizar o login e retorna um ponteiro para o jogador correspondente.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">playerNumber</td><td>O número do jogador para realizar o login. </td></tr>
+    <tr><td class="paramname">playerNumber</td><td>Jogador que irá realizar o login (player 1 ou player 2). </td></tr>
   </table>
   </dd>
 </dl>
@@ -500,7 +500,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                cin &gt;&gt; nickname;</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <a class="code" href="classInterface.html#a737b66109e1e159752c9217689733743">clearBuffer</a>();</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <a class="code" href="classPlayer.html">Player</a>* player = <a class="code" href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">controller</a>-&gt;<a class="code" href="classPlayerController.html#ae82375e6158343f33060a1a27284892f">getPlayerByNickname</a>(nickname);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <a class="code" href="classPlayer.html">Player</a>* player = <a class="code" href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">controller</a>-&gt;<a class="code" href="classPlayerController.html#a314f2b87b101428c86e417c659820ada">getPlayerByNickname</a>(nickname);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">if</span> (player == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Jogador com apelido \&quot;&quot;</span> &lt;&lt; nickname &lt;&lt; <span class="stringliteral">&quot;\&quot; nao encontrado! Tente novamente!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
@@ -536,7 +536,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 <div class="ttc" id="aclassInterface_html_acf1b423b27b0def6aeb30e4e4a8a65d0"><div class="ttname"><a href="classInterface.html#acf1b423b27b0def6aeb30e4e4a8a65d0">Interface::createPlayer</a></div><div class="ttdeci">Player * createPlayer()</div><div class="ttdoc">Cria um novo jogador.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00273">interface.cpp:273</a></div></div>
-<div class="ttc" id="aclassPlayerController_html_ae82375e6158343f33060a1a27284892f"><div class="ttname"><a href="classPlayerController.html#ae82375e6158343f33060a1a27284892f">PlayerController::getPlayerByNickname</a></div><div class="ttdeci">Player * getPlayerByNickname(string nickname)</div><div class="ttdoc">Obtém um jogador pelo apelido.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00016">player_controller.cpp:16</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a314f2b87b101428c86e417c659820ada"><div class="ttname"><a href="classPlayerController.html#a314f2b87b101428c86e417c659820ada">PlayerController::getPlayerByNickname</a></div><div class="ttdeci">Player * getPlayerByNickname(std::string nickname)</div><div class="ttdoc">Obtém um jogador pelo apelido.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00018">player_controller.cpp:18</a></div></div>
 <div class="ttc" id="acolors_8hpp_html_ac9a7670c3012a412bd3fefd424da3f50"><div class="ttname"><a href="colors_8hpp.html#ac9a7670c3012a412bd3fefd424da3f50">BOLD</a></div><div class="ttdeci">const std::string BOLD</div><div class="ttdef"><b>Definition:</b> <a href="colors_8hpp_source.html#l00027">colors.hpp:27</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -614,8 +614,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a274ecde6a62109d5e7babce7066ba4d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a274ecde6a62109d5e7babce7066ba4d6">&#9670;&nbsp;</a></span>playerLoginVerification()</h2>
+<a id="a2f5439dfebc08406e060257fe2540821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5439dfebc08406e060257fe2540821">&#9670;&nbsp;</a></span>playerLoginVerification()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -635,7 +635,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>playerNumber</em>&#160;</td>
         </tr>
         <tr>
@@ -647,7 +647,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifica o login de um jogador. </p>
-<p>Verifica se o jogador com o número fornecido está registrado e retorna o jogador correspondente.</p>
+<p>Verifica se o jogador com o número fornecido já está 'logado' e retorna o jogador correspondente.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">player1</td><td>Ponteiro para o primeiro jogador. </td></tr>
@@ -656,12 +656,12 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Um ponteiro para o jogador correspondente ou <code>nullptr</code> se o jogador não for encontrado. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Um ponteiro para o jogador correspondente. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00373">373</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                                                                                {</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (player2 == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        player2 = <a class="code" href="classInterface.html#aae0f4945248d6acd6215666ff199a400">loginPlayer</a>(playerNumber);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        player2 = <a class="code" href="classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd">loginPlayer</a>(playerNumber);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">if</span> (player1 == player2) {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Jogador com apelido \&quot;&quot;</span> &lt;&lt; player1-&gt;<a class="code" href="classPlayer.html#a36f1ada4456bcf9e0d98eb8e82f17cca">getNickname</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot; ja selecionado! Tente novamente!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
@@ -694,7 +694,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Exibe o menu de jogadores e gerencia operações relacionadas aos jogadores. </p>
-<p>Este método exibe o menu para criar, remover e gerenciar jogadores. </p>
+<p>Este método exibe o menu para criar, remover e exibir jogadores. </p>
 
 <p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00053">53</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                            {</div>
@@ -748,8 +748,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="ttc" id="aclassInterface_html_a42586bd80716c883800641ab172c8758"><div class="ttname"><a href="classInterface.html#a42586bd80716c883800641ab172c8758">Interface::removePlayer</a></div><div class="ttdeci">void removePlayer()</div><div class="ttdoc">Remove um jogador existente.</div><div class="ttdef"><b>Definition:</b> <a href="interface_8cpp_source.html#l00296">interface.cpp:296</a></div></div>
-<div class="ttc" id="aclassPlayerController_html_a2cbfb792b62db78e622f0ce89cab209b"><div class="ttname"><a href="classPlayerController.html#a2cbfb792b62db78e622f0ce89cab209b">PlayerController::printPlayersByName</a></div><div class="ttdeci">void printPlayersByName()</div><div class="ttdoc">Imprime a lista de jogadores ordenada por nome.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00057">player_controller.cpp:57</a></div></div>
-<div class="ttc" id="aclassPlayerController_html_a7aa8869f04cb3f259ee23647c45c1bb0"><div class="ttname"><a href="classPlayerController.html#a7aa8869f04cb3f259ee23647c45c1bb0">PlayerController::printPlayersByNickname</a></div><div class="ttdeci">void printPlayersByNickname()</div><div class="ttdoc">Imprime a lista de jogadores ordenada por apelido.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00087">player_controller.cpp:87</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a2cbfb792b62db78e622f0ce89cab209b"><div class="ttname"><a href="classPlayerController.html#a2cbfb792b62db78e622f0ce89cab209b">PlayerController::printPlayersByName</a></div><div class="ttdeci">void printPlayersByName()</div><div class="ttdoc">Imprime a lista de jogadores ordenada por nome.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00059">player_controller.cpp:59</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a7aa8869f04cb3f259ee23647c45c1bb0"><div class="ttname"><a href="classPlayerController.html#a7aa8869f04cb3f259ee23647c45c1bb0">PlayerController::printPlayersByNickname</a></div><div class="ttdeci">void printPlayersByNickname()</div><div class="ttdoc">Imprime a lista de jogadores ordenada por apelido.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00089">player_controller.cpp:89</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -769,7 +769,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Remove um jogador existente. </p>
-<p>Solicita ao usuário as informações necessárias para identificar e remover um jogador existente do controlador de jogadores. </p>
+<p>Método auxiliar que solicita ao usuário as informações necessárias para identificar e remover um jogador existente do controlador de jogadores. </p>
 
 <p class="definition">Definition at line <a class="el" href="interface_8cpp_source.html#l00296">296</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                             {</div>
@@ -778,7 +778,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    cin &gt;&gt; nickname;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="classInterface.html#a737b66109e1e159752c9217689733743">clearBuffer</a>();</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">int</span> removed = <a class="code" href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">controller</a>-&gt;<a class="code" href="classPlayerController.html#ae050cea20b0a2909c304414512ce7395">removePlayer</a>(nickname);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">int</span> removed = <a class="code" href="classInterface.html#abdf3b611a91189eb4e34ef0b24f80d5c">controller</a>-&gt;<a class="code" href="classPlayerController.html#a98df5310cf2da077019b307fdbf5c5db">removePlayer</a>(nickname);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (removed == 1)</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#aea71658c8b9226f3a57cb8792ac71be3">GREEN_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Jogador &quot;</span> &lt;&lt; nickname &lt;&lt; <span class="stringliteral">&quot; removido com sucesso!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
@@ -789,7 +789,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#af4ff33f31f564390ae6768a68afa3d5c">RED_COLOR</a> &lt;&lt; <span class="stringliteral">&quot;Nenhum jogador cadastrado! Tente novamente!&quot;</span> &lt;&lt; <a class="code" href="colors_8hpp.html#a8d004b6af9a60bf3bc518aa139d41898">RESET_ALL</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
-<div class="ttc" id="aclassPlayerController_html_ae050cea20b0a2909c304414512ce7395"><div class="ttname"><a href="classPlayerController.html#ae050cea20b0a2909c304414512ce7395">PlayerController::removePlayer</a></div><div class="ttdeci">int removePlayer(string nickname)</div><div class="ttdoc">Remove um jogador do sistema.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00039">player_controller.cpp:39</a></div></div>
+<div class="ttc" id="aclassPlayerController_html_a98df5310cf2da077019b307fdbf5c5db"><div class="ttname"><a href="classPlayerController.html#a98df5310cf2da077019b307fdbf5c5db">PlayerController::removePlayer</a></div><div class="ttdeci">int removePlayer(std::string nickname)</div><div class="ttdoc">Remove um jogador do vetor de players.</div><div class="ttdef"><b>Definition:</b> <a href="player__controller_8cpp_source.html#l00041">player_controller.cpp:41</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -815,9 +815,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ponteiro para o controlador de jogadores. </p>
-<p>Usado para gerenciar e acessar informações sobre os jogadores. </p>
+<p>Usado para gerenciar e acessar informações sobre todos os jogadores. </p>
 
-<p class="definition">Definition at line <a class="el" href="interface_8hpp_source.html#l00038">38</a> of file <a class="el" href="interface_8hpp_source.html">interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8hpp_source.html#l00045">45</a> of file <a class="el" href="interface_8hpp_source.html">interface.hpp</a>.</p>
 
 </div>
 </div>

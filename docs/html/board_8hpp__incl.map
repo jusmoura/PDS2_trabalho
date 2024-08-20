@@ -1,12 +1,12 @@
 <map id="/home/julia/Julia/PDS2_trabalho/include/board.hpp" name="/home/julia/Julia/PDS2_trabalho/include/board.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="246,5,449,47"/>
 <area shape="rect" id="node2" href="$cell_8hpp.html" title="Declaração da classe Cell para representar as células do tabuleiro." alt="" coords="5,95,79,121"/>
-<area shape="rect" id="node3" href="$player_8hpp.html" title="Declaração da classe Player responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="351,95,442,121"/>
+<area shape="rect" id="node3" href="$player_8hpp.html" title="Declaração da classe Player, responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="351,95,442,121"/>
 <area shape="rect" id="node6" title=" " alt="" coords="227,319,286,345"/>
 <area shape="rect" id="node7" title=" " alt="" coords="480,244,543,271"/>
 <area shape="rect" id="node8" href="$colors_8hpp.html" title="Declaração de constantes para cores e estilos de texto para alterar a saída no terminal." alt="" coords="155,169,244,196"/>
 <area shape="rect" id="node9" title=" " alt="" coords="647,169,727,196"/>
-<area shape="rect" id="node4" href="$game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto." alt="" coords="319,169,474,196"/>
+<area shape="rect" id="node4" href="$game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto e possibilitar o salv..." alt="" coords="319,169,474,196"/>
 <area shape="rect" id="node10" title=" " alt="" coords="549,169,623,196"/>
 <area shape="rect" id="node5" href="$game_8hpp.html" title="Declaração da classe Game para representar um jogo." alt="" coords="337,244,424,271"/>
 </map>

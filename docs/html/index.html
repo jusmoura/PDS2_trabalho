@@ -123,7 +123,7 @@ Jogar!</h2>
 <p>Permite iniciar uma nova partida de um dos seguintes jogos:</p>
 <ul>
 <li><b>Reversi</b></li>
-<li><b><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a></b></li>
+<li><b><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.">Lig4</a></b></li>
 <li><b>Jogo da Velha</b></li>
 <li><b>Campo Minado</b></li>
 <li><b>Damas</b></li>
@@ -139,25 +139,30 @@ Jogar!</h2>
 Encerrar o Programa</h2>
 <p>Permite sair do sistema e liberar os recursos.</p>
 <h1><a class="anchor" id="autotoc_md9"></a>
+Tratamento de Exceções e Entradas Inválidas</h1>
+<p>Todos os tratamentos de possíveis erros, em todo o projeto, ocorrem por meio de if's e switch cases; todos os trys, catchs e throws presentes nos jogos e interface são utilizados, exclusivamente, para auxiliar no fluxo entre menus (voltar e sair) e na "desistência" do usuário durante os jogos, fazendo-o retornar na pilha stack&#160;de&#160;execução. Dessa forma, o usuário possui controle total de seu caminho entre os menus durante a utilização do sistema.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Entradas e Saídas</h1>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Entradas</h2>
 <ul>
 <li><b>Criar Jogador</b>: Apelido do jogador.</li>
 <li><b>Remover Jogador</b>: Apelido do jogador.</li>
 <li><b>Listar Jogadores</b>: Ordenação por nome ou apelido.</li>
-<li><b>Selecionar Jogo</b>: Índice do jogo desejado (Reversi(0), <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4(1)</a>, Jogo da velha(2), Campo minado(3), Damas(4))</li>
+<li><b>Selecionar Jogo</b>: Índice do jogo desejado (Reversi(0), <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.">Lig4(1)</a>, Jogo da velha(2), Campo minado(3), Damas(4))</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Saídas</h2>
 <ul>
 <li><b>Sucesso</b>: Mensagens de confirmação para criação, remoção de jogadores e início de jogos.</li>
 <li><b>Erros</b>: Mensagens de erro para dados incorretos ou jogadores não encontrados.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Jogos</h1>
+<h1><a class="anchor" id="autotoc_md14"></a>
 CheckersGame</h1>
 <p>A classe <code><a class="el" href="classCheckersGame.html" title="Implementa a lógica do jogo de damas (checkers) baseado na classe Board.">CheckersGame</a></code> gerencia o jogo de Damas (Checkers) com um tabuleiro 8x8 e permite que dois jogadores joguem uma partida.</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Visão geral</h2>
 <ul>
 <li><b>Inicialização do Jogo</b>: Configura o tabuleiro com peças dos jogadores nos lugares iniciais.</li>
@@ -165,18 +170,24 @@ Visão geral</h2>
 <li><b>Gerenciamento de Jogo</b>: Alterna entre os jogadores, atualiza o tabuleiro após cada jogada e verifica se há um vencedor.</li>
 <li><b>Condições de Vitória</b>: Determina o vencedor com base no número de peças restantes.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Como Funciona</h2>
 <ol type="1">
 <li><b>Início do Jogo</b>: O tabuleiro é configurado com peças dos jogadores.</li>
 <li><b>Jogadas</b>: Jogadores alternam turnos para fazer movimentos ou capturas, sendo a primeira entrada a peça a ser movida e a segunda qual é o destino dela.</li>
 <li><b>Atualização</b>: O tabuleiro é atualizado com as novas posições das peças após cada movimento.</li>
 <li><b>Verificação de Vitória</b>: O jogo continua até que um jogador vença, com base na quantidade de peças restantes.</li>
+<li><b>Regras</b>: O jogo segue as regras das damas americanas. Para peças simples não há captura de peça 'para trás'; As damas movimentam-se apenas uma casa em qualquer direção.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Especificações</h2>
+<ul>
+<li><b>play()</b>: A função play inicia o jogo de damas. Faz a chamada da função setDefaults, que inicializa o tabuleiro com as posições das peças do jogo de damas. Em seguida recebe os dois jogadores e chama printBoard, para imprimir o tabuleiro. O jogo funciona dentro de um loop para a leitura das jogadas, alternando entre os dois jogadores. Dentro do loop, há um if chamando a função readMove, que lê as jogadas. Dentro desse if, verifica-se se a jogada é um movimento simples ou um movimento de captura de peça. Após uma jogada válida, atualiza-se o tabuleiro e é checado se alguma peça se tornou 'Dama'. Então, verifica-se se há algum vencedor, chamando a função winner que checa se algum dos jogadores está sem peças restantes. Caso haja um vencedor, imprime a mensagem de vitória e encerra o jogo.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md18"></a>
 Lig4</h1>
-<p>A classe <code><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a></code> implementa o jogo <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4) derivada da classe Board.">Lig4</a>. Este é um jogo de tabuleiro onde os jogadores se alternam para que peças caiam verticalmente, e o objetivo é formar uma linha de quatro peças consecutivas horizontalmente, verticalmente ou diagonalmente.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<p>A classe <code><a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.">Lig4</a></code> implementa o jogo <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.">Lig4</a>. Este é um jogo de tabuleiro onde os jogadores se alternam para que peças caiam verticalmente, e o objetivo é formar uma linha de quatro peças consecutivas horizontalmente, verticalmente ou diagonalmente.</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Visão geral</h2>
 <ul>
 <li><b>Inicialização do Jogo</b>: Configura um tabuleiro 6x7 vazio e define o jogador inicial.</li>
@@ -185,7 +196,7 @@ Visão geral</h2>
 <li><b>Verificação de Vitória</b>: Verifica se o jogador atual conseguiu alinhar quatro peças consecutivas em qualquer direção (horizontal, vertical ou diagonal).</li>
 <li><b>Empate</b>: Verifica se o tabuleiro está cheio e não há vencedor, resultando em empate.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Como Funciona</h2>
 <ol type="1">
 <li><b>Início do Jogo</b>: O tabuleiro é inicializado vazio, e o jogador X começa.</li>
@@ -198,10 +209,20 @@ Como Funciona</h2>
 </li>
 <li><b>Final do Jogo</b>: O jogo termina quando um jogador vence ou o tabuleiro está cheio, resultando em empate.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Especificações</h2>
+<ol type="1">
+<li><b>play()</b>: inicia o jogo <a class="el" href="classLig4.html" title="Classe que implementa o jogo Lig4 (Conecta 4), derivada da classe Board.">Lig4</a> com um tabuleiro 6x7 vazio e recebe 2 jogadores como parâmetro. Um jogo funciona dentro de um while loop que lê a entrada [coluna] e preenche a linha disponível. O loop é interrompido quando há um vencedor ou todas as casas foram preenchidas;</li>
+<li><b>makeMove()</b>: chama a função validateMove() da classe <a class="el" href="classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas do tabuleiro de jogo.">Board</a> e verifica se a jogada é válida. Em seguida itera pelas linhas da coluna escolhida e preenche a primeira linha disponível, “empilhando” as peças. Caso a coluna esteja totalmente preenchida ou a coluna seja incoerente com o tamanho do tabuleiro, retorna uma mensagem de erro;</li>
+<li><b>switchPlayer()</b>: é chamada após cada jogada e é responsável por trocar a vez dos jogadores X e O;</li>
+<li><b>checkVictory()</b> : verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal.</li>
+<li><b>checkTie()</b>: verifica se o jogo empatou, isto é, todas as casas foram preenchidas mas não há vencedor;</li>
+<li><b>printBoard()</b>: sobreescreve o método da classe <a class="el" href="classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas do tabuleiro de jogo.">Board</a>. Imprime o tabuleiro 6x7.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md22"></a>
 Minesweeper (Campo Minado)</h1>
 <p>A classe <code><a class="el" href="classMinesweeper.html" title="Implementa o jogo Campo Minado.">Minesweeper</a></code> gerencia o jogo Campo Minado em um tabuleiro 8x8, onde o objetivo é revelar todas as células sem explosões de bombas.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Visão Geral</h2>
 <ul>
 <li><b>Inicialização do Jogo</b>: Configura um tabuleiro 8x8 e posiciona as bombas aleatoriamente. As células ao redor das bombas são atualizadas para refletir o número de bombas adjacentes.</li>
@@ -209,7 +230,7 @@ Visão Geral</h2>
 <li><b>Movimentos do Jogador</b>: Permite ao jogador escolher uma célula para revelar. Se a célula contiver uma bomba, o jogo termina. Se a célula for vazia, revela células adjacentes recursivamente.</li>
 <li><b>Verificação de Vitória e Derrota</b>: Determina se o jogador venceu (revelando todas as células sem bombas) ou perdeu (revelando uma célula com bomba).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Como Funciona</h2>
 <ol type="1">
 <li><b>Inicialização</b>: O tabuleiro é criado e as posições das bombas são definidas. Cada célula ao redor de uma bomba é atualizada com o número de bombas adjacentes.</li>
@@ -225,10 +246,16 @@ Como Funciona</h2>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Especificações</h2>
+<ul>
+<li><b>Construtor</b>: O contrutor é responsável por instanciar a função setBombsPositions, que aloca bombas em posições aleatórias no tabuleiro.</li>
+<li><b>play()</b>: A função play inicia o campo minado em um loop de jogadas, no qual são solicitados as entradas para realização da escolha de posição a ser revelada. Se o movimento for válido e a posição seleciona estiver vazia (valor 0), é chamada a função checkAndShowAdjacentsCells que, de maneira recursiva, revela todas as células adjacentes àquela jogada. Caso não seja 0, apenas a posição selecionada é revelada. Por fim, é verificado se uma bomba foi selecionada e, em caso positivo, o jogo é encerrado em derrota. Verifica-se, também (caso não tenha ocorrido a derrota), se houve vitória, na situação em que todas as casas, exceto bombas, foram reveladas.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Reversi</h1>
 <p>A classe <code><a class="el" href="classReversiGame.html" title="Classe que implementa o jogo Reversi.">ReversiGame</a></code> implementa o jogo Reversi, um jogo de estratégia de dois jogadores em um tabuleiro 8x8. O objetivo é ter a maioria das peças na cor do jogador ao final do jogo, invertendo as peças do adversário durante as jogadas.</p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Visão Geral</h2>
 <ul>
 <li><b>Inicialização do Tabuleiro</b>: Configura o tabuleiro com peças iniciais e disponibiliza as posições para jogadas.</li>
@@ -239,7 +266,7 @@ Visão Geral</h2>
 <li><b>Ajuda</b>: Lista todos os movimentos válidos disponíveis no momento.</li>
 <li><b>Acompanhamento de Pontuação</b>: Atualiza e exibe a pontuação em tempo real durante o jogo.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3><a class="anchor" id="autotoc_md28"></a>
 Como Funciona</h3>
 <ol type="1">
 <li><b>Inicialização do Jogo</b>:<ul>
@@ -271,10 +298,10 @@ Como Funciona</h3>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 TicTacToe</h1>
 <p>A classe <code><a class="el" href="classTicTacToe.html" title="Classe que implementa o jogo da velha (Tic-Tac-Toe) derivada da classe Board.">TicTacToe</a></code> implementa o clássico jogo da velha, um jogo de estratégia simples para dois jogadores. O objetivo é alinhar três peças em uma linha, seja horizontal, vertical ou diagonal, antes que o adversário o faça.</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Visão Geral</h2>
 <ul>
 <li><b>Inicialização do Tabuleiro</b>: Configura um tabuleiro 3x3 vazio.</li>
@@ -282,7 +309,7 @@ Visão Geral</h2>
 <li><b>Verificação de Vitória</b>: Checa se há um vencedor ou se o jogo terminou em empate.</li>
 <li><b>Impressão do Tabuleiro</b>: Exibe o estado atual do tabuleiro no console.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md26"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Como Funciona</h3>
 <ol type="1">
 <li><b>Inicialização do Jogo</b>:<ul>
@@ -302,9 +329,20 @@ Como Funciona</h3>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
+Especificações</h2>
+<ol type="1">
+<li><b>play()</b>: inicia o jogo da velha com um tabuleiro 3x3 vazio e recebe os dois jogadores como parâmetro. O jogo funciona dentro de um while loop que lê a entrada [linha coluna] e preenche a casa do tabuleiro correspondente. O loop é interrompido quando há um vencedor ou todas as casas foram preenchidas;</li>
+<li><b>makeMove()</b> recebe uma linha e coluna como parâmetro e preenche a casa correspondente se ela estiver vazia ou retorna uma mensagem de erro caso a jogada seja inválida;</li>
+<li><b>validMove()</b>: recebe uma linha e coluna como parâmetro e verifica se a jogada é válida, ou seja, se a casa escolhida está vazia e dentro do tabuleiro, retornando uma mensagem de erro caso seja inválida;</li>
+<li><b>switchPlayer()</b>: é chamada após cada jogada e é responsável por trocar a vez dos jogadores X e O;</li>
+<li><b>checkTie()</b>: verifica se o jogo empatou, isto é, todas as casas foram preenchidas mas não há vencedor;</li>
+<li><b>checkVictory()</b>: verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal. <br  />
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md33"></a>
 Compilação e Execução</h1>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3><a class="anchor" id="autotoc_md34"></a>
 No Linux</h3>
 <ol type="1">
 <li><b>Navegue até o diretório do projeto</b>:<ul>
@@ -323,7 +361,7 @@ No Linux</h3>
 </li>
 </ol>
 <p><b>Observação</b>: Certifique-se de que o <code>make</code> esteja instalado no seu sistema e que o <code>Makefile</code> esteja corretamente configurado para gerar os binários na pasta <code>bin</code>.</p>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 No Windows</h3>
 <ol type="1">
 <li><b>Navegue até o diretório do projeto</b>:<ul>
@@ -343,9 +381,9 @@ No Windows</h3>
 </li>
 </ol>
 <p><b>Observação</b>: Certifique-se de que o <code>mingw32-make</code> esteja instalado e configurado corretamente no seu sistema, e que o <code>Makefile</code> esteja corretamente configurado para gerar os binários na pasta <code>bin</code>.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Doxyfile</h1>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 Como Abrir a Documentação Gerada pelo Doxygen</h3>
 <p>Após a geração da documentação com o Doxygen, siga os passos abaixo para visualizar a documentação em HTML:</p>
 <ol type="1">

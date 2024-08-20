@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Declaração da classe <a class="el" href="classGame.html" title="Representa um jogo com estatísticas de desempenho.">Game</a> para representar um jogo.  
+<p>Declaração da classe <a class="el" href="classGame.html" title="Representa um jogo e suas estatísticas individuais (número de vitórias, derrotas e empates).">Game</a> para representar um jogo.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -90,12 +90,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="game_8hpp__dep__incl.png" border="0" usemap="#a_2home_2julia_2Julia_2PDS2__trabalho_2include_2game_8hppdep" alt=""/></div>
 <map name="a_2home_2julia_2Julia_2PDS2__trabalho_2include_2game_8hppdep" id="a_2home_2julia_2Julia_2PDS2__trabalho_2include_2game_8hppdep">
 <area shape="rect" title="Declaração da classe Game para representar um jogo." alt="" coords="1639,5,1842,47"/>
-<area shape="rect" href="game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto." alt="" coords="1555,95,1729,151"/>
+<area shape="rect" href="game__controller_8hpp.html" title="Declaração da classe GameController para gerenciar jogos disponíveis no projeto e possibilitar o salv..." alt="" coords="1555,95,1729,151"/>
 <area shape="rect" href="game_8cpp.html" title=" " alt="" coords="1753,102,1928,143"/>
-<area shape="rect" href="player_8hpp.html" title="Declaração da classe Player responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="1415,199,1621,240"/>
+<area shape="rect" href="player_8hpp.html" title="Declaração da classe Player, responsável por representar e gerenciar as estatísticas de um jogador." alt="" coords="1415,199,1621,240"/>
 <area shape="rect" href="game__controller_8cpp.html" title=" " alt="" coords="1646,199,1889,240"/>
 <area shape="rect" href="board_8hpp.html" title=" " alt="" coords="619,295,822,337"/>
-<area shape="rect" href="player__controller_8hpp.html" title="Declaração da classe PlayerController responsável pelo gerenciamento dos jogadores." alt="" coords="1429,288,1607,344"/>
+<area shape="rect" href="player__controller_8hpp.html" title="Declaração da classe PlayerController, responsável pelo gerenciamento de todos os jogadores." alt="" coords="1429,288,1607,344"/>
 <area shape="rect" href="player_8cpp.html" title=" " alt="" coords="1632,295,1809,337"/>
 <area shape="rect" href="checkers_8hpp.html" title="Declaração da classe CheckersGame para gerenciar um jogo de damas." alt="" coords="609,399,832,441"/>
 <area shape="rect" href="lig4_8hpp.html" title=" " alt="" coords="395,399,585,441"/>
@@ -103,7 +103,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="reversi_8hpp.html" title="Declaração da classe ReversiGame para o jogo Reversi." alt="" coords="1134,399,1345,441"/>
 <area shape="rect" href="tic__tac__toe_8hpp.html" title=" " alt="" coords="205,392,370,448"/>
 <area shape="rect" href="board_8cpp.html" title=" " alt="" coords="5,399,180,441"/>
-<area shape="rect" href="interface_8hpp.html" title="Declaração da classe Interface para gerenciar a interação com o usuário." alt="" coords="765,503,989,545"/>
+<area shape="rect" href="interface_8hpp.html" title="Declaração da classe Interface para gerenciar a interação com o usuário e a instanciação de todas as ..." alt="" coords="765,503,989,545"/>
 <area shape="rect" href="checkers_8cpp.html" title=" " alt="" coords="546,503,741,545"/>
 <area shape="rect" href="interface_8cpp.html" title=" " alt="" coords="675,600,870,641"/>
 <area shape="rect" href="main_8cpp.html" title=" " alt="" coords="894,600,1065,641"/>
@@ -122,12 +122,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGame.html">Game</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um jogo com estatísticas de desempenho.  <a href="classGame.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um jogo e suas estatísticas individuais (número de vitórias, derrotas e empates).  <a href="classGame.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaração da classe <a class="el" href="classGame.html" title="Representa um jogo com estatísticas de desempenho.">Game</a> para representar um jogo. </p>
-<p>Este arquivo define a classe <code><a class="el" href="classGame.html" title="Representa um jogo com estatísticas de desempenho.">Game</a></code>, que é usada para representar um jogo com informações sobre o nome do jogo e suas estatísticas, como o número de vitórias, derrotas e empates. </p>
+<div class="textblock"><p>Declaração da classe <a class="el" href="classGame.html" title="Representa um jogo e suas estatísticas individuais (número de vitórias, derrotas e empates).">Game</a> para representar um jogo. </p>
+<p>Este arquivo define a classe <code><a class="el" href="classGame.html" title="Representa um jogo e suas estatísticas individuais (número de vitórias, derrotas e empates).">Game</a></code>, que é usada para representar um jogo com informações sobre o nome do jogo e suas estatísticas, como o número de vitórias, derrotas e empates, a serem computados pelos players. </p>
 
 <p class="definition">Definition in file <a class="el" href="game_8hpp_source.html">game.hpp</a>.</p>
 </div></div><!-- contents -->

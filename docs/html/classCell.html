@@ -99,12 +99,12 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a893d52f51ce9c98a618d6e24b157492c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor armazenado na célula.  <a href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">More...</a><br /></td></tr>
 <tr class="separator:a893d52f51ce9c98a618d6e24b157492c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2951b78b6ec01875d8514ae57e07d676"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a></td></tr>
-<tr class="memdesc:a2951b78b6ec01875d8514ae57e07d676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica se a célula foi selecionada ou não.  <a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">More...</a><br /></td></tr>
+<tr class="memdesc:a2951b78b6ec01875d8514ae57e07d676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica se a célula já foi selecionada ou não.  <a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">More...</a><br /></td></tr>
 <tr class="separator:a2951b78b6ec01875d8514ae57e07d676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representa uma célula individual em um tabuleiro de jogo. </p>
-<p>A classe <code><a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a></code> é usada para representar uma célula em um tabuleiro. Ela armazena o valor da célula e um estado booleano que indica se a célula foi selecionada ou não. </p>
+<p>A classe <code><a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a></code> é usada para representar uma célula em um tabuleiro. Ela armazena o valor da célula e um estado booleano que indica se a célula já foi selecionada ou não. </p>
 
 <p class="definition">Definition at line <a class="el" href="cell_8hpp_source.html#l00019">19</a> of file <a class="el" href="cell_8hpp_source.html">cell.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -124,14 +124,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construtor padrão da classe <a class="el" href="classCell.html" title="Representa uma célula individual em um tabuleiro de jogo.">Cell</a>. </p>
-<p>Inicializa a célula com valores padrão. Normalmente, o valor é 0 e o estado de seleção é false. </p>
+<p>Inicializa a célula com valores padrão 0 e estado de seleção false. </p>
 
 <p class="definition">Definition at line <a class="el" href="cell_8cpp_source.html#l00003">3</a> of file <a class="el" href="cell_8cpp_source.html">cell.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;           {</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <a class="code" href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">_value</a> = 0;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">_wasSelected</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="ttc" id="aclassCell_html_a2951b78b6ec01875d8514ae57e07d676"><div class="ttname"><a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">Cell::_wasSelected</a></div><div class="ttdeci">bool _wasSelected</div><div class="ttdoc">Indica se a célula foi selecionada ou não.</div><div class="ttdef"><b>Definition:</b> <a href="cell_8hpp_source.html#l00034">cell.hpp:34</a></div></div>
+<div class="ttc" id="aclassCell_html_a2951b78b6ec01875d8514ae57e07d676"><div class="ttname"><a href="classCell.html#a2951b78b6ec01875d8514ae57e07d676">Cell::_wasSelected</a></div><div class="ttdeci">bool _wasSelected</div><div class="ttdoc">Indica se a célula já foi selecionada ou não.</div><div class="ttdef"><b>Definition:</b> <a href="cell_8hpp_source.html#l00034">cell.hpp:34</a></div></div>
 <div class="ttc" id="aclassCell_html_a893d52f51ce9c98a618d6e24b157492c"><div class="ttname"><a href="classCell.html#a893d52f51ce9c98a618d6e24b157492c">Cell::_value</a></div><div class="ttdeci">int _value</div><div class="ttdoc">Valor armazenado na célula.</div><div class="ttdef"><b>Definition:</b> <a href="cell_8hpp_source.html#l00027">cell.hpp:27</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -297,7 +297,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indica se a célula foi selecionada ou não. </p>
+<p>Indica se a célula já foi selecionada ou não. </p>
 <p>Esse estado pode ser usado para verificar se a célula foi jogada ou manipulada de alguma forma. </p>
 
 <p class="definition">Definition at line <a class="el" href="cell_8hpp_source.html#l00034">34</a> of file <a class="el" href="cell_8hpp_source.html">cell.hpp</a>.</p>

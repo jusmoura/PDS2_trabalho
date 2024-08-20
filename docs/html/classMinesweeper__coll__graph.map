@@ -1,4 +1,4 @@
 <map id="Minesweeper" name="Minesweeper">
 <area shape="rect" id="node1" title="Implementa o jogo Campo Minado." alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node2" href="$classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas de um tabuleiro de jogo." alt="" coords="30,5,90,32"/>
+<area shape="rect" id="node2" href="$classBoard.html" title="Classe abstrata que define a estrutura e funcionalidades básicas do tabuleiro de jogo." alt="" coords="30,5,90,32"/>
 </map>

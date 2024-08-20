@@ -5,5 +5,5 @@ var searchData=
   ['lig4_2ecpp_86',['lig4.cpp',['../lig4_8cpp.html',1,'']]],
   ['lig4_2ehpp_87',['lig4.hpp',['../lig4_8hpp.html',1,'']]],
   ['linessize_88',['linesSize',['../classBoard.html#a2331cf0e362f0487b0d1f1cba5b82aea',1,'Board']]],
-  ['loginplayer_89',['loginPlayer',['../classInterface.html#aae0f4945248d6acd6215666ff199a400',1,'Interface']]]
+  ['loginplayer_89',['loginPlayer',['../classInterface.html#ac9ceecc5b3d66441b2d646b4fedd10cd',1,'Interface']]]
 ];
