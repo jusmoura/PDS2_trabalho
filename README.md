@@ -132,6 +132,14 @@ A classe `Lig4` implementa o jogo  Lig4. Este é um jogo de tabuleiro onde os jo
    - **Empate**: O jogo verifica se o tabuleiro está cheio e não há vencedor.
 5. **Final do Jogo**: O jogo termina quando um jogador vence ou o tabuleiro está cheio, resultando em empate.
 
+## Especificações
+1. **play()**: inicia o jogo Lig4 com um tabuleiro 6x7 vazio e recebe 2 jogadores como parâmetro. Um jogo funciona dentro de um while loop que lê a entrada [coluna] e preenche a linha disponível. O loop é interrompido quando há um vencedor ou todas as casas foram preenchidas;
+2. **makeMove()**: chama a função validateMove() da classe Board e verifica se a jogada é válida. Em seguida itera pelas linhas da coluna escolhida e preenche a primeira linha disponível, “empilhando” as peças. Caso a coluna esteja totalmente preenchida ou a coluna seja incoerente com o tamanho do tabuleiro, retorna uma mensagem de erro;
+3. **switchPlayer()**: é chamada após cada jogada e é responsável por trocar a vez dos jogadores X e O;
+4. **checkVictory()** : verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal.
+5. **checkTie()**: verifica se o jogo empatou, isto é, todas as casas foram preenchidas mas não há vencedor;
+6. **printBoard()**: sobreescreve o método da classe Board. Imprime o tabuleiro 6x7.
+
 
 # Minesweeper (Campo Minado)
 
@@ -217,6 +225,15 @@ A classe `TicTacToe` implementa o clássico jogo da velha, um jogo de estratégi
 
 4. **Impressão do Tabuleiro**:
    - O estado atual do tabuleiro é exibido no console, mostrando as peças dos jogadores (X e O) nas posições correspondentes.
+
+## Especificações
+
+1. **play()**: inicia o jogo da velha com um tabuleiro 3x3 vazio e recebe os dois jogadores como parâmetro. O jogo funciona dentro de um while loop que lê a entrada [linha coluna] e preenche a casa do tabuleiro correspondente. O loop é interrompido quando há um vencedor ou todas as casas foram preenchidas;
+2. **makeMove()** recebe uma linha e coluna como parâmetro e preenche a casa correspondente se ela estiver vazia ou retorna uma mensagem de erro caso a jogada seja inválida; 
+3. **validMove()**: recebe uma linha e coluna como parâmetro e verifica se a jogada é válida, ou seja, se a casa escolhida está vazia e dentro do tabuleiro, retornando uma mensagem de erro caso seja inválida;
+4. **switchPlayer()**: é chamada após cada jogada e é responsável por trocar a vez dos jogadores X e O;
+5. **checkTie()**: verifica se o jogo empatou, isto é, todas as casas foram preenchidas mas não há vencedor;
+6. **checkVictory()**: verifica se há um vencedor, ou seja, se um dos jogadores preencheu 3 casas seguidas na diagonal, vertical ou horizontal.   
 
 # Compilação e Execução
 
